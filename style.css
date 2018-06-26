@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Markazi+Text');
+	
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.topnav {
+		overflow: hidden;
+		background-color: #333;
+		background-color: #edebe3;
+		text-align: center;
+		font-family: 'Josefin Sans', sans-serif;
+		width: 100%;
+	}
+
+	.topnav a {
+		display: inline-block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	.topnav a:hover {
+		color: #8e8c83;
+	}
+
+
+	.main {
+		width: 100%;
+		left: 10%;
+	}
+
+	.page-title {	
+		font-family: 'Josefin Sans', sans-serif;
+		color: #6d6c6a;
+		font-size: 150px;
+		padding: 0px;
+		width: 70%;
+		margin: auto;
+		text-align: right;
+	}
+
+	.content {
+		color: white;
+		font-family: 'Crimson Text', serif;
+		background-color: #5d7993;
+		width: 70%;
+		margin: auto;
+		padding: 10px 2% 10px 2%;
+		font-size: 16px;
+	}
