@@ -1,53 +1,98 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Markazi+Text');
 	
-	body {
-		margin: 0px;
-		padding: 0px;
-	}
+body {
+	margin: 0px;
+	padding: 0px;
+}
 
-	.topnav {
-		overflow: hidden;
-		background-color: #333;
-		background-color: #edebe3;
-		text-align: center;
-		font-family: 'Josefin Sans', sans-serif;
-		width: 100%;
-	}
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+	background-color: #edebe3;
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+}
 
-	.topnav a {
-		display: inline-block;
-		color: black;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
+.topnav a {
+	display: inline-block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
 
-	.topnav a:hover {
-		color: #8e8c83;
-	}
+.topnav a:hover {
+	color: #8e8c83;
+}
 
 
-	.main {
-		width: 100%;
-		left: 10%;
-	}
+.page-title {	
+	font-family: 'Josefin Sans', sans-serif;
+	color: #f2f0ea;
+	font-size: 150px;
+	width: 70%;
+	margin: auto;
+	text-align: right;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-image: url("header_background2.png");
+	background-size: cover;
+}
 
-	.page-title {	
-		font-family: 'Josefin Sans', sans-serif;
-		color: #6d6c6a;
-		font-size: 150px;
-		padding: 0px;
-		width: 70%;
-		margin: auto;
-		text-align: right;
-	}
 
-	.content {
-		color: white;
-		font-family: 'Crimson Text', serif;
-		background-color: #5d7993;
-		width: 70%;
-		margin: auto;
-		padding: 10px 2% 10px 2%;
-		font-size: 16px;
-	}
+.content {
+	color: #f2f0ea;
+	font-family: 'Crimson Text', serif;
+	line-height: 1;
+	background-color: #5d7993;
+	width: 70%;
+	margin: auto;
+	font-size: 16px;
+}
+
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'left left middle middle right right' 
+  'left left middle middle right right' 
+  'left left middle middle right right' ;
+} 
+
+.left, .middle, .right {
+  padding: 10px;
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+.columns {
+	color: #f2f0ea;
+	font-size: 24px;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+    'header header header header header header' 
+    'left left left left left left' 
+    'middle middle middle middle middle middle' 
+    'right right right right right right' 
+    'footer footer footer footer footer footer';
+}
