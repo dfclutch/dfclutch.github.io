@@ -5,9 +5,35 @@ body {
 	padding: 0px;
 }
 
+a.in-text {
+	text-decoration: none;
+	color: #bcb9af;
+	font-family: 'Crimson Text', serif;
+}
+
+a.in-text:link{
+	text-decoration: none;
+	color: #bcb9af;
+}
+
+a.in-text:visited {
+	text-decoration: none;
+	color: #bcb9af;
+}
+
+a.in-text:hover  {
+	text-decoration: underline;
+	color: #bcb9af;
+}
+
+a.in-text:active {
+	text-decoration: none;
+	color: #bcb9af;
+}
+
 .topnav {
 	overflow: hidden;
-	background-color: #333;
+	color: #333;
 	background-color: #edebe3;
 	text-align: center;
 	font-family: 'Josefin Sans', sans-serif;
@@ -29,11 +55,11 @@ body {
 
 .page-title {	
 	font-family: 'Josefin Sans', sans-serif;
-	color: #f2f0ea;
+	color: #333;
 	font-size: 150px;
 	width: 70%;
 	margin: auto;
-	text-align: right;
+	text-align: left;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background-image: url("header_background2.png");
@@ -96,3 +122,15 @@ body {
     'right right right right right right' 
     'footer footer footer footer footer footer';
 }
+
+.collectorButton {
+    background-color: #4286f4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
