@@ -1,34 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Markazi+Text');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Markazi+Text|Julius+Sans+One');
 	
-body {
-	margin: 0px;
-	padding: 0px;
+* { padding: 0; margin: 0; }
+
+html, body {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
+
+body > * {
+  flex-shrink: 0;
+}
+
 
 a.in-text {
 	text-decoration: none;
-	color: #bcb9af;
+	color: #5d7993;
 	font-family: 'Crimson Text', serif;
 }
 
 a.in-text:link{
 	text-decoration: none;
-	color: #bcb9af;
+	color: #5d7993;
 }
 
 a.in-text:visited {
 	text-decoration: none;
-	color: #bcb9af;
+	color: #5d7993;
 }
 
 a.in-text:hover  {
 	text-decoration: underline;
-	color: #bcb9af;
+	color: #5d7993;
 }
 
 a.in-text:active {
 	text-decoration: none;
-	color: #bcb9af;
+	color: #5d7993;
 }
 
 .topnav {
@@ -38,6 +47,8 @@ a.in-text:active {
 	text-align: center;
 	font-family: 'Josefin Sans', sans-serif;
 	width: 100%;
+	top: 0px;
+	position: fixed;
 }
 
 .topnav a {
@@ -55,26 +66,47 @@ a.in-text:active {
 
 .page-title {	
 	font-family: 'Josefin Sans', sans-serif;
-	color: #333;
+	color: #f2f0ea;
 	font-size: 150px;
-	width: 70%;
+	width: 100%;
 	margin: auto;
-	text-align: left;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	text-align: center;
+	padding-top: 170px;
+	padding-bottom: 170px;
 	background-image: url("header_background2.png");
 	background-size: cover;
 }
 
+.page-title-home {	
+	font-family: 'Josefin Sans', sans-serif;
+	color: #f2f0ea;
+	font-size: 150px;
+	text-align: center;
+	background-image: url("header_background2.png");
+	background-size: cover;
+	flex-grow: 1;
+	padding-top: 10%;
+
+}
+
 
 .content {
-	color: #f2f0ea;
+	color: #333;
 	font-family: 'Crimson Text', serif;
 	line-height: 1;
-	background-color: #5d7993;
+	background-color: #edebe3;
 	width: 70%;
 	margin: auto;
 	font-size: 16px;
+}
+
+.home-content {
+	color: #edebe3;
+	font-family: 'Crimson Text', serif;
+	font-size: 24px;
+	padding-top: 20px;
+	width: 100%;
+	text-align: center;
 }
 
 
@@ -107,7 +139,7 @@ a.in-text:active {
 }
 
 .columns {
-	color: #f2f0ea;
+	color: #5d7993;
 	font-size: 24px;
 	font-family: 'Josefin Sans', sans-serif;
 	
@@ -116,11 +148,9 @@ a.in-text:active {
 @media (max-width: 600px) {
   .grid-container  {
     grid-template-areas: 
-    'header header header header header header' 
     'left left left left left left' 
     'middle middle middle middle middle middle' 
-    'right right right right right right' 
-    'footer footer footer footer footer footer';
+    'right right right right right right' ;
 }
 
 .collectorButton {
@@ -133,4 +163,6 @@ a.in-text:active {
     display: inline-block;
     font-size: 16px;
 }
+
+
 
