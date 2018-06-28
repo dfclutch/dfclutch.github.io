@@ -40,6 +40,33 @@ a.in-text:active {
 	color: #5d7993;
 }
 
+a.in-text-footer {
+	text-decoration: none;
+	color: #f2f0ea;
+	font-family: 'Crimson Text', serif;
+	padding-right: 10px;
+}
+
+a.in-tex-footer:link{
+	text-decoration: none;
+	color: #f2f0ea;
+}
+
+a.in-text-footer:visited {
+	text-decoration: none;
+	color: #f2f0ea;
+}
+
+a.in-text-footer:hover  {
+	text-decoration: underline;
+	color: #f2f0ea;
+}
+
+a.in-text-footer:active {
+	text-decoration: none;
+	color: #f2f0ea;
+}
+
 .topnav {
 	overflow: hidden;
 	color: #333;
@@ -68,13 +95,12 @@ a.in-text:active {
 	font-family: 'Josefin Sans', sans-serif;
 	color: #f2f0ea;
 	font-size: 150px;
-	width: 100%;
-	margin: auto;
 	text-align: center;
 	padding-top: 170px;
 	padding-bottom: 170px;
 	background-image: url("header_background2.png");
 	background-size: cover;
+	flex-grow: 1;
 }
 
 .page-title-home {	
@@ -84,11 +110,10 @@ a.in-text:active {
 	text-align: center;
 	background-image: url("header_background2.png");
 	background-size: cover;
-	flex-grow: 1;
 	padding-top: 10%;
+	flex-grow: 1;
 
 }
-
 
 .content {
 	color: #333;
@@ -107,6 +132,14 @@ a.in-text:active {
 	padding-top: 20px;
 	width: 100%;
 	text-align: center;
+}
+
+.footer {
+	background-color: #5d7993;
+	font-family: 'Crimson Text', serif;
+	color: #f2f0ea;
+	padding: 10px;
+	text-align: left;
 }
 
 
