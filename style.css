@@ -76,6 +76,11 @@ a.in-text-footer:active {
 	width: 100%;
 	top: 0px;
 	position: fixed;
+	opacity: .5;
+}
+
+.topnav:hover {
+	opacity: 1;
 }
 
 .topnav a {
