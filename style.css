@@ -100,7 +100,7 @@ a.in-text-footer:active {
 }
 
 .page {
-	background-image: url("agriculture-barn-cabin-239533.png");
+	background-image: url("background-main.jpg");
 	background-size: cover;
 	flex-grow: 1;
 	padding-top: 8%;
@@ -111,7 +111,7 @@ a.in-text-footer:active {
 	color: #f2f0ea;
 	font-size: 150px;
 	text-align: center;
-	background-image: url("agriculture-barn-cabin-239533.png");
+	background-image: url("background-main.jpg");
 	background-size: cover;
 	padding-top: 10%;
 	flex-grow: 1;
@@ -134,6 +134,12 @@ a.in-text-footer:active {
 	margin: auto;
 	font-size: 18px;
 	text-align: justify;
+}
+
+.picture {
+	text-align: center;
+	width: 100%;
+	margin: auto;
 }
 
 .home-content {
