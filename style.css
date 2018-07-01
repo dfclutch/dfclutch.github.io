@@ -103,7 +103,7 @@ a.in-text-footer:active {
 	background-image: url("header_background2.png");
 	background-size: cover;
 	flex-grow: 1;
-	padding-top: 10%;
+	padding-top: 8%;
 }
 
 .page-home {	
@@ -197,4 +197,38 @@ a.in-text-footer:active {
 	color: #f2f0ea;
 	padding: 10px;
 	text-align: left;
+}
+
+.skills-box {
+	float: left;
+	text-align: center;
+	width: 33.33333%;
+	padding: 20px;
+	margin: auto;
+}
+
+.skills-box-img {
+	max-width: 100%;
+	height: auto;
+}
+
+.contact-box {
+	float: left;
+	text-align: center;
+	width: 25%;
+	padding: 20px;
+	margin: auto;
+}
+
+.contact-box-img {
+	max-width: 100%;
+	height: auto;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+	width: 40%;
+	margin: auto;
 }
