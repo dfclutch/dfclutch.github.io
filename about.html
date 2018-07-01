@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body style="background-color: #edebe3">
+<body>
 
 	<div class="topnav">
 		  <a href="home.html">Home</a>
@@ -15,26 +15,37 @@
 		  <a href="contact.html">Contact</a>
 		</ul>
 	</div>
-	<div class="header-image">
-		<div class="page-title">
-			About
-		</div>
-	</div>
-	<div class="content">
-			<div class="grid-container">
-			<div class="left"><div class="columns">Introduction:</div>Pennsylvania native studying Computer Science Engineering at The Ohio State University. Originally from the small, historic town of Gettysburg. <p>
-			<img src="introduction-pic.jpg" style="max-width: 100%; margin: 5px;"></div>
-			<div class="middle"><div class="columns">Education:</div>My studies at Ohio State have focused mainly on learning the fundamental concepts of computer science. These include object-oriented programming techniques, data structures, proper documentation,  low-level programming, version control techniques, automated testing, and efficient algorithm design. The CSE department at Ohio State produces students who can ground-up build applications and systems that are easily maintained, well organized, and self-explanatory. Outside of my studies in the computer science department, Statistics has been a significant portion of my education at Ohio State. I have taken statistics courses covering inference and testing, spatial statistical methods, non-parametric testing, regression, dimensionality-reduction, and feature extraction. In my free time, I enjoy developing my front-end development skills, both in web and standalone application use cases. Building instantly comfortable and self-guiding interfaces is a central goal when I approach building an application. Because I like to consider myself and engineer first, I focus on learning about software development strategies and continually improving performance and efficiency.  </div>
-			<div class="right"><div class="columns">Personal:</div>The middle child of three boys, I grew up around farms and orchards in rural southern PA. Few things are as important to me as spending time alone outside. I enjoy long distance running and will nerd out over ultralight backpacking gear for hours (check out my <a href="https://lighterpack.com/r/6pw8l" class="in-text"> lighterpack</a>). Aside from walking and running in the woods, music has been a long-term passion of mine, beginning with guitar. After studying classical guitar for several years, among other instruments such as cello and piano, I have branched out into many different genres. From experimental hip hop to American Primitive Guitar (<a href="https://danfiller.bandcamp.com/releases" class="in-text">Listen!</a>) and modal jazz, I will play or listen to just about anything. Other hobbies of mine include drawing and painting, searching for the ultimate apple cider (it's from <a href="http://www.oylersorganicfarms.com/" class="in-text">Oyler's Organics</a> in Biglerville, PA), and looking at maps.</div>
-			</div>
-		</div>
+	
+	<div class="page">
+			<div class="mySlides fade">
+				<div class="page-title">Introduction</div>
+				<div class="content">Pennsylvania native studying Computer Science Engineering at The Ohio State University. Originally from the small, historic town of Gettysburg.</div>
+			 </div>
+			<div class="mySlides fade">
+				<div class="page-title">Education</div>
+				<div class="content">My studies at Ohio State have focused mainly on learning the fundamental concepts of computer science. These include object-oriented programming techniques, data structures, proper documentation,  low-level programming, version control techniques, automated testing, and efficient algorithm design. The CSE department at Ohio State produces students who can ground-up build applications and systems that are easily maintained, well organized, and self-explanatory. Outside of my studies in the computer science department, Statistics has been a significant portion of my education at Ohio State. I have taken statistics courses covering inference and testing, spatial statistical methods, non-parametric testing, regression, dimensionality-reduction, and feature extraction. In my free time, I enjoy developing my front-end development skills, both in web and standalone application use cases. Building instantly comfortable and self-guiding interfaces is a central goal when I approach building an application. Because I like to consider myself and engineer first, I focus on learning about software development strategies and continually improving performance and efficiency. 
+				</div>
+			 </div>
+			 <div class="mySlides fade">
+				<div class="page-title">Personal</div>
+				<div class="content">The middle child of three boys, I grew up around farms and orchards in rural southern PA. Few things are as important to me as spending time alone outside. I enjoy long distance running and will nerd out over ultralight backpacking gear for hours (check out my <a href="https://lighterpack.com/r/6pw8l" class="in-text"> lighterpack</a>). Aside from walking and running in the woods, music has been a long-term passion of mine, beginning with guitar. After studying classical guitar for several years, among other instruments such as cello and piano, I have branched out into many different genres. From experimental hip hop to American Primitive Guitar (<a href="https://danfiller.bandcamp.com/releases" class="in-text">Listen!</a>) and modal jazz, I will play or listen to just about anything. Other hobbies of mine include drawing and painting, searching for the ultimate apple cider (it's from <a href="http://www.oylersorganicfarms.com/" class="in-text">Oyler's Organics</a> in Biglerville, PA), and looking at maps.
+				</div>
+			 </div>
+			
+			
+		 <!-- Next and previous buttons -->
+		 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		 <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			
 	</div>
 	<div class="footer">
 		<a href="home.html" class="in-text-footer">Home </a>
 		  <a href="about.html" class="in-text-footer">About </a>
 		  <a href="projects.html" class="in-text-footer">Projects </a>
-		  <a href="contact.html" class="in-text-footer">Contact</a><p>
-		  copyright: Dan Filler 2018
+		  <a href="contact.html" class="in-text-footer">Contact</a>
 	</div>
+	
+<script src="slideshow_js.js"></script>
 </body>
 </html>

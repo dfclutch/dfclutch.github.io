@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Markazi+Text|Julius+Sans+One');
 	
-* { padding: 0; margin: 0; }
+* { padding: 0; margin: 0; box-sizing: border-box;}
 
 html, body {
   height: 100%;
-
   display: flex;
   flex-direction: column;
 }
@@ -13,7 +12,11 @@ body > * {
   flex-shrink: 0;
 }
 
+.mySlides {
+    display: none;
+}
 
+/* links */
 a.in-text {
 	text-decoration: none;
 	color: #5d7993;
@@ -67,6 +70,7 @@ a.in-text-footer:active {
 	color: #f2f0ea;
 }
 
+/* nav bar */
 .topnav {
 	overflow: hidden;
 	color: #333;
@@ -95,20 +99,14 @@ a.in-text-footer:active {
 	color: #8e8c83;
 }
 
-
-.page-title {	
-	font-family: 'Josefin Sans', sans-serif;
-	color: #f2f0ea;
-	font-size: 150px;
-	text-align: center;
-	padding-top: 170px;
-	padding-bottom: 170px;
+.page {
 	background-image: url("header_background2.png");
 	background-size: cover;
 	flex-grow: 1;
+	padding-top: 10%;
 }
 
-.page-title-home {	
+.page-home {	
 	font-family: 'Josefin Sans', sans-serif;
 	color: #f2f0ea;
 	font-size: 150px;
@@ -120,14 +118,22 @@ a.in-text-footer:active {
 
 }
 
+.page-title {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #f2f0ea;
+	font-size: 120px;
+	text-align: center;
+}
+
 .content {
-	color: #333;
+	color: #f2f0ea;
 	font-family: 'Crimson Text', serif;
-	line-height: 1;
-	background-color: #edebe3;
-	width: 70%;
+	/* background-color: #edebe3; */
+	background: none;
+	width: 40%;
 	margin: auto;
-	font-size: 16px;
+	font-size: 18px;
+	text-align: justify;
 }
 
 .home-content {
@@ -139,6 +145,52 @@ a.in-text-footer:active {
 	text-align: center;
 }
 
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
 .footer {
 	background-color: #5d7993;
 	font-family: 'Crimson Text', serif;
@@ -146,61 +198,3 @@ a.in-text-footer:active {
 	padding: 10px;
 	text-align: left;
 }
-
-
-/* The grid container */
-.grid-container {
-  display: grid;
-  grid-template-areas: 
-  'left left middle middle right right' 
-  'left left middle middle right right' 
-  'left left middle middle right right' ;
-} 
-
-.left, .middle, .right {
-  padding: 10px;
-}
-
-/* Style the left column */
-.left {
-  grid-area: left;
-}
-
-/* Style the middle column */
-.middle {
-  grid-area: middle;
-}
-
-/* Style the right column */
-.right {
-  grid-area: right;
-}
-
-.columns {
-	color: #5d7993;
-	font-size: 24px;
-	font-family: 'Josefin Sans', sans-serif;
-	
-}
-
-@media (max-width: 600px) {
-  .grid-container  {
-    grid-template-areas: 
-    'left left left left left left' 
-    'middle middle middle middle middle middle' 
-    'right right right right right right' ;
-}
-
-.collectorButton {
-    background-color: #4286f4;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-
-
