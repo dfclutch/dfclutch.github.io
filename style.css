@@ -19,28 +19,28 @@ body > * {
 /* links */
 a.in-text {
 	text-decoration: none;
-	color: #5d7993;
+	color: #e8f5f7;
 	font-family: 'Crimson Text', serif;
 }
 
 a.in-text:link{
 	text-decoration: none;
-	color: #5d7993;
+	color: #e8f5f7;
 }
 
 a.in-text:visited {
 	text-decoration: none;
-	color: #5d7993;
+	color: #e8f5f7;
 }
 
 a.in-text:hover  {
 	text-decoration: underline;
-	color: #5d7993;
+	color: #e8f5f7;
 }
 
 a.in-text:active {
 	text-decoration: none;
-	color: #5d7993;
+	color: #e8f5f7;
 }
 
 a.in-text-footer {
@@ -100,10 +100,10 @@ a.in-text-footer:active {
 }
 
 .page {
-	background-image: url("background-main.jpg");
+	background-image: url("background-main.png");
 	background-size: cover;
 	flex-grow: 1;
-	padding-top: 8%;
+	padding-top: 7.5%;
 }
 
 .page-home {	
@@ -111,7 +111,7 @@ a.in-text-footer:active {
 	color: #f2f0ea;
 	font-size: 150px;
 	text-align: center;
-	background-image: url("background-main.jpg");
+	background-image: url("background-main.png");
 	background-size: cover;
 	padding-top: 10%;
 	flex-grow: 1;
@@ -123,6 +123,8 @@ a.in-text-footer:active {
 	color: #f2f0ea;
 	font-size: 120px;
 	text-align: center;
+	max-width: 40%;
+	margin: auto;
 }
 
 .content {
@@ -140,6 +142,7 @@ a.in-text-footer:active {
 	text-align: center;
 	width: 100%;
 	margin: auto;
+	padding-top: 10px;
 }
 
 .home-content {
