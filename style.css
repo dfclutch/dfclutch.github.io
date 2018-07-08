@@ -19,56 +19,58 @@ body > * {
 /* links */
 a.in-text {
 	text-decoration: none;
-	color: #e8f5f7;
+	color: #ededed;
 	font-family: 'Crimson Text', serif;
+
 }
 
 a.in-text:link{
 	text-decoration: none;
-	color: #e8f5f7;
+	color: #ededed;
 }
 
 a.in-text:visited {
 	text-decoration: none;
-	color: #e8f5f7;
+	color: #ededed;
 }
 
 a.in-text:hover  {
 	text-decoration: underline;
-	color: #e8f5f7;
+	color: #aaa;
 }
 
 a.in-text:active {
 	text-decoration: none;
-	color: #e8f5f7;
+	color: #aaa;
 }
 
-a.in-text-footer {
+/* links */
+a.title-link {
 	text-decoration: none;
-	color: #f2f0ea;
-	font-family: 'Crimson Text', serif;
-	padding-right: 10px;
+	color: #ededed;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-a.in-tex-footer:link{
+a.title-link:link{
 	text-decoration: none;
-	color: #f2f0ea;
+	color: #ededed;
 }
 
-a.in-text-footer:visited {
+a.title-link:visited {
 	text-decoration: none;
-	color: #f2f0ea;
+	color: #ededed;
 }
 
-a.in-text-footer:hover  {
+a.title-link:hover  {
 	text-decoration: underline;
-	color: #f2f0ea;
+	color: #ededed;
 }
 
-a.in-text-footer:active {
+a.in-text:active {
 	text-decoration: none;
-	color: #f2f0ea;
+	color: #ededed;
 }
+
 
 /* nav bar */
 .topnav {
@@ -209,8 +211,8 @@ a.in-text-footer:active {
 .skills-box {
 	float: left;
 	text-align: center;
-	width: 33.33333%;
-	padding: 20px;
+	width: 25%;
+	padding: 10px;
 	margin: auto;
 }
 
