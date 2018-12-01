@@ -91,7 +91,7 @@ a.in-text:active {
 
 .topnav a {
 	display: inline-block;
-	color: black;
+	color: #333;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -102,7 +102,7 @@ a.in-text:active {
 }
 
 .page {
-	background-image: url("background-main.png");
+  background-color: #48545b;
 	background-size: cover;
 	flex-grow: 1;
 	padding-top: 7.5%;
@@ -113,7 +113,7 @@ a.in-text:active {
 	color: #f2f0ea;
 	font-size: 150px;
 	text-align: center;
-	background-image: url("background-main.png");
+  background-color: #48545b;
 	background-size: cover;
 	padding-top: 10%;
 	flex-grow: 1;
@@ -128,7 +128,7 @@ a.in-text:active {
 }
 
 .content {
-	color: #f2f0ea;
+	color: #333;
 	font-family: 'Crimson Text', serif;
 	/* background-color: #edebe3; */
 	background: none;
@@ -143,6 +143,53 @@ a.in-text:active {
 	width: 100%;
 	margin: auto;
 	padding-top: 10px;
+}
+
+.blog-list-content {
+	color: #333;
+	font-family: 'Crimson Text', serif;
+	/* background-color: #edebe3; */
+	background: none;
+	width: 40%;
+	margin: auto;
+	font-size: 18px;
+	text-align: justify;
+}
+
+.blog-list-content a{
+  display: block;
+  text-decoration: none;
+}
+
+.blog-summary-box{
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+  background-color:#e5e2de;
+	opacity: .65;
+	text-decoration: none;
+}
+
+.blog-summary-box:hover{
+	opacity: 1;
+}
+
+.blog-summary-title {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #333;
+  font-size: 48px;
+  text-align: left;
+}
+
+.blog-summary-date{
+  	color: #111;
+    font-size: 12;
+    text-align: left;
+}
+
+.blog-summary-content{
+  	color: #333;
+    text-align: left;
 }
 
 .home-content {
