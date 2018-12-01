@@ -10,6 +10,7 @@ html, body {
 
 body > * {
   flex-shrink: 0;
+
 }
 
 .mySlides {
@@ -19,19 +20,19 @@ body > * {
 /* links */
 a.in-text {
 	text-decoration: none;
-	color: #ededed;
+	color: #db7c62;
 	font-family: 'Crimson Text', serif;
 
 }
 
 a.in-text:link{
 	text-decoration: none;
-	color: #ededed;
+	color: #db7c62;
 }
 
 a.in-text:visited {
 	text-decoration: none;
-	color: #ededed;
+	color: #db7c62;
 }
 
 a.in-text:hover  {
@@ -74,15 +75,14 @@ a.in-text:active {
 
 /* nav bar */
 .topnav {
-	overflow: hidden;
 	color: #333;
 	background-color: #edebe3;
 	text-align: center;
 	font-family: 'Josefin Sans', sans-serif;
 	width: 100%;
 	top: 0px;
-	position: fixed;
 	opacity: .5;
+  display: block;
 }
 
 .topnav:hover {
@@ -102,10 +102,10 @@ a.in-text:active {
 }
 
 .page {
+  display: block;
   background-color: #48545b;
 	background-size: cover;
 	flex-grow: 1;
-	padding-top: 7.5%;
 }
 
 .page-home {
@@ -125,6 +125,8 @@ a.in-text:active {
 	color: #f2f0ea;
 	font-size: 120px;
 	text-align: center;
+  padding: 50px 0px 0px 0px;
+  display: block;
 }
 
 .content {
@@ -192,6 +194,25 @@ a.in-text:active {
     text-align: left;
 }
 
+.blog-post-title {
+  font-family: 'Josefin Sans', sans-serif;
+	color: #333;
+  background-color: #c6c4bc;
+  border-radius: 4px;
+	font-size: 80px;
+	text-align: left;
+  width: 40%;
+  padding: 25px 0px 15px 0px;
+  margin: 50px auto 10px auto;
+}
+p {
+  padding: 5px 0 5px 0;
+}
+
+.bottom-padded {
+  padding: 5px 0 15px 0;
+}
+
 .home-content {
 	color: #edebe3;
 	font-family: 'Crimson Text', serif;
@@ -201,12 +222,33 @@ a.in-text:active {
 	text-align: center;
 }
 
+.box {
+	float: left;
+	text-align: center;
+	width: 50%;
+	margin: auto;
+  height: auto;
+}
+
+.right {
+  padding: 0 0 0 10px;
+}
+
+.left {
+  padding: 0 10px 0 0;
+}
+
+.image-box {
+	max-width: 100%;
+	height: auto;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+  width: 50;
   margin-top: -22px;
   padding: 16px;
   color: white;
@@ -224,7 +266,7 @@ a.in-text:active {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #161616;
 }
 
 
@@ -245,7 +287,6 @@ a.in-text:active {
   from {opacity: .4}
   to {opacity: 1}
 }
-
 
 .footer {
 	background-color: #5d7993;
@@ -282,9 +323,9 @@ a.in-text:active {
 }
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 	width: 40%;
 	margin: auto;
 }
