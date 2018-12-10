@@ -20,90 +20,65 @@ body > * {
 /* links */
 a.in-text {
 	text-decoration: none;
-	color: #db7c62;
+	color: #5b5b5b;
 	font-family: 'Crimson Text', serif;
+  font-weight: bold;
 
 }
 
 a.in-text:link{
 	text-decoration: none;
-	color: #db7c62;
+	color: #5b5b5b;
 }
 
 a.in-text:visited {
 	text-decoration: none;
-	color: #db7c62;
+	color: #5b5b5b;
 }
 
 a.in-text:hover  {
-	text-decoration: underline;
-	color: #aaa;
+	text-decoration: none;
+	color: #2b2b2b;
 }
 
 a.in-text:active {
 	text-decoration: none;
-	color: #aaa;
+	color: #5b5b5b;
 }
 
 /* links */
 a.title-link {
 	text-decoration: none;
 	color: #ededed;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Crimson Text', serif;
+  font-size: 48px;
+  color: #2b2b2b;
+  display: block;
 }
 
 a.title-link:link{
 	text-decoration: none;
-	color: #ededed;
+  color: #2b2b2b;
 }
 
 a.title-link:visited {
 	text-decoration: none;
-	color: #ededed;
+  color: #2b2b2b;
 }
 
 a.title-link:hover  {
 	text-decoration: underline;
-	color: #ededed;
+  color: #2b2b2b;
 }
 
 a.in-text:active {
 	text-decoration: none;
-	color: #ededed;
-}
-
-
-/* nav bar */
-.topnav {
-	color: #333;
-	background-color: #edebe3;
-	text-align: center;
-	font-family: 'Josefin Sans', sans-serif;
-	width: 100%;
-	top: 0px;
-	opacity: .5;
-  display: block;
-}
-
-.topnav:hover {
-	opacity: 1;
-}
-
-.topnav a {
-	display: inline-block;
-	color: #333;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.topnav a:hover {
-	color: #8e8c83;
+  color: #2b2b2b;
 }
 
 .page {
   display: block;
-  background-color: #48545b;
+  background-color: #f9f9f9;
 	background-size: cover;
 	flex-grow: 1;
 }
@@ -113,26 +88,24 @@ a.in-text:active {
 	color: #f2f0ea;
 	font-size: 150px;
 	text-align: center;
-  background-color: #48545b;
+  background-color: #f9f9f9;
 	background-size: cover;
-	padding-top: 10%;
+	padding-top: 5%;
 	flex-grow: 1;
-
 }
 
 .page-title {
-	font-family: 'Josefin Sans', sans-serif;
-	color: #f2f0ea;
-	font-size: 120px;
+  font-family: 'Crimson Text', serif;
+	color: #2b2b2b;
+	font-size: 90px;
 	text-align: center;
   padding: 50px 0px 0px 0px;
   display: block;
 }
 
 .content {
-	color: #f2f0ea;
+	color: #2b2b2b;
 	font-family: 'Crimson Text', serif;
-	/* background-color: #edebe3; */
 	background: none;
 	width: 40%;
 	margin: auto;
@@ -140,11 +113,21 @@ a.in-text:active {
 	text-align: justify;
 }
 
-.picture {
+.footer {
+  display: block;
+  width: 100%;
+  color: #2b2b2b;
+  font-size: 20px;
+	font-family: 'Crimson Text', serif;
+  text-align: center;
+  padding: 60px 0px 10px 0px;
+}
+
+.image {
 	text-align: center;
-	width: 100%;
-	margin: auto;
-	padding-top: 10px;
+  display: block;
+	max-width: 40%;
+	margin: 20px auto;
 }
 
 p {
@@ -152,12 +135,8 @@ p {
   display: block;
 }
 
-.bottom-padded {
-  padding: 5px 0 15px 0;
-}
-
 .home-content {
-	color: #edebe3;
+	color: #2b2b2b;
 	font-family: 'Crimson Text', serif;
 	font-size: 24px;
 	padding-top: 20px;
@@ -165,26 +144,6 @@ p {
 	text-align: center;
 }
 
-.box {
-	float: left;
-	text-align: center;
-	width: 50%;
-	margin: auto;
-  height: auto;
-}
-
-.right {
-  padding: 0 0 0 10px;
-}
-
-.left {
-  padding: 0 10px 0 0;
-}
-
-.image-box {
-	max-width: 100%;
-	height: auto;
-}
 
 /* Next & previous buttons */
 .prev, .next {
@@ -194,9 +153,9 @@ p {
   width: 50;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: #2b2b2b;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 28px;
   transition: 0.6s ease;
   border-radius: 0px 3px 3px 0px;
   display: block;
@@ -210,7 +169,8 @@ p {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: #161616;
+  background-color: #2b2b2b;
+  color: white;
 }
 
 
@@ -230,46 +190,4 @@ p {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
-}
-
-.footer {
-	background-color: #5d7993;
-	font-family: 'Crimson Text', serif;
-	color: #f2f0ea;
-	padding: 10px;
-	text-align: left;
-}
-
-.skills-box {
-	float: left;
-	text-align: center;
-	width: 25%;
-	padding: 10px;
-	margin: auto;
-}
-
-.skills-box-img {
-	max-width: 100%;
-	height: auto;
-}
-
-.contact-box {
-	float: left;
-	text-align: center;
-	width: 25%;
-	padding: 20px;
-	margin: auto;
-}
-
-.contact-box-img {
-	max-width: 100%;
-	height: auto;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-	width: 40%;
-	margin: auto;
 }
