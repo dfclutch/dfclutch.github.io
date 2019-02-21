@@ -82,7 +82,7 @@ a.in-text:active {
 	width: 100%;
 	top: 0px;
 	opacity: .5;
-  display: block;
+ 	display: block;
 }
 
 .topnav:hover {
@@ -113,7 +113,7 @@ a.in-text:active {
 	color: #f2f0ea;
 	font-size: 150px;
 	text-align: center;
-  background-color: #48545b;
+  	background-color: #48545b;
 	background-size: cover;
 	padding-top: 10%;
 	flex-grow: 1;
@@ -125,8 +125,8 @@ a.in-text:active {
 	color: #f2f0ea;
 	font-size: 120px;
 	text-align: center;
-  padding: 50px 0px 0px 0px;
-  display: block;
+    padding: 50px 0px 0px 0px;
+    display: block;
 }
 
 .content {
