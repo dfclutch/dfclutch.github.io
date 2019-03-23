@@ -10,7 +10,6 @@ html, body {
 
 body > * {
   flex-shrink: 0;
-
 }
 
 .mySlides {
@@ -104,8 +103,8 @@ a.in-text:active {
 .page {
   display: block;
   background-color: #48545b;
-	background-size: cover;
-	flex-grow: 1;
+  background-size: cover;
+  flex-grow: 1;
 }
 
 .page-home {
