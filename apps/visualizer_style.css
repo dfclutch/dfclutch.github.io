@@ -2,10 +2,12 @@
 .controls {
 	background-color: #447fc4;
 	color: #e5e5e5;
-	width: 60%;
 	font-family: sans-serif;
 	margin: 10px 0px;
+	padding: 5px;
 	border-radius: 10px;
+	display: block;
+	float: left;
 }
 
 .control_set {
@@ -13,6 +15,7 @@
 	border-radius: 4px;
 	display: inline-block;
 	text-orientation: right;
+	height: 100%;
 }
 
 .control_button {
@@ -31,20 +34,14 @@
 	background-color: #fff;
 }
 
-.configs {
+.control_block {
 	background-color: #316096; 
 	display: inline-block;
+	float: left;
 	margin: 10px;
 	padding-bottom: 5px;
 	border-radius: 10px;
-}
-
-.run_buttons {
-	background-color: #316096; 
-	display: inline-block;
-	margin: 10px;
-	padding-bottom: 5px;
-	border-radius: 10px;
+	height: 200px;
 }
 
 /* slider */
@@ -106,4 +103,8 @@ a.in_text:active {
 a.in_text:hover {
 	text-decoration: none;
 	color: #000;
+}
+
+#info {
+	width: 400px;
 }

@@ -7,11 +7,11 @@
 	<div class="title_blocK">
 		<h1>Graph Algorithms</h1>
 		<p>
-			<a class="in_text" href= https://github.com/dfclutch/Visualizer>Code and some tips on using the animation</a>
+			<a class="in_text" href= https://github.com/dfclutch/Visualizer>Code and some tips on using the animation located here</a>
 		</p>
 	</div>
 	<div class="controls">
-		<div class="configs">
+		<div class="control_block">
 			<div class="control_set">
 				<h3>Graph Controls</h3>
 				<div class="control_pair">
@@ -20,7 +20,7 @@
 					<br>
 				</div>
 				<div class="control_pair">
-					Graph Density:
+					Graph Density: (disabled)
 					<input class="slider" type="range" id="density" min="10" max="200" step="10" disabled="true">
 					<br>
 				</div>
@@ -42,7 +42,7 @@
 				<br>
 			</div>
 		</div>
-		<div class="run_buttons">
+		<div class="control_block">
 			<div class="control_set">
 				<h3>Run Algorithms</h3>
 				</br>
@@ -55,7 +55,26 @@
 			</div>
 			<br>
 		</div>
+		<div class="control_block">
+			<div class="control_set">
+				<h3>Graph Type (disabled)</h3>
+				<br>
+				<input type="radio" name="graph_type" value="tree" checked="checked"> Tree<br>
+				<input type="radio" name="graph_type" value="random"> Random<br>
+			</div>
+		</div>
+		<div class="control_block" id="info">
+			<div class="control_set">
+				<strong>Tips:</strong> 
+				<ul>
+					<li>The graph won't update until you release the slider you are currently changing</li>
+					<li>Before bringing up the branching factor, lower the depth almost to 0</li>
+					<li>If you set the branching factor to 2 you can take the depth all the way up pretty smoothly (lower the node size). No higher branching factor, even 3, will make it past a depth of about 6 before crashing/slowing down a lot</li>
+				</ul>
+			</div>
+		</div>
 	</div>
+
 	<div>
 		<canvas id="viewport" width="1500" height="500" style="border:1px solid #000000;">
 		</canvas>
