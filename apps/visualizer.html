@@ -7,7 +7,7 @@
 	<div class="title_blocK">
 		<h1>Graph Algorithms</h1>
 		<p>
-			<a class="in_text" href= https://github.com/dfclutch/Visualizer>Code and some tips on using the animation located here</a>
+			<a class="in_text" href= https://github.com/dfclutch/Visualizer>Code and some tips on using the animation located here</a>, more tips at the bottom of this page
 		</p>
 	</div>
 	<div class="controls">
@@ -59,27 +59,98 @@
 			<div class="control_set">
 				<h3>Graph Type (disabled)</h3>
 				<br>
-				<input type="radio" name="graph_type" value="tree" checked="checked"> Tree<br>
-				<input type="radio" name="graph_type" value="random"> Random<br>
+				<input type="radio" name="graph_type" value="tree" checked="checked">
+				Tree
+				<br>
+				<input type="radio" name="graph_type" value="rand_tree"> 
+				Random Tree
+				<br>
+				<input type="radio" name="graph_type" value="random"> 
+				Random
+				<br>
+				<input type="radio" name="graph_type" value="edge_weighted"> 
+				Edge Weigthed
+				<br>
+				<input type="radio" name="graph_type" value="network"> 
+				Network
+				<br>
+				<input type="radio" name="graph_type" value="colored"> 
+				Colored
+				<br>
 			</div>
-		</div>
-		<div class="control_block" id="info">
-			<div class="control_set">
-				<strong>Tips:</strong> 
-				<ul>
-					<li>The graph won't update until you release the slider you are currently changing</li>
-					<li>Before bringing up the branching factor, lower the depth almost to 0</li>
-					<li>If you set the branching factor to 2 you can take the depth all the way up pretty smoothly (lower the node size). No higher branching factor, even 3, will make it past a depth of about 6 before crashing/slowing down a lot</li>
-				</ul>
-			</div>
-		</div>
+		</div>		
 	</div>
 
 	<div>
-		<canvas id="viewport" width="1500" height="500" style="border:1px solid #000000;">
+		<canvas id="viewport" width="1500" height="500">
 		</canvas>
 	</div>
 
+	<div class="info">
+		<div class="info_block">
+			<h3>Tips:</h3> 
+			<ul>
+				<li>
+					The graph won't update until you release the slider you are currently changing
+				</li>
+				<li>
+					Changing any setting witll end the current animation and you will need to start a new one
+				</li>
+				<li>
+					Before bringing up the branching factor, lower the depth almost to 0
+				</li>
+				<li>
+					If you set the branching factor to 2 you can take the depth all the way up pretty smoothly (lower the node size). No higher branching factor, even 3, will make it past a depth of about 6 before crashing/slowing down a lot
+				</li>
+				<li>
+					lower the depth and speed, increase node size to get an actual understanding of the algorithms
+				</li>
+				<li>
+					Minimax doesn't really work with higher depth or branching factor, use the biggest nodes you can
+				</li>
+			</ul>
+		</div>
+		<div class="info_block">
+			<h3>Future Plans:</h3> 
+			<ul>
+				<li>
+					Algorithms: Alpha-beta pruning minimax layer, informed searches (A* first probably), colorings, max flow, clique/independent set
+				</li>
+				<li>
+					Graph Types: 
+					<ul>
+						<li>
+							Random tree: tree where each node has between 0 and n (set by branching factor) children until max depth
+						</li>
+						<li>
+							Random: Non-directional, uniform edge weighted graph of nodes connected by edges, the percentage of possible edges present in the graph is set by graph density slider
+						</li>
+						<li>
+							Edge-weighted: Random graph with edge weights, edge weights are determined randomly over a range determined by the algorithm using the tree
+						</li>
+						<li>
+							Network: Edge weighted graph with directional edges
+						</li>
+						<li>
+							Colored: Graph whose nodes can be colored, colorings enforced by algorithm
+						</li>
+					</ul>
+				</li>
+				<li>
+					Improvements:
+					<ul>
+						<li>
+							Update graph as settings are changed, not upon release
+						</li>
+						<li>
+							Live update animations to match new settings instead of killing animation
+						</li>
+						
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<script type="text/javascript" src="tree.js"></script>
 	<script type="text/javascript" src="visualizer.js"></script>
 </body>

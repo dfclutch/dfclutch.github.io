@@ -3,11 +3,12 @@
 	background-color: #447fc4;
 	color: #e5e5e5;
 	font-family: sans-serif;
-	margin: 10px 0px;
+	margin: 5px 0px;
 	padding: 5px;
 	border-radius: 10px;
 	display: block;
 	float: left;
+	width: 80%;
 }
 
 .control_set {
@@ -40,7 +41,7 @@
 	float: left;
 	margin: 10px;
 	padding-bottom: 5px;
-	border-radius: 10px;
+	border-radius: 6px;
 	height: 200px;
 }
 
@@ -74,12 +75,12 @@
   cursor: pointer;
 }
 
-/*title block*/
+/* title block */
 .title_block {
 	font-family: sans-serif;
 	background-color: #447fc4;
 	color: #e5e5e5;
-	margin: 10px 0px;
+	margin: 5px 0px;
 	padding: 5px 10px;
 	border-radius: 10px;
 }
@@ -107,4 +108,33 @@ a.in_text:hover {
 
 #info {
 	width: 400px;
+}
+
+/* canvas */
+canvas {
+	border-radius: 10px;
+	border: 2px solid #000;
+}
+
+/* info section */
+.info {
+	background-color: #447fc4;
+	color: #e5e5e5;
+	font-family: sans-serif;
+	margin: 5px 0px;
+	padding: 5px;
+	border-radius: 10px;
+	display: block;
+	float: left;
+	width: 80%;
+}
+
+.info_block {
+	background-color: #316096; 
+	display: inline-block;
+	float: left;
+	margin: 10px;
+	padding-bottom: 5px;
+	border-radius: 6px;
+	padding: 0px 10px;
 }
