@@ -137,4 +137,5 @@ canvas {
 	padding-bottom: 5px;
 	border-radius: 6px;
 	padding: 0px 10px;
+	max-width: 100%;
 }
