@@ -1,0 +1,109 @@
+/* controller styling */
+.controls {
+	background-color: #447fc4;
+	color: #e5e5e5;
+	width: 60%;
+	font-family: sans-serif;
+	margin: 10px 0px;
+	border-radius: 10px;
+}
+
+.control_set {
+	padding: 2px 8px;
+	border-radius: 4px;
+	display: inline-block;
+	text-orientation: right;
+}
+
+.control_button {
+	margin: 8px;
+	padding: 2px;
+	border: 0;
+	background-color: #e5e5e5;
+	box-shadow: none;
+	border-radius: 0px;
+	font-family: sans-serif;
+	width: 150px;
+	text-align: center;
+}
+
+.control_button:hover {
+	background-color: #fff;
+}
+
+.configs {
+	background-color: #316096; 
+	display: inline-block;
+	margin: 10px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+}
+
+.run_buttons {
+	background-color: #316096; 
+	display: inline-block;
+	margin: 10px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+}
+
+/* slider */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 10px 0px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  cursor: pointer;
+}
+
+/*title block*/
+.title_block {
+	font-family: sans-serif;
+	background-color: #447fc4;
+	color: #e5e5e5;
+	margin: 10px 0px;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+a.in_text {
+	text-decoration: none;
+	color: #e5e5e5;
+}
+a.in_text:link {
+	text-decoration: none;
+	color: #e5e5e5;
+}
+a.in_text:visited {
+	text-decoration: none;
+	color: #e5e5e5;
+}
+a.in_text:active {
+	text-decoration: none;
+	color: #e5e5e5;
+}
+a.in_text:hover {
+	text-decoration: none;
+	color: #000;
+}
