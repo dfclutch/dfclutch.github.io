@@ -4,16 +4,6 @@
 * Author: Dan Filler 3.2019
 */
 
-/*
-* COLOR DEFINITIONS
-*/
-let BLACK = "#000000";
-let RED = "#ff1c1c";
-let BLUE = "#3065ba";
-let GREEN = "#28d67c";
-let ORANGE = "#ffd11c";
-let WHITE = "#FFFFFF";
-
 /***************      TREE GENERATION     ***************/
 /* 
 * creates a new tree represented by coordinates in node_center_list
@@ -270,11 +260,19 @@ function minimax_animation() {
 			}
 			//if past the end of the set
 			if (current_node_index + 1 == num_of_nodes) {
-				console.log("here")
 				draw_tree(node_center_list);
 				//repaint closed set (viewed nodes)
 				paint_set_with_text(GREEN, completed_nodes)
 				paint_set(BLUE, selected_nodes);
+
+				//write final score
+				context.font = "20px Arial";
+				context.fillStyle = BLACK;
+				let text = "Overall Chosen Value: " + node_values[0].toString();
+				context.textAlign = "center";
+				context.fillText(text, 110,25);
+
+				console.log(text);
 				//end animation
 				clearInterval(minimax_animation_timer);
 				return;
