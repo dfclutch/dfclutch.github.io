@@ -160,7 +160,7 @@ function graph_dfs_animation() {
 	let goal_index = Math.floor(Math.random() * num_of_nodes);
 	let goal_coord = [god_nodes[goal_index][0], god_nodes[goal_index][1]];
 	let goal_node_set = [[goal_coord], RED];
-	let start_node_set = [[god_nodes[0], BLUE]];
+	let start_node_set = [[god_nodes[0]], BLUE];
 	let open = [];
 	let closed = [];
 

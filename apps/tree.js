@@ -349,7 +349,7 @@ function find_path_set(node) {
 	let node_set = [];
 	let edge_set = [];
 	counter = 0;
-	while (node.parent != null && counter < 20) {
+	while (node.parent != null) {
 		node_set.push(node.coord);
 		edge_set.push([node.coord, node.parent.coord])
 		node = node.parent;
