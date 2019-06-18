@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>Algorithm Visualizations</title>
+	<link rel="stylesheet" href="./apps_style.css">
+</head>
+<body>
+	<div class="title_blocK">
+		<h1>Graph Algorithms</h1>
+	</div>
+	<div class="content">
+		<div>
+			<canvas id="viewport" width="700" height="600">
+			</canvas>
+		</div>
+		<div class="controls">
+			<div class="control_block">
+				<div class="control_set">
+					<h3>Graph Controls</h3>
+						Branching Factor
+					<input class="slider" type="range" id="branching" min="1" max="9">
+						<br>
+						Graph Density
+					<input class="slider" type="range" id="density" min="1" max="10" step="1">
+						<br>
+						Depth
+					<input class="slider" type="range" id="depth" min="1" max="10">
+						<br>
+						Node Size
+					<input class="slider" type="range" id="node_size" min="1" max="10">
+						<br>
+						Speed
+					<input class="slider" type="range" id="speed" min="0" max="499">
+
+				</div>
+			</div>
+			<div class="control_block">
+				<div class="control_set">
+					<h3>Run Algorithms</h3>
+					<input class="control_button" type="button" id="btn_1" value="Run">
+					<input class="control_button" type="button" id="btn_2" value="Run">
+					<input class="control_button" type="button" id="btn_3" value="Run">
+					<input class="control_button" type="button" id="btn_4" value="Run">
+				</div>
+				<div class="control_set">
+					<h3 id="text_output"></h3>
+					<input class="control_button" type="button" id="new_graph" value="New Graph">
+					<br>
+				</div>
+				<br>
+			</div>
+			<div class="control_block">
+				<div class="control_set">
+					<h3>Graph Type</h3>
+					<input type="radio" name="graph_type" value="tree" checked="checked">
+					Tree
+					<input type="radio" name="graph_type" value="und_simple">
+					Undirected
+					<input type="radio" name="graph_type" value="dir_simple">
+					Directed
+					<input type="radio" name="graph_type" value="edge_weighted">
+					Edge Weighted
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="info_block">
+			<p>A set of live-animated, fully tweakable graph algorithm visualizations. The app is currently being fully rewritten for both code quality and performance. This is not up to the same spot as the old version - in terms of number of types of graphs and algorithms implemented on them. However, here are some of the plans I have for future development on this site:</p>
+			<br>
+			<em>Types of graphs</em>
+			<ul>
+				<li>Undirected Simple Graphs</li>
+				<li>Directed Graphs</li>
+				<li>Edge weighted (network flow graph)</li>
+				<li>Nice Graph (grid node positions to be easier to see)</li>
+				<li></li>
+			</ul>
+			<em>Algorithms</em>
+			<ul>
+				<li>Breadth First/Depth First Search</li>
+				<li>Maxflow (Ford Fulkerson probably)</li>
+				<li>Hamiltonian Path</li>
+				<li>Minimum Spanning Tree (Kruskal's)</li>
+				<li>Some coloring algorithms</li>
+			</ul>
+		</div>
+	</div>
+
+	
+
+	<script type="text/javascript" src="./src/graph.js"></script>
+	<script type="text/javascript" src="./src/app.js"></script>
+	<script type="text/javascript" src="./src/constants.js"></script>
+	<script type="text/javascript" src="./src/state.js"></script>
+	<script type="text/javascript" src="./src/generate.js"></script>
+	<script type="text/javascript" src="./src/graphics.js"></script>
+	<script type="text/javascript" src="./src/update_elements.js"></script>
+
+
+</body>
+</html>

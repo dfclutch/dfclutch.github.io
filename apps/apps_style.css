@@ -1,22 +1,31 @@
 /* controller styling */
+.content {}
+
 .controls {
-	background-color: #ffffff;
+	background-color: #888;
 	color: #333;
 	font-family: sans-serif;
-	margin: 5px 0px;
+	margin: 0px 10px;
 	padding: 5px;
 	border-radius: 10px;
-	display: block;
+	display: inline-block;
 	float: left;
-	width: 80%;
+	width: 50%;
 }
 
+.control_block {
+	background-color: #ccc; 
+	display: block;
+	margin: 10px;
+	padding-bottom: 5px;
+	border-radius: 6px;
+	max-height: 200px;
+}
 .control_set {
 	padding: 2px 8px;
 	border-radius: 4px;
 	display: inline-block;
 	text-orientation: right;
-	height: 100%;
 }
 
 .control_button {
@@ -25,11 +34,11 @@
 	border: 0;
 	background-color: #b23737;
 	box-shadow: none;
-	border-radius: 0px;
 	font-family: sans-serif;
 	width: 150px;
 	text-align: center;
 	color: #fff;
+	border-radius: 4px
 }
 
 .control_button:hover {
@@ -37,20 +46,10 @@
 	color: #000;
 }
 
-.control_block {
-	background-color: #ccc; 
-	display: inline-block;
-	float: left;
-	margin: 10px;
-	padding-bottom: 5px;
-	border-radius: 6px;
-	height: 200px;
-}
 
 /* slider */
 .slider {
   -webkit-appearance: none;
-  width: 100%;
   height: 2px;
   background: #333;
   outline: none;
@@ -83,22 +82,27 @@
 	background-color: #ffffff;
 	color: #333;
 	margin: 5px 0px;
-	padding: 5px 10px;
+	padding: 0px 10px;
 	border-radius: 10px;
+	display: block;
 }
 
 a.in_text {
 	color: #b23737;
 }
+
 a.in_text:link {
 	color: #b23737;
 }
+
 a.in_text:visited {
 	color: #b23737;
 }
+
 a.in_text:active {
 	color: #b23737;
 }
+
 a.in_text:hover {
 	color: #b23737;
 }
@@ -107,10 +111,22 @@ a.in_text:hover {
 	width: 400px;
 }
 
+/* text output */
+#text_output {
+	background-color: #777;
+	color: white;
+	min-height: 20px;
+	width: 150px;
+	padding: 5px;
+	border-radius: 5px
+}
+
 /* canvas */
 canvas {
 	border-radius: 10px;
 	border: 2px solid #000;
+	display: inline-block;
+	float: left;
 }
 
 /* info section */
@@ -123,7 +139,7 @@ canvas {
 	border-radius: 10px;
 	display: block;
 	float: left;
-	width: 100%;
+	width: 70%;
 }
 
 .info_block {
