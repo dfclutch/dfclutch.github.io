@@ -84,6 +84,7 @@ function update(prop_to_update) {
         state.graph = new Graph(state);
         draw_graph(state.graph);
     } else {
+        draw_graph(state.graph);
         animate();
     }
 }

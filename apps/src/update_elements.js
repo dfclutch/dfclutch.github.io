@@ -14,5 +14,7 @@ const update_elements = {
 };
 
 /*      Event listeners     */
-update_elements.branching_factor.addEventListener('change', () => {update('branching_factor')});
-update_elements.depth.addEventListener('change', () => {update('depth')});
+update_elements.branching_factor.addEventListener('change', () => {update(STATE_PROPERTIES.BRANCHING_FACTOR)});
+update_elements.depth.addEventListener('change', () => {update(STATE_PROPERTIES.DEPTH)});
+update_elements.speed.addEventListener('change', () => {update(STATE_PROPERTIES.SPEED)});
+update_elements.node_size.addEventListener('change', () => {update(STATE_PROPERTIES.NODE_SIZE)});
