@@ -23,11 +23,20 @@ const COLORS = {
     ORANGE: "#ff7c1e",
 };
 
+const STATE_PROPERTIES = {
+    GRAPH_TYPE: 'graph_type',
+    BRANCHING_FACTOR: 'branching_factor',
+    DEPTH: 'depth',
+    DENSITY: 'density',
+    SPEED: 'speed',
+    NODE_SIZE: 'node_size',
+}
+
 const STOPPING_PROPERTIES = [
-    'graph_type',
-    'branching_factor',
-    'depth',
-    'density'
+    STATE_PROPERTIES.GRAPH_TYPE,
+    STATE_PROPERTIES.BRANCHING_FACTOR,
+    STATE_PROPERTIES.DEPTH,
+    STATE_PROPERTIES.DENSITY
 ];
 
 const TREE_ALGORITHMS = {

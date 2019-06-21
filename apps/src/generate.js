@@ -1,3 +1,10 @@
+/*
+*   Functions for generating various types of graphs. Implemented as layered objects. So to generate a tree the call
+*   would look like generate.a_matrix.tree(branching_factor, depth)
+*
+*   Author: Dan Filler 6.2019
+*/
+
 const generate = {
     a_matrix: {
         tree: (b, d) => {
@@ -62,11 +69,11 @@ const generate = {
             return null;
         }
     }
-}
+};
 
 const generate_utils = {
     tree_num_of_nodes: (b, d) => {
-        return (Math.pow(b, d + 1) - 1) / (b - 1);
+        return (Math.pow(b, d + 1) - 1) / (b - 1) || d;
     },
     gen_num_of_nodes: (b, d) => {
         return b * d;
