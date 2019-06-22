@@ -1,3 +1,0 @@
-An Animator Function takes a graph representation (stored in state.graph) an populates state.frames with node and edge
-sets as well as colorings to be animated by the graphics engine. For example, a tree bfs animator will choose a starting
-and ending node and search the tree for it, adding different nodes and edges to sets as it goes.

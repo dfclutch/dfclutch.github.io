@@ -9,6 +9,5 @@ const state = {};
 
 window.onload = () => {
     Object.assign(state, initState());
-    console.log(state);
     draw_graph(state.graph);
 }

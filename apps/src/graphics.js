@@ -81,7 +81,7 @@ function end_animation() {
 */
 function draw_node(node, color, text) {
     state.context.beginPath();
-    state.context.fillStyle = color;
+    state.context.fillStyle = color || COLORS.BLACK;
     let min_x = node[0] - state.node_size;
     let min_y = node[1] - state.node_size;
     state.context.fillRect(min_x, min_y, state.node_size * 2, state.node_size * 2);
@@ -103,7 +103,7 @@ function draw_node(node, color, text) {
 *	string representing color in hex or rgba e.g. "#______" or "rgba{_,_,_,_}"
 * - text:
 *	optional: if typeof text != string: then edge tries to have text {text} attached using
-*	default .toString, if fails, sorry, shoulda used a string
+*	default .toString, if fails, sorry, should have used a string
 *	else: edge has no text
 */
 function draw_edge(node1, node2, color, text) {
@@ -113,7 +113,7 @@ function draw_edge(node1, node2, color, text) {
     } else {
         state.context.lineWidth = 2;
     }
-    state.context.strokeStyle = color;
+    state.context.strokeStyle = color || COLORS.BLACK;
     state.context.moveTo(node1[0], node1[1]);
     state.context.lineTo(node2[0], node2[1]);
     state.context.stroke();

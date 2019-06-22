@@ -23,4 +23,22 @@ function Frame() {
         colors: [],
         text: []
     };
+    /*
+    *   Add a node to the current frame. component is an object with properties node (a coordinate), color, and text (optional)
+     */
+    this.add_node_component = (component) => {
+        this.node_components.nodes.push(component.node);
+        this.node_components.colors.push(component.color);
+        component.text ? this.node_components.text.push(component.text) : this.node_components.text.push('');
+    };
+
+    this.add_edge_component = (component) => {
+        this.node_components.edges.push(component.edge);
+        this.node_components.colors.push(component.color);
+        component.text ? this.node_components.text.push(component.text) : this.node_components.text.push('');
+    };
+}
+
+function resetFrames() {
+    state.frames.length = 0;
 }

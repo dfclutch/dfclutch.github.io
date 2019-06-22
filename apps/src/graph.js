@@ -45,5 +45,13 @@ function Graph(state) {
 		break;
 	}
 
+	graph.get_connected_nodes = (node) => {
+		let connected = [];
+		this.a_matrix[node].forEach((elt, ind) => {
+			if (elt === 1) connected.push(ind);
+		});
+		return connected;
+	};
+
 	return graph;
 }
