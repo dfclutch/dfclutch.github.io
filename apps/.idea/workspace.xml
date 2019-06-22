@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38d73861-2b12-4195-bd02-894830dfbbee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/animators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs.html" beforeDir="false" afterPath="$PROJECT_DIR$/graphs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animators/Documentation" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animators/animators.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animators/tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics.js" afterDir="false" />
-    </list>
+    <list default="true" id="38d73861-2b12-4195-bd02-894830dfbbee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="482">
+              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -165,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561236193130" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561236459008" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/Projects/GraphsJS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -200,16 +187,15 @@
       <updated>1561155759083</updated>
       <workItem from="1561155763042" duration="4080000" />
       <workItem from="1561213386315" duration="1756000" />
-      <workItem from="1561229844453" duration="1558000" />
+      <workItem from="1561229844453" duration="1830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7394000" />
+    <option name="totallyTimeSpent" value="7666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -351,8 +337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="482">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

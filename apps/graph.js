@@ -10,18 +10,14 @@
 
 /***************      GRAPH GENERATION     ***************/
 /*
-* Note that for graphs, god_edges is a set of INDICES from god_nodes, NOT coordinate pairs.
-* This will be rewrittent in tree.js to match this far better scheme
-*/
-
-/*
 * special global for graphs, allows easy tracking of relationships
 *
-* Entry at god_rels[i] is arrays of indexes (in god_nodes) of children of god_nodes[i]
+* Entry at god_rels[i] is an array of indexes (in god_nodes) of relationships (bi-directional) of god_nodes[i]
 */
 let god_rels = [];
 
-function generate_graph() {
+function generate_random_graph() {
+	console.log("generate rand nodes");
 	god_nodes.length = 0;
 	let num_of_nodes = Math.floor(branching_factor * depth);
 
@@ -33,29 +29,58 @@ function generate_graph() {
 	}
 }
 
-function generate_edge_set() {
+function generate_random_edge_set() {	
 	god_edges.length = 0;
 	god_rels.length = 0;
+	//regenerate empty array
+	generate_god_rels();
+
 	for(var i=0; i<god_nodes.length; i++) {
 		let current_node = god_nodes[i];
-		let current_rel = [];
 		//generate rand number of children between 0 and density
 		let num_connected = 1 + Math.floor(Math.random() * density);
-		var j = 0;
-		while (j < num_connected ){
+		var j = esc = 0;
+		while (j < num_connected && esc < god_nodes.length){
 			let connected_node_index = Math.floor(Math.random() * god_nodes.length);
-			//add num_connected number of connected nodes to edges list
-			if(connected_node_index != i) {
+			//add num_connected number of connected nodes to edges list if not already existant
+			//and non-self relating
+			if(connected_node_index != i && god_rels[i].indexOf(connected_node_index) == -1) {
 				god_edges.push([god_nodes[i], god_nodes[connected_node_index]]);
-				current_rel.push(connected_node_index);
+				god_rels[i].push(connected_node_index);
+				god_rels[connected_node_index].push(i); //handshaking for non-directed edges
 				j++;
 			}
+			esc++;
 		}
-		//add node (now with children array)
-		god_rels.push(current_rel);
 	}
 }
 
+function generate_nice_graph() {
+	console.log("generate nice nodes");
+	god_nodes.length = 0;
+	let num_of_nodes = Math.floor(branching_factor * depth);
+
+	//def boundaries in w
+	let l_offset = Math.floor(canvas.width * .1);
+	let node_width_spacing = Math.floor((canvas.width * .8) / 5);
+	let b_offset = Math.floor(canvas.height *.1);
+	let node_height_spacing = Math.floor((canvas.height *.8) / 5);
+
+	for(var i=0; i<num_of_nodes; i++) {
+		let new_x_coord = Math.floor(Math.random() * (6)) * node_width_spacing + l_offset;
+		let new_y_coord = Math.floor(Math.random() * (6)) * node_height_spacing + b_offset;
+		let new_coord = [new_x_coord, new_y_coord];
+		god_nodes.push(new_coord);
+	}
+}
+
+//populate god_rels with correct number of empty arrays
+function generate_god_rels() {
+	god_rels.length = 0;
+	for (var i=0; i<god_nodes.length; i++) {
+		god_rels.push([]);
+	}
+}
 
 /***************      GRAPH ANIMATIONS     ***************/
 
@@ -186,7 +211,6 @@ function graph_dfs_animation() {
 		let current_node_coord = current_node.coord;
 		let current_node_index = current_node.index;
 		let current_children = current_node.children;
-
 		//check if goal
 		if (current_node_index == goal_index) {
 			//repaint closed set (viewed nodes)
