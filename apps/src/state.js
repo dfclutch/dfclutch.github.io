@@ -43,7 +43,7 @@ function initState() {
     state.graph = new Graph(state);
 
     set_sliders(state);
-
+    set_radio_buttons(state);
     return state;
 }
 
@@ -52,6 +52,12 @@ function set_sliders(state) {
         if (update_elements.hasOwnProperty(prop)) update_elements[prop].value = state[prop];
         if (prop === STATE_PROPERTIES.SPEED) update_elements.speed.value = 500 - state.speed;
     });
+}
+
+function set_radio_buttons (state) {
+    update_elements.graph_type.forEach((option) => {
+        option.checked = (state.graph_type === option.value);
+    })
 }
 
 function special_updates(prop_to_update) {
@@ -92,8 +98,8 @@ function special_updates(prop_to_update) {
             update_elements.graph_type.forEach((option) => {
                 if (option.checked) state.graph_type = option.value;
             });
-            if (state.graph_type === GRAPH_TYPES.TREE)
-            {
+            if (state.graph_type === GRAPH_TYPES.TREE) {
+                state.branching_factor = update_elements.branching_factor.value = 2;
                 special_updates(STATE_PROPERTIES.BRANCHING_FACTOR);
             } else {
                 update_elements.depth.max = 20;
