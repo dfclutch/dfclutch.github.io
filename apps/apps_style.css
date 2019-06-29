@@ -144,8 +144,6 @@ canvas {
 	background-color: #ffffff;
 	color: #333;
 	font-family: sans-serif;
-	margin: 5px 0px;
-	padding: 5px;
 	border-radius: 10px;
 	display: block;
 	float: left;
@@ -153,12 +151,11 @@ canvas {
 }
 
 .info_block {
-	background-color: #ffffff; 
+	background-color: #bbb;
 	display: inline-block;
 	float: left;
-	margin: 10px;
-	padding-bottom: 5px;
-	border-radius: 6px;
+	margin: 10px 0;
 	padding: 0px 10px;
+	border-radius: 6px;
 	max-width: 100%;
 }

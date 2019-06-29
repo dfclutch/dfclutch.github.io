@@ -49,10 +49,12 @@ const animators = {
 
             let children = get_children(current_node.index);
             children.forEach((child_index) => {
-                open.push({
-                    index: child_index,
-                    parent: current_node
-                })
+                if(!animator_utils.visited(child_index, closed)) {
+                    open.push({
+                        index: child_index,
+                        parent: current_node
+                    })
+                }
             });
 
             closed.push(current_node.index);

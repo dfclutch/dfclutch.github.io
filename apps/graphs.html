@@ -87,6 +87,54 @@
             <li>Some coloring algorithms</li>
         </ul>
     </div>
+
+    <div class="info_block">
+        <h2>Learning Corner</h2>
+        <p><em><strong>Implementation:</strong></em></p>
+        <p>
+            This app is written in front-end only JavaScript. All animations are created live based on the state of the
+            controller settings. This extremely <a href="https://en.wikipedia.org/wiki/Fat_client" class="in_text">thick
+            client</a>
+            design was chosen for a few reasons:<br>
+        <ul>
+            <li>I can host static sites with front-end JS for free on github pages</li>
+            <li>Easier to implement instead of trying to maintain both a UI and Server codebase</li>
+            <li>Makes the app more responsive</li>
+        </ul>
+        The code can be viewed <a href="https://github.com/dfclutch/dfclutch.github.io" class="in_text">here</a>. In
+        short, the app relies on a central state object that is updated whenever the sliders/radio buttons are changed -
+        much like the pattern used in Redux applications. The graph is represented as an object with an <a
+            href="https://en.wikipedia.org/wiki/Adjacency_matrix" class="in_text"><em>Adjacency Matrix</em></a> to model
+        the graph structure, and arrays of Node and Edge objects to represent the literal expression of the graph. Each animation
+        is tied to a function which populates Frames, a property of the state, with many Graph objects, each colored
+        (and eventually text-ed) differently to represent each step of the algorithm. When the animation is run, the
+        Frames object is populated completely first, and then each Graph gets drawn with a certain amount of time in between each redraw.
+        <p><em><strong>Search:</strong></em></p>
+        <p>
+            The first algorithms animations implemented on this site are basic <em><a
+                href="https://en.wikipedia.org/wiki/Breadth-first_search" class="in_text">Breadth First Search</a></em>
+            and <em><a
+                href="https://en.wikipedia.org/wiki/Depth-first_search" class="in_text">Depth First Search</a></em>.
+            These are the two
+            most common algorithms for <a href="https://en.wikipedia.org/wiki/graph_traversal" class="in_text"><em>graph
+            searching</em></a>. The algorithms start from an initial position (the root of the tree, or a random node in
+            the simple graph) and searches for the goal node, marked in red. When watching the algorithm run some
+            interesting properties can be observed.
+        </p>
+        <p>
+            The algorithms behave differently depending on the situation they are searching. For example, if the node is
+            in the first half of the bottom row of the tree, DFS will search significantly fewer nodes (marked in green
+            after being visited) than BFS. Though if you animate the algorithm on the random undirected graph - which
+            includes both cycles and much greater "depth" than the trees, BFS will generally take longer, though the
+            eventual path to the goal node will often be <b>much</b> shorter than that of DFS.
+        </p>
+        <p>
+            The differences between the behavior (which can be formally expressed in part by analyzing their asymptotic
+            time and space complexity, see the linked articles above) make deciding between the two algorithms a
+            critical choice when they are used in application. Graph traversal is a key part of many algorithms for
+            things like web searching, network analysis, artificial intelligence, etc.
+        </p>
+    </div>
 </div>
 
 <script type="text/javascript" src="./src/state.js"></script>
