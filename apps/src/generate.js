@@ -47,7 +47,6 @@ const generate = {
                     esc++;
                 }
             }
-            console.log(num_of_ones(a_matrix))
             return a_matrix;
         },
             directed_simple: () => {
@@ -129,13 +128,3 @@ const generate_utils = {
         return a_matrix;
     }
 };
-
-function num_of_ones(mat) {
-    let count = 0;
-    mat.forEach(vector => {
-        vector.forEach(elt => {
-            if (elt === 1) count++;
-        })
-    });
-    return count;
-}

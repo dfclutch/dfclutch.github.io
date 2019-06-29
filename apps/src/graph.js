@@ -45,7 +45,6 @@ function Graph(state) {
                 this.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.undirected_simple(state.branching_factor, state.depth);
                 this.edges = generate.edges(this.a_matrix, this.nodes);
-                console.log(this);
                 break;
             case GRAPH_TYPES.DIR_SIMPLE:
                 break;
@@ -68,6 +67,7 @@ function get_children(node) {
     });
     return connected;
 }
+
 
 function find_parent(node) {
     for (let i = 0; i < state.graph.a_matrix.length; i++) {

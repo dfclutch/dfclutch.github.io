@@ -71,6 +71,9 @@ const animator_utils = {
             });
         })
     },
+    visited: (node, arr) => {
+        return arr.includes(node);
+    }
 };
 
 const chance = {
