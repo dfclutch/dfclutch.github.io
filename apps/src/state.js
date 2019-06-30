@@ -49,45 +49,47 @@ function initState() {
 
 function set_sliders(state) {
     Object.keys(state).forEach((prop) => {
-        if (update_elements.hasOwnProperty(prop)) update_elements[prop].value = state[prop];
-        if (prop === STATE_PROPERTIES.SPEED) update_elements.speed.value = 500 - state.speed;
+        if (page_elements.hasOwnProperty(prop)) page_elements[prop].value = state[prop];
+        if (prop === STATE_PROPERTIES.SPEED) page_elements.speed.value = 500 - state.speed;
     });
 }
 
 function set_radio_buttons (state) {
-    update_elements.graph_type.forEach((option) => {
+    page_elements.graph_type.forEach((option) => {
         option.checked = (state.graph_type === option.value);
     })
 }
 
 function special_updates(prop_to_update) {
+    reset_output_text();
     switch (prop_to_update) {
         case STATE_PROPERTIES.BRANCHING_FACTOR:
             if (state.graph_type === GRAPH_TYPES.TREE) {
-                update_elements.branching_factor.max = 9;
+                page_elements.branching_factor.max = 9;
                 if (state.branching_factor === 2) {
-                    update_elements.depth.max = 9;
-                    update_elements.depth.value = state.depth = 6;
+                    page_elements.depth.max = 9;
+                    page_elements.depth.value = state.depth = 6;
                 } else if (state.branching_factor === 3) {
-                    update_elements.depth.max = 6;
-                    update_elements.depth.value = state.depth = 3;
+                    page_elements.depth.max = 6;
+                    page_elements.depth.value = state.depth = 3;
                 } else if (state.branching_factor > 3) {
-                    update_elements.depth.max = 3;
-                    update_elements.depth.value = state.depth = 2;
+                    page_elements.depth.max = 3;
+                    page_elements.depth.value = state.depth = 2;
                 }
             }
             break;
         case STATE_PROPERTIES.DENSITY:
             if (state.graph_type !== GRAPH_TYPES.TREE) {
-                state.density = update_elements.density.valueAsNumber;
+                state.density = page_elements.density.valueAsNumber;
                 clear_canvas();
                 state.graph.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
-                state.graph.edges = generate.edges(state.graph.a_matrix, state.graph.nodes);
+                state.graph.edges = state.graph_type === GRAPH_TYPES.EDGE_WEIGHTED ? generate.weighted_edges(state.graph) : generate.edges(state.graph);
                 draw_graph(state.graph);
             }
+            if (state.currently_animating) end_animation(); draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.SPEED:
-            state.speed = 500 - update_elements.speed.valueAsNumber;
+            state.speed = 500 - page_elements.speed.valueAsNumber;
             break;
         case STATE_PROPERTIES.NODE_SIZE:
             clear_canvas();
@@ -95,19 +97,24 @@ function special_updates(prop_to_update) {
             break;
         case STATE_PROPERTIES.GRAPH_TYPE:
             end_animation();
-            update_elements.graph_type.forEach((option) => {
+            page_elements.graph_type.forEach((option) => {
                 if (option.checked) state.graph_type = option.value;
             });
             if (state.graph_type === GRAPH_TYPES.TREE) {
-                state.branching_factor = update_elements.branching_factor.value = 2;
+                state.branching_factor = page_elements.branching_factor.value = 2;
                 special_updates(STATE_PROPERTIES.BRANCHING_FACTOR);
+            } else if (state.graph_type === GRAPH_TYPES.EDGE_WEIGHTED) {
+                state.branching_factor = page_elements.branching_factor.value = 2;
+                page_elements.depth.value = state.depth = 4;
+                page_elements.depth.max = page_elements.branching_factor.max = 5;
             } else {
-                update_elements.depth.max = 20;
-                update_elements.depth.value = state.depth = 6;
-                update_elements.branching_factor.max = 20;
-                update_elements.branching_factor.value = state.branching_factor = 6;
+                page_elements.depth.max = 20;
+                page_elements.depth.value = state.depth = 6;
+                page_elements.branching_factor.max = 20;
+                page_elements.branching_factor.value = state.branching_factor = 6;
             }
             state.graph = new Graph(state);
+            update_buttons(state);
             clear_canvas();
             draw_graph(state.graph);
             break;
@@ -115,8 +122,9 @@ function special_updates(prop_to_update) {
 }
 
 function update(prop_to_update) {
-    end_animation();
-    state[prop_to_update] = update_elements[prop_to_update].valueAsNumber;
+    pause_animation();
+    reset_output_text();
+    state[prop_to_update] = page_elements[prop_to_update].valueAsNumber;
 
     special_updates(prop_to_update);
     set_sliders(state);
@@ -132,6 +140,5 @@ function update(prop_to_update) {
             animate();
         }
     }
-
     update_buttons(state);
 }

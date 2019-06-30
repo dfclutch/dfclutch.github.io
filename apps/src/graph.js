@@ -39,16 +39,19 @@ function Graph(state) {
             case GRAPH_TYPES.TREE:
                 this.a_matrix = generate.a_matrix.tree(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.tree(state.branching_factor, state.depth);
-                this.edges = generate.edges(this.a_matrix, this.nodes);
+                this.edges = generate.edges(this);
                 break;
             case GRAPH_TYPES.UND_SIMPLE:
                 this.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.undirected_simple(state.branching_factor, state.depth);
-                this.edges = generate.edges(this.a_matrix, this.nodes);
+                this.edges = generate.edges(this);
                 break;
             case GRAPH_TYPES.DIR_SIMPLE:
                 break;
             case GRAPH_TYPES.EDGE_WEIGHTED:
+                this.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
+                this.nodes = generate.nodes.undirected_simple(state.branching_factor, state.depth);
+                this.edges = generate.weighted_edges(this);
                 break;
             default:
                 break;
