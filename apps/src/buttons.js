@@ -19,8 +19,9 @@ new_graph.addEventListener('click', () => {
 
 function update_buttons(state) {
     Object.keys(algorithm_buttons).forEach((btn_name, ind) => {
-        let button = algorithm_buttons[btn_name];
-        button.addEventListener('click', () => {
+        let button = $(`#${btn_name}`);
+        button.off('click');
+        button.bind('click', () => {
             end_animation();
             clear_canvas();
             draw_graph(state.graph);
@@ -30,12 +31,12 @@ function update_buttons(state) {
             let algorithm = ALGORITHMS[state.graph_type][algorithm_name];
             let animatorFunction = algorithm.animator;
             let animatorName = algorithm.name;
-            button.addEventListener('click', () => {
+            button.bind('click', () => {
                 animatorFunction()
             });
-            button.value = animatorName;
+            button.val(animatorName);
         } else {
-            button.value = NO_ACTION;
+            button.val(NO_ACTION);
         }
     });
 }

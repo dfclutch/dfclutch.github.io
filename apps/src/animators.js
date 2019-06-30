@@ -39,12 +39,12 @@ const animators = {
                     },
                     {
                         nodes: path.nodes,
-                        color: COLORS.RED
+                        color: COLORS.BLUE
                     }
                 ]);
                 animator_utils.add_edge_sets(frame_graph, [{
                     edges: path.edges,
-                    color: COLORS.RED
+                    color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
                 break;
@@ -124,12 +124,12 @@ const animators = {
                     },
                     {
                         nodes: path.nodes,
-                        color: COLORS.RED
+                        color: COLORS.BLUE
                     }
                 ]);
                 animator_utils.add_edge_sets(frame_graph, [{
                     edges: path.edges,
-                    color: COLORS.RED
+                    color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
                 break;
