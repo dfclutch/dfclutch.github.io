@@ -17,6 +17,8 @@ function GraphEdge(start, end, color, text) {
         state.context.strokeStyle = this.color || COLORS.BLACK;
         if (state.context.strokeStyle !== COLORS.BLACK) {
             state.context.lineWidth = 2;
+        } else if (this.weight) {
+            state.context.lineWidth = this.weight / EDGE_WEIGHT_REDUCTION_FACTOR;
         } else {
             state.context.lineWidth = .2;
         }

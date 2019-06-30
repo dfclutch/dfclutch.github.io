@@ -125,9 +125,9 @@ a.in_text:hover {
 	background-color: #ddd;
 	color: #333;
 	min-height: 20px;
-	width: 150px;
+	width: 300px;
 	padding: 10px;
-	border-radius: 3px;
+	border-radius: 5px;
 	border: 2px solid #555;
 }
 

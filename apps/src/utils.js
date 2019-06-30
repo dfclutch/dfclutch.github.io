@@ -3,7 +3,6 @@
 *
 *   Author: Dan Filler 6.2019
  */
-
 const animator_utils = {
     /* tree specific utilities */
     tree: {
@@ -79,25 +78,5 @@ const animator_utils = {
 const chance = {
     between:  (min, max) => {
         return Math.floor(Math.random() * (max-min) + min) + 1;
-    },
-    rand_from_list: (list, num) => {
-        if (num >= list.length) {
-            return list;
-        }
-        let rands = [];
-        for(let i = 0; i < list.length; i++) {
-            let index = chance.between(0, list.length - 1);
-            if (!rands.includes(index)) {
-                rands.push(index);
-            }
-            if(rands.length === num) {
-                break;
-            }
-        }
-        return rands;
-    },
-    density_connected: () => {
-        let num = chance.between(0, 10);
-        return (num <= state.density)
     }
 };

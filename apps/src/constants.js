@@ -1,3 +1,9 @@
+const MAX_FLOW_CAP = 15;
+
+const EDGE_WEIGHT_REDUCTION_FACTOR = 4;
+
+const NO_ACTION = 'This Does Nothing';
+
 const GRAPH_TYPES = {
     TREE: 'tree',
     UND_SIMPLE: 'und_simple',
@@ -59,6 +65,12 @@ const ALGORITHMS = {
         dfs: {
             name: 'Depth First Search',
             animator: animators.dfs
+        }
+    },
+    [GRAPH_TYPES.EDGE_WEIGHTED]: {
+        ford_fulkerson: {
+            name: 'Ford Fulkerson',
+            animator: animators.ford_fulkerson
         }
     }
 };

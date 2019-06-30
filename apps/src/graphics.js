@@ -42,3 +42,7 @@ function clear_canvas() {
 function end_animation() {
     clearInterval(state.animation_timer);
 }
+
+function pause_animation() {
+    clearInterval(state.animation_timer);
+}
