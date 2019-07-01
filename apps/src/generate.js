@@ -49,8 +49,22 @@ const generate = {
             }
             return a_matrix;
         },
-        directed_simple: () => {
-            return null;
+        directed_simple: (b, d) => {
+            const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
+            let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
+            for (let parent = 0; parent < num_of_nodes; parent++) {
+                let num_connected = chance.between(1, state.density);
+                let count = esc = 0;
+                while (count < num_connected && esc < num_of_nodes) {
+                    let child = chance.between(0, num_of_nodes - 1);
+                    if (child !== parent && a_matrix[parent][child] !== 1) {
+                        a_matrix[parent][child] = 1;
+                        count++;
+                    }
+                    esc++;
+                }
+            }
+            return a_matrix;
         },
         edge_weighted: (b, d) => {
             const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
@@ -61,7 +75,7 @@ const generate = {
                 while (count < num_connected && esc < num_of_nodes) {
                     let child = chance.between(0, num_of_nodes - 1);
                     if (child !== parent && a_matrix[parent][child] !== 1) {
-                        a_matrix[parent][child] = chance.between(1, MAX_FLOW_CAP);
+                        a_matrix[parent][child] = 1;
                         count++;
                     }
                     esc++;
@@ -125,6 +139,11 @@ const generate = {
         let edges = generate.edges(graph);
         edges.forEach((edge) => {
             edge.weight = chance.between(1, MAX_FLOW_CAP);
+            edge.flow = 0;
+            edge.direction = chance.between(0, 1);
+            edge.cap = () => {
+                return edge.weight - edge.flow;
+            }
         });
         return edges;
     }

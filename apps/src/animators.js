@@ -8,7 +8,6 @@ const animators = {
         resetFrames();
         let open = [];
         let closed = [];
-        let visited = [];
         let success = false;
         let goal_index = animator_utils.find_goal_index();
         let frame_graph = new Graph();
@@ -47,17 +46,18 @@ const animators = {
                     color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
+                output_text(
+                    `Number of Nodes Visited: ${closed.length}\nPath To Goal: ${path.edges.length}`);
                 break;
             }
 
             let children = get_children(current_node.index);
             children.forEach((child_index) => {
-                if(!animator_utils.visited(child_index, visited)) {
+                if (!animator_utils.visited(child_index, closed)) {
                     open.push({
                         index: child_index,
                         parent: current_node
                     });
-                    visited.push(child_index);
                 }
             });
 
@@ -82,10 +82,9 @@ const animators = {
                 edges: path.edges,
                 color: COLORS.YELLOW
             }]);
-
+            if (!success) output_text('No Solution');
             state.frames.push(frame_graph);
         }
-        !success ? output_text('No Solution') : output_text(`Number of Nodes Visited: ${visited.length}`);
         animate();
     },
     dfs: () => {
@@ -93,7 +92,6 @@ const animators = {
         resetFrames();
         let open = [];
         let closed = [];
-        let visited = [];
         let success;
         let goal_index = animator_utils.find_goal_index();
         let frame_graph = new Graph();
@@ -132,17 +130,18 @@ const animators = {
                     color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
+                output_text(
+                    `Number of Nodes Visited: ${closed.length}\nPath To Goal: ${path.edges.length}`);
                 break;
             }
 
             let children = get_children(current_node.index).reverse();
             children.forEach((child_index) => {
-                if(!animator_utils.visited(child_index, visited)) {
+                if (!animator_utils.visited(child_index, closed)) {
                     open.unshift({
                         index: child_index,
                         parent: current_node
                     });
-                    visited.push(child_index);
                 }
             });
 
@@ -170,7 +169,7 @@ const animators = {
 
             state.frames.push(frame_graph);
         }
-        !success ? output_text('No Solution') : output_text(`Number of Nodes Visited: ${visited.length}`);
+        if (!success) output_text('No Solution');
         animate();
     },
     ford_fulkerson: () => {

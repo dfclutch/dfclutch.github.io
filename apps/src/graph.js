@@ -49,7 +49,7 @@ function Graph(state) {
             case GRAPH_TYPES.DIR_SIMPLE:
                 break;
             case GRAPH_TYPES.EDGE_WEIGHTED:
-                this.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
+                this.a_matrix = generate.a_matrix.edge_weighted(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.undirected_simple(state.branching_factor, state.depth);
                 this.edges = generate.weighted_edges(this);
                 break;
@@ -61,6 +61,7 @@ function Graph(state) {
         this.nodes = [];
         this.edges = [];
     }
+    console.log(this);
 }
 
 function get_children(node) {

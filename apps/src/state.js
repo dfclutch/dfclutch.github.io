@@ -61,7 +61,6 @@ function set_radio_buttons (state) {
 }
 
 function special_updates(prop_to_update) {
-    reset_output_text();
     switch (prop_to_update) {
         case STATE_PROPERTIES.BRANCHING_FACTOR:
             if (state.graph_type === GRAPH_TYPES.TREE) {
@@ -86,6 +85,7 @@ function special_updates(prop_to_update) {
                 state.graph.edges = state.graph_type === GRAPH_TYPES.EDGE_WEIGHTED ? generate.weighted_edges(state.graph) : generate.edges(state.graph);
                 draw_graph(state.graph);
             }
+            reset_output_text();
             if (state.currently_animating) end_animation(); draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.SPEED:
@@ -96,6 +96,7 @@ function special_updates(prop_to_update) {
             draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.GRAPH_TYPE:
+            reset_output_text();
             end_animation();
             page_elements.graph_type.forEach((option) => {
                 if (option.checked) state.graph_type = option.value;
@@ -108,9 +109,9 @@ function special_updates(prop_to_update) {
                 page_elements.depth.value = state.depth = 4;
                 page_elements.depth.max = page_elements.branching_factor.max = 5;
             } else {
-                page_elements.depth.max = 20;
+                page_elements.depth.max = 25;
                 page_elements.depth.value = state.depth = 6;
-                page_elements.branching_factor.max = 20;
+                page_elements.branching_factor.max = 25;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
             state.graph = new Graph(state);
@@ -123,13 +124,13 @@ function special_updates(prop_to_update) {
 
 function update(prop_to_update) {
     pause_animation();
-    reset_output_text();
     state[prop_to_update] = page_elements[prop_to_update].valueAsNumber;
 
     special_updates(prop_to_update);
     set_sliders(state);
 
     if (STOPPING_PROPERTIES.includes(prop_to_update)) {
+        reset_output_text();
         clear_canvas();
         end_animation();
         state.currently_animating = false;
