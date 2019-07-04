@@ -6,8 +6,12 @@
 
 function GraphEdge(start, end, color, text) {
     this.coords = {
-        start,
-        end
+        start: start.coord,
+        end: end.coord
+    };
+    this.nodes = {
+        start: start,
+        end: end
     };
     this.color = color || COLORS.BLACK;
     this.text = text || '';
@@ -35,5 +39,10 @@ function GraphEdge(start, end, color, text) {
                 Math.floor((this.coords.start.y + this.coords.end.y) / 2)
             );
         }
-    }
+    };
+    this.euclid_dist = euclid_dist(start, end);
+}
+
+function euclid_dist (start, end) {
+    return Math.sqrt(Math.pow(start.coord.x - end.coord.x, 2) + Math.pow(start.coord.y - end.coord.y, 2));
 }

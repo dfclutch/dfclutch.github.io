@@ -4,13 +4,14 @@
 *   Author: Dan Filler 2.26.2019
  */
 
-function GraphNode(x, y, color, text) {
+function GraphNode(x, y, index, color, text) {
     this.coord = {
         x,
         y
     };
     this.color = color || COLORS.BLACK;
     this.text = text || '';
+    this.index = index;
 
     this.draw = () => {
         state.context.beginPath();

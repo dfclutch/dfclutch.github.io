@@ -61,13 +61,12 @@ function Graph(state) {
         this.nodes = [];
         this.edges = [];
     }
-    console.log(this);
 }
 
 function get_children(node) {
     let connected = [];
-    state.graph.a_matrix[node].forEach((elt, ind) => {
-        if (elt === 1) connected.push(ind);
+    state.graph.a_matrix[node.index].forEach((elt, ind) => {
+        if (elt === 1) connected.push(state.graph.nodes[ind]);
     });
     return connected;
 }

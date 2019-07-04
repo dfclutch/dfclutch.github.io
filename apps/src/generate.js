@@ -35,7 +35,7 @@ const generate = {
             const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
             let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
             for (let parent = 0; parent < num_of_nodes; parent++) {
-                let num_connected = chance.between(1, state.density) / 2;
+                let num_connected = chance.between(1, state.density) / 3;
                 let count = esc = 0;
                 while (count < num_connected && esc < num_of_nodes) {
                     let child = chance.between(0, num_of_nodes - 1);
@@ -91,12 +91,14 @@ const generate = {
             let y_pos = CANVAS.OFFSET;
             let row_height = CANVAS.USABLE_HEIGHT / d;
             let num_in_row = 1;
+            let index = 0;
 
             for (let row = 0; row < d + 1; row++) {
                 for (let pos_in_row = 0; pos_in_row < num_in_row; pos_in_row++) {
                     let x_pos = Math.floor(CANVAS.USABLE_WIDTH * (pos_in_row + 1) / (num_in_row + 1) + CANVAS.OFFSET);
-                    let current_node = new GraphNode(x_pos, y_pos);
+                    let current_node = new GraphNode(x_pos, y_pos, index);
                     nodes.push(current_node);
+                    index++
                 }
                 num_in_row *= b;
                 y_pos = Math.floor(y_pos + row_height);
@@ -109,7 +111,7 @@ const generate = {
             for (let i = 0; i < num_of_nodes; i++) {
                 let x_pos = Math.floor((Math.random() * (state.canvas.width - 50) * 20 + 50) / 20);
                 let y_pos = Math.floor((Math.random() * (state.canvas.height - 50) * 10 + 50) / 10);
-                let current_node = new GraphNode(x_pos, y_pos);
+                let current_node = new GraphNode(x_pos, y_pos, i);
                 nodes.push(current_node);
             }
             return nodes;
@@ -128,8 +130,12 @@ const generate = {
         matrix.forEach((parent_vector, parent_index) => {
             parent_vector.forEach((is_connected, child_index) => {
                 if (is_connected === 1) {
-                    let new_edge = new GraphEdge(nodes[parent_index].coord, nodes[child_index].coord, COLORS.BLACK);
+                    if (matrix[child_index][parent_index] === 1) matrix[child_index][parent_index] = -1;
+                    let new_edge = new GraphEdge(nodes[parent_index], nodes[child_index], COLORS.BLACK);
                     edges.push(new_edge);
+                } else if (is_connected === -1) {
+                    //this is done to not create duplicated edges when I want single bidirectional edges
+                    matrix[parent_index][child_index] = 1
                 }
             });
         });
@@ -140,7 +146,6 @@ const generate = {
         edges.forEach((edge) => {
             edge.weight = chance.between(1, MAX_FLOW_CAP);
             edge.flow = 0;
-            edge.direction = chance.between(0, 1);
             edge.cap = () => {
                 return edge.weight - edge.flow;
             }

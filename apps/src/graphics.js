@@ -7,12 +7,13 @@
 function animate() {
     state.currently_animating = true;
     state.animation_timer = setInterval(() => {
-        clear_canvas();
-        draw_graph(state.graph);
-        draw_graph(state.frames.shift());
-        if(!state.frames.length > 0) {
+        if(state.frames.length === 0) {
             state.currently_animating = false;
             end_animation();
+        } else {
+            clear_canvas();
+            draw_graph(state.graph);
+            draw_graph(state.frames.shift());
         }
     }, state.speed);
 }

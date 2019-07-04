@@ -19,59 +19,93 @@ const animator_utils = {
 
         return chance.between(1, state.graph.nodes.length);
     },
-    /*  for a given node augmented with index and parent properties, find the path back to the ultimate parent node, capped
-    *   with a null parent prop
-    */
-    find_search_path_set: (node) => {
+    find_search_path_set: (path_element) => {
         let nodes = [];
         let edges = [];
-        while (node.parent !== null) {
-            let start = state.graph.nodes[node.index].coord;
-            nodes.push(node.index);
-            node = node.parent;
-            let end = state.graph.nodes[node.index].coord;
+        while (path_element.parent !== null) {
+            let start = path_element.node;
+            nodes.push(path_element.node);
+            path_element = path_element.parent;
+            let end = path_element.node;
             edges.push(
-                {
+                new GraphEdge(
                     start,
                     end
-                }
+                )
             );
         }
         //add root
-        nodes.push(0);
+        nodes.push(state.graph.nodes[0]);
         return {nodes, edges};
     },
-    color_graph: (frame_graph, node_sets) => {
+    color_graph_nodes: (frame_graph, node_sets) => {
         for (let node_set of node_sets) {
             let color = node_set.color;
             let nodes = node_set.nodes;
-            nodes.forEach((index) => {
-                let state_node = state.graph.nodes[index];
-                frame_graph.nodes[index] = new GraphNode(
-                    state_node.coord.x,
-                    state_node.coord.y,
+            nodes.forEach((node) => {
+                frame_graph.nodes[node.index] = new GraphNode(
+                    node.coord.x,
+                    node.coord.y,
+                    node.index,
                     color
-                )
+                );
             });
-
         }
     },
-    add_edge_sets: (frame_graph, edge_sets) => {
+    color_graph_edges: (frame_graph, edge_sets) => {
         edge_sets.forEach( edge_set => {
             let color = edge_set.color;
             let edges = edge_set.edges;
             edges.forEach((edge) => {
-                let new_edge = new GraphEdge(
-                    edge.start,
-                    edge.end,
-                    color
+                frame_graph.edges.push(
+                    new GraphEdge(
+                        edge.nodes.start,
+                        edge.nodes.end,
+                        color
+                    )
                 );
-                frame_graph.edges.push(new_edge);
             });
         })
     },
     visited: (node, arr) => {
         return arr.includes(node);
+    },
+    order_edges_by_euclid_dist: (edges) => {
+        let ordered_set = [];
+        edges.forEach(edge => {
+            let current_dist = edge.euclid_dist;
+            let index = 0;
+            while (index < ordered_set.length && current_dist >= ordered_set[index].euclid_dist){
+                index++;
+            }
+            ordered_set.splice(index, 0, edge);
+        });
+        return ordered_set;
+    }
+};
+
+// node in this context refers not to a GraphNode object but a node index within the global state.graph
+const union_find_utils = {
+    make_set: (node) => {
+        return {
+            ...node,
+            parent: node,
+            rank: 0, // MAY NOT BE NEEDED UNTIL PATH COMPRESSION IS IMPLEMENTED
+            size: 1
+        }
+    },
+    find_parent: (node) => {
+        if(node.parent !== node) {
+            node.parent = union_find_utils.find_parent(node.parent);
+        }
+        return node.parent;
+    },
+    union: (node1, node2) => {
+        let node1_root = union_find_utils.find_parent(node1);
+        let node2_root =  union_find_utils.find_parent(node2);
+        if (node1_root.index === node2_root.index) {
+            node2_root.parent = node1_root;
+        }
     }
 };
 

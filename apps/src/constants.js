@@ -1,6 +1,6 @@
 const MAX_FLOW_CAP = 15;
 
-const EDGE_WEIGHT_REDUCTION_FACTOR = 4;
+const EDGE_WEIGHT_REDUCTION_FACTOR = 2;
 
 const NO_ACTION = 'This Does Nothing';
 
@@ -65,6 +65,10 @@ const ALGORITHMS = {
         dfs: {
             name: 'Depth First Search',
             animator: animators.dfs
+        },
+        kruskal: {
+            name: "Minimum Spanning Tree",
+            animator: animators.kruskal
         }
     },
     [GRAPH_TYPES.EDGE_WEIGHTED]: {
