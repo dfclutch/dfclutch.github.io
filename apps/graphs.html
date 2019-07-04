@@ -142,7 +142,11 @@
             Spanning Tree</a> is the set of edges within a graph that represents the lowest possible cumulative <em>weight</em>
             to connect all vertices within the graph without cycles. Here, an edge's weight is the length of the edge,
             for visual simplicity. In other words, a the minimal spanning tree I draw here uses the least amount of ink
-            to connect all the dots while only drawing on the graph's edges.
+            to connect all the dots while only drawing on the graph's edges. As somewhat of an intuition for proving the
+            minimality of the generated tree, I have included in the text output the weight of the spanning tree and the
+            total weight of the graph's edges. Notice that when running the algorithm repeatedly on the same graph, even
+            when starting from different points, the minimal weight is the same. While not a proof of the minimality, it
+            suggests that there are no cheaper ways to traverse the graph.
         </p>
         <p>
             To find the Minimal Spanning Tree, I use <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm"

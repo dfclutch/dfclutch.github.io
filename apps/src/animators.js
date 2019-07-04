@@ -263,9 +263,10 @@ const animators = {
         draw_graph(state.graph);
         resetFrames();
         let frame_graph = new Graph();
+        let starting_index = chance.between(0, state.graph.nodes.length -1)
         let mst =
             {
-                nodes: [state.graph.nodes[0]],
+                nodes: [state.graph.nodes[starting_index]],
                 edges: []
             };
         animator_utils.color_graph_nodes(
