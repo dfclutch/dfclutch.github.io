@@ -83,7 +83,7 @@
             <li>Breadth First/Depth First Search</li>
             <li>Maxflow (Ford Fulkerson probably)</li>
             <li>Hamiltonian Path</li>
-            <li>Minimum Spanning Tree (Kruskal's)</li>
+            <li>Minimum Spanning Tree (Prim's)</li>
             <li>Some coloring algorithms</li>
         </ul>
     </div>
@@ -105,10 +105,12 @@
         short, the app relies on a central state object that is updated whenever the sliders/radio buttons are changed -
         much like the pattern used in Redux applications. The graph is represented as an object with an <a
             href="https://en.wikipedia.org/wiki/Adjacency_matrix" class="in_text"><em>Adjacency Matrix</em></a> to model
-        the graph structure, and arrays of Node and Edge objects to represent the literal expression of the graph. Each animation
+        the graph structure, and arrays of Node and Edge objects to represent the literal expression of the graph. Each
+        animation
         is tied to a function which populates Frames, a property of the state, with many Graph objects, each colored
         (and eventually text-ed) differently to represent each step of the algorithm. When the animation is run, the
-        Frames object is populated completely first, and then each Graph gets drawn with a certain amount of time in between each redraw.
+        Frames object is populated completely first, and then each Graph gets drawn with a certain amount of time in
+        between each redraw.
         <p><em><strong>Search:</strong></em></p>
         <p>
             The first algorithms animations implemented on this site are basic <em><a
@@ -133,6 +135,32 @@
             time and space complexity, see the linked articles above) make deciding between the two algorithms a
             critical choice when they are used in application. Graph traversal is a key part of many algorithms for
             things like web searching, network analysis, artificial intelligence, etc.
+        </p>
+        <p><em><strong>Minimal Spanning Tree:</strong></em> ([beta] if it crashes, sorry!)</p>
+        <p>
+            A <a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree" class="in_text">Minimal (or minimum)
+            Spanning Tree</a> is the set of edges within a graph that represents the lowest possible cumulative <em>weight</em>
+            to connect all vertices within the graph without cycles. Here, an edge's weight is the length of the edge,
+            for visual simplicity. In other words, a the minimal spanning tree I draw here uses the least amount of ink
+            to connect all the dots while only drawing on the graph's edges.
+        </p>
+        <p>
+            To find the Minimal Spanning Tree, I use <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm"
+                                                        class="in_text"><em>Prim's Algorithm.</em></a> Prim's is the
+            simplest algorithm for finding minimal spanning trees, though with limitations. For example, if you run the
+            animation with a low graph density, you may notice some nodes are not colored. This results from the graph
+            not being <a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)" class="in_text">connected.</a>
+            A solution would be to run the algorithm until a minimal spanning tree is created for a given connected
+            component of the graph, selected a new node NOT within the MST, and repeat the process until all nodes are
+            part of an MST, creating a Minimal Spanning Forest. A more elegant solution to the non-connected graph
+            problem is using something like <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm"
+                                               class="in_text">Kruskal's Algorithm.</a>
+        </p>
+        <p>
+            The applications of finding the Minimal Spanning Tree on a graph are highly varied. Things like process
+            optimization e.g. figuring out the best routes for delivery truck drivers, or the optimal circuit path when
+            designing an electrical component. As with most graph theory problems, the applications go far beyond what
+            you might expect including ecotoxicology, taxonomy, and financial analysis.
         </p>
     </div>
 </div>

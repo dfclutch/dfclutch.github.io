@@ -63,6 +63,16 @@ function Graph(state) {
     }
 }
 
+function includes_node(node, arr) {
+    for(let i = 0; i < arr.length; i++) {
+        let current_node = arr[i];
+        if(node.equals(current_node)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function get_children(node) {
     let connected = [];
     state.graph.a_matrix[node.index].forEach((elt, ind) => {
@@ -71,11 +81,68 @@ function get_children(node) {
     return connected;
 }
 
+function get_all_children(nodes) {
+    let connected = [];
+    nodes.forEach(node => {
+        let children = get_children(node);
+        connected.push(children);
+    });
+}
 
-function find_parent(node) {
-    for (let i = 0; i < state.graph.a_matrix.length; i++) {
-        if (state.graph.a_matrix[i][node] === 1) {
-            return i;
+function includes_edge(edge, arr) {
+    for(let i = 0; i < arr.length; i++) {
+        let current_edge = arr[i];
+        if(edge.equals(current_edge)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function find_edge(node1, node2) {
+    for(let i = 0; i < state.graph.edges.length; i++) {
+        let edge = state.graph.edges[i];
+        if (edge.nodes.start.index === node1.index ) {
+            if(edge.nodes.end.index === node2.index) {
+                return edge;
+            }
+        } else if (edge.nodes.start.index === node2.index) {
+            if (edge.nodes.end.index === node1.index) {
+                return edge;
+            }
         }
     }
 }
+
+function get_connected_edges(node) {
+    let connected = [];
+    let children = get_children(node);
+    children.forEach((child) => {
+        let edge = find_edge(node, child);
+        connected.push(edge);
+    });
+    return connected;
+}
+
+function get_all_connected_edges(nodes) {
+    let connected = [];
+    nodes.forEach((node) => {
+        let edges = get_connected_edges(node);
+        edges.forEach((edge) => {
+            if(!includes_edge(edge, connected)) {
+                connected.push(edge);
+            }
+        });
+    });
+    return connected;
+}
+
+function total_edge_weight() {
+    let total = 0;
+    state.graph.edges.forEach(edge => {
+        total += edge.euclid_dist;
+    })
+    return total;
+}
+
+

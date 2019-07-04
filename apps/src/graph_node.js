@@ -25,5 +25,8 @@ function GraphNode(x, y, index, color, text) {
             state.context.textAlign = "center";
             state.context.fillText(text, this.coord.x - 3 * state.node_size, this.coord.y + state.node_size);
         }
+    };
+    this.equals = (node) => {
+        return this.index === node.index;
     }
 }

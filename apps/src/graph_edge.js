@@ -40,6 +40,9 @@ function GraphEdge(start, end, color, text) {
             );
         }
     };
+    this.equals = (edge) => {
+        return (this.nodes.start.index === edge.nodes.start.index && this.nodes.end.index === edge.nodes.end.index)
+    };
     this.euclid_dist = euclid_dist(start, end);
 }
 

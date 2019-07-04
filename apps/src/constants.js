@@ -66,9 +66,9 @@ const ALGORITHMS = {
             name: 'Depth First Search',
             animator: animators.dfs
         },
-        kruskal: {
-            name: "Minimum Spanning Tree",
-            animator: animators.kruskal
+        prim: {
+            name: "[beta] Min. Span Tree",
+            animator: animators.prim
         }
     },
     [GRAPH_TYPES.EDGE_WEIGHTED]: {

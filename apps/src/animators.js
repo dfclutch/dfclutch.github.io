@@ -9,8 +9,13 @@ const animators = {
         let open = [];
         let closed = [];
         let success = false;
-        let goal_node = state.graph.nodes[animator_utils.find_goal_index()];
-        goal_node.color = COLORS.RED;
+        let state_goal_node = state.graph.nodes[animator_utils.find_goal_index()];
+        let goal_node = new GraphNode(
+            state_goal_node.coord.x,
+            state_goal_node.coord.y,
+            state_goal_node.index,
+            COLORS.RED
+        );
         let frame_graph = new Graph();
         frame_graph.nodes.push(goal_node);
         open.push({
@@ -88,8 +93,13 @@ const animators = {
         let open = [];
         let closed = [];
         let success = false;
-        let goal_node = state.graph.nodes[animator_utils.find_goal_index()];
-        goal_node.color = COLORS.RED;
+        let state_goal_node = state.graph.nodes[animator_utils.find_goal_index()];
+        let goal_node = new GraphNode(
+            state_goal_node.coord.x,
+            state_goal_node.coord.y,
+            state_goal_node.index,
+            COLORS.RED
+        );
         let frame_graph = new Graph();
         frame_graph.nodes.push(goal_node);
         open.push({
@@ -167,28 +177,28 @@ const animators = {
         let open = [];
         let closed = [];
         let success = false;
-        let goal_index = animator_utils.find_goal_index();
-        let frame_graph = new Graph();
-        frame_graph.nodes.push(
-            new GraphNode(
-                state.graph.nodes[goal_index].coord.x,
-                state.graph.nodes[goal_index].coord.y,
-                COLORS.RED
-            )
+        let state_goal_node = state.graph.nodes[animator_utils.find_goal_index()];
+        let goal_node = new GraphNode(
+            state_goal_node.coord.x,
+            state_goal_node.coord.y,
+            state_goal_node.index,
+            COLORS.RED
         );
+        let frame_graph = new Graph();
+        frame_graph.nodes.push(goal_node);
         open.push({
-            index: 0,
+            node: state.graph.nodes[0],
             parent: null
         });
         state.frames.push(frame_graph);
 
         while (open.length > 0) {
-            let current_node = open.shift();
+            let current = open.shift();
             frame_graph = new Graph();
 
-            if (current_node.index === goal_index) {
+            if (current.node.index === goal_node.index) {
                 success = true;
-                let path = animator_utils.find_search_path_set(current_node);
+                let path = animator_utils.find_search_path_set(current);
                 animator_utils.color_graph_nodes(frame_graph, [
                     {
                         nodes: closed,
@@ -209,14 +219,19 @@ const animators = {
                 break;
             }
 
-            let children = get_children(current_node.index);
-            children.forEach((child_index) => {
-                let child_node = state.graph.nodes[child_index];
+            let children = get_children(current.node);
+            children.forEach((child) => {
+                if (!animator_utils.visited(child, closed)) {
+                    open.push({
+                        node: child,
+                        parent: current
+                    });
+                }
             });
 
-            closed.push(current_node.index);
+            closed.push(current.node);
 
-            let path = animator_utils.find_search_path_set(current_node);
+            let path = animator_utils.find_search_path_set(current);
 
             animator_utils.color_graph_nodes(frame_graph, [
                 {
@@ -228,7 +243,7 @@ const animators = {
                     color: COLORS.YELLOW
                 },
                 {
-                    nodes: [goal_index],
+                    nodes: [goal_node],
                     color: COLORS.RED
                 }]);
             animator_utils.color_graph_edges(frame_graph, [{
@@ -243,22 +258,72 @@ const animators = {
     ford_fulkerson: () => {
 
     },
-    kruskal: () => {
+    prim: () => {
         console.log(state.graph);
         draw_graph(state.graph);
         resetFrames();
         let frame_graph = new Graph();
-        let sets = [];
-        let edge_set = animator_utils.order_edges_by_euclid_dist(state.graph.edges);
-
-
-        console.log(sets);
-
-        /*while(edge_set.length !== 0) {
-
-        }*/
-
-
-        /*animate();*/
+        let mst =
+            {
+                nodes: [state.graph.nodes[0]],
+                edges: []
+            };
+        animator_utils.color_graph_nodes(
+            frame_graph,
+            [
+                {
+                    nodes: mst.nodes,
+                    color: COLORS.RED
+                }
+            ]
+        );
+        state.frames.push(frame_graph);
+        let esc = 0;
+        let cumulative_weight = 0;
+        let graph_total_weight = Math.floor(total_edge_weight());
+        while(mst.nodes.length !== state.graph.nodes.length && esc < state.graph.edges.length) {
+            esc++;
+            frame_graph = new Graph();
+            let edges = get_all_connected_edges(mst.nodes);
+            let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
+            for(let i = 0; i < sorted_edges.length; i++) {
+                let lowest_cost_edge = sorted_edges[i];
+                let new_node = !(includes_node(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
+                if(!includes_node(new_node, mst.nodes)) {
+                    mst.nodes.push(new_node);
+                    mst.edges.push(lowest_cost_edge);
+                    cumulative_weight += lowest_cost_edge.euclid_dist;
+                    break;
+                }
+            }
+            animator_utils.color_graph_nodes(frame_graph,
+                [
+                    {
+                        nodes: mst.nodes,
+                        color: COLORS.RED
+                    }]);
+            animator_utils.color_graph_edges(frame_graph,
+                [{
+                    edges: mst.edges,
+                    color: COLORS.RED
+                }]);
+            state.frames.push(frame_graph);
+        }
+        frame_graph = new Graph();
+        animator_utils.color_graph_nodes(frame_graph,
+            [
+                {
+                    nodes: mst.nodes,
+                    color: COLORS.BLUE
+                }]);
+        animator_utils.color_graph_edges(frame_graph,
+            [{
+                edges: mst.edges,
+                color: COLORS.BLUE
+            }]);
+        output_text(
+            `Cumulative Weight: ${Math.floor(cumulative_weight)}<br>Total Graph Weight: ${graph_total_weight}`);
+        state.frames.push(frame_graph);
+        animate();
     }
 };
