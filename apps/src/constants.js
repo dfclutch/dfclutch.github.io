@@ -8,7 +8,7 @@ const GRAPH_TYPES = {
     TREE: 'tree',
     UND_SIMPLE: 'und_simple',
     DIR_SIMPLE: 'dir_simple',
-    EDGE_WEIGHTED: 'edge_weighted'
+    NETWORK_FLOW: 'network_flow'
 };
 
 const CANVAS = {
@@ -37,7 +37,7 @@ const STATE_PROPERTIES = {
     SPEED: 'speed',
     NODE_SIZE: 'node_size',
     CURRENTLY_ANIMATING: 'currently_animating'
-}
+};
 
 const STOPPING_PROPERTIES = [
     STATE_PROPERTIES.GRAPH_TYPE,
@@ -71,7 +71,7 @@ const ALGORITHMS = {
             animator: animators.prim
         }
     },
-    [GRAPH_TYPES.EDGE_WEIGHTED]: {
+    [GRAPH_TYPES.NETWORK_FLOW]: {
         ford_fulkerson: {
             name: 'Ford Fulkerson',
             animator: animators.ford_fulkerson

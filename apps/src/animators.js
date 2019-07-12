@@ -171,99 +171,39 @@ const animators = {
         }
         animate();
     },
-    greedy_bfs: () => {
+    ford_fulkerson: () => {
         draw_graph(state.graph);
         resetFrames();
-        let open = [];
-        let closed = [];
-        let success = false;
-        let state_goal_node = state.graph.nodes[animator_utils.find_goal_index()];
-        let goal_node = new GraphNode(
-            state_goal_node.coord.x,
-            state_goal_node.coord.y,
-            state_goal_node.index,
-            COLORS.RED
-        );
         let frame_graph = new Graph();
-        frame_graph.nodes.push(goal_node);
-        open.push({
-            node: state.graph.nodes[0],
-            parent: null
-        });
-        state.frames.push(frame_graph);
+        let source = state.graph.nodes[0];
+        let sink = state.graph.nodes[state.graph.nodes.length - 1];
+        let flow = 0;
+        let path = [];
+        let path_exists = true;
+        let edges = animator_utils.generate_reverse_edges(state.graph.edges);
 
-        while (open.length > 0) {
-            let current = open.shift();
-            frame_graph = new Graph();
+        while(path_exists) {
+            path = animator_utils.find_aug_path(edges, source, sink);
 
-            if (current.node.index === goal_node.index) {
-                success = true;
-                let path = animator_utils.find_search_path_set(current);
-                animator_utils.color_graph_nodes(frame_graph, [
-                    {
-                        nodes: closed,
-                        color: COLORS.GREEN
-                    },
-                    {
-                        nodes: path.nodes,
-                        color: COLORS.BLUE
-                    }
-                ]);
-                animator_utils.color_graph_edges(frame_graph, [{
-                    edges: path.edges,
-                    color: COLORS.BLUE
-                }]);
-                state.frames.push(frame_graph);
-                output_text(
-                    `Nodes Visited: ${closed.length}<br>Path To Goal: ${path.edges.length}`);
-                break;
+            if (path[sink.index] === null) {path_exists = false; break;}
+            //find min flow
+            let increment = Infinity;
+            for(let edge = path[sink.nodes.end.index]; edge != null; edge = path[edge.nodes.start.index]) {
+                if ((edge.cap() - edge.flow) < increment) increment = edge.cap() - edge.flow;
             }
-
-            let children = get_children(current.node);
-            children.forEach((child) => {
-                if (!animator_utils.visited(child, closed)) {
-                    open.push({
-                        node: child,
-                        parent: current
-                    });
-                }
-            });
-
-            closed.push(current.node);
-
-            let path = animator_utils.find_search_path_set(current);
-
-            animator_utils.color_graph_nodes(frame_graph, [
-                {
-                    nodes: closed,
-                    color: COLORS.GREEN
-                },
-                {
-                    nodes: path.nodes,
-                    color: COLORS.YELLOW
-                },
-                {
-                    nodes: [goal_node],
-                    color: COLORS.RED
-                }]);
-            animator_utils.color_graph_edges(frame_graph, [{
-                edges: path.edges,
-                color: COLORS.YELLOW
-            }]);
-            if (!success) output_text('No Solution');
-            state.frames.push(frame_graph);
+            //update edges by increment
+            for(let edge = path[sink.index]; edge != null; edge = path[edge.start]) {
+                edge.flow += increment;
+                edge.reverse.flow -= increment;
+            }
+            flow += increment;
         }
-        animate();
-    },
-    ford_fulkerson: () => {
-
     },
     prim: () => {
-        console.log(state.graph);
         draw_graph(state.graph);
         resetFrames();
         let frame_graph = new Graph();
-        let starting_index = chance.between(0, state.graph.nodes.length -1)
+        let starting_index = chance.between(0, state.graph.nodes.length -1);
         let mst =
             {
                 nodes: [state.graph.nodes[starting_index]],
