@@ -81,8 +81,8 @@ function special_updates(prop_to_update) {
             if (state.graph_type !== GRAPH_TYPES.TREE) {
                 state.density = page_elements.density.valueAsNumber;
                 clear_canvas();
-                state.graph.a_matrix = generate.a_matrix.undirected_simple(state.branching_factor, state.depth);
-                state.graph.edges = state.graph_type === GRAPH_TYPES.EDGE_WEIGHTED ? generate.weighted_edges(state.graph) : generate.edges(state.graph);
+                state.graph.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth);
+                state.graph.edges = generate.edges[state.graph_type](state.graph);
                 draw_graph(state.graph);
             }
             reset_output_text();
@@ -104,7 +104,7 @@ function special_updates(prop_to_update) {
             if (state.graph_type === GRAPH_TYPES.TREE) {
                 state.branching_factor = page_elements.branching_factor.value = 2;
                 special_updates(STATE_PROPERTIES.BRANCHING_FACTOR);
-            } else if (state.graph_type === GRAPH_TYPES.EDGE_WEIGHTED) {
+            } else if (state.graph_type === GRAPH_TYPES.NETWORK_FLOW) {
                 state.branching_factor = page_elements.branching_factor.value = 2;
                 page_elements.depth.value = state.depth = 4;
                 page_elements.depth.max = page_elements.branching_factor.max = 5;
@@ -114,6 +114,7 @@ function special_updates(prop_to_update) {
                 page_elements.branching_factor.max = 25;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
+            console.log(state.graph_type);
             state.graph = new Graph(state);
             update_buttons(state);
             clear_canvas();

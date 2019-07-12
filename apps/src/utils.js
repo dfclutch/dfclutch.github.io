@@ -13,11 +13,11 @@ const animator_utils = {
         }
     },
     find_goal_index: () => {
-        if(state.graph_type === GRAPH_TYPES.TREE) {
+        if (state.graph_type === GRAPH_TYPES.TREE) {
             return animator_utils.tree.find_goal_index();
         }
 
-        return chance.between(1, state.graph.nodes.length);
+        return state.graph.nodes.length - 1;
     },
     find_search_path_set: (path_element) => {
         let nodes = [];
@@ -53,7 +53,7 @@ const animator_utils = {
         }
     },
     color_graph_edges: (frame_graph, edge_sets) => {
-        edge_sets.forEach( edge_set => {
+        edge_sets.forEach(edge_set => {
             let color = edge_set.color;
             let edges = edge_set.edges;
             edges.forEach((edge) => {
@@ -75,42 +75,50 @@ const animator_utils = {
         edges.forEach(edge => {
             let current_dist = edge.euclid_dist;
             let index = 0;
-            while (index < ordered_set.length && current_dist >= ordered_set[index].euclid_dist){
+            while (index < ordered_set.length && current_dist >= ordered_set[index].euclid_dist) {
                 index++;
             }
             ordered_set.splice(index, 0, edge);
         });
         return ordered_set;
-    }
-};
+    },
+    order_nodes_by_euclid_dist: (nodes, goal_node) => {
+        let ordered_set = [];
+        let dist_list = [];
+        nodes.forEach(node => {
+            let current_dist = node.distance_to(goal_node);
+            let index = 0;
+            while (index < ordered_set.length && current_dist >= dist_list[index]) {
+                index++;
+            }
+            dist_list.splice(index, 0, current_dist);
+            ordered_set.splice(index, 0, node);
+        })
+    },
+    find_aug_path: (edges, source, sink) => {
+        //perform BFS from source to sink
+        let open = [source];
+        let path = new Array(state.graph.nodes.length);
+        while (open.length !== 0) {
+            let current = open.shift();
+            let edges = get_connected_edges(current);
 
-// node in this context refers not to a GraphNode object but a node index within the global state.graph
-const union_find_utils = {
-    make_set: (node) => {
-        return {
-            ...node,
-            parent: node,
-            rank: 0, // MAY NOT BE NEEDED UNTIL PATH COMPRESSION IS IMPLEMENTED
-            size: 1
+            edges.forEach(edge => {
+                if (path[edge.nodes.end.index] === undefined && !edge.nodes.end.equals(source) && edge.cap() > edge.flow) {
+                    path[edge.nodes.end.index] = edge;
+                    open.push(edge.nodes.end);
+                }
+            });
         }
+        return path;
     },
-    find_parent: (node) => {
-        if(node.parent !== node) {
-            node.parent = union_find_utils.find_parent(node.parent);
-        }
-        return node.parent;
-    },
-    union: (node1, node2) => {
-        let node1_root = union_find_utils.find_parent(node1);
-        let node2_root =  union_find_utils.find_parent(node2);
-        if (node1_root.index === node2_root.index) {
-            node2_root.parent = node1_root;
-        }
+    generate_reverse_edges: (edges) => {
+
     }
 };
 
 const chance = {
-    between:  (min, max) => {
-        return Math.floor(Math.random() * (max-min) + min) + 1;
+    between: (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min) + 1;
     }
 };

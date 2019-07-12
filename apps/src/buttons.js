@@ -13,6 +13,8 @@ const algorithm_buttons = {
 const new_graph = document.getElementById('new_graph')
 new_graph.addEventListener('click', () => {
     clear_canvas();
+    end_animation();
+    state.frames.length = 0;
     state.graph = new Graph(state);
     draw_graph(state.graph);
 });

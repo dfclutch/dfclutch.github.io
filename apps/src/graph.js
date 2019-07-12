@@ -35,7 +35,10 @@
  */
 function Graph(state) {
     if (state) {
-        switch (state.graph_type) {
+        this.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth);
+        this.nodes = generate.nodes[state.graph_type](state.branching_factor, state.depth);
+        this.edges = generate.edges[state.graph_type](this);
+        /*switch (state.graph_type)
             case GRAPH_TYPES.TREE:
                 this.a_matrix = generate.a_matrix.tree(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.tree(state.branching_factor, state.depth);
@@ -48,14 +51,15 @@ function Graph(state) {
                 break;
             case GRAPH_TYPES.DIR_SIMPLE:
                 break;
-            case GRAPH_TYPES.EDGE_WEIGHTED:
-                this.a_matrix = generate.a_matrix.edge_weighted(state.branching_factor, state.depth);
+            case GRAPH_TYPES.NETWORK_FLOW:
+                this.a_matrix = generate.a_matrix.network_flow(state.branching_factor, state.depth);
                 this.nodes = generate.nodes.undirected_simple(state.branching_factor, state.depth);
                 this.edges = generate.weighted_edges(this);
                 break;
             default:
                 break;
-        }
+        }*/
+        console.log(this);
     } else {
         this.a_matrix = [];
         this.nodes = [];
@@ -85,7 +89,7 @@ function get_all_children(nodes) {
     let connected = [];
     nodes.forEach(node => {
         let children = get_children(node);
-        connected.push(children);
+        connected.concat(children);
     });
 }
 
@@ -141,7 +145,7 @@ function total_edge_weight() {
     let total = 0;
     state.graph.edges.forEach(edge => {
         total += edge.euclid_dist;
-    })
+    });
     return total;
 }
 

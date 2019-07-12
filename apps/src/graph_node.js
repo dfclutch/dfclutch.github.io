@@ -5,10 +5,7 @@
  */
 
 function GraphNode(x, y, index, color, text) {
-    this.coord = {
-        x,
-        y
-    };
+    this.coord = {x, y};
     this.color = color || COLORS.BLACK;
     this.text = text || '';
     this.index = index;
@@ -26,7 +23,12 @@ function GraphNode(x, y, index, color, text) {
             state.context.fillText(text, this.coord.x - 3 * state.node_size, this.coord.y + state.node_size);
         }
     };
+
     this.equals = (node) => {
         return this.index === node.index;
-    }
+    };
+
+    this.distance_to = (node) => {
+        return Math.sqrt(Math.pow(node.coord.x - this.coord.x, 2) + Math.pow(node.coord.y - this.coord.y, 2))
+    };
 }
