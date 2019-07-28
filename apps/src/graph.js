@@ -38,7 +38,6 @@ function Graph(state) {
         this.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth);
         this.nodes = generate.nodes[state.graph_type](state.branching_factor, state.depth);
         this.edges = generate.edges[state.graph_type](this);
-
     } else {
         this.a_matrix = [];
         this.nodes = [];
