@@ -334,7 +334,7 @@ graph_type_update = function() {
 /**********			Event listener Registration			**********/
 
 /*
-* Get initial branching factor and depth, register event listeners for buttons
+* Get initial branching factor and depth, register event listeners for algorithm_buttons
 */
 let branching_factor_element = document.getElementById("branching");
 let branching_factor = branching_factor_element.valueAsNumber;
@@ -404,7 +404,7 @@ function generate_nodes() {
 		case "nice":
 			generate_nice_graph();
 			break;
-		case "edge_weighted":
+		case "network_flow":
 			generate_random_graph();
 			break;
 		default:
@@ -425,7 +425,7 @@ function generate_edges() {
 		case "nice":
 			generate_random_edge_set();
 			break;
-		case "edge_weighted":
+		case "network_flow":
 			generate_random_edge_set();
 			generate_edge_weights();
 			break;
@@ -475,7 +475,7 @@ function minimax_animation() {
 function maxflow_animation() {
 	end_animation();
 	switch(graph_type) {
-		case "edge_weighted":
+		case "network_flow":
 			ew_maxflow_animation();
 	}
 }
@@ -515,7 +515,7 @@ function update_options() {
 			branching_factor_element.value = branching_factor = 2;
 			undirected = true;
 			break;
-		case "edge_weighted":
+		case "network_flow":
 			bfs_start_button.style.textDecoration = "line-through";
 			dfs_start_button.style.textDecoration = "line-through";
 			mini_start_button.style.textDecoration = "line-through";
