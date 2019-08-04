@@ -51,7 +51,7 @@ const animators = {
                 break;
             }
 
-            let children = get_children(current.node);
+            let children = get_children(current.node, state.graph, state.graph);
             children.forEach((child) => {
                 if (!animator_utils.visited(child, closed)) {
                     open.push({
@@ -135,7 +135,7 @@ const animators = {
                 break;
             }
 
-            let children = get_children(current.node).reverse();
+            let children = get_children(current.node, state.graph).reverse();
             children.forEach((child) => {
                 if (!animator_utils.visited(child, closed)) {
                     open.unshift({
@@ -182,17 +182,20 @@ const animators = {
         let path_exists = true;
         let edges = animator_utils.generate_reverse_edges(state.graph.edges);
 
-        while(path_exists) {
-            path = animator_utils.find_aug_path(edges, source, sink);
+        while (path_exists) {
+            path = animator_utils.find_aug_path(edges, source, sink, state.graph);
 
-            if (path[sink.index] === null) {path_exists = false; break;}
+            if (path[sink.index] === null) {
+                path_exists = false;
+                break;
+            }
             //find min flow
             let increment = Infinity;
-            for(let edge = path[sink.nodes.end.index]; edge != null; edge = path[edge.nodes.start.index]) {
+            for (let edge = path[sink.nodes.end.index]; edge != null; edge = path[edge.nodes.start.index]) {
                 if ((edge.cap() - edge.flow) < increment) increment = edge.cap() - edge.flow;
             }
             //update edges by increment
-            for(let edge = path[sink.index]; edge != null; edge = path[edge.start]) {
+            for (let edge = path[sink.index]; edge != null; edge = path[edge.start]) {
                 edge.flow += increment;
                 edge.reverse.flow -= increment;
             }
@@ -203,7 +206,7 @@ const animators = {
         draw_graph(state.graph);
         resetFrames();
         let frame_graph = new Graph();
-        let starting_index = chance.between(0, state.graph.nodes.length -1);
+        let starting_index = chance.between(0, state.graph.nodes.length - 1);
         let mst =
             {
                 nodes: [state.graph.nodes[starting_index]],
@@ -222,15 +225,15 @@ const animators = {
         let esc = 0;
         let cumulative_weight = 0;
         let graph_total_weight = Math.floor(total_edge_weight());
-        while(mst.nodes.length !== state.graph.nodes.length && esc < state.graph.edges.length) {
+        while (mst.nodes.length !== state.graph.nodes.length && esc < state.graph.edges.length) {
             esc++;
             frame_graph = new Graph();
-            let edges = get_all_connected_edges(mst.nodes);
+            let edges = get_all_connected_edges(mst.nodes, state.graph);
             let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
-            for(let i = 0; i < sorted_edges.length; i++) {
+            for (let i = 0; i < sorted_edges.length; i++) {
                 let lowest_cost_edge = sorted_edges[i];
                 let new_node = !(includes_node(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
-                if(!includes_node(new_node, mst.nodes)) {
+                if (!includes_node(new_node, mst.nodes)) {
                     mst.nodes.push(new_node);
                     mst.edges.push(lowest_cost_edge);
                     cumulative_weight += lowest_cost_edge.euclid_dist;
@@ -266,5 +269,79 @@ const animators = {
             `Cumulative Weight: ${Math.floor(cumulative_weight)}<br>Total Graph Weight: ${graph_total_weight}`);
         state.frames.push(frame_graph);
         animate();
+    },
+    primEuclid: async () => {
+        let localGraph = state.graph;
+        state.graph = {nodes: state.graph.nodes, edges: []};
+        localGraph.a_matrix = generate.a_matrix[`${GRAPH_TYPES.UND_SIMPLE}_complete`](state.branching_factor, state.depth);
+        localGraph.edges = generate.edges.standard(localGraph);
+        draw_nodes(localGraph.nodes);
+        resetFrames();
+        let frame_graph = new Graph();
+        let starting_index = chance.between(0, localGraph.nodes.length - 1);
+        let mst =
+            {
+                nodes: [localGraph.nodes[starting_index]],
+                edges: []
+            };
+        animator_utils.color_graph_nodes(
+            frame_graph,
+            [
+                {
+                    nodes: mst.nodes,
+                    color: COLORS.RED
+                }
+            ]
+        );
+        state.frames.push(frame_graph);
+        let esc = 0;
+        let cumulative_weight = 0;
+        let graph_total_weight = Math.floor(total_edge_weight());
+        while (mst.nodes.length !== localGraph.nodes.length && esc < localGraph.edges.length) {
+            esc++;
+            frame_graph = new Graph();
+            let edges = get_all_connected_edges(mst.nodes, localGraph);
+
+            let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
+            for (let i = 0; i < sorted_edges.length; i++) {
+                let lowest_cost_edge = sorted_edges[i];
+                let new_node = !(includes_node(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
+                if (!includes_node(new_node, mst.nodes)) {
+                    mst.nodes.push(new_node);
+                    mst.edges.push(lowest_cost_edge);
+                    cumulative_weight += lowest_cost_edge.euclid_dist;
+                    break;
+                }
+            }
+            animator_utils.color_graph_nodes(frame_graph,
+                [
+                    {
+                        nodes: mst.nodes,
+                        color: COLORS.RED
+                    }]);
+            animator_utils.color_graph_edges(frame_graph,
+                [{
+                    edges: mst.edges,
+                    color: COLORS.RED
+                }]);
+            state.frames.push(frame_graph);
+        }
+        frame_graph = new Graph();
+        animator_utils.color_graph_nodes(frame_graph,
+            [
+                {
+                    nodes: mst.nodes,
+                    color: COLORS.BLUE
+                }]);
+        animator_utils.color_graph_edges(frame_graph,
+            [{
+                edges: mst.edges,
+                color: COLORS.BLUE
+            }]);
+        output_text(
+            `Cumulative Weight: ${Math.floor(cumulative_weight)}<br>Total Graph Weight: ${graph_total_weight}`);
+        state.frames.push(frame_graph);
+        await animate();
+        state.graph = new Graph(state);
     }
 };

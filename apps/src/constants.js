@@ -67,8 +67,12 @@ const ALGORITHMS = {
             animator: animators.dfs
         },
         prim: {
-            name: "[beta] Min. Span Tree",
+            name: "Minimum Span Tree",
             animator: animators.prim
+        },
+        primEuclid: {
+            name: "[Beta] Euclidean Min. Span Tree",
+            animator: animators.primEuclid
         }
     },
     [GRAPH_TYPES.NETWORK_FLOW]: {

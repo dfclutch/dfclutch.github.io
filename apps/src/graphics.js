@@ -5,29 +5,40 @@
  */
 
 function animate() {
-    state.currently_animating = true;
-    state.animation_timer = setInterval(() => {
-        if(state.frames.length === 0) {
-            state.currently_animating = false;
-            end_animation();
-        } else {
-            clear_canvas();
-            draw_graph(state.graph);
-            draw_graph(state.frames.shift());
-        }
-    }, state.speed);
+    return new Promise((res, rej) => {
+        state.currently_animating = true;
+        state.animation_timer = setInterval(() => {
+            if(state.frames.length === 0) {
+                state.currently_animating = false;
+                end_animation();
+                res();
+            } else {
+                clear_canvas();
+                draw_graph(state.graph);
+                draw_graph(state.frames.shift());
+            }
+        }, state.speed);
+    });
+
 }
 
 /*
 *   Draw A Graph Object
  */
 function draw_graph(graph) {
-    graph.edges.forEach((edge) => {
-        edge.draw();
-    });
+    draw_edges(graph.edges);
+    draw_nodes(graph.nodes);
+}
 
-    graph.nodes.forEach((node) => {
+function draw_nodes(nodes) {
+    nodes.forEach((node) => {
         node.draw();
+    });
+}
+
+function draw_edges(edges) {
+    edges.forEach((edge) => {
+        edge.draw();
     });
 }
 
@@ -42,6 +53,7 @@ function clear_canvas() {
 */
 function end_animation() {
     clearInterval(state.animation_timer);
+    state.frames = [];
 }
 
 function pause_animation() {

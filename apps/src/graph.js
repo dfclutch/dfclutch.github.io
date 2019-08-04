@@ -55,18 +55,18 @@ function includes_node(node, arr) {
     return false;
 }
 
-function get_children(node) {
+function get_children(node, graph) {
     let connected = [];
-    state.graph.a_matrix[node.index].forEach((elt, ind) => {
-        if (elt === 1) connected.push(state.graph.nodes[ind]);
+    graph.a_matrix[node.index].forEach((elt, ind) => {
+        if (elt === 1) connected.push(graph.nodes[ind]);
     });
     return connected;
 }
 
-function get_all_children(nodes) {
+function get_all_children(nodes, graph) {
     let connected = [];
     nodes.forEach(node => {
-        let children = get_children(node);
+        let children = get_children(node, graph);
         connected.concat(children);
     });
 }
@@ -81,9 +81,9 @@ function includes_edge(edge, arr) {
     return false;
 }
 
-function find_edge(node1, node2) {
-    for(let i = 0; i < state.graph.edges.length; i++) {
-        let edge = state.graph.edges[i];
+function find_edge(node1, node2, graph) {
+    for(let i = 0; i < graph.edges.length; i++) {
+        let edge = graph.edges[i];
         if (edge.nodes.start.index === node1.index ) {
             if(edge.nodes.end.index === node2.index) {
                 return edge;
@@ -96,20 +96,20 @@ function find_edge(node1, node2) {
     }
 }
 
-function get_connected_edges(node) {
+function get_connected_edges(node, graph) {
     let connected = [];
-    let children = get_children(node);
+    let children = get_children(node, graph);
     children.forEach((child) => {
-        let edge = find_edge(node, child);
+        let edge = find_edge(node, child, graph);
         connected.push(edge);
     });
     return connected;
 }
 
-function get_all_connected_edges(nodes) {
+function get_all_connected_edges(nodes, graph) {
     let connected = [];
     nodes.forEach((node) => {
-        let edges = get_connected_edges(node);
+        let edges = get_connected_edges(node, graph);
         edges.forEach((edge) => {
             if(!includes_edge(edge, connected)) {
                 connected.push(edge);

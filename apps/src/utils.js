@@ -95,13 +95,13 @@ const animator_utils = {
             ordered_set.splice(index, 0, node);
         })
     },
-    find_aug_path: (edges, source, sink) => {
+    find_aug_path: (edges, source, sink, graph) => {
         //perform BFS from source to sink
         let open = [source];
-        let path = new Array(state.graph.nodes.length);
+        let path = new Array(graph.nodes.length);
         while (open.length !== 0) {
             let current = open.shift();
-            let edges = get_connected_edges(current);
+            let edges = get_connected_edges(current, graph);
 
             edges.forEach(edge => {
                 if (path[edge.nodes.end.index] === undefined && !edge.nodes.end.equals(source) && edge.cap() > edge.flow) {
