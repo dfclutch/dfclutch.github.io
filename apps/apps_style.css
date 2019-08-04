@@ -8,6 +8,7 @@
 	margin: 0px 10px;
 	padding: 5px;
 	border-radius: 10px;
+	border: 1px solid black;
 	display: inline-block;
 	float: left;
 	width: 50%;
@@ -19,6 +20,7 @@
 	margin: 10px;
 	padding-bottom: 5px;
 	border-radius: 6px;
+	border: 1px solid black;
 	max-height: 200px;
 }
 .control_set {
@@ -88,12 +90,17 @@
 /* title block */
 .title_block {
 	font-family: sans-serif;
-	background-color: #ffffff;
-	color: #333;
-	margin: 5px 0px;
-	padding: 0px 10px;
+	background-color: #888;
+	color: #000;
+	margin: 0px 0 5 0;
+	padding: 5px 5px;
 	border-radius: 10px;
+	border: 1px solid black;
 	display: block;
+}
+
+h1, h2, h3, h4 {
+	margin: 2px
 }
 
 a.in_text {
@@ -134,7 +141,7 @@ a.in_text:hover {
 /* canvas */
 canvas {
 	border-radius: 10px;
-	border: 2px solid #000;
+	border: 1px solid #000;
 	display: inline-block;
 	float: left;
 }
@@ -157,5 +164,6 @@ canvas {
 	margin: 10px 0;
 	padding: 0px 10px;
 	border-radius: 6px;
+	border: 1px solid black;
 	max-width: 100%;
 }

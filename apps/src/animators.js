@@ -271,7 +271,7 @@ const animators = {
         animate();
     },
     primEuclid: async () => {
-        const max_node_factor = 7;
+        const max_node_factor = 8;
         let localGraph = new Graph({
             branching_factor: max_node_factor,
             depth: max_node_factor,
