@@ -8,7 +8,8 @@ const GRAPH_TYPES = {
     TREE: 'tree',
     UND_SIMPLE: 'und_simple',
     DIR_SIMPLE: 'dir_simple',
-    NETWORK_FLOW: 'network_flow'
+    NETWORK_FLOW: 'network_flow',
+    COMPLETE: 'complete'
 };
 
 const CANVAS = {

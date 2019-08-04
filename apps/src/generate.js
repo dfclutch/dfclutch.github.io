@@ -49,7 +49,7 @@ const generate = {
             }
             return a_matrix;
         },
-        [`${GRAPH_TYPES.UND_SIMPLE}_complete`]: (b, d) => {
+        [GRAPH_TYPES.COMPLETE]: (b, d) => {
             const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
             let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
             for (let parent = 0; parent < num_of_nodes; parent++) {
@@ -128,9 +128,11 @@ const generate = {
             return nodes;
         },
         [GRAPH_TYPES.DIR_SIMPLE]: (b, d) => {
-            return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
         },
         [GRAPH_TYPES.NETWORK_FLOW]: (b, d) => {
+            return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
+        },
+        [GRAPH_TYPES.COMPLETE]: (b,d) => {
             return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
         }
     },
@@ -172,7 +174,10 @@ const generate = {
                 }
             });
             return edges;
-        }
+        },
+        [GRAPH_TYPES.COMPLETE]: (graph) => {
+            return generate.edges.standard(graph)
+        },
     },
 };
 

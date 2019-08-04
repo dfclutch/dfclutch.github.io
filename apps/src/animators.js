@@ -271,10 +271,13 @@ const animators = {
         animate();
     },
     primEuclid: async () => {
-        let localGraph = state.graph;
-        state.graph = {nodes: state.graph.nodes, edges: []};
-        localGraph.a_matrix = generate.a_matrix[`${GRAPH_TYPES.UND_SIMPLE}_complete`](state.branching_factor, state.depth);
-        localGraph.edges = generate.edges.standard(localGraph);
+        const max_node_factor = 7;
+        let localGraph = new Graph({
+            branching_factor: max_node_factor,
+            depth: max_node_factor,
+            graph_type: GRAPH_TYPES.COMPLETE
+        });
+        state.graph = {nodes: localGraph.nodes, edges: []};
         draw_nodes(localGraph.nodes);
         resetFrames();
         let frame_graph = new Graph();
