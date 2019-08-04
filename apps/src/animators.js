@@ -342,7 +342,7 @@ const animators = {
                 color: COLORS.BLUE
             }]);
         output_text(
-            `Cumulative Weight: ${Math.floor(cumulative_weight)}<br>Total Graph Weight: ${graph_total_weight}`);
+            `Cumulative Weight: ${Math.floor(cumulative_weight)}`);
         state.frames.push(frame_graph);
         await animate();
         state.graph = new Graph(state);
