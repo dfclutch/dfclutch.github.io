@@ -161,6 +161,12 @@
                                                class="in_text">Kruskal's Algorithm.</a>
         </p>
         <p>
+            The Euclidean Minimal Spanning Tree takes the idea of an MST and discards the constraint of following only
+            the existing edges of the graph. Instead, it will draw its own connections, choosing the absolute minimum
+            path connecting all nodes. This is equivalent to constructing an MST on a complete graph where the edge
+            weight is the length - and that is the implementation I used.
+        </p>
+        <p>
             The applications of finding the Minimal Spanning Tree on a graph are highly varied. Things like process
             optimization e.g. figuring out the best routes for delivery truck drivers, or the optimal circuit path when
             designing an electrical component. As with most graph theory problems, the applications go far beyond what

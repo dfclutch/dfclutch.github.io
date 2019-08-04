@@ -71,7 +71,7 @@ const ALGORITHMS = {
             animator: animators.prim
         },
         primEuclid: {
-            name: "[Beta] Euclidean Min. Span Tree",
+            name: "Euclidean Min. Sp. Tree",
             animator: animators.primEuclid
         }
     },
