@@ -45,16 +45,6 @@ function Graph(state) {
     }
 }
 
-function includes_node(node, arr) {
-    for(let i = 0; i < arr.length; i++) {
-        let current_node = arr[i];
-        if(node.equals(current_node)) {
-            return true;
-        }
-    }
-    return false;
-}
-
 function get_children(node, graph) {
     let connected = [];
     graph.a_matrix[node.index].forEach((elt, ind) => {
@@ -71,10 +61,10 @@ function get_all_children(nodes, graph) {
     });
 }
 
-function includes_edge(edge, arr) {
+function includes_component(component, arr) {
     for(let i = 0; i < arr.length; i++) {
-        let current_edge = arr[i];
-        if(edge.equals(current_edge)) {
+        let current_component = arr[i];
+        if(component.equals(current_component)) {
             return true;
         }
     }
@@ -111,7 +101,7 @@ function get_all_connected_edges(nodes, graph) {
     nodes.forEach((node) => {
         let edges = get_connected_edges(node, graph);
         edges.forEach((edge) => {
-            if(!includes_edge(edge, connected)) {
+            if(!includes_component(edge, connected)) {
                 connected.push(edge);
             }
         });

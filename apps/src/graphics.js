@@ -5,21 +5,25 @@
  */
 
 function animate() {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
+        state.animation_hanlder = animation_handler(res);
         state.currently_animating = true;
-        state.animation_timer = setInterval(() => {
-            if(state.frames.length === 0) {
-                state.currently_animating = false;
-                end_animation();
-                res();
-            } else {
-                clear_canvas();
-                draw_graph(state.graph);
-                draw_graph(state.frames.shift());
-            }
-        }, state.speed);
+        state.animation_timer = setInterval(state.animation_handler, state.speed);
     });
+}
 
+function animation_handler (res) {
+    return () => {
+        if (state.frames.length === 0) {
+            state.currently_animating = false;
+            end_animation();
+            res();
+        } else {
+            clear_canvas();
+            draw_graph(state.graph);
+            draw_graph(state.frames.shift());
+        }
+    }
 }
 
 /*
@@ -58,4 +62,8 @@ function end_animation() {
 
 function pause_animation() {
     clearInterval(state.animation_timer);
+}
+
+function continue_animation() {
+    setInterval(state.animation_handler, state.speed);
 }

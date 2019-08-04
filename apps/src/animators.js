@@ -171,7 +171,7 @@ const animators = {
         }
         animate();
     },
-    ford_fulkerson: () => {
+    /* ford_fulkerson: () => {
         draw_graph(state.graph);
         resetFrames();
         let frame_graph = new Graph();
@@ -201,7 +201,7 @@ const animators = {
             }
             flow += increment;
         }
-    },
+    }, */
     prim: () => {
         draw_graph(state.graph);
         resetFrames();
@@ -232,8 +232,8 @@ const animators = {
             let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
             for (let i = 0; i < sorted_edges.length; i++) {
                 let lowest_cost_edge = sorted_edges[i];
-                let new_node = !(includes_node(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
-                if (!includes_node(new_node, mst.nodes)) {
+                let new_node = !(includes_component(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
+                if (!includes_component(new_node, mst.nodes)) {
                     mst.nodes.push(new_node);
                     mst.edges.push(lowest_cost_edge);
                     cumulative_weight += lowest_cost_edge.euclid_dist;
@@ -308,8 +308,8 @@ const animators = {
             let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
             for (let i = 0; i < sorted_edges.length; i++) {
                 let lowest_cost_edge = sorted_edges[i];
-                let new_node = !(includes_node(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
-                if (!includes_node(new_node, mst.nodes)) {
+                let new_node = !(includes_component(lowest_cost_edge.nodes.end, mst.nodes)) ? lowest_cost_edge.nodes.end : lowest_cost_edge.nodes.start;
+                if (!includes_component(new_node, mst.nodes)) {
                     mst.nodes.push(new_node);
                     mst.edges.push(lowest_cost_edge);
                     cumulative_weight += lowest_cost_edge.euclid_dist;
@@ -346,5 +346,6 @@ const animators = {
         state.frames.push(frame_graph);
         await animate();
         state.graph = new Graph(state);
+        console.log(state.graph);
     }
 };

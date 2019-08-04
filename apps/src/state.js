@@ -15,6 +15,7 @@ function initState() {
     /* animation information */
     const frames = [];
     const animation_timer = null;
+    const animation_handler = null;
     const speed = 100;
     const node_size = 4;
     const currently_animating = false;
@@ -32,6 +33,7 @@ function initState() {
 
         frames,
         animation_timer,
+        animation_handler,
         speed,
         node_size,
         currently_animating,
@@ -139,7 +141,7 @@ function update(prop_to_update) {
         draw_graph(state.graph);
     } else {
         if (state.currently_animating === true) {
-            animate();
+            continue_animation();
         }
     }
     update_buttons(state);
