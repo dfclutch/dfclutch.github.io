@@ -277,6 +277,7 @@ const animators = {
             depth: max_node_factor,
             graph_type: GRAPH_TYPES.COMPLETE
         });
+        state.graph_type = GRAPH_TYPES.COMPLETE
         state.graph = {nodes: localGraph.nodes, edges: []};
         draw_nodes(localGraph.nodes);
         resetFrames();
@@ -299,7 +300,6 @@ const animators = {
         state.frames.push(frame_graph);
         let esc = 0;
         let cumulative_weight = 0;
-        let graph_total_weight = Math.floor(total_edge_weight());
         while (mst.nodes.length !== localGraph.nodes.length && esc < localGraph.edges.length) {
             esc++;
             frame_graph = new Graph();
@@ -345,6 +345,7 @@ const animators = {
             `Cumulative Weight: ${Math.floor(cumulative_weight)}`);
         state.frames.push(frame_graph);
         await animate();
+        state.graph_type = GRAPH_TYPES.UND_SIMPLE;
         state.graph = new Graph(state);
         console.log(state.graph);
     }
