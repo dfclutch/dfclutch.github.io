@@ -270,22 +270,17 @@ const animators = {
         state.frames.push(frame_graph);
         animate();
     },
-    primEuclid: async () => {
+    prim_euclid: async () => {
         const max_node_factor = 8;
-        let localGraph = new Graph({
-            branching_factor: max_node_factor,
-            depth: max_node_factor,
-            graph_type: GRAPH_TYPES.COMPLETE
-        });
-        state.graph_type = GRAPH_TYPES.COMPLETE
-        state.graph = {nodes: localGraph.nodes, edges: []};
-        draw_nodes(localGraph.nodes);
+        let local_graph = state.graph
+        state.graph = {nodes: local_graph.nodes, a_matrix: local_graph.a_matrix, edges: []};
+        draw_nodes(local_graph.nodes);
         resetFrames();
         let frame_graph = new Graph();
-        let starting_index = chance.between(0, localGraph.nodes.length - 1);
+        let starting_index = chance.between(0, local_graph.nodes.length - 1);
         let mst =
             {
-                nodes: [localGraph.nodes[starting_index]],
+                nodes: [local_graph.nodes[starting_index]],
                 edges: []
             };
         animator_utils.color_graph_nodes(
@@ -300,10 +295,10 @@ const animators = {
         state.frames.push(frame_graph);
         let esc = 0;
         let cumulative_weight = 0;
-        while (mst.nodes.length !== localGraph.nodes.length && esc < localGraph.edges.length) {
+        while (mst.nodes.length !== local_graph.nodes.length && esc < local_graph.edges.length) {
             esc++;
             frame_graph = new Graph();
-            let edges = get_all_connected_edges(mst.nodes, localGraph);
+            let edges = get_all_connected_edges(mst.nodes, local_graph);
 
             let sorted_edges = animator_utils.order_edges_by_euclid_dist(edges);
             for (let i = 0; i < sorted_edges.length; i++) {
@@ -345,8 +340,6 @@ const animators = {
             `Cumulative Weight: ${Math.floor(cumulative_weight)}`);
         state.frames.push(frame_graph);
         await animate();
-        state.graph_type = GRAPH_TYPES.UND_SIMPLE;
-        state.graph = new Graph(state);
-        console.log(state.graph);
+        state.graph = local_graph
     }
 };

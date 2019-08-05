@@ -70,16 +70,18 @@ const ALGORITHMS = {
         prim: {
             name: "Minimum Span Tree",
             animator: animators.prim
-        },
-        primEuclid: {
-            name: "Euclidean Min. Sp. Tree",
-            animator: animators.primEuclid
         }
     },
     [GRAPH_TYPES.NETWORK_FLOW]: {
         ford_fulkerson: {
             name: 'Ford Fulkerson',
             animator: animators.ford_fulkerson
+        }
+    },
+    [GRAPH_TYPES.COMPLETE]: {
+        prim_euclid: {
+            name: 'Euclidean MST',
+            animator: animators.prim_euclid
         }
     }
 };

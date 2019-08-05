@@ -56,10 +56,6 @@ function clear_canvas() {
 * ends currently running animation for updates
 */
 function end_animation() {
-    if(state.graph_type === GRAPH_TYPES.COMPLETE) {
-        state.graph_type = GRAPH_TYPES.UND_SIMPLE;
-        state.graph = new Graph(state);
-    }
     clearInterval(state.animation_timer);
     state.frames = [];
 }
