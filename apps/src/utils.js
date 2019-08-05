@@ -10,6 +10,25 @@ const animator_utils = {
             let first_index_in_last_row = generate_utils.tree_num_of_nodes(state.branching_factor, (state.depth - 1));
             let num_of_nodes_in_last_row = Math.pow(state.branching_factor, (state.depth));
             return Math.floor(Math.random() * num_of_nodes_in_last_row) + first_index_in_last_row;
+        },
+        set_d_and_b: () => {
+            page_elements.branching_factor.max = 9;
+            if (state.branching_factor === 2) {
+                page_elements.depth.max = 9;
+                page_elements.depth.value = state.depth = 6;
+            } else if (state.branching_factor < 4) {
+                page_elements.depth.max = 6;
+                page_elements.depth.value = state.depth = 3;
+            } else if (state.branching_factor < 5) {
+                page_elements.depth.max = 5;
+                page_elements.depth.value = state.depth = 3;
+            }else if (state.branching_factor < 8) {
+                page_elements.depth.max = 4;
+                page_elements.depth.value = state.depth = 2;
+            } else {
+                page_elements.depth.max = 3;
+                page_elements.depth.value = state.depth = 2;
+            }
         }
     },
     find_goal_index: () => {

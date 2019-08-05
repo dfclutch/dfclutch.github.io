@@ -66,17 +66,7 @@ function special_updates(prop_to_update) {
     switch (prop_to_update) {
         case STATE_PROPERTIES.BRANCHING_FACTOR:
             if (state.graph_type === GRAPH_TYPES.TREE) {
-                page_elements.branching_factor.max = 9;
-                if (state.branching_factor === 2) {
-                    page_elements.depth.max = 9;
-                    page_elements.depth.value = state.depth = 6;
-                } else if (state.branching_factor === 3) {
-                    page_elements.depth.max = 6;
-                    page_elements.depth.value = state.depth = 3;
-                } else if (state.branching_factor > 3) {
-                    page_elements.depth.max = 3;
-                    page_elements.depth.value = state.depth = 2;
-                }
+                animator_utils.tree.set_d_and_b();
             }
             break;
         case STATE_PROPERTIES.DENSITY:
