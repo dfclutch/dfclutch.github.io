@@ -271,7 +271,6 @@ const animators = {
         animate();
     },
     prim_euclid: async () => {
-        const max_node_factor = 8;
         let local_graph = state.graph
         state.graph = {nodes: local_graph.nodes, a_matrix: local_graph.a_matrix, edges: []};
         draw_nodes(local_graph.nodes);

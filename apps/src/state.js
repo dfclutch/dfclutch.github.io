@@ -110,13 +110,16 @@ function special_updates(prop_to_update) {
                 state.branching_factor = page_elements.branching_factor.value = 2;
                 page_elements.depth.value = state.depth = 4;
                 page_elements.depth.max = page_elements.branching_factor.max = 5;
+            } else if (state.graph_type === GRAPH_TYPES.COMPLETE){
+                page_elements.branching_factor.value = state.branching_factor = 5;
+                page_elements.depth.value = state.depth = 5;
+                page_elements.depth.max = page_elements.branching_factor.max = 8;
             } else {
                 page_elements.depth.max = 25;
                 page_elements.depth.value = state.depth = 6;
                 page_elements.branching_factor.max = 25;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
-            console.log(state.graph_type);
             state.graph = new Graph(state);
             update_buttons(state);
             clear_canvas();
