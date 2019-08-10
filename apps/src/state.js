@@ -56,7 +56,7 @@ function set_sliders(state) {
     });
 }
 
-function set_radio_buttons (state) {
+function set_radio_buttons(state) {
     page_elements.graph_type.forEach((option) => {
         option.checked = (state.graph_type === option.value);
     })
@@ -71,14 +71,16 @@ function special_updates(prop_to_update) {
             break;
         case STATE_PROPERTIES.DENSITY:
             if (state.graph_type !== GRAPH_TYPES.TREE) {
+                end_animation();
                 state.density = page_elements.density.valueAsNumber;
                 clear_canvas();
                 state.graph.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth);
                 state.graph.edges = generate.edges[state.graph_type](state.graph);
                 draw_graph(state.graph);
+                reset_output_text();
+                if (state.currently_animating) end_animation();
+                draw_graph(state.graph);
             }
-            reset_output_text();
-            if (state.currently_animating) end_animation(); draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.SPEED:
             state.speed = 500 - page_elements.speed.valueAsNumber;
@@ -100,7 +102,7 @@ function special_updates(prop_to_update) {
                 state.branching_factor = page_elements.branching_factor.value = 2;
                 page_elements.depth.value = state.depth = 4;
                 page_elements.depth.max = page_elements.branching_factor.max = 5;
-            } else if (state.graph_type === GRAPH_TYPES.COMPLETE){
+            } else if (state.graph_type === GRAPH_TYPES.COMPLETE) {
                 page_elements.branching_factor.value = state.branching_factor = 5;
                 page_elements.depth.value = state.depth = 5;
                 page_elements.depth.max = page_elements.branching_factor.max = 8;
