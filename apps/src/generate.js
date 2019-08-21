@@ -35,7 +35,7 @@ const generate = {
             const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
             let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
             for (let parent = 0; parent < num_of_nodes; parent++) {
-                let num_connected = chance.between(1, state.density) / 3;
+                let num_connected = chance.between(1, state.density) / 2;
                 let count = esc = 0;
                 while (count < num_connected && esc < num_of_nodes) {
                     let child = chance.between(0, num_of_nodes - 1);
