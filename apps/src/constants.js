@@ -70,9 +70,9 @@ const ALGORITHMS = {
             name: 'Depth First Search',
             animator: animators.dfs
         },
-        prim: {
-            name: "Minimum Span Tree",
-            animator: animators.prim
+        greedy: {
+            name: "Greedy Search",
+            animator: animators.greedy_search
         },
         a_star: {
             name: "A*",

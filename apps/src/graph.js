@@ -109,9 +109,9 @@ function get_all_connected_edges(nodes, graph) {
     return connected;
 }
 
-function total_edge_weight() {
+function total_edge_weight(edges) {
     let total = 0;
-    state.graph.edges.forEach(edge => {
+    edges.forEach(edge => {
         total += edge.euclid_dist;
     });
     return total;
