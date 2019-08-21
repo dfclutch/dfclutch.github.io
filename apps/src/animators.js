@@ -28,7 +28,7 @@ const animators = {
             let current = open.shift();
             frame_graph = new Graph();
 
-            if (current.node.index === goal_node.index) {
+            if (current.node.equals(goal_node)) {
                 success = true;
                 let path = animator_utils.find_search_path_set(current);
                 animator_utils.color_graph_nodes(frame_graph, [
@@ -398,6 +398,9 @@ const animators = {
                     color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
+                output_text(
+                    `Nodes Visited: ${closed.length}<br>Path To Goal: ${path.edges.length}`
+                );
                 break;
             }
             let connected = get_children(current, state.graph);
@@ -439,7 +442,7 @@ const animators = {
             }]);
             state.frames.push(frame_graph);
         }
-
+        if (!success) output_text('No Solution');
         animate();
     }
 };
