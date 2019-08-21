@@ -24,7 +24,7 @@ const animators = {
         });
         state.frames.push(frame_graph);
 
-        while (open.length > 0) {
+        while (open.length) {
             let current = open.shift();
             frame_graph = new Graph();
 
@@ -82,9 +82,9 @@ const animators = {
                 edges: path.edges,
                 color: COLORS.YELLOW
             }]);
-            if (!success) output_text('No Solution');
             state.frames.push(frame_graph);
         }
+        if (!success) output_text('No Solution');
         animate();
     },
     dfs: () => {
@@ -340,5 +340,106 @@ const animators = {
         state.frames.push(frame_graph);
         await animate();
         state.graph = local_graph
+    },
+    a_star: () => {
+        draw_graph(state.graph);
+        resetFrames();
+        const start = state.graph.nodes[0];
+        const goal = state.graph_type === GRAPH_TYPES.UND_SIMPLE ? state.graph.nodes[state.graph.nodes.length - 1] : state.graph.nodes[animator_utils.tree.find_goal_index()];
+        let frame_graph = new Graph();
+        let goal_node = new GraphNode(
+            goal.coord.x,
+            goal.coord.y,
+            goal.index,
+            COLORS.RED
+        );
+        let success = false;
+        frame_graph.nodes.push(goal_node);
+
+        const open = [];
+        open[0] = start;
+        const closed = [];
+        const search_path = [];
+        const f_scores = [];
+        const g_scores = [];
+        search_path[0] = {
+            node: start,
+            parent: null
+        };
+
+        for (let i = 0; i < state.graph.nodes.length; i++) {
+            f_scores[i] = g_scores[i] = Infinity;
+        }
+
+        g_scores[0] = 0;
+        f_scores[0] = start.distance_to(goal);
+
+        state.frames.push(frame_graph);
+        while (!success && open.length) {
+            frame_graph = new Graph();
+            const current = animator_utils.remove_lowest_score(open, f_scores);
+            closed.push(current);
+
+            if (current.equals(goal)) {
+                success = true;
+                let path = animator_utils.find_search_path_set(search_path[current.index]);
+                animator_utils.color_graph_nodes(frame_graph, [
+                    {
+                        nodes: closed,
+                        color: COLORS.GREEN
+                    },
+                    {
+                        nodes: path.nodes,
+                        color: COLORS.BLUE
+                    }
+                ]);
+                animator_utils.color_graph_edges(frame_graph, [{
+                    edges: path.edges,
+                    color: COLORS.BLUE
+                }]);
+                state.frames.push(frame_graph);
+                break;
+            }
+            let connected = get_children(current, state.graph);
+
+            connected.forEach(neighbor => {
+                let new_g_score = g_scores[current.index] + euclid_dist(current, neighbor);
+
+                if (!includes_component(neighbor, closed)) {
+                    open.push(neighbor)
+                }
+
+                if (new_g_score < g_scores[neighbor.index]) {
+                    search_path[neighbor.index] = {
+                        node: neighbor,
+                        parent: search_path[current.index]
+                    };
+                    g_scores[neighbor.index] = new_g_score;
+                    f_scores[neighbor.index] = new_g_score + euclid_dist(neighbor, goal);
+                }
+            });
+            let path = animator_utils.find_search_path_set(search_path[current.index]);
+
+            animator_utils.color_graph_nodes(frame_graph, [
+                {
+                    nodes: closed,
+                    color: COLORS.GREEN
+                },
+                {
+                    nodes: path.nodes,
+                    color: COLORS.YELLOW
+                },
+                {
+                    nodes: [goal],
+                    color: COLORS.RED
+                }]);
+            animator_utils.color_graph_edges(frame_graph, [{
+                edges: path.edges,
+                color: COLORS.YELLOW
+            }]);
+            state.frames.push(frame_graph);
+        }
+
+        animate();
     }
 };

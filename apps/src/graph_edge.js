@@ -48,5 +48,5 @@ function GraphEdge(start, end, color, text) {
 }
 
 function euclid_dist (start, end) {
-    return Math.sqrt(Math.pow(start.coord.x - end.coord.x, 2) + Math.pow(start.coord.y - end.coord.y, 2));
+    return start.distance_to(end);
 }

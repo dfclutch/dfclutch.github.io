@@ -43,8 +43,7 @@ const STATE_PROPERTIES = {
 const STOPPING_PROPERTIES = [
     STATE_PROPERTIES.GRAPH_TYPE,
     STATE_PROPERTIES.BRANCHING_FACTOR,
-    STATE_PROPERTIES.DEPTH,
-    STATE_PROPERTIES.DENSITY
+    STATE_PROPERTIES.DEPTH
 ];
 
 const ALGORITHMS = {
@@ -56,6 +55,10 @@ const ALGORITHMS = {
         dfs: {
             name: "Depth First Search",
             animator: animators.dfs
+        },
+        a_star: {
+            name: "A*",
+            animator: animators.a_star
         }
     },
     [GRAPH_TYPES.UND_SIMPLE]: {
@@ -70,6 +73,10 @@ const ALGORITHMS = {
         prim: {
             name: "Minimum Span Tree",
             animator: animators.prim
+        },
+        a_star: {
+            name: "A*",
+            animator: animators.a_star
         }
     },
     [GRAPH_TYPES.NETWORK_FLOW]: {

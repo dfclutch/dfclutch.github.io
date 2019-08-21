@@ -22,7 +22,7 @@ const animator_utils = {
             } else if (state.branching_factor < 5) {
                 page_elements.depth.max = 5;
                 page_elements.depth.value = state.depth = 3;
-            }else if (state.branching_factor < 8) {
+            } else if (state.branching_factor < 8) {
                 page_elements.depth.max = 4;
                 page_elements.depth.value = state.depth = 2;
             } else {
@@ -131,8 +131,38 @@ const animator_utils = {
         }
         return path;
     },
-    generate_reverse_edges: (edges) => {
+    remove_lowest_score: (nodes, scores) => {
+        let min = Infinity;
+        let lowest_node_index = -1;
+        nodes.forEach((node, index) => {
+            if (scores[node.index] < min) {
+                min = scores[node.index];
+                lowest_node_index = index;
+            }
+        });
+        return nodes.splice(lowest_node_index, 1)[0];
+    }
+};
 
+const comparator = {
+    edge_length: (e1, e2) => {
+        return e1.euclid_dist - e2.euclid_dist;
+    },
+    heuristicValue: (h) => {
+        return (a, b) => {
+            return a.h - b.h;
+        }
+    },
+    property: (prop_name) => {
+        return (a, b) => {
+            return a[prop_name] - b[prop_name];
+        }
+    }
+};
+
+const heuristic = {
+    node_euclid_dist(node, goal) {
+        node.distance_to(goal);
     }
 };
 
