@@ -6,7 +6,9 @@
 
 function Automata(state) {
 	this.Q = [];
+	this.D = [];
 	this.Q_open = true;
+	this.D_open = false;
 	this.Q.push (new QState(
 		0,
 		{
@@ -16,7 +18,7 @@ function Automata(state) {
 	));
 	
 	this.draw = () => {
-		clear_canvas(state.canvas, state.context);
+		graphics.clear_canvas(state.canvas, state.context);
 		this.Q.forEach(q_state => {
 			q_state.draw();
 		});
@@ -31,18 +33,17 @@ function Automata(state) {
 		this.draw();
 	};
 
-	this.toggle_Q = () => {
+	this.toggle_lock_Q = () => {
 		this.Q_open = !this.Q_open;
+	};
+
+	this.toggle_lock_d = () => {
+		this.D_open = !this.D_open;
+	};
+
+	this.next_state = (input) => {
+		return input;
 	}
 }
 
 
-function get_click_coord_in_canvas(event) {
-	const rect = state.canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const y = event.clientY - rect.top
-    return {
-    	x,
-    	y
-    };
-}
