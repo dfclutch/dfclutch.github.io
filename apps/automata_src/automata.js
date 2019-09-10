@@ -62,3 +62,12 @@ function Automata(state) {
 }
 
 
+function get_click_coord_in_canvas(event) {
+	const rect = state.canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+    return {
+    	x,
+    	y
+    };
+}
