@@ -16,10 +16,11 @@ function Automata(state) {
 	));
 	
 	this.draw = () => {
+		clear_canvas(state.canvas, state.context);
 		this.Q.forEach(q_state => {
 			q_state.draw();
 		});
-	}
+	};
 
 	this.add_state = (coord) => {
 		let new_state = new QState(
@@ -28,10 +29,10 @@ function Automata(state) {
 		);
 		this.Q.push(new_state);
 		this.draw();
-	}
+	};
 
-	this.lock_Q = () => {
-		this.Q_open = false;
+	this.toggle_Q = () => {
+		this.Q_open = !this.Q_open;
 	}
 }
 

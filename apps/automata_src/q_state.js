@@ -6,11 +6,11 @@
 */
 
 function QState(index, coord) {
-	this.label = `q${index + 1}`
+	this.label = `q${index + 1}`;
 	this.coord = {
 		x: coord.x,
 		y: coord.y
-	}
+	};
 	this.index = index;
 	this.draw = () => {
 		state.context.beginPath();

@@ -4,7 +4,7 @@
 *   Author: Dan Filler 6.2019
  */
 const animator_utils = {
-    /* tree specific utilities */
+    /* tree specific utils.js */
     tree: {
         find_goal_index: () => {
             let first_index_in_last_row = generate_utils.tree_num_of_nodes(state.branching_factor, (state.depth - 1));
