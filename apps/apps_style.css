@@ -24,10 +24,10 @@
 	max-height: 200px;
 }
 .control_set {
-	padding: 2px 8px;
+	padding: 3px 8px 8px 8px;
 	border-radius: 4px;
 	display: inline-block;
-	text-orientation: right;
+	text-align: left;
 }
 
 .control_button {
