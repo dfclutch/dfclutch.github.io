@@ -4,10 +4,18 @@
 *	Author: Dan Filler 6.2019
 */
 
+const map = {
+    click_mode: (value) => {
+        page_elements.click_mode.forEach((option) => {
+            if (option.checked) state.click_mode = option.value;
+        });
+    }
+};
+
 function initState() {
     /* automata information */
     const num_states = 5;
-    const automata = null;
+    const automata = {};
     
     /* animation information */
     const frames = [];
@@ -19,6 +27,7 @@ function initState() {
     /* canvas information */
     const canvas = document.getElementById("viewport");
     const context = canvas.getContext('2d');
+    const click_mode = CLICK_MODES.add_nodes;
 
     let state = {
         automata,
@@ -31,7 +40,10 @@ function initState() {
         currently_animating,
 
         canvas,
-        context
+        context,
+        click_mode,
+
+        map
     };
 
     state.automata = new Automata(state);
@@ -39,5 +51,3 @@ function initState() {
     return state;
 }
 
-function update(prop_to_update) {
-}
