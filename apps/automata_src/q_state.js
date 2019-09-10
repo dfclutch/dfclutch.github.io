@@ -14,7 +14,7 @@ function QState(index, coord) {
 	this.index = index;
 	this.draw = () => {
 		state.context.beginPath();
-        state.context.arc(this.coord.x, this.coord.y, 30, 0, 2 * Math.PI);
+        state.context.arc(this.coord.x, this.coord.y, NODE_RADIUS, 0, 2 * Math.PI);
        	state.context.stroke();
        	
         state.context.beginPath();

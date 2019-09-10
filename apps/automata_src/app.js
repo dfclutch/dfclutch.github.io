@@ -7,7 +7,7 @@ function initCanvas() {
         } else if (state.click_mode === CLICK_MODES.add_transitions) {
 
         } else if (state.click_mode === CLICK_MODES.delete) {
-
+            state.automata.delete_state(graphics.get_click_coord_in_canvas(e));
         } else {
             console.log('error: state click mode is not one of the allowed states')
         }

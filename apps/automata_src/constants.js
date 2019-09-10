@@ -15,3 +15,5 @@ const CLICK_MODES = {
     add_transitions: 'add_transitions',
     delete: 'delete'
 };
+
+const NODE_RADIUS = 30;
