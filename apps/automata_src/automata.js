@@ -10,6 +10,7 @@ function Automata(state) {
     this.Q_open = true;
     this.D_open = false;
     this.next_state_index = 1;
+    this.new_transition = {};
     this.Q.push(new QState(
         0,
         {
@@ -20,11 +21,11 @@ function Automata(state) {
 
     this.draw = () => {
         graphics.clear_canvas(state.canvas, state.context);
-        this.Q.forEach(q_state => {
-            q_state.draw();
-        });
         this.D.forEach(transition => {
             transition.draw();
+        });
+        this.Q.forEach(q_state => {
+            q_state.draw();
         });
     };
 
@@ -35,6 +36,7 @@ function Automata(state) {
         );
         this.next_state_index++;
         this.Q.push(new_state);
+
         this.draw();
     };
 
@@ -42,6 +44,23 @@ function Automata(state) {
         state.automata.Q = state.automata.Q.filter(q_state => !this._click_did_hit(coord, q_state));
 
         this.draw();
+    };
+
+    this.add_transition = (coord) => {
+        let new_node = this._clicked_node(coord);
+        if (!new_node) { return; }
+
+        if (this.new_transition.start) {
+            this.new_transition.end = new_node;
+            let transition = new Transition(this.new_transition);
+            this.D.push(transition);
+            this.new_transition = {};
+            console.log('D: ', this.D);
+            this.draw();
+        } else {
+            this.new_transition.start = new_node;
+            console.log('start: ', this.new_transition.start);
+        }
     };
 
     this.toggle_lock_Q = () => {
@@ -54,6 +73,10 @@ function Automata(state) {
 
     this.next_state = (input) => {
         return input;
+    };
+
+    this._clicked_node = (coord) => {
+        return state.automata.Q.filter(q_state => this._click_did_hit(coord, q_state))[0];
     };
 
     this._click_did_hit = (coord, q_state) => {

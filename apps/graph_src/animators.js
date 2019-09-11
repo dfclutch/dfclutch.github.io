@@ -510,7 +510,7 @@ const animators = {
             let connected = get_children(current, state.graph);
 
             connected.forEach(neighbor => {
-                let new_g_score = g_scores[current.index] + euclid_dist(current, neighbor);
+                let new_g_score = g_scores[current.index] +euclid_dist(current, neighbor);
 
                 if (!includes_component(neighbor, closed)) {
                     open.push(neighbor)

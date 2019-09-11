@@ -7,6 +7,7 @@
 const map = {
     click_mode: (value) => {
         page_elements.click_mode.forEach((option) => {
+            state.automata.new_transition = {};
             if (option.checked) state.click_mode = option.value;
         });
     }

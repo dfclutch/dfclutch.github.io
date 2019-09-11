@@ -5,7 +5,7 @@ function initCanvas() {
         if (state.click_mode === CLICK_MODES.add_nodes) {
             state.automata.add_state(graphics.get_click_coord_in_canvas(e));
         } else if (state.click_mode === CLICK_MODES.add_transitions) {
-
+            state.automata.add_transition(graphics.get_click_coord_in_canvas(e));
         } else if (state.click_mode === CLICK_MODES.delete) {
             state.automata.delete_state(graphics.get_click_coord_in_canvas(e));
         } else {
