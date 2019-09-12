@@ -12,6 +12,8 @@ function QState(index, coord) {
 		y: coord.y
 	};
 	this.index = index;
+	this.transitions = [];
+
 	this.draw = (color) => {
 		state.context.beginPath();
 		state.context.strokeStyle = color || COLORS.BLACK;

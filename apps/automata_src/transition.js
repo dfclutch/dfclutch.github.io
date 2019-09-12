@@ -10,6 +10,7 @@ const ARROW_ANGLE = 30;
 function Transition(nodes) {
     this.index = trans_index;
     trans_index++;
+
     this.nodes = nodes;
 
     this.draw = () => {
@@ -48,14 +49,12 @@ function Transition(nodes) {
 
         state.context.beginPath();
         state.context.strokeStyle = "#000";
-
         state.context.moveTo(p2.x, p2.y);
         state.context.lineTo(p3.x, p3.y);
         state.context.stroke();
         state.context.moveTo(p2.x, p2.y);
         state.context.lineTo(p4.x, p4.y);
         state.context.stroke();
-
         state.context.closePath();
     }
 }

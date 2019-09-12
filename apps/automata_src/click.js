@@ -20,20 +20,20 @@ const click = {
         state.automata.draw();
     },
     [CLICK_MODES.add_transitions]: (coord) => {
-        let new_node = _clicked_node(coord);
-        if (!new_node) {
+        let new_transition = state.automata.new_transition;
+        let clicked_node = _clicked_node(coord);
+        if (!clicked_node) {
             return;
         }
-        if (state.automata.new_transition.start) {
-            state.automata.new_transition.end = new_node;
-            let transition = new Transition(state.automata.new_transition);
+        if (new_transition.start) {
+            new_transition.end = clicked_node;
+            let transition = new Transition(new_transition);
+            new_transition.start.transitions.push(transition);
             state.automata.D.push(transition);
             state.automata.new_transition = {};
-            console.log('D: ', state.automata.D);
             state.automata.draw();
         } else {
-            state.automata.new_transition.start = new_node;
-            console.log('start: ', state.automata.new_transition.start);
+            new_transition.start = clicked_node;
         }
     },
     [CLICK_MODES.change_q0]: (coord) => {
@@ -57,4 +57,14 @@ const click = {
         state.automata.draw();
     }
 
+};
+
+const _clicked_node = (coord) => {
+    return state.automata.Q.filter(q_state => _click_did_hit(coord, q_state))[0];
+};
+
+const _click_did_hit = (coord, q_state) => {
+    const in_x_range = coord.x < q_state.coord.x + NODE_RADIUS && coord.x > q_state.coord.x - NODE_RADIUS;
+    const in_y_range = coord.y < q_state.coord.y + NODE_RADIUS && coord.y > q_state.coord.y - NODE_RADIUS;
+    return in_x_range && in_y_range;
 };
