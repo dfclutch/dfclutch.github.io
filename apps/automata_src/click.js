@@ -51,9 +51,12 @@ const click = {
             return;
         }
 
-        if (!state.automata.F.includes(clicked_node)) {
+        if (state.automata.F.includes(clicked_node)) {
+            state.automata.F = state.automata.F.filter(q => !q.equals(clicked_node));
+        } else {
             state.automata.F.push(clicked_node);
         }
+
         state.automata.draw();
     }
 
