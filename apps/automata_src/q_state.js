@@ -24,10 +24,10 @@ function QState(index, coord) {
         state.context.textAlign = "center";
         state.context.fillText(this.label, this.coord.x, this.coord.y);
 	};
-	this.draw_border = (color) => {
+	this.draw_border = (color, offset_direction) => {
 		state.context.beginPath();
 		state.context.strokeStyle = color;
-		state.context.arc(this.coord.x, this.coord.y, NODE_RADIUS + NODE_BORDER_OFFSET, 0, 2 * Math.PI);
+		state.context.arc(this.coord.x, this.coord.y, NODE_RADIUS + offset_direction * NODE_BORDER_OFFSET, 0, 2 * Math.PI);
 		state.context.stroke();
 	};
 	this.equals = (q_state) => {

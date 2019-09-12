@@ -15,6 +15,7 @@ const CLICK_MODES = {
     add_transitions: 'add_transitions',
     delete: 'delete',
     change_q0: 'change_q0',
+    add_final: 'add_final',
 };
 
 const COLORS = {
@@ -28,4 +29,4 @@ const COLORS = {
 };
 
 const NODE_RADIUS = 30;
-const NODE_BORDER_OFFSET = -4;
+const NODE_BORDER_OFFSET = 4;

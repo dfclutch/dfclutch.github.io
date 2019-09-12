@@ -7,6 +7,7 @@
 function Automata(state) {
     this.Q = [];
     this.D = [];
+    this.F = [];
     this.Q_open = true;
     this.D_open = false;
     this.next_state_index = 1;
@@ -30,8 +31,12 @@ function Automata(state) {
             q_state.draw();
 
             if(q_state.equals(this.q0)) {
-                q_state.draw_border(COLORS.GREEN)
+                q_state.draw_border(COLORS.GREEN, -1);
             }
+
+            this.F.forEach(f => {
+                if(f.equals(q_state)) q_state.draw_border(COLORS.BLACK, 1);
+            });
         });
     };
 
@@ -54,9 +59,7 @@ function Automata(state) {
 
     this.add_transition = (coord) => {
         let new_node = this._clicked_node(coord);
-        if (!new_node) {
-            return;
-        }
+        if (!new_node) { return; }
 
         if (this.new_transition.start) {
             this.new_transition.end = new_node;
@@ -76,6 +79,16 @@ function Automata(state) {
         if (!clicked_node) { return; }
 
         this.q0 = clicked_node;
+        this.draw();
+    };
+
+    this.add_final = (coord) => {
+        let clicked_node = this._clicked_node(coord);
+        if (!clicked_node) { return; }
+
+        if (!this.F.includes(clicked_node)) {
+            this.F.push(clicked_node);
+        }
         this.draw();
     };
 
