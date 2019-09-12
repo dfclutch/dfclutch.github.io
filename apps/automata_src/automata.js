@@ -19,6 +19,8 @@ function Automata(state) {
         }
     ));
 
+    this.q0 = this.Q[0];
+
     this.draw = () => {
         graphics.clear_canvas(state.canvas, state.context);
         this.D.forEach(transition => {
@@ -26,6 +28,10 @@ function Automata(state) {
         });
         this.Q.forEach(q_state => {
             q_state.draw();
+
+            if(q_state.equals(this.q0)) {
+                q_state.draw_border(COLORS.GREEN)
+            }
         });
     };
 
@@ -48,7 +54,9 @@ function Automata(state) {
 
     this.add_transition = (coord) => {
         let new_node = this._clicked_node(coord);
-        if (!new_node) { return; }
+        if (!new_node) {
+            return;
+        }
 
         if (this.new_transition.start) {
             this.new_transition.end = new_node;
@@ -61,6 +69,14 @@ function Automata(state) {
             this.new_transition.start = new_node;
             console.log('start: ', this.new_transition.start);
         }
+    };
+
+    this.change_q0 = (coord) => {
+        let clicked_node = this._clicked_node(coord);
+        if (!clicked_node) { return; }
+
+        this.q0 = clicked_node;
+        this.draw();
     };
 
     this.toggle_lock_Q = () => {

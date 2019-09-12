@@ -8,6 +8,8 @@ function initCanvas() {
             state.automata.add_transition(graphics.get_click_coord_in_canvas(e));
         } else if (state.click_mode === CLICK_MODES.delete) {
             state.automata.delete_state(graphics.get_click_coord_in_canvas(e));
+        } else if (state.click_mode === CLICK_MODES.change_q0) {
+            state.automata.change_q0(graphics.get_click_coord_in_canvas(e));
         } else {
             console.log('error: state click mode is not one of the allowed states')
         }
