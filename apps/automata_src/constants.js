@@ -11,7 +11,7 @@ const INPUT_PARAMETERS = {
 };
 
 const CLICK_MODES = {
-    add_nodes: 'add_nodes',
+    add_states: 'add_states',
     add_transitions: 'add_transitions',
     delete: 'delete',
     change_q0: 'change_q0',

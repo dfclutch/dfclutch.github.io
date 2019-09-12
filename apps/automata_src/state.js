@@ -28,7 +28,7 @@ function initState() {
     /* canvas information */
     const canvas = document.getElementById("viewport");
     const context = canvas.getContext('2d');
-    const click_mode = CLICK_MODES.add_nodes;
+    const click_mode = CLICK_MODES.add_states;
 
     let state = {
         automata,
