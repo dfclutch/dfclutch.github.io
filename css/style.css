@@ -48,7 +48,7 @@ a.in-text:active {
 a.title-link {
 	text-decoration: none;
 	color: #ededed;
-  font-family: 'Josefin Sans', sans-serif;
+  	font-family: 'Josefin Sans', sans-serif;
 }
 
 a.title-link:link{
@@ -104,7 +104,7 @@ a.in-text:active {
   display: block;
   background-color: #48545b;
   background-size: cover;
-  flex-grow: 1;
+  flex: 1 0 auto;
 }
 
 .page-home {
@@ -237,6 +237,7 @@ p {
 	color: #f2f0ea;
 	padding: 10px;
 	text-align: left;
+	flex-shrink: 0;
 }
 
 .skills-box {
@@ -271,4 +272,39 @@ p {
   clear: both;
 	width: 40%;
 	margin: auto;
+}
+
+button {
+	margin: 5px;
+	padding: 3px;
+	border: 0;
+	background-color: #5d7993;
+	box-shadow: none;
+	font-family: sans-serif;
+	text-align: center;
+	color: #fff;
+	border-radius: 4px
+}
+
+@media only screen and (max-width: 400px) {
+	.content {
+		min-width: 90%;
+	}
+	.page {
+		max-width: 100%;
+	}
+	.page-title {
+		font-size: 30px;
+	}
+	.prev,.next {
+		display: none;
+	}
+
+	.page-home {
+		font-size: 70px;
+	}
+
+	.home-content {
+		font-size: 20px;
+	}
 }

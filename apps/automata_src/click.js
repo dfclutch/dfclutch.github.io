@@ -28,8 +28,13 @@ const click = {
         if (new_transition.start) {
             new_transition.end = clicked_node;
             let transition = new Transition(new_transition);
-            new_transition.start.transitions.push(transition);
+            if (clicked_node.equals(new_transition.start)) {
+                new_transition.draw = draw_self_loop;
+            }
+
             state.automata.D.push(transition);
+
+            new_transition.start.transitions.push(transition);
             state.automata.new_transition = {};
             state.automata.draw();
         } else {

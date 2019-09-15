@@ -30,3 +30,4 @@ const COLORS = {
 
 const NODE_RADIUS = 30;
 const NODE_BORDER_OFFSET = 4;
+const TEXT_OFFSET = 20;
