@@ -171,6 +171,7 @@ a.in-text:active {
     margin: auto;
     width: 100%;
     background-color: #c4c2be;
+    border-radius: 5px;
 }
 
 .picture {
