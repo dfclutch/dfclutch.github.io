@@ -22,56 +22,49 @@ body > * {
 
 /* links */
 a.in-text {
-    color: #db7c62;
-    font-family: 'Roboto Thin', sans-serif;
+    color: #0398fc;
     text-decoration: none;
 }
 
 a.in-text:link {
     text-decoration: none;
-    color: #db7c62;
+    color: #0398fc;
 }
 
 a.in-text:visited {
-    text-decoration: none;
-    color: #db7c62;
+    text-decoration: underline;
+    color: #0398fc;
 }
 
 a.in-text:hover {
     text-decoration: underline;
-    color: #aaa;
+    color: #333;
 }
 
 a.in-text:active {
     text-decoration: none;
-    color: #aaa;
+    color: #333;
 }
 
 /* links */
 a.title-link {
-    text-decoration: none;
     color: #000;
-    font-family: 'Roboto Thin', sans-serif;
     text-transform: uppercase;
 }
 
 a.title-link:link {
-    text-decoration: none;
     color: #000;
 }
 
 a.title-link:visited {
-    text-decoration: none;
     color: #000;
 }
 
 a.title-link:hover {
-    text-decoration: underline;
-    color: #000;
+    color: #888;
 }
 
 a.in-text:active {
-    text-decoration: none;
     color: #000;
 }
 
@@ -103,10 +96,7 @@ a.in-text:active {
     margin: auto;
     text-decoration: none;
     border-radius: 6px;
-}
-
-.topnav a:hover {
-    color: #FFF;
+    opacity: .6;
 }
 
 .topnav a:nth-child(1) {
@@ -123,6 +113,16 @@ a.in-text:active {
 
 .topnav a:nth-child(4) {
     background-color: #2bc47d;
+}
+
+
+.topnav a:hover {
+    opacity: 1;
+}
+
+#topnav_selected {
+    opacity: 1;
+    border: 1px solid #a8a8a8;
 }
 
 .page {
@@ -157,7 +157,7 @@ a.in-text:active {
 
 .content {
     color: #000;
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /* background-color: #edebe3; */
     background: none;
     width: 40%;
@@ -170,7 +170,7 @@ a.in-text:active {
     padding: 25px;
     margin: auto;
     width: 100%;
-    background-color: #c4c2be;
+    background-color: #a8a8a8;
     border-radius: 5px;
 }
 
@@ -321,13 +321,17 @@ button {
     margin: 4px;
     padding: 2px 15px;
     border: 0;
-    background-color: #2bc47d;
+    background-color: #FFF;
     box-shadow: none;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     text-align: center;
-    color: #FFF;
+    color: #000;
     border-radius: 4px
+}
+
+button:hover {
+    background-color: #a8a8a8;
 }
 
 @media only screen and (max-width: 400px) {
