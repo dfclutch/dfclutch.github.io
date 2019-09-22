@@ -344,6 +344,7 @@ button:hover {
     }
 
     .page-title {
+        width: 90%;
         font-size: 30px;
     }
 
