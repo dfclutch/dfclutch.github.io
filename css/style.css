@@ -86,7 +86,7 @@ a.in-text:active {
 
 .topnav_wrapper {
     margin: 8px auto;
-    width: 40%;
+    width: 100%;
 }
 .topnav a {
     display: inline-block;
@@ -94,6 +94,7 @@ a.in-text:active {
     text-align: center;
     padding: 10px 12px;
     margin: auto;
+    width: 10%;
     text-decoration: none;
     border-radius: 6px;
     opacity: .6;
@@ -367,5 +368,7 @@ button:hover {
     .topnav a {
         padding: 8px;
         margin: auto;
+        width: 22%;
+        font-size: 14px;
     }
 }
