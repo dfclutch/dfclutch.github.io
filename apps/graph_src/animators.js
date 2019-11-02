@@ -345,7 +345,7 @@ const animators = {
         draw_graph(state.graph);
         resetFrames();
         const start = state.graph.nodes[0];
-        const goal = state.graph_type === GRAPH_TYPES.UND_SIMPLE ? state.graph.nodes[state.graph.nodes.length - 1] : state.graph.nodes[animator_utils.tree.find_goal_index()];
+        const goal = state.graph_type === GRAPH_TYPES.NICE ? state.graph.nodes[state.graph.nodes.length - 1] : state.graph.nodes[animator_utils.tree.find_goal_index()];
         let frame_graph = new Graph();
         let goal_node = new GraphNode(
             goal.coord.x,

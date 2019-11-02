@@ -169,5 +169,15 @@ const heuristic = {
 const chance = {
     between: (min, max) => {
         return Math.floor(Math.random() * (max - min) + min) + 1;
+    },
+    get_n_random_elements: (array, n) => {
+        let elements = [];
+        while (elements.length < n) {
+            let new_element = array[Math.floor(Math.random() * array.length)];
+            if (!elements.includes(new_element)) {
+                elements.push(new_element)
+            }
+        }
+        return elements
     }
 };

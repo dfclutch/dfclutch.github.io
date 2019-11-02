@@ -112,7 +112,8 @@ const generate = {
             let k = state.density;
             //get indices of k smallest elements of each node's children
             for(let parent = 0; parent < dist_matrix.length; parent++) {
-                let closest_children = generate_utils.k_smallest_children(k, dist_matrix[parent]);
+                let closest_children = generate_utils.k_smallest_children(Math.floor(k * 1.5), dist_matrix[parent]);
+                closest_children = chance.get_n_random_elements(closest_children, k);
                 console.log(closest_children);
                 closest_children.forEach(child => {
                     a_matrix[parent][child] = 1;

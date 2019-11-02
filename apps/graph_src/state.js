@@ -105,9 +105,9 @@ function special_updates(prop_to_update) {
                 page_elements.depth.value = state.depth = 5;
                 page_elements.depth.max = page_elements.branching_factor.max = 8;
             } else {
-                page_elements.depth.max = 25;
+                page_elements.depth.max = 15;
                 page_elements.depth.value = state.depth = 6;
-                page_elements.branching_factor.max = 25;
+                page_elements.branching_factor.max = 15;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
             state.graph = new Graph(state);
