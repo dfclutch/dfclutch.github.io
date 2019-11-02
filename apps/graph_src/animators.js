@@ -360,24 +360,24 @@ const animators = {
         open[0] = start;
         const closed = [];
         const search_path = [];
-        const f_scores = [];
-        const g_scores = [];
+        const cumulative_score = [];
+        const path_cost = [];
         search_path[0] = {
             node: start,
             parent: null
         };
 
         for (let i = 0; i < state.graph.nodes.length; i++) {
-            f_scores[i] = g_scores[i] = Infinity;
+            cumulative_score[i] = path_cost[i] = Infinity;
         }
 
-        g_scores[0] = 0;
-        f_scores[0] = start.distance_to(goal);
+        path_cost[0] = 0;
+        cumulative_score[0] = start.distance_to(goal);
 
         state.frames.push(frame_graph);
         while (!success && open.length) {
             frame_graph = new Graph();
-            const current = animator_utils.remove_lowest_score(open, f_scores);
+            const current = animator_utils.remove_lowest_score(open, cumulative_score);
             closed.push(current);
 
             if (current.equals(goal)) {
@@ -406,19 +406,19 @@ const animators = {
             let connected = get_children(current, state.graph);
 
             connected.forEach(neighbor => {
-                let new_g_score = g_scores[current.index] + euclid_dist(current, neighbor);
+                let new_score = path_cost[current.index] + euclid_dist(current, neighbor);
 
                 if (!includes_component(neighbor, closed)) {
                     open.push(neighbor)
                 }
 
-                if (new_g_score < g_scores[neighbor.index]) {
+                if (new_score < path_cost[neighbor.index]) {
                     search_path[neighbor.index] = {
                         node: neighbor,
                         parent: search_path[current.index]
                     };
-                    g_scores[neighbor.index] = new_g_score;
-                    f_scores[neighbor.index] = new_g_score + euclid_dist(neighbor, goal);
+                    path_cost[neighbor.index] = new_score;
+                    cumulative_score[neighbor.index] = new_score + euclid_dist(neighbor, goal);
                 }
             });
             let path = animator_utils.find_search_path_set(search_path[current.index]);
