@@ -9,7 +9,7 @@ function initState() {
     const graph_type = GRAPH_TYPES.TREE;
     const branching_factor = 2;
     const depth = 6;
-    const density = 2;
+    const density = 4;
     const graph = {};
 
     /* animation information */
