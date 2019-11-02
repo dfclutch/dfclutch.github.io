@@ -76,23 +76,8 @@ const generate = {
             }
             return a_matrix;
         },
-        [GRAPH_TYPES.NETWORK_FLOW]: (b, d) => {
-            const num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
-            let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
-            for (let parent = 0; parent < num_of_nodes; parent++) {
-                let num_connected = chance.between(1, state.density);
-                let count = esc = 0;
-                while (count < num_connected && esc < num_of_nodes) {
-                    let child = chance.between(0, num_of_nodes - 1);
-                    if (child !== parent && a_matrix[parent][child] === 0) {
-                        a_matrix[parent][child] = 1;
-                        a_matrix[child][parent] = -1;
-                        count++;
-                    }
-                    esc++;
-                }
-            }
-            return a_matrix;
+        [GRAPH_TYPES.NETWORK_FLOW]: (b, d, nodes) => {
+            return (generate.a_matrix.nice(b,d, nodes));
         },
         [GRAPH_TYPES.NICE]: (b, d, nodes) => {
             let num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
@@ -114,9 +99,9 @@ const generate = {
             for(let parent = 0; parent < dist_matrix.length; parent++) {
                 let closest_children = generate_utils.k_smallest_children(Math.floor(k * 1.5), dist_matrix[parent]);
                 closest_children = chance.get_n_random_elements(closest_children, k);
-                console.log(closest_children);
                 closest_children.forEach(child => {
                     a_matrix[parent][child] = 1;
+                    a_matrix[child][parent] = 1;
                 });
             }
             return a_matrix;
@@ -233,9 +218,22 @@ const generate_utils = {
     },
     //return indices of k smallest children as an array of length k
     k_smallest_children(k, dist_array) {
-        function sort_val(o1, o2) {
-            return o1.value - o2.value;
+        //sort for when guaranteed only last element is in wrong place
+        //O(n) - pretty good to me
+        function advantage_sort(array) {
+            let sorted_array = array.slice(0);
+            let pos = sorted_array.length - 1;
+            while( pos > 0 && sorted_array[pos].value <= sorted_array[pos - 1].value) {
+                let t = sorted_array[pos];
+                sorted_array[pos] = sorted_array[pos - 1];
+                sorted_array[pos - 1] = t;
+                pos--;
+            }
+            return sorted_array;
         }
+
+        //simple ordering function for objects used here
+        function sort_val(o1, o2) { return o1.value - o2.value; }
 
         let smallest_array = [];
         for(let i = 0; i < dist_array.length; i++) {
@@ -244,8 +242,9 @@ const generate_utils = {
                     index: i,
                     value: dist_array[i]
                 });
+                smallest_array = smallest_array.sort(sort_val);
             } else {
-                smallest_array.sort(sort_val);
+                smallest_array = advantage_sort(smallest_array);
                 //if current is smaller than largest value in arr, remove and add current
                 if (dist_array[i] < smallest_array[smallest_array.length - 1].value) {
                     smallest_array[smallest_array.length - 1] = {

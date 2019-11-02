@@ -70,23 +70,30 @@
 </div>
 <div class="info">
     <div class="info_block">
-        <p>A set of live-animated, fully tweakable graph algorithm visualizations. Here are some of the plans I have for
-            future development on this site:</p>
+        <p>A set of live-animated, fully tweakable graph algorithm visualizations. Current features:</p>
         <br>
         <em>Types of graphs</em>
         <ul>
-            <li>Undirected Simple Graphs</li>
-            <li>Directed Graphs</li>
-            <li>Edge weighted (network flow graph)</li>
-            <li>Nice Graph (grid node positions to be easier to see)</li>
+            <li>Trees - n-ary complete trees</li>
+            <li>Undirected Simple Graphs - randomly spaced nodes, with random-ish edges (see "Nice graph" below</li>
+            <li>Directed Graphs - Undirected Simple Graphs with directionality on edges [not implemented currently]</li>
+            <li>Edge weighted - Undirected Simple Graphs with randomized edge weights and corresponding line thickness
+            </li>
         </ul>
         <em>Algorithms</em>
         <ul>
             <li>Breadth First/Depth First Search</li>
-            <li>Maxflow (Ford Fulkerson probably)</li>
-            <li>Hamiltonian Path</li>
+            <li>Maxflow (Not yet implemented, Ford Fulkerson probably)</li>
             <li>Minimum Spanning Tree (Prim's)</li>
-            <li>Some coloring algorithms</li>
+        </ul>
+        <em>Settings</em>
+        <ul>
+            <li><em>Branching Factor / Depth</em> - For trees, these represent the number of children of each node and number of
+                layers in the tree. For other graphs, they are simply multiplied together to get the number of nodes
+            </li>
+            <li><em>Density</em> - For all graph types except trees, controls the approximate number of edges in the graph</li>
+            <li><em>Node Size</em> - Size of nodes in graph</li>
+            <li><em>Speed</em> - Speed of animation (higher on slider is fewer ms between frame)</li>
         </ul>
     </div>
 

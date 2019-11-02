@@ -88,6 +88,10 @@ const ALGORITHMS = {
         ford_fulkerson: {
             name: 'Ford Fulkerson',
             animator: animators.ford_fulkerson
+        },
+        dfs: {
+            name: 'Breadth First Search',
+            animator: animators.bfs
         }
     },
     [GRAPH_TYPES.COMPLETE]: {
