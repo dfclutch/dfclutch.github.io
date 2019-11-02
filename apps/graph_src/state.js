@@ -74,7 +74,8 @@ function special_updates(prop_to_update) {
                 end_animation();
                 state.density = page_elements.density.valueAsNumber;
                 clear_canvas();
-                state.graph = new Graph(state);
+                state.graph.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth, state.graph.nodes);
+                state.graph.edges = generate.edges[state.graph_type](state.graph);
                 reset_output_text();
                 if (state.currently_animating) end_animation();
                 draw_graph(state.graph);
