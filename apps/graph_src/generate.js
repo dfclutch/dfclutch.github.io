@@ -131,9 +131,14 @@ const generate = {
         [GRAPH_TYPES.UND_SIMPLE]: (b, d) => {
             const nodes = [];
             let num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
+            
+            function offset() {
+                return Math.floor((MAX_NUM_NODES - num_of_nodes) / 2) + 50;
+            }
+                        
             for (let i = 0; i < num_of_nodes; i++) {
-                let x_pos = Math.floor((Math.random() * (state.canvas.width - 50) * 20 + 50) / 20);
-                let y_pos = Math.floor((Math.random() * (state.canvas.height - 50) * 10 + 50) / 10);
+                let x_pos = chance.between(offset(), state.canvas.width - offset());
+                let y_pos = chance.between(offset(), state.canvas.height - offset());
                 let current_node = new GraphNode(x_pos, y_pos, i);
                 nodes.push(current_node);
             }

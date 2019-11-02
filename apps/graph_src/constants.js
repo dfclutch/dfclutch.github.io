@@ -1,5 +1,5 @@
 const MAX_FLOW_CAP = 15;
-
+const MAX_NUM_NODES = 15 * 15;
 const EDGE_WEIGHT_REDUCTION_FACTOR = 2;
 
 const NO_ACTION = 'This Does Nothing';
