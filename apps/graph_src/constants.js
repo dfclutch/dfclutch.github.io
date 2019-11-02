@@ -9,7 +9,8 @@ const GRAPH_TYPES = {
     UND_SIMPLE: 'und_simple',
     DIR_SIMPLE: 'dir_simple',
     NETWORK_FLOW: 'network_flow',
-    COMPLETE: 'complete'
+    COMPLETE: 'complete',
+    NICE: 'nice'
 };
 
 const CANVAS = {
@@ -61,7 +62,7 @@ const ALGORITHMS = {
             animator: animators.a_star
         }
     },
-    [GRAPH_TYPES.UND_SIMPLE]: {
+    [GRAPH_TYPES.NICE]: {
         bfs: {
             name: 'Breadth First Search',
             animator: animators.bfs

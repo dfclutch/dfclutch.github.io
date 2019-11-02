@@ -93,6 +93,32 @@ const generate = {
                 }
             }
             return a_matrix;
+        },
+        [GRAPH_TYPES.NICE]: (b, d, nodes) => {
+            let num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
+            // make matrix size of adj. matrix to hold distances for each pair of node
+            let dist_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
+            let a_matrix = generate_utils.generate_new_a_matrix(num_of_nodes);
+            //calculate all euclidean distances
+            for (let i = 0; i < dist_matrix.length; i++) {
+                for (let j = 0; j < dist_matrix.length; j++) {
+                    let dist = Infinity;
+                    if (i !== j) {
+                        dist = euclid_dist(nodes[i], nodes[j]); // don't want self-relations
+                    }
+                    dist_matrix[i][j] = dist;
+                }
+            }
+            let k = state.density;
+            //get indices of k smallest elements of each node's children
+            for(let parent = 0; parent < dist_matrix.length; parent++) {
+                let closest_children = generate_utils.k_smallest_children(k, dist_matrix[parent]);
+                console.log(closest_children);
+                closest_children.forEach(child => {
+                    a_matrix[parent][child] = 1;
+                });
+            }
+            return a_matrix;
         }
     },
     nodes: {
@@ -132,7 +158,10 @@ const generate = {
         [GRAPH_TYPES.NETWORK_FLOW]: (b, d) => {
             return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
         },
-        [GRAPH_TYPES.COMPLETE]: (b,d) => {
+        [GRAPH_TYPES.COMPLETE]: (b, d) => {
+            return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
+        },
+        [GRAPH_TYPES.NICE]: (b, d) => {
             return (generate.nodes[GRAPH_TYPES.UND_SIMPLE](b, d));
         }
     },
@@ -149,7 +178,7 @@ const generate = {
                         edges.push(new_edge);
                     } else if (is_connected === -1) {
                         //this is done to not create duplicated edges when I want single bidirectional edges
-                        matrix[parent_index][child_index] = 1
+                        matrix[parent_index][child_index] = 1;
                     }
                 });
             });
@@ -178,6 +207,9 @@ const generate = {
         [GRAPH_TYPES.COMPLETE]: (graph) => {
             return generate.edges.standard(graph)
         },
+        [GRAPH_TYPES.NICE]: (graph) => {
+            return generate.edges.standard(graph)
+        },
     },
 };
 
@@ -197,5 +229,31 @@ const generate_utils = {
             }
         }
         return a_matrix;
+    },
+    //return indices of k smallest children as an array of length k
+    k_smallest_children(k, dist_array) {
+        function sort_val(o1, o2) {
+            return o1.value - o2.value;
+        }
+
+        let smallest_array = [];
+        for(let i = 0; i < dist_array.length; i++) {
+            if (smallest_array.length < k) {
+                smallest_array.push({
+                    index: i,
+                    value: dist_array[i]
+                });
+            } else {
+                smallest_array.sort(sort_val);
+                //if current is smaller than largest value in arr, remove and add current
+                if (dist_array[i] < smallest_array[smallest_array.length - 1].value) {
+                    smallest_array[smallest_array.length - 1] = {
+                        index: i,
+                        value: dist_array[i]
+                    }
+                }
+            }
+        }
+        return smallest_array.map(elt => elt.index);
     }
 };
