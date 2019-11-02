@@ -133,7 +133,8 @@ const generate = {
             let num_of_nodes = generate_utils.gen_num_of_nodes(b, d);
             
             function offset() {
-                return Math.floor((MAX_NUM_NODES - num_of_nodes) / 2) + 50;
+                return state.graph_type === GRAPH_TYPES.COMPLETE ? 64 - num_of_nodes + 50 :
+                    Math.floor((MAX_NUM_NODES - num_of_nodes) / 2) + 50;
             }
                         
             for (let i = 0; i < num_of_nodes; i++) {
