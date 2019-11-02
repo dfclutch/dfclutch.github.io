@@ -41,6 +41,7 @@
                 <input class="control_button" type="button" id="btn_2" value="This Does Nothing">
                 <input class="control_button" type="button" id="btn_3" value="This Does Nothing">
                 <input class="control_button" type="button" id="btn_4" value="This Does Nothing">
+                <input class="control_button" type="button" id="btn_5" value="This Does Nothing">
             </div>
             <div class="control_set">
                 <h5 id="text_output">text output</h5>
@@ -69,7 +70,8 @@
 </div>
 <div class="info">
     <div class="info_block">
-        <p>A set of live-animated, fully tweakable graph algorithm visualizations. Here are some of the plans I have for future development on this site:</p>
+        <p>A set of live-animated, fully tweakable graph algorithm visualizations. Here are some of the plans I have for
+            future development on this site:</p>
         <br>
         <em>Types of graphs</em>
         <ul>
@@ -176,7 +178,14 @@
         </p>
         <p><em><strong>Nice Graphs:</strong></em></p>
         <p>
-            A long standing problem with this site has been producing random graphs that are structured such that the intuition for what each algorithm does is clear. I refer to this as the "Nice" Graph Problem. Because there is no definition for niceness, I have implemented an algorithm for generating graphs that at least look somewhat organized. I call the current implementation <em>soft k-nearest neighbor.</em> This implementation connects each node to <em>k</em> nearby nodes, however, they are not necessarily the closest <em>k</em> nodes. Instead, the <em>k * 1.5</em> nearest are found and then a random <em>k</em> subset of those nearby nodes are selected. This produces graphs that are generally clustered by proximity but includes some variation for visual interest.
+            A long standing problem with this site has been producing random graphs that are structured such that the
+            intuition for what each algorithm does is clear. I refer to this as the "Nice" Graph Problem. Because there
+            is no definition for niceness, I have implemented an algorithm for generating graphs that at least look
+            somewhat organized. I call the current implementation <em>soft k-nearest neighbor.</em> This implementation
+            connects each node to <em>k</em> nearby nodes, however, they are not necessarily the closest <em>k</em>
+            nodes. Instead, the <em>k * 1.5</em> nearest are found and then a random <em>k</em> subset of those nearby
+            nodes are selected. This produces graphs that are generally clustered by proximity but includes some
+            variation for visual interest.
         </p>
     </div>
 </div>

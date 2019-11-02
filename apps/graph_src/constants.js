@@ -78,6 +78,10 @@ const ALGORITHMS = {
         a_star: {
             name: "A*",
             animator: animators.a_star
+        },
+        prim_euclid: {
+            name: "Prim MST",
+            animator: animators.prim_euclid
         }
     },
     [GRAPH_TYPES.NETWORK_FLOW]: {
@@ -88,7 +92,7 @@ const ALGORITHMS = {
     },
     [GRAPH_TYPES.COMPLETE]: {
         prim_euclid: {
-            name: 'Euclidean MST',
+            name: 'Min Spanning Tree',
             animator: animators.prim_euclid
         }
     }

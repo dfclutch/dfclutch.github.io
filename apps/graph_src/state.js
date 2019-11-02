@@ -17,7 +17,7 @@ function initState() {
     const animation_timer = null;
     const animation_handler = null;
     const speed = 100;
-    const node_size = 4;
+    const node_size = 6;
     const currently_animating = false;
 
     /* canvas information */

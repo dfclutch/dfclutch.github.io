@@ -9,8 +9,10 @@ const algorithm_buttons = {
     btn_2: document.getElementById('btn_2'),
     btn_3: document.getElementById('btn_3'),
     btn_4: document.getElementById('btn_4'),
+    btn_5: document.getElementById('btn_5'),
+
 };
-const new_graph = document.getElementById('new_graph')
+const new_graph = document.getElementById('new_graph');
 new_graph.addEventListener('click', () => {
     clear_canvas();
     end_animation();
