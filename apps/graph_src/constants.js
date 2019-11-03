@@ -58,7 +58,7 @@ const ALGORITHMS = {
             animator: animators.dfs
         },
         a_star: {
-            name: "A*",
+            name: "A* [beta]",
             animator: animators.a_star
         }
     },
@@ -76,7 +76,7 @@ const ALGORITHMS = {
             animator: animators.greedy_search
         },
         a_star: {
-            name: "A*",
+            name: "A* [beta]",
             animator: animators.a_star
         },
         prim_euclid: {
@@ -88,6 +88,10 @@ const ALGORITHMS = {
         ford_fulkerson: {
             name: 'Ford Fulkerson',
             animator: animators.ford_fulkerson
+        },
+        live_network: {
+          name: 'Live Network',
+          animator: animators.live_network
         },
         dfs: {
             name: 'Breadth First Search',

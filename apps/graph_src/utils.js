@@ -31,13 +31,6 @@ const animator_utils = {
             }
         }
     },
-    find_goal_index: () => {
-        if (state.graph_type === GRAPH_TYPES.TREE) {
-            return animator_utils.tree.find_goal_index();
-        }
-
-        return state.graph.nodes.length - 1;
-    },
     find_search_path_set: (path_element) => {
         let nodes = [];
         let edges = [];
@@ -54,7 +47,7 @@ const animator_utils = {
             );
         }
         //add root
-        nodes.push(state.graph.nodes[0]);
+        nodes.push(path_element.node);
         return {nodes, edges};
     },
     color_graph_nodes: (frame_graph, node_sets) => {
@@ -134,13 +127,38 @@ const animator_utils = {
     remove_lowest_score: (nodes, scores) => {
         let min = Infinity;
         let lowest_node_index = -1;
-        nodes.forEach((node, index) => {
+        for(let index = 0; index < nodes.length; index++) {
+            node = nodes[index];
             if (scores[node.index] < min) {
                 min = scores[node.index];
                 lowest_node_index = index;
             }
-        });
+        }
         return nodes.splice(lowest_node_index, 1)[0];
+    },
+    get_start_goal_nodes: () => {
+        let start_node, goal_node;
+
+        if (state.graph_type === GRAPH_TYPES.TREE) {
+            start_node = state.graph.nodes[0];
+            goal_node =  state.graph.nodes[animator_utils.tree.find_goal_index()];
+        } else { // find spatially farthest away nodes
+            let min = Infinity;
+            let max = -Infinity;
+            let current = 0;
+            for (let i = 0; i < state.graph.nodes.length; i++) {
+                let current_node = state.graph.nodes[i];
+                current = current_node.coord.x + current_node.coord.y;
+                if (current < min) {
+                    min = current;
+                    start_node = current_node;
+                } else if (current > max) {
+                    max = current;
+                    goal_node = current_node;
+                }
+            }
+        }
+        return {start_node, goal_node}
     }
 };
 

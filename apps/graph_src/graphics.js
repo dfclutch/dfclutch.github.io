@@ -56,14 +56,17 @@ function clear_canvas() {
 * ends currently running animation for updates
 */
 function end_animation() {
+    state.currently_animating = false;
     clearInterval(state.animation_timer);
     state.frames = [];
 }
 
 function pause_animation() {
+    state.currently_animating = false;
     clearInterval(state.animation_timer);
 }
 
 function continue_animation() {
+    state.currently_animating = true;
     state.animation_timer = setInterval(state.animation_handler, state.speed);
 }

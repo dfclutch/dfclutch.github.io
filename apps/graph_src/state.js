@@ -83,6 +83,7 @@ function special_updates(prop_to_update) {
             break;
         case STATE_PROPERTIES.SPEED:
             state.speed = 500 - page_elements.speed.valueAsNumber;
+            continue_animation();
             break;
         case STATE_PROPERTIES.NODE_SIZE:
             clear_canvas();
