@@ -12,13 +12,23 @@ const algorithm_buttons = {
     btn_5: document.getElementById('btn_5'),
 
 };
-const new_graph = document.getElementById('new_graph');
-new_graph.addEventListener('click', () => {
+const new_graph_element = document.getElementById('new_graph');
+new_graph_element.addEventListener('click', () => {
     clear_canvas();
     end_animation();
     state.frames.length = 0;
     state.graph = new Graph(state);
     draw_graph(state.graph);
+});
+
+const pause_animation_element = document.getElementById('pause_animation');
+pause_animation_element.addEventListener('click', () => {
+    pause_animation();
+});
+
+const start_animation_element = document.getElementById('start_animation');
+start_animation_element.addEventListener('click', () => {
+    continue_animation();
 });
 
 function update_buttons(state) {
