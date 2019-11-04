@@ -39,6 +39,40 @@ function GraphEdge(start, end, color, text) {
                 Math.floor((this.coords.start.y + this.coords.end.y) / 2)
             );
         }
+        if(state.graph_type !== GRAPH_TYPES.DIR_SIMPLE) return;
+        /*
+            Draw Arrow
+         */
+        let p1 = this.coords.start;
+        let p2 = {
+            x: (this.coords.start.x + this.coords.end.x) / 2,
+            y: (this.coords.start.y + this.coords.end.y) / 2,
+        };
+
+        let L1 = graphics.euclid_dist(p1, p2);
+        let L2 = EDGE_ARROW_LENGTH;
+
+        let theta = EDGE_ARROW_ANGLE * Math.PI / 180;
+
+        let p3 = {
+            x: (p2.x + L2 / L1 * ((p1.x - p2.x) * Math.cos(theta) + (p1.y - p2.y) * Math.sin(theta))),
+            y: (p2.y + L2 / L1 * ((p1.y - p2.y) * Math.cos(theta) - (p1.x - p2.x) * Math.sin(theta))),
+        };
+
+        let p4 = {
+            x: (p2.x + L2 / L1 * ((p1.x - p2.x) * Math.cos(theta) - (p1.y - p2.y) * Math.sin(theta))),
+            y: (p2.y + L2 / L1 * ((p1.y - p2.y) * Math.cos(theta) + (p1.x - p2.x) * Math.sin(theta))),
+        };
+
+        state.context.beginPath();
+        state.context.strokeStyle = this.color || COLORS.BLACK;
+        state.context.moveTo(p2.x, p2.y);
+        state.context.lineTo(p3.x, p3.y);
+        state.context.stroke();
+        state.context.moveTo(p2.x, p2.y);
+        state.context.lineTo(p4.x, p4.y);
+        state.context.stroke();
+        state.context.closePath();
     };
     this.equals = (edge) => {
         return (this.nodes.start.index === edge.nodes.start.index && this.nodes.end.index === edge.nodes.end.index)

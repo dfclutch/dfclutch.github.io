@@ -36,6 +36,22 @@
         </div>
         <div class="control_block">
             <div class="control_set">
+                <h3>Graph Type</h3>
+                <input type="radio" name="graph_type" value="tree" checked="checked">
+                Tree
+                <input type="radio" name="graph_type" value="und_simple">
+                Undirected
+                <input type="radio" name="graph_type" value="dir_simple">
+                <s>Directed</s>
+                <input type="radio" name="graph_type" value="network_flow">
+                <s>Edge Weighted</s>
+                <input type="radio" name="graph_type" value="complete">
+                Complete
+                <br>
+            </div>
+        </div>
+        <div class="control_block">
+            <div class="control_set">
                 <h3>Run Algorithms</h3>
                 <input class="control_button" type="button" id="btn_1" value="This Does Nothing">
                 <input class="control_button" type="button" id="btn_2" value="This Does Nothing">
@@ -46,27 +62,12 @@
             <div class="control_set">
                 <h5 id="text_output">Output Text</h5>
                 <input class="control_button" type="button" id="new_graph" value="New Graph">
+                <input class="control_button" type="button" id="clear_graph" value="Clear Graph">
                 <input class="control_button" type="button" id="pause_animation" value="Pause Animation">
                 <input class="control_button" type="button" id="start_animation" value="Start Animation">
                 <br>
             </div>
             <br>
-        </div>
-        <div class="control_block">
-            <div class="control_set">
-                <h3>Graph Type</h3>
-                <input type="radio" name="graph_type" value="tree" checked="checked">
-                Tree
-                <input type="radio" name="graph_type" value="nice">
-                Undirected
-                <input type="radio" name="graph_type" value="dir_simple">
-                <s>Directed</s>
-                <input type="radio" name="graph_type" value="network_flow">
-                <s>Edge Weighted</s>
-                <input type="radio" name="graph_type" value="complete">
-                Complete
-                <br>
-            </div>
         </div>
     </div>
 </div>

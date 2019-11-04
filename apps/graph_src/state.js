@@ -62,14 +62,22 @@ function set_radio_buttons(state) {
     })
 }
 
-function special_updates(prop_to_update) {
+function update(prop_to_update) {
+    pause_animation();
     switch (prop_to_update) {
         case STATE_PROPERTIES.BRANCHING_FACTOR:
+            end_animation();
+            state.branching_factor = page_elements.branching_factor.valueAsNumber;
             if (state.graph_type === GRAPH_TYPES.TREE) {
                 animator_utils.tree.set_d_and_b();
             }
             break;
+        case STATE_PROPERTIES.DEPTH:
+            end_animation();
+            state.depth = page_elements.depth.valueAsNumber;
+            break;
         case STATE_PROPERTIES.DENSITY:
+            state.density = page_elements.density.valueAsNumber;
             if (state.graph_type !== GRAPH_TYPES.TREE) {
                 end_animation();
                 state.density = page_elements.density.valueAsNumber;
@@ -77,21 +85,21 @@ function special_updates(prop_to_update) {
                 state.graph.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth, state.graph.nodes);
                 state.graph.edges = generate.edges[state.graph_type](state.graph);
                 reset_output_text();
-                if (state.currently_animating) end_animation();
                 draw_graph(state.graph);
             }
+            break;
+        case STATE_PROPERTIES.NODE_SIZE:
+            clear_canvas();
+            draw_graph(state.graph);
+            continue_animation();
             break;
         case STATE_PROPERTIES.SPEED:
             state.speed = 500 - page_elements.speed.valueAsNumber;
             continue_animation();
             break;
-        case STATE_PROPERTIES.NODE_SIZE:
-            clear_canvas();
-            draw_graph(state.graph);
-            break;
         case STATE_PROPERTIES.GRAPH_TYPE:
-            reset_output_text();
             end_animation();
+            reset_output_text();
             page_elements.graph_type.forEach((option) => {
                 if (option.checked) state.graph_type = option.value;
             });
@@ -106,10 +114,15 @@ function special_updates(prop_to_update) {
                 page_elements.branching_factor.value = state.branching_factor = 5;
                 page_elements.depth.value = state.depth = 5;
                 page_elements.depth.max = page_elements.branching_factor.max = 8;
-            } else {
-                page_elements.depth.max = 15;
+            } else if (state.graph_type === GRAPH_TYPES.DIR_SIMPLE) {
+                page_elements.depth.max = 12;
                 page_elements.depth.value = state.depth = 6;
-                page_elements.branching_factor.max = 15;
+                page_elements.branching_factor.max = 12;
+                page_elements.branching_factor.value = state.branching_factor = 6;
+            } else {
+                page_elements.depth.max = 10;
+                page_elements.depth.value = state.depth = 6;
+                page_elements.branching_factor.max = 10;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
             state.graph = new Graph(state);
@@ -118,26 +131,8 @@ function special_updates(prop_to_update) {
             draw_graph(state.graph);
             break;
     }
-}
 
-function update(prop_to_update) {
-    pause_animation();
-    state[prop_to_update] = page_elements[prop_to_update].valueAsNumber;
-
-    special_updates(prop_to_update);
+    //set sliders and buttons on front-end
     set_sliders(state);
-
-    if (STOPPING_PROPERTIES.includes(prop_to_update)) {
-        reset_output_text();
-        clear_canvas();
-        end_animation();
-        state.currently_animating = false;
-        state.graph = new Graph(state);
-        draw_graph(state.graph);
-    } else {
-        if (state.currently_animating === true) {
-            continue_animation();
-        }
-    }
     update_buttons(state);
 }

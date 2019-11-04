@@ -3,7 +3,7 @@
  */
 
 const animators = {
-    bfs: async () => {
+    bfs: () => {
         draw_graph(state.graph);
         resetFrames();
         let open = [];
@@ -456,34 +456,34 @@ const animators = {
         if (!success) output_text('No Solution');
         animate();
     },
-    live_network: () => {
-        state.currently_animating = true;
-        draw_graph(state.graph);
-        resetFrames();
-
-        state.animation_timer = setInterval(function() {
-            let frame_graph = new Graph();
-            frame_graph.edges = state.graph.edges.splice();
-            frame_graph.nodes = state.graph.nodes.splice();
-
-            frame_graph.edges.forEach(edge => {
-                edge.pos_count = 0;
-                edge.neg_count = 0;
-            });
-
-            //randomly increase or decrease weight of edges
-            frame_graph.edges.forEach(edge => {
-                let old_weight = edge.weight;
-                let total = edge.pos_count + edge.neg_count;
-                let pos_bias = edge.pos_count / total;
-                let neg_bias = edge.neg_count / total;
-                //weighted coin flip * 10
-                edge.weight += Math.sign(chance.between(-10 * neg_bias, 10 * pos_bias)) * chance.between(10)
-                (old_weight < edge.weight) ? pos_count++ : neg_count++;
-            });
-            clear_canvas();
-            draw_graph(frame_graph);
-        }, state.speed);
-
-    }
+    // live_network: () => {
+    //     state.currently_animating = true;
+    //     draw_graph(state.graph);
+    //     resetFrames();
+    //
+    //     state.animation_timer = setInterval(function() {
+    //         let frame_graph = new Graph();
+    //         frame_graph.edges = state.graph.edges.splice();
+    //         frame_graph.nodes = state.graph.nodes.splice();
+    //
+    //         frame_graph.edges.forEach(edge => {
+    //             edge.pos_count = 0;
+    //             edge.neg_count = 0;
+    //         });
+    //
+    //         //randomly increase or decrease weight of edges
+    //         frame_graph.edges.forEach(edge => {
+    //             let old_weight = edge.weight;
+    //             let total = edge.pos_count + edge.neg_count;
+    //             let pos_bias = edge.pos_count / total;
+    //             let neg_bias = edge.neg_count / total;
+    //             //weighted coin flip * 10
+    //             edge.weight += Math.sign(chance.between(-10 * neg_bias, 10 * pos_bias)) * chance.between(10)
+    //             (old_weight < edge.weight) ? pos_count++ : neg_count++;
+    //         });
+    //         clear_canvas();
+    //         draw_graph(frame_graph);
+    //     }, state.speed);
+    //
+    // }
 };

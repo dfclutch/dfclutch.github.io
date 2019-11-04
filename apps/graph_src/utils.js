@@ -35,10 +35,10 @@ const animator_utils = {
         let nodes = [];
         let edges = [];
         while (path_element.parent !== null) {
-            let start = path_element.node;
+            let end = path_element.node;
             nodes.push(path_element.node);
             path_element = path_element.parent;
-            let end = path_element.node;
+            let start = path_element.node;
             edges.push(
                 new GraphEdge(
                     start,
@@ -128,7 +128,7 @@ const animator_utils = {
         let min = Infinity;
         let lowest_node_index = -1;
         for(let index = 0; index < nodes.length; index++) {
-            node = nodes[index];
+            let node = nodes[index];
             if (scores[node.index] < min) {
                 min = scores[node.index];
                 lowest_node_index = index;

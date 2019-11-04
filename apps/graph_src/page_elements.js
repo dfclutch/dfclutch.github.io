@@ -17,12 +17,12 @@ const page_elements = {
 /*      Event listeners     */
 page_elements.branching_factor.addEventListener('change', () => {update(STATE_PROPERTIES.BRANCHING_FACTOR)});
 page_elements.depth.addEventListener('change', () => {update(STATE_PROPERTIES.DEPTH)});
-page_elements.density.addEventListener('change', () => {special_updates(STATE_PROPERTIES.DENSITY)});
-page_elements.speed.addEventListener('change', () => {update(STATE_PROPERTIES.SPEED)});
+page_elements.density.addEventListener('change', () => {update(STATE_PROPERTIES.DENSITY)});
+page_elements.speed.addEventListener('change',  () => {update(STATE_PROPERTIES.SPEED)});
 page_elements.node_size.addEventListener('change', () => {update(STATE_PROPERTIES.NODE_SIZE)});
 
 page_elements.graph_type.forEach(option => {
-    option.addEventListener('change', () => {special_updates(STATE_PROPERTIES.GRAPH_TYPE); draw_graph(state.graph);});
+    option.addEventListener('change', () => {update(STATE_PROPERTIES.GRAPH_TYPE); draw_graph(state.graph);});
 });
 
 function output_text(text) {

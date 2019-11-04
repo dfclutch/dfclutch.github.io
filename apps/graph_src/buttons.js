@@ -21,6 +21,13 @@ new_graph_element.addEventListener('click', () => {
     draw_graph(state.graph);
 });
 
+const clear_graph_element = document.getElementById('clear_graph');
+clear_graph_element.addEventListener('click', () => {
+    clear_canvas();
+    end_animation();
+    draw_graph(state.graph);
+});
+
 const pause_animation_element = document.getElementById('pause_animation');
 pause_animation_element.addEventListener('click', () => {
     pause_animation();
