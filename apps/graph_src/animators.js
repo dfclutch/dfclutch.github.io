@@ -8,6 +8,7 @@ const animators = {
         resetFrames();
         let open = [];
         let closed = [];
+        let visited = [];
         let success = false;
         let {start_node, goal_node} = animator_utils.get_start_goal_nodes();
         let frame_graph = new Graph();
@@ -47,7 +48,8 @@ const animators = {
 
             let children = get_children(current.node, state.graph, state.graph);
             children.forEach((child) => {
-                if (!animator_utils.visited(child, closed)) {
+                if (!visited[child.index]) {
+                    visited[child.index] = true;
                     open.push({
                         node: child,
                         parent: current
@@ -160,37 +162,36 @@ const animators = {
         }
         animate();
     },
-    /* ford_fulkerson: () => {
+    ford_fulkerson: () => {
+        clear_canvas();
         draw_graph(state.graph);
         resetFrames();
-        let frame_graph = new Graph();
-        let source = state.graph.nodes[0];
-        let sink = state.graph.nodes[state.graph.nodes.length - 1];
-        let flow = 0;
-        let path = [];
-        let path_exists = true;
-        let edges = animator_utils.generate_reverse_edges(state.graph.edges);
 
-        while (path_exists) {
-            path = animator_utils.find_aug_path(edges, source, sink, state.graph);
+        let graph = state.graph.a_matrix;
+        let ROW = state.graph.a_matrix[0].length;
 
-            if (path[sink.index] === null) {
-                path_exists = false;
-                break;
+        // returns true if path from source to sink and stores path nodes and edges in path
+        function bfs(source_node, sink_node, path) {
+            let visited = graph.map(() => false); // visited list all false
+
+            let queue = [source_node];
+            visited[source_node.index] = true;
+
+            while (queue.length) {
+                let current_node = queue.shift();
+
+                graph[current_node.index].forEach((adjacent, ind) => {
+                        if (!adjacent) return;
+                        if (!visited[ind] && state.graph.nodes[ind]) {
+
+                        }
+                    }
+                );
+
             }
-            //find min flow
-            let increment = Infinity;
-            for (let edge = path[sink.nodes.end.index]; edge != null; edge = path[edge.nodes.start.index]) {
-                if ((edge.cap() - edge.flow) < increment) increment = edge.cap() - edge.flow;
-            }
-            //update edges by increment
-            for (let edge = path[sink.index]; edge != null; edge = path[edge.start]) {
-                edge.flow += increment;
-                edge.reverse.flow -= increment;
-            }
-            flow += increment;
         }
-    }, */
+
+    },
     prim_euclid: async () => {
         let local_graph = state.graph;
         state.graph = {nodes: local_graph.nodes, a_matrix: local_graph.a_matrix, edges: []};
@@ -417,7 +418,7 @@ const animators = {
             let connected = get_children(current, state.graph);
 
             connected.forEach(neighbor => {
-                let new_g_score = g_scores[current.index] +euclid_dist(current, neighbor);
+                let new_g_score = g_scores[current.index] + euclid_dist(current, neighbor);
 
                 if (!includes_component(neighbor, closed)) {
                     open.push(neighbor)

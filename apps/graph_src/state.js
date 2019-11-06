@@ -14,6 +14,8 @@ function initState() {
 
     /* animation information */
     const frames = [];
+    const old_frames = [];
+    const last_animation = null;
     const animation_timer = null;
     const animation_handler = null;
     const speed = 100;
@@ -32,6 +34,8 @@ function initState() {
         graph,
 
         frames,
+        old_frames,
+        last_animation,
         animation_timer,
         animation_handler,
         speed,
@@ -66,6 +70,8 @@ function update(prop_to_update) {
     pause_animation();
     switch (prop_to_update) {
         case STATE_PROPERTIES.BRANCHING_FACTOR:
+            //clear stored animations when getting a new graph;
+            state.last_animation = null;
             end_animation();
             clear_canvas();
             state.branching_factor = page_elements.branching_factor.valueAsNumber;
@@ -73,16 +79,22 @@ function update(prop_to_update) {
                 animator_utils.tree.set_d_and_b();
             }
             state.graph = new Graph(state);
+            update_buttons(state);
             draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.DEPTH:
+            //clear stored animations when getting a new graph;
+            state.last_animation = null;
             end_animation();
             clear_canvas();
             state.depth = page_elements.depth.valueAsNumber;
             state.graph = new Graph(state);
+            update_buttons(state);
             draw_graph(state.graph);
             break;
         case STATE_PROPERTIES.DENSITY:
+            //clear stored animations when getting a new graph;
+            state.last_animation = null;
             state.density = page_elements.density.valueAsNumber;
             if (state.graph_type !== GRAPH_TYPES.TREE) {
                 end_animation();
@@ -91,6 +103,7 @@ function update(prop_to_update) {
                 state.graph.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth, state.graph.nodes);
                 state.graph.edges = generate.edges[state.graph_type](state.graph);
                 reset_output_text();
+                update_buttons(state);
                 draw_graph(state.graph);
             }
             break;
@@ -107,6 +120,8 @@ function update(prop_to_update) {
         case STATE_PROPERTIES.GRAPH_TYPE:
             end_animation();
             reset_output_text();
+            //clear stored animations when getting a new graph;
+            state.last_animation = null;
             page_elements.graph_type.forEach((option) => {
                 if (option.checked) state.graph_type = option.value;
             });
@@ -127,9 +142,9 @@ function update(prop_to_update) {
                 page_elements.branching_factor.max = 12;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             } else {
-                page_elements.depth.max = 10;
+                page_elements.depth.max = 12;
                 page_elements.depth.value = state.depth = 6;
-                page_elements.branching_factor.max = 10;
+                page_elements.branching_factor.max = 12;
                 page_elements.branching_factor.value = state.branching_factor = 6;
             }
             state.graph = new Graph(state);

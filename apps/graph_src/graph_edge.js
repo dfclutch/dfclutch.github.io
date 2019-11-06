@@ -45,8 +45,8 @@ function GraphEdge(start, end, color, text) {
          */
         let p1 = this.coords.start;
         let p2 = {
-            x: (this.coords.start.x + this.coords.end.x) / 2,
-            y: (this.coords.start.y + this.coords.end.y) / 2,
+            x: (this.coords.start.x * .5 + this.coords.end.x * 1.5) / 2,
+            y: (this.coords.start.y * .5+ this.coords.end.y * 1.5) / 2,
         };
 
         let L1 = graphics.euclid_dist(p1, p2);

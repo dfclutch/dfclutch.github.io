@@ -34,6 +34,7 @@
 *   Otherwise: returns a general graph object to be populated manually (generally for drawing frames)
  */
 function Graph(state) {
+    MAX_NUM_NODES = page_elements.branching_factor.max * page_elements.depth.max;
     if (state) {
         this.nodes = generate.nodes[state.graph_type](state.branching_factor, state.depth);
         this.a_matrix = generate.a_matrix[state.graph_type](state.branching_factor, state.depth, this.nodes);

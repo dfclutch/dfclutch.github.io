@@ -1,5 +1,5 @@
 const MAX_FLOW_CAP = 15;
-let MAX_NUM_NODES = 12 * 12;
+let MAX_NUM_NODES = page_elements.branching_factor.max * page_elements.depth.max;
 const EDGE_WEIGHT_REDUCTION_FACTOR = 2;
 const EDGE_ARROW_ANGLE = 15;
 const EDGE_ARROW_LENGTH = 10;

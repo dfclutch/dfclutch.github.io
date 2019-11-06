@@ -13,14 +13,15 @@ function animate() {
 }
 
 function animation_handler (res) {
-    return () => {
-        if (state.frames.length === 0) {
+    return async () => {
+        if (state.frames.length === 0 && state.currently_animating) {
             state.currently_animating = false;
-            end_animation();
+            await end_animation();
             res();
-        } else {
+        } else if (state.currently_animating) {
             clear_canvas();
             draw_graph(state.graph);
+            state.old_frames.push(state.frames[0]);
             draw_graph(state.frames.shift());
         }
     }
@@ -58,6 +59,8 @@ function clear_canvas() {
 function end_animation() {
     state.currently_animating = false;
     clearInterval(state.animation_timer);
+    //store old frames
+    state.old_frames = state.old_frames.concat(state.frames);
     state.frames = [];
 }
 
