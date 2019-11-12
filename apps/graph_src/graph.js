@@ -72,6 +72,11 @@ function includes_component(component, arr) {
     return false;
 }
 
+function find_edge_better(node1, node2, graph) {
+    let edge_index = node1.index * node2.index;
+    return graph.edges[edge_index];
+}
+
 function find_edge(node1, node2, graph) {
     for(let i = 0; i < graph.edges.length; i++) {
         let edge = graph.edges[i];
