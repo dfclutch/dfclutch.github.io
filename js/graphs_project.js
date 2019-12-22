@@ -2,8 +2,8 @@ let state = {}
 
 const page_elements = {branching_factor: {max: 10}, depth: {max : 10}};
 
-window.onload = () => {
-	const graph_type = GRAPH_TYPES.UND_SIMPLE;
+function run_bfs() {
+    const graph_type = GRAPH_TYPES.UND_SIMPLE;
     const branching_factor = 8;
     const depth = 6;
     const density = 4;
@@ -49,4 +49,8 @@ window.onload = () => {
     draw_graph(state.graph);
 
     ALGORITHMS[GRAPH_TYPES.UND_SIMPLE].bfs.animator(false);
+}
+
+window.onload = () => {
+	run_bfs();
 }

@@ -248,6 +248,29 @@ p {
     background-color: #161616;
 }
 
+/* algorithm sample */
+.control-button {
+    margin: 4px;
+    padding: 2px;
+    border: 0;
+    background-color: #d41919;
+    box-shadow: none;
+    font-family: sans-serif;
+    width: 150px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px
+}
+
+#viewport {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #000;
+    display: inline-block;
+    float: left;
+    margin: 0px 0px 10px 0px;
+}
+
 
 /* Fading animation */
 .fade {
