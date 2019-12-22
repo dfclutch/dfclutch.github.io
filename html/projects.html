@@ -28,7 +28,10 @@
 			A fully front-end based, live-tweakable, set of graph algorithms intended for education. written in pure javascript for easy development/deployment using github pages. The project is constantly in progress as I continually add more graph types, algorithms, etc. Far more information is availible on the website.<p>
 
 			<canvas id="viewport" width="700" height="600">
-        	</canvas>
+        	</canvas><br>
+        	<p>
+        		In the example animation above (a breadth first search), the graph is randomly produced every time the page is loaded. But to make a visually informative graph, constructing purely random nodes and edges is not adequate. The hardest problem to solve in building this site was creating an algorithm to generate "nice" looking graphs that provide valuable information about why some algorithms are better for some applications than others. The eventual result of this design process was an algorithm I call <em>soft k-nearest neighbor.</em> the SKNN algorithm first selects a random number of edges in the range [1:k] for each node. The edges are connected to nearby nodes, simulating a real-life network. These nearby neighbors are selected randoml from the set of the <em>k * 1.5</em> nearest nodes. This produces a graph which looks and behaves like real life networks, where closely connected nodes are more likely to be connected, but some farther adjacencies are possible.
+        	</p>
 			</div>
 		</div><div class="mySlides fade">
 			<div class="page-title"><a class="title-link" href="https://java-docs.herokuapp.com">Java Docs</a></div>
