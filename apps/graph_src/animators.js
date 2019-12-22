@@ -3,7 +3,7 @@
  */
 
 const animators = {
-    bfs: () => {
+    bfs: (verbose) => {
         draw_graph(state.graph);
         resetFrames();
         let open = [];
@@ -41,8 +41,11 @@ const animators = {
                     color: COLORS.BLUE
                 }]);
                 state.frames.push(frame_graph);
-                output_text(
-                    `Nodes Visited: ${closed.length}<br>Path To Goal: ${path.edges.length}`);
+                if(verbose) { 
+                    output_text(
+                    `Nodes Visited: ${closed.length}<br>Path To Goal: ${path.edges.length}`
+                    );
+                }
                 break;
             }
 
@@ -80,7 +83,7 @@ const animators = {
             }]);
             state.frames.push(frame_graph);
         }
-        if (!success) output_text('No Solution');
+        if (!success && verbose) output_text('No Solution');
         animate();
     },
     dfs: () => {

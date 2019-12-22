@@ -144,6 +144,7 @@ canvas {
 	border: 1px solid #000;
 	display: inline-block;
 	float: left;
+	margin: 0px 0px 10px 0px;
 }
 
 /* info section */
