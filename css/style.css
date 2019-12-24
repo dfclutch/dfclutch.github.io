@@ -48,16 +48,16 @@ a.in-text:active {
 
 /* links */
 a.title-link {
-    color: #000;
+    color: #0398fc;
     text-transform: uppercase;
 }
 
 a.title-link:link {
-    color: #000;
+    color: #0398fc;
 }
 
 a.title-link:visited {
-    color: #000;
+    color: #0398fc;
 }
 
 a.title-link:hover {
