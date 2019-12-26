@@ -137,10 +137,9 @@ a.in-text:active {
     font-family: 'Roboto Thin', sans-serif;
     color: #000;
     font-size: 100px;
-    text-align: center;
     background-color: #FFF;
     background-size: cover;
-    padding-top: 10%;
+    margin: 0;
     flex-grow: 1;
 }
 
@@ -152,14 +151,12 @@ a.in-text:active {
     width: 40%;
     margin: auto;
     padding: 50px 0 0 0;
-    display: block;
     text-transform: uppercase;
 }
 
 .content {
     color: #000;
-    font-family: 'Roboto', sans-serif;
-    /* background-color: #edebe3; */
+    font-family: 'Roboto', sans-serif;=
     background: none;
     width: 40%;
     margin: auto;
@@ -189,15 +186,6 @@ p {
 
 .bottom-padded {
     padding: 5px 0 15px 0;
-}
-
-.home-content {
-    color: #000;
-    font-family: 'Roboto Light', sans-serif;
-    font-size: 24px;
-    padding-top: 20px;
-    width: 100%;
-    text-align: center;
 }
 
 .box {
@@ -378,10 +366,6 @@ button:hover {
 
     .page-home {
         font-size: 70px;
-    }
-
-    .home-content {
-        font-size: 20px;
     }
 
     .topnav_wrapper {

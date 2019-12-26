@@ -8,8 +8,7 @@
 function QState(index, coord) {
 	this.label = `q${index + 1}`;
 	this.coord = {
-		x: coord.x,
-		y: coord.y
+		...coord
 	};
 	this.index = index;
 	this.transitions = [];
