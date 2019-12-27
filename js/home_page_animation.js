@@ -13,12 +13,12 @@ const colors = [
 	];
 let canvas, context, page, animation_timer;
 
-const animation_speed = 100;
-const opacity_gradient = 5;
-const percent_white = 50;
-const max_width = 150;
-const min_height = 50;
-const max_height = 200;
+const animation_speed = 120;
+const opacity_gradient = 8;
+let percent_white = 50;
+let max_width = 150;
+let min_height = 50;
+let max_height = 200;
 const separation_dist = 2;
 
 window.onload = () => {
@@ -28,6 +28,8 @@ window.onload = () => {
 	canvas.width = page.offsetWidth - 5;
 	canvas.height = page.offsetHeight - 5;
 
+	adjust_sizing();
+
 	animate();
 }
 
@@ -35,7 +37,25 @@ window.onresize = () => {
 	clearInterval(animation_timer);
 	canvas.width = page.offsetWidth - 5;
 	canvas.height = page.offsetHeight - 5;
+	adjust_sizing();
 	animate();
+}
+
+/*
+	adjust sizing parameters for different sized screens
+*/
+function adjust_sizing() {
+	if(page.offsetWidth < 400) {
+		max_width = 80;
+		min_height = 20;
+		max_height = 150;
+		percent_white = 40;
+	} else {
+		percent_white = 50;
+		max_width = 150;
+		min_height = 50;
+		max_height = 200;
+	}
 }
 
 /*
