@@ -12,7 +12,14 @@ const colors = [
 	"#2bc47d"
 	];
 let canvas, context, page, animation_timer;
+
 const animation_speed = 100;
+const opacity_gradient = 5;
+const percent_white = 50;
+const max_width = 150;
+const min_height = 50;
+const max_height = 200;
+const separation_dist = 2;
 
 window.onload = () => {
 	canvas = document.getElementById("animation_canv");
@@ -34,12 +41,12 @@ window.onresize = () => {
 /*
 	Constructor for circle object
 */
-function Rectangle() {
+function Rectangle(w, h) {
 	const upper_opacity = 80;
 	const lower_opacity = 20;
 
-	this.width = chance.between(1, 20);
-	this.height = chance.between(50, 500);
+	this.width = w;
+	this.height = h;
 
 	this.color = colors[Math.floor(Math.random() * colors.length)];
 	this.opacity = chance.between(0, 100);
@@ -58,13 +65,13 @@ function Rectangle() {
 
 	this.update_opacity = () => {
 		if (this.increase_opacity) {
-			this.opacity += chance.between(0, 20);
+			this.opacity += chance.between(0, opacity_gradient);
 			if (this.opacity > 100) {
 				this.increase_opacity = false
 				this.opacity = 100;
 			}
 		} else {
-			this.opacity -= chance.between(0, 10);
+			this.opacity -= chance.between(0, opacity_gradient);
 			if (this.opacity < 20) {
 				this.increase_opacity = true;
 				this.opacity = 20;
@@ -92,18 +99,22 @@ function animate() {
 		let col = [];
 		let total_height = 0;
 
-		let r = new Rectangle();
-		r.offset = {x: total_width, y: total_height}
-		let column_width = r.width;
-		col.push(r);
+		let column_width = chance.between(1, max_width);
+
 		while(total_height < canvas.height) {
-			total_height += r.height + 2;
-			r = new Rectangle();
-			r.width = column_width;
-			r.offset = {x: total_width, y: total_height}
-			col.push(r)
+			let h = chance.between(min_height, max_height);
+
+
+			if(chance.between(0, 100) > percent_white) {
+				let r = new Rectangle(column_width, h)
+				r.offset = {x: total_width, y: total_height}
+				col.push(r);
+			}
+
+
+			total_height += h + separation_dist;
 		}
-		total_width += column_width + 2;
+		total_width += column_width + separation_dist;
 		col_list.push(col);
 	}
 

@@ -188,6 +188,9 @@ const chance = {
     between: (min, max) => {
         return Math.floor(Math.random() * (max - min) + min) + 1;
     },
+    coinflip: () => {
+        return Math.random() > .5;
+    },
     get_n_random_elements: (array, n) => {
         let elements = [];
         while (elements.length < n) {
