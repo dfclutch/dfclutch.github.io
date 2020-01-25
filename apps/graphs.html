@@ -74,15 +74,19 @@
 <div class="info">
     <div class="info_block">
         <p>A set of live-animated, fully tweakable graph algorithm visualizations.<br>
-            <strong>Warning:</strong> This site is not robust and the algorithms are prone to crashing. It won't affect your computer in any other way than just causing a browser tab to crash. If it happens, just lower the branching factor and depth sliders to decrease the number of nodes. The sliders are tuned to not crash on my quad-core i7 laptop.<br>
+            <strong>Warning:</strong> This site is not robust and the algorithms are prone to crashing. It won't affect
+            your computer in any other way than just causing a browser tab to crash. If it happens, just lower the
+            branching factor and depth sliders to decrease the number of nodes. The sliders are tuned to not crash on my
+            quad-core i7 laptop.<br>
             Current features:</p>
         <br>
         <em>Types of graphs</em>
         <ul>
             <li>Trees - n-ary complete trees</li>
             <li>Undirected Simple Graphs - randomly spaced nodes, with random-ish edges (see "Nice graph" below)</li>
-            <li>Directed Graphs - Undirected Simple Graphs with directionality on edges (not implemented currently)</li>
+            <li>Directed Graphs - Undirected Simple Graphs with directionality on edges</li>
             <li>Edge weighted - Undirected Simple Graphs with randomized edge weights and corresponding line thickness
+                (not implemented currently, just viewable)
             </li>
         </ul>
         <em>Algorithms</em>
@@ -199,14 +203,17 @@
         </p>
         <p><em><strong>Nice Graphs:</strong></em></p>
         <p>
-            A long standing problem with this site has been producing random graphs that are structured such that the
+            A long standing problem with this site was producing random graphs that are structured such that the
             intuition for what each algorithm does is clear. I refer to this as the "Nice" Graph Problem. Because there
             is no definition for niceness, I have implemented an algorithm for generating graphs that at least look
             somewhat organized. I call the current implementation <em>soft k-nearest neighbor.</em> This implementation
-            connects each node to <em>k</em> nearby nodes, however, they are not necessarily the closest <em>k</em>
+            connects each node to <em>k*</em> nearby nodes. However, they are not necessarily the closest <em>k</em>
             nodes. Instead, the <em>k * 1.5</em> nearest are found and then a random <em>k</em> subset of those nearby
             nodes are selected. This produces graphs that are generally clustered by proximity but includes some
             variation for visual interest.
+            <br>
+            <br>
+            *randomly +/- [0,k/2] so each node does not have the same degree
         </p>
     </div>
 </div>
