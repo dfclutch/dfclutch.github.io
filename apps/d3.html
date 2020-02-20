@@ -17,9 +17,10 @@
    		<button id="generateHub">Hub Graph!</button>
    		<button id="generateScaleFree">Scale-Free Graph!</button>
    		<div style="{display: block}">
-   			<h3 id="currentGraphType">
+   			<strong id="currentGraphType">
    				Erdos-Renyi Graph:
-   			</h3>
+   			</strong>
+   			<span id="textOutput"></span>
    		</div>
    		<div id="renderArea" style="{display: block}">
    			<!-- SVG animation goes here! -->
@@ -35,6 +36,7 @@
 			const generateScaleFreeElement = document.getElementById("generateScaleFree");
     		const renderAreaElement = document.getElementById("renderArea");
     		const currentGraphTypeElement = document.getElementById("currentGraphType");
+    		const textOutputElement = document.getElementById("textOutput");
     		/*	
     			Call as the first step of generating any new graph 
     			- stops simulation
@@ -48,7 +50,8 @@
 					nodes: [],
 					links: []
 				}
-
+				updateCurrentGraphTextOutput();
+				textOutputElement.innerHTML = ""
     		}
 
 			function generateErdos() {
@@ -101,7 +104,7 @@
 			nodesInputElement.value = numNodes;
 
 			let currentGraphType = GRAPH_TYPES.SF;
-			currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
+			updateCurrentGraphTextOutput()
 
 
 			let graph = {
@@ -234,19 +237,22 @@
 				*/
 				let firstNode = {
 					color: chance.color(50),
-					r: radius
+					r: radius,
+					friends: 0
 				}
 				weightedNodeArray = [firstNode];
 				graph.nodes.push(firstNode)
 				for(let i=0; i<numNodes; i++) {
 					let newNode = {
     					color: chance.color(50),
-    					r: radius
+    					r: radius,
+						friends: 1
     				};
 
 					let targetNode = chance.oneOf(weightedNodeArray);
 					weightedNodeArray.push(targetNode);
 					targetNode.r = targetNode.r + radiusIncrease;
+					targetNode.friends = targetNode.friends + 1;
 					graph.links.push({
 						source: newNode,
 						target: targetNode
@@ -256,11 +262,18 @@
     				weightedNodeArray.push(newNode)
     			}
 
-    			/*while(graph.links.length < (desiredNumberEdges * 1.5/numNodes)) {
-    				let sourceNode = chance.oneOf(weightedNodeArray);
-    			}*/
-
-			}
+    			//find node with most friends:
+    			let maxFriends = 0;
+    			let maxNode;
+    			graph.nodes.forEach(node => {
+    				if (node.friends > maxFriends) {
+    					maxFriends = node.friends;
+    					maxNode = node
+    				}
+    			});
+    			let outputHTML = `Most popular node has: <strong style="color: ${maxNode.color}">${maxFriends} friends</strong>`;
+				textOutputElement.innerHTML = outputHTML;
+   			}
 
 			/*
 				Dragging behavior for simulation
@@ -354,18 +367,21 @@
 			}
 			generateErdosElement.onclick = () => {
 				currentGraphType = GRAPH_TYPES.ERDOS;
-				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
+				updateCurrentGraphTextOutput()
 				GRAPH_GENERATORS[GRAPH_TYPES.ERDOS]();
 			}
 			generateHubElement.onclick = () => {
 				currentGraphType = GRAPH_TYPES.HUB;
-				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
+				updateCurrentGraphTextOutput()
 				GRAPH_GENERATORS[GRAPH_TYPES.HUB]();
 			}
 			generateScaleFreeElement.onclick = () => {
 				currentGraphType = GRAPH_TYPES.SF;
-				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
+				updateCurrentGraphTextOutput()
 				GRAPH_GENERATORS[GRAPH_TYPES.SF]();
+			}
+			function updateCurrentGraphTextOutput() {
+				currentGraphTypeElement.innerHTML = `Graph generated with the ${GRAPH_NAMES[currentGraphType]} model`;
 			}
 
 			window.onresize = () => {
