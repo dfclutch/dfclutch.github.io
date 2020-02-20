@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Getting Started</title>
+   	</head>
+   	<body>
+   		<h1>Random Graphs with D3!</h1>
+   		These graphs are produced using the <a href="d3js.og">D3 visualization library</a>.<br>
+   		The <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős-Renyi</a> model generates graphs with random edges using a probability parameter. The Hub Graph is a design of my own. Hub graphs are constructed with a fairly small number of "Hubs" - shown as large, black nodes. The hubs are connected to some of the other Hubs. Hubs are highly connected to a number of "Friends". Friends which share a hub node are highly connected, with a few connections to nodes not in their friend group.
+   		<br>
+   		<br>
+   		Image Size = <input type="text" id="sizeInput" value="900"></input>
+   		Nodes = <input type="text" id="nodesInput" value="200"></input>
+   		<button id="generateErdos">Erdős-Renyi Graph!</button>
+   		<button id="generateHub">Hub Graph!</button>
+   		<div id="renderArea" style="{display: block}">
+   			<!-- SVG animation goes here! -->
+   		</div>
+   		<script src="../src/chance.js"></script>
+   		<script src="https://d3js.org/d3.v5.js"></script>
+    	<script>
+    		function generateHub() { 
+    			if(simulation) simulation.stop()
+				d3.selectAll("svg").remove()
+				graph = {
+					nodes: [],
+					links: []
+				}
+				hubGraph(Math.floor(Math.sqrt(numNodes)), Math.floor(numNodes / Math.sqrt(numNodes)));
+				run();
+			}
+
+			function generateErdos() {
+    			if(simulation) simulation.stop()
+				d3.selectAll("svg").remove()
+				graph = {
+					nodes: [],
+					links: []
+				}
+				erdosRenyi();
+				run();
+			}
+
+    		const GRAPH_GENERATORS = [
+    			generateErdos,
+    			generateHub
+    		];
+
+    		const GRAPH_TYPES = {
+    			ERDOS: 0,
+    			HUB: 1
+    		};
+
+			let width = 900,
+			    height = 900,
+			    radius=5,
+			    numNodes=200;
+
+			let current_graph_type = GRAPH_TYPES.ERDOS;
+
+
+			let graph = {
+				nodes: [],
+				links: []
+			}
+
+			function erdosRenyi() {
+				function populateNodes(n) {
+					for(let i=0; i<n; i++) {
+						graph.nodes.push({
+							color: chance.color(20),
+							r: radius
+						})
+					}
+				}
+
+				/*
+					erdos-renyi selection of links
+
+					p: probability node_i connected to node_j
+				*/
+				function populateLinks(p) {
+					for (let i=0;i<graph.nodes.length;i++) {
+						for(let j=0;j<graph.nodes.length;j++) {
+							if (i==j) {continue}
+
+							if(Math.random() < p) {
+								graph.links.push({
+									source: graph.nodes[i],
+									target: graph.nodes[j]
+								})
+							}
+
+						}
+					}
+				}
+
+				populateNodes(numNodes);
+				populateLinks(1.5/numNodes);
+			}
+			
+
+			/*
+				creates a graph with {hubs} number of hub nodes, each with an average number of 
+				connected nodes equal to {friends}
+			*/
+			function hubGraph(hubs, friends) {
+				let hubList = [];
+				let friendsList = []
+				for(let i=0; i<hubs; i++) {
+					let hubColor = "#000";//chance.color(50);
+					let numberFriends = chance.between(friends/2, friends*2);
+					let friendColor = chance.color(50);
+
+					let hubNode = {
+						color: hubColor,
+						r: radius * 2
+					};
+
+					graph.nodes.push(hubNode)
+					hubList.push(hubNode);
+
+					let closeFriendsList = []
+					for(let j=0; j<numberFriends; j++) {
+						friendNode = {
+							color: friendColor,
+							r: radius
+						}
+						graph.nodes.push(friendNode);
+						friendsList.push(friendNode);
+						closeFriendsList.push(friendNode);
+
+						graph.links.push({source: hubNode, target: friendNode});
+					}
+
+					//erdos renyi all the friends together, pretty densely
+					for(let k=0; k<closeFriendsList.length; k++) {
+						for(let l=0; l<closeFriendsList.length; l++) {
+							if (k==l) continue;
+							if(Math.random() < 2/(closeFriendsList.length)) {
+								graph.links.push({
+									source: closeFriendsList[k],
+									target: closeFriendsList[l]
+								})
+							}
+						}
+					}
+				}
+
+				//erdos renyi the hubs together
+				for(let i=0; i<hubs; i++) {
+					for(let j=0; j<hubs; j++) {
+						if (i==j) continue;
+						if(Math.random() < 2/(hubs)) {
+							graph.links.push({
+								source: hubList[i],
+								target: hubList[j]
+							})
+						}
+					}
+				}
+				//erdos renyi all the friends together, but make it sparse
+				for(let i=0; i<friendsList.length; i++) {
+					for(let j=0; j<friendsList.length; j++) {
+						if (i==j) continue;
+						if(Math.random() < 1/(friendsList.length*friends/1.5)) {
+							graph.links.push({
+								source: friendsList[i],
+								target: friendsList[j]
+							})
+						}
+					}
+				}
+			}
+
+			const drag = simulation => {
+			  
+			  function dragstarted(d) {
+			    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+			    d.fx = d.x;
+			    d.fy = d.y;
+			  }
+			  
+			  function dragged(d) {
+			    d.fx = d3.event.x;
+			    d.fy = d3.event.y;
+			  }
+			  
+			  function dragended(d) {
+			    if (!d3.event.active) simulation.alphaTarget(0);
+			    d.fx = null;
+			    d.fy = null;
+			  }
+			  
+			  return d3.drag()
+			      .on("start", dragstarted)
+			      .on("drag", dragged)
+			      .on("end", dragended);
+			}
+
+			let simulation;
+			function run() {
+				simulation = null;
+				let svg = d3.select("#renderArea").append("svg")
+					.attr("width", width)
+					.attr("height", height);
+
+				simulation = d3.forceSimulation(graph.nodes)
+					//.force("radial", d3.forceRadial(width/4, width/2, height/2).strength(.6))
+					.force("charge", d3.forceManyBody().strength(-15))
+					.force("center", d3.forceCenter(width/2, height/2))
+					.force("link", d3.forceLink(graph.links))
+					.force("collide", d3.forceCollide((d) => {return d.r}).strength(1))
+					//.velocityDecay(.8);
+
+				let link = svg.append("g")
+					.attr("class", "edge")
+					.selectAll("line")
+					.data(graph.links)
+					.join("line")
+					.attr("stroke", "#555");
+
+				let node = svg.append("g")
+					.selectAll("circle")
+					.data(graph.nodes)
+					.join("circle")					
+					.attr("fill", (d) => {return d.color})
+					.attr("r", (d) => {return d.r});
+
+				simulation.on("tick", ticked)
+
+				node.call(drag(simulation))
+
+				function ticked() {
+					var u = d3.select('svg')
+
+				    link
+					    .attr("x1", function(d) { return d.source.x; })
+				        .attr("y1", function(d) { return d.source.y; })
+				        .attr("x2", function(d) { return d.target.x; })
+				        .attr("y2", function(d) { return d.target.y; });
+
+				    // bound positions of nodes within svg
+				    node.attr("cx", function(d) { return d.x = Math.max(d.r, Math.min(width - d.r, d.x)); })
+				        .attr("cy", function(d) { return d.y = Math.max(d.r, Math.min(height - d.r, d.y)); });
+				}
+			}
+			const nodesInputElement = document.getElementById("nodesInput")
+			nodesInputElement.onkeyup = () => {
+				console.log('here')
+				numNodes = parseInt(nodesInputElement.value);
+				GRAPH_GENERATORS[current_graph_type]();
+			}
+
+			const sizeInputElement = document.getElementById("sizeInput");
+			sizeInputElement.onkeyup = () => {
+				width = height = Math.max(50, parseInt(sizeInputElement.value));
+				GRAPH_GENERATORS[current_graph_type]();
+			}
+			const generateErdosElement = document.getElementById("generateErdos")
+			generateErdosElement.onclick = () => {
+				current_graph_type = GRAPH_TYPES.ERDOS;
+				GRAPH_GENERATORS[GRAPH_TYPES.ERDOS]();
+			}
+			const generateHubElement = document.getElementById("generateHub");
+			generateHubElement.onclick = () => {
+				current_graph_type = GRAPH_TYPES.HUB;
+				GRAPH_GENERATORS[GRAPH_TYPES.HUB]();
+			}
+
+			window.onload = () => {
+				GRAPH_GENERATORS[current_graph_type]();
+			}
+	    </script> <!-- Dist bundle from webpack-->
+   	</body>
+</html>
