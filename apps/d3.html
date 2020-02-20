@@ -6,7 +6,7 @@
    	<body>
    		<h1>Random Graphs with D3!</h1>
    		These graphs are produced using the <a href="https://d3js.org">D3 visualization library</a>.<br>
-   		The <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős-Renyi</a> model generates graphs with random edges using a probability parameter. The Hub Graph is a design of my own. Hub graphs are constructed with a fairly small number of "Hubs" - shown as large, black nodes. The hubs are connected to some of the other Hubs. Hubs are highly connected to a number of "Friends". Friends which share a hub node are highly connected, with a few connections to nodes not in their friend group.
+   		The <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős-Renyi</a> model generates graphs with random edges using a probability parameter. The Hub Graph is a design of my own. Hub graphs are constructed with a fairly small number of "Hubs" - shown as large, black nodes. The hubs are connected to some of the other Hubs. Hubs are highly connected to a number of "Friends". Friends which share a hub node are highly connected, with a few connections to nodes not in their friend group. <a href="https://en.wikipedia.org/wiki/Scale-free_network">Scale-Free Networks</a> are generated using a "rich-get-richer" principle. Every time a new node is added, the node it connects to is selected randomly, but weighted toward nodes that already have a lot of friends.
    		<br>
    		Hint: Try dragging the nodes around!
    		<br>
@@ -15,50 +15,93 @@
    		Nodes = <input type="text" id="nodesInput" value="200"></input>
    		<button id="generateErdos">Erdős-Renyi Graph!</button>
    		<button id="generateHub">Hub Graph!</button>
+   		<button id="generateScaleFree">Scale-Free Graph!</button>
+   		<div style="{display: block}">
+   			<h3 id="currentGraphType">
+   				Erdos-Renyi Graph:
+   			</h3>
+   		</div>
    		<div id="renderArea" style="{display: block}">
    			<!-- SVG animation goes here! -->
    		</div>
    		<script type="text/javascript" src="./chance.js"></script>
    		<script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
     	<script>
-    		function generateHub() { 
+
+			const sizeInputElement = document.getElementById("sizeInput");
+			const nodesInputElement = document.getElementById("nodesInput");
+			const generateErdosElement = document.getElementById("generateErdos");
+			const generateHubElement = document.getElementById("generateHub");
+			const generateScaleFreeElement = document.getElementById("generateScaleFree");
+    		const renderAreaElement = document.getElementById("renderArea");
+    		const currentGraphTypeElement = document.getElementById("currentGraphType");
+    		/*	
+    			Call as the first step of generating any new graph 
+    			- stops simulation
+    			- clears SVG from page
+    			- clears graph object
+    		*/
+    		function clearForGraphGeneration() {
     			if(simulation) simulation.stop()
 				d3.selectAll("svg").remove()
 				graph = {
 					nodes: [],
 					links: []
 				}
-				hubGraph(Math.floor(Math.sqrt(numNodes)), Math.floor(numNodes / Math.sqrt(numNodes)));
-				run();
-			}
+
+    		}
 
 			function generateErdos() {
-    			if(simulation) simulation.stop()
-				d3.selectAll("svg").remove()
-				graph = {
-					nodes: [],
-					links: []
-				}
+    			clearForGraphGeneration();
 				erdosRenyi();
 				run();
 			}
 
+    		function generateHub() { 
+    			clearForGraphGeneration();
+				hubGraph(Math.floor(Math.sqrt(numNodes)), Math.floor(numNodes / Math.sqrt(numNodes)));
+				run();
+			}
+
+			function generateScaleFree() {
+    			clearForGraphGeneration();
+    			scaleFree();
+    			run();
+			}
+
     		const GRAPH_GENERATORS = [
     			generateErdos,
-    			generateHub
+    			generateHub,
+    			generateScaleFree
     		];
+
+    		const GRAPH_NAMES = [
+    			"Erdős-Renyi",
+    			"Hub Graph",
+    			"Scale-Free"
+    		]
 
     		const GRAPH_TYPES = {
     			ERDOS: 0,
-    			HUB: 1
+    			HUB: 1,
+    			SF: 2
     		};
 
-			let width = 900,
-			    height = 900,
+    		let renderAreaRect = renderAreaElement.getBoundingClientRect();
+
+    		let sizeOffset = 15;
+			let width = Math.min(
+					window.innerHeight - renderAreaRect.top - window.scrollY, 
+					window.innerWidth - renderAreaRect.left) - sizeOffset;
+			let height = width,
 			    radius=5,
 			    numNodes=200;
 
-			let current_graph_type = GRAPH_TYPES.ERDOS;
+			sizeInputElement.value = Math.floor(width);
+			nodesInputElement.value = numNodes;
+
+			let currentGraphType = GRAPH_TYPES.SF;
+			currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
 
 
 			let graph = {
@@ -66,6 +109,10 @@
 				links: []
 			}
 
+			/*
+				Creates a basic Erdos-Renyi graph using numNodes as the number of nodes and
+				1.5/numNodes as probability parameter ps
+			*/
 			function erdosRenyi() {
 				function populateNodes(n) {
 					for(let i=0; i<n; i++) {
@@ -175,6 +222,49 @@
 				}
 			}
 
+			/*	
+				Generates a scale-free graph based on the "rich get richer" property proposed by
+				Barabasi and Albert
+			*/
+			function scaleFree() {
+				const radiusIncrease = .25;
+				/*
+					this array contains duplicates of each node, a duplicate added
+					each time a node gets a new link - rich get richer
+				*/
+				let firstNode = {
+					color: chance.color(50),
+					r: radius
+				}
+				weightedNodeArray = [firstNode];
+				graph.nodes.push(firstNode)
+				for(let i=0; i<numNodes; i++) {
+					let newNode = {
+    					color: chance.color(50),
+    					r: radius
+    				};
+
+					let targetNode = chance.oneOf(weightedNodeArray);
+					weightedNodeArray.push(targetNode);
+					targetNode.r = targetNode.r + radiusIncrease;
+					graph.links.push({
+						source: newNode,
+						target: targetNode
+					});
+
+    				graph.nodes.push(newNode)
+    				weightedNodeArray.push(newNode)
+    			}
+
+    			/*while(graph.links.length < (desiredNumberEdges * 1.5/numNodes)) {
+    				let sourceNode = chance.oneOf(weightedNodeArray);
+    			}*/
+
+			}
+
+			/*
+				Dragging behavior for simulation
+			*/
 			const drag = simulation => {
 			  
 			  function dragstarted(d) {
@@ -200,20 +290,23 @@
 			      .on("end", dragended);
 			}
 
+			/*
+				Main function go generate and run a simulation
+				- simulation is declared outside the function to have global scope and
+				allow for stopping in other areas
+			*/
 			let simulation;
 			function run() {
-				simulation = null;
 				let svg = d3.select("#renderArea").append("svg")
 					.attr("width", width)
 					.attr("height", height);
 
 				simulation = d3.forceSimulation(graph.nodes)
-					//.force("radial", d3.forceRadial(width/4, width/2, height/2).strength(.6))
-					.force("charge", d3.forceManyBody().strength(-15))
+					.force("charge", d3.forceManyBody().strength(-10))
 					.force("center", d3.forceCenter(width/2, height/2))
 					.force("link", d3.forceLink(graph.links))
-					.force("collide", d3.forceCollide((d) => {return d.r}).strength(1))
-					//.velocityDecay(.8);
+					.force("collide", d3.forceCollide((d) => {return d.r}).strength(1));
+					
 
 				let link = svg.append("g")
 					.attr("class", "edge")
@@ -247,32 +340,46 @@
 				        .attr("cy", function(d) { return d.y = Math.max(d.r, Math.min(height - d.r, d.y)); });
 				}
 			}
-			const nodesInputElement = document.getElementById("nodesInput")
-			nodesInputElement.onkeyup = () => {
-				console.log('here')
-				numNodes = parseInt(nodesInputElement.value);
-				GRAPH_GENERATORS[current_graph_type]();
-			}
 
-			const sizeInputElement = document.getElementById("sizeInput");
+			/*
+				HTML event handlers
+			*/
+			nodesInputElement.onkeyup = () => {
+				numNodes = parseInt(nodesInputElement.value);
+				GRAPH_GENERATORS[currentGraphType]();
+			}
 			sizeInputElement.onkeyup = () => {
 				width = height = Math.max(50, parseInt(sizeInputElement.value));
-				GRAPH_GENERATORS[current_graph_type]();
+				GRAPH_GENERATORS[currentGraphType]();
 			}
-			const generateErdosElement = document.getElementById("generateErdos")
 			generateErdosElement.onclick = () => {
-				current_graph_type = GRAPH_TYPES.ERDOS;
+				currentGraphType = GRAPH_TYPES.ERDOS;
+				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
 				GRAPH_GENERATORS[GRAPH_TYPES.ERDOS]();
 			}
-			const generateHubElement = document.getElementById("generateHub");
 			generateHubElement.onclick = () => {
-				current_graph_type = GRAPH_TYPES.HUB;
+				currentGraphType = GRAPH_TYPES.HUB;
+				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
 				GRAPH_GENERATORS[GRAPH_TYPES.HUB]();
+			}
+			generateScaleFreeElement.onclick = () => {
+				currentGraphType = GRAPH_TYPES.SF;
+				currentGraphTypeElement.innerHTML = `${GRAPH_NAMES[currentGraphType]}:`;
+				GRAPH_GENERATORS[GRAPH_TYPES.SF]();
+			}
+
+			window.onresize = () => {
+				width = Math.min(
+					window.innerHeight - renderAreaRect.top - window.scrollY, 
+					window.innerWidth - renderAreaRect.left) - sizeOffset;
+				height = width;
+				sizeInputElement.value = Math.floor(width);
+				GRAPH_GENERATORS[currentGraphType]();
 			}
 
 			window.onload = () => {
-				GRAPH_GENERATORS[current_graph_type]();
+				GRAPH_GENERATORS[currentGraphType]();
 			}
-	    </script> <!-- Dist bundle from webpack-->
+	    </script>
    	</body>
 </html>
