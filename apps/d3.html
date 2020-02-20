@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-    	<title>Getting Started</title>
+    	<title>Random D3 Graphs</title>
    	</head>
    	<body>
    		<h1>Random Graphs with D3!</h1>
@@ -62,7 +62,7 @@
 
     		function generateHub() { 
     			clearForGraphGeneration();
-				hubGraph(Math.floor(Math.sqrt(numNodes)), Math.floor(numNodes / Math.sqrt(numNodes)));
+				hubGraph(Math.floor(Math.sqrt(numNodes)/1.5), Math.floor(numNodes / Math.sqrt(numNodes)/1.5));
 				run();
 			}
 
@@ -117,7 +117,8 @@
 				1.5/numNodes as probability parameter ps
 			*/
 			function erdosRenyi() {
-				radius=5;
+				radius=2;
+				radiusIncrease = .5;
 				function populateNodes(n) {
 					for(let i=0; i<n; i++) {
 						graph.nodes.push({
@@ -141,6 +142,7 @@
 							if(Math.random() < p) {
 								graph.nodes[i].friends = graph.nodes[i].friends + 1;
 								graph.nodes[j].friends = graph.nodes[j].friends + 1;
+								graph.nodes[i].r = graph.nodes[i].r + radiusIncrease; //increase for outlinks
 								graph.links.push({
 									source: graph.nodes[i],
 									target: graph.nodes[j]
