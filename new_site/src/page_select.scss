@@ -1,0 +1,38 @@
+@import 'src/colors';
+
+.page-select {
+		padding: 0px 10px;
+
+		#pages {
+			margin: 6px 0;
+			padding: 0;
+			border-top: 2px solid $light-green;
+			font-weight: 400;
+
+			div {
+				float: left;
+				margin: 0 5px;
+				display: inline;
+				list-style-type: none;
+				padding: 5px 20px;
+				color: $light-grey;
+				border: 1px solid $light-grey;
+				border-top: 0;
+				border-bottom-right-radius: 8px;
+				border-bottom-left-radius: 8px;
+				width: 105px;
+			}
+
+			div:hover {
+				cursor: pointer;
+			}
+
+			.selected {
+				font-weight: 700;
+				border: 2px solid $light-green;
+				border-top: 0;
+				color: black;
+				max-width: 103px;
+			}
+		}
+	}

@@ -1,0 +1,15 @@
+@import "src/colors";
+
+.home-content {
+	ul {
+		padding: 0;
+		margin: 0;
+		font-size: 90%;
+		color: $grey;
+
+		li {
+			display: inline;
+			padding: 0 5px;
+		}
+	}
+}
