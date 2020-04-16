@@ -21,8 +21,8 @@ class AboutContent extends React.Component {
                 <p>
                     Beyond Computer Science I have a ridiculous number of Hobbies. I invest a large amount of time and
                     money into ultralight backpacking, <a href="https://lighterpack.com/r/73c46t">here is my
-                    lighterpack.</a> To go along with long distance hiking, I've been a runner for most of my life I
-                    also am a specialty coffee drinker and daily home-espresso maker. I use a manual espresso press and
+                    lighterpack.</a> To go along with long distance hiking, I've been a runner for most of my life. I am
+                    a specialty coffee drinker and daily home-espresso maker. I use a manual espresso press and
                     grinder, and I prefer Ethiopian natural process coffees. I play a host of musical instruments,
                     mostly guitar, where I study the <a href="https://rateyourmusic.com/genre/American+Primitivism/">American
                     Primitivism style.</a> "I've always been passionate about Art and Design. I draw every day, and if I
