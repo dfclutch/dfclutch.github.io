@@ -6,7 +6,7 @@ import "./home.scss";
 class HomeContent extends React.Component {
     render() {
         return (
-            <div>
+            <div className="home-content">
                 <h1>Dan Filler</h1>
                 <ul>
                     <li>The Ohio State University</li>
@@ -23,6 +23,10 @@ class HomeContent extends React.Component {
                 <p>
                     Frameworks and tech I use: React, Express, Hapi.js, Flask, Mongo, Axios, D3js, three.js, Webpack,
                     Babel, Sass, Bootstrap, Mocha, Chai, Enzyme, Sinon, Pact, JWT, Passport, AWS, Heroku
+                </p>
+                <p>
+                    <strong>NOTE:</strong> This webpage is currently under construction. It is the working result of a
+                    React component built for content presentation.
                 </p>
             </div>
         );

@@ -1,0 +1,24 @@
+@import "../colors";
+
+#carousel {
+
+  #next {
+    float: right;
+  }
+
+  #prev {
+    float: left;
+  }
+
+  #next, #prev {
+    padding: 8px 20px;
+    text-align: center;
+    border: 1px solid $light-grey;
+    display: inline;
+  }
+
+  #next:hover, #prev:hover {
+    background-color: $grey;
+    color: white;
+  }
+}

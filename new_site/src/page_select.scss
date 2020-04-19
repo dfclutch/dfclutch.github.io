@@ -6,7 +6,7 @@
 		#pages {
 			margin: 6px 0;
 			padding: 0;
-			border-top: 2px solid $light-green;
+			border-top: 2px solid $light-theme;
 			font-weight: 400;
 
 			div {
@@ -17,9 +17,9 @@
 				padding: 5px 20px;
 				color: $light-grey;
 				border: 1px solid $light-grey;
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
 				border-top: 0;
-				border-bottom-right-radius: 8px;
-				border-bottom-left-radius: 8px;
 				width: 105px;
 			}
 
@@ -29,7 +29,7 @@
 
 			.selected {
 				font-weight: 700;
-				border: 2px solid $light-green;
+				border: 2px solid $light-theme;
 				border-top: 0;
 				color: black;
 				max-width: 103px;

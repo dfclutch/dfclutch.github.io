@@ -11,7 +11,8 @@ section {
 		text-align: justify;
 		border: 1px solid $light-grey;
 		padding: 10px;
-		background-color: white;
+		background-color: $theme;
+		color: white;
 		min-height: 510px;
 	}
 
@@ -19,23 +20,40 @@ section {
 		margin: 0;
 	}
 
+	h4 {
+		color: $light-grey;
+	}
+
 	a {
 		text-decoration: none;
-		color: $light-green;
+		color: $light-theme;
 	}
 
 	a:visited {
 		text-decoration: none;
-		color: $light-green;
+		color: $light-theme;
 	}
 
 	a:hover {
 		text-decoration: none;
-		color: $green;
+		color: $theme;
 	}
 
 	a:active {
 		text-decoration: none;
-		color: $dark-green;
+		color: $dark-theme;
 	}
+}
+
+@media only screen and (max-width: 425px) {
+	section {
+		width: 95%;
+		margin: 0;
+		font-size: 30px;
+
+		#content {
+			min-height: 80%;
+		}
+	}
+	
 }
