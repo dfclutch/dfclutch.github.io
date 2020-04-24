@@ -59,17 +59,17 @@ body {
 
 @media only screen and (max-device-width: 425px) {
 	body {
-		padding: 5px 0;
+		padding: 20px;
 	}
 
 	#root {
-		min-width: 95%;
-		margin: 0 auto;
+		width: 100%;
+		margin: 0;
 		font-size: 35px;
 
 		#content {
 			border: none;
-			background-color: $theme;
+			background-color: $light-theme;
 			height: 1200px;
 		}
 	}
