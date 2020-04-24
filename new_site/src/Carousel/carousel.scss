@@ -22,3 +22,10 @@
     color: white;
   }
 }
+
+
+@media only screen and (max-device-width: 425px) {
+  #next, #prev {
+    border: 3px solid $light-neutral
+  }
+}
