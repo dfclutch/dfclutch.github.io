@@ -1,77 +1,93 @@
 @import 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantata+One&display=swap');
 
-html,body {
-	margin: 0;
-	height: 100%;
+html, body {
+    margin: 0;
+    max-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-	background-color: $theme;
-	padding: 20px;
+    background-color: $theme;
+    padding: 20px;
 }
 
 #root {
-	width: 775px;
-	font-family: 'Overpass', sans-serif;
-	font-weight: 400;
-	margin: auto;
+    font-family: 'Overpass', sans-serif;
 
-	#content {
-		text-align: justify;
-		border: 1px solid $light-neutral;
-		background-color: $light-theme;
-		color: white;
-		min-height: 510px;
-		border-radius: 6px;
-		box-shadow: 10px 10px $light-neutral;
-		margin-bottom: 15px;
-	}
+    #app-container {
+        width: 800px;
+        margin: auto;
 
-	h1 {
-		margin: 0;
-		padding: 20px;
-	}
+        #content {
+            text-align: justify;
+            font-weight: 400;
+            font-size: 18px;
+            background-color: $light-theme;
+            color: white;
 
-	h4 {
-		color: white;
-		background-color: $dark-theme;
-		margin: 0;
-		padding: 20px;
-	}
+            min-height: 550px;
+            margin-bottom: 15px;
 
-	a {
-		color: $light-neutral;
-	}
+            border-radius: 8px;
+            box-shadow: 10px 10px $light-neutral;
+            border: 1px solid $light-neutral;
+        }
 
-	a:visited {
-		color: $light-neutral;
-	}
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 70px;
+            font-family: 'Cantata One', serif;
+        }
 
-	a:active {
-		color: $dark-neutral;
-	}
+        h4 {
+            color: white;
+            background-color: $dark-theme;
+            margin: 0;
+            padding: 20px;
+        }
 
-	p {
-		padding: 0 20px;
-	}
+        a {
+            color: $light-neutral;
+        }
+
+        a:visited {
+            color: $light-neutral;
+        }
+
+        a:active {
+            color: $dark-neutral;
+        }
+
+        p {
+            padding: 0 20px;
+        }
+    }
+
 }
 
-@media only screen and (max-device-width: 425px) {
-	body {
-		padding: 20px;
-	}
+@media only screen and (max-device-width: 660px) {
+    body {
+        padding: 20px;
+    }
 
-	#root {
-		width: 100%;
-		margin: 0;
-		font-size: 35px;
+    #root {
+        #app-container {
+            min-width: 100%;
 
-		#content {
-			border: none;
-			background-color: $light-theme;
-			height: 1200px;
-		}
-	}
-	
+            #content {
+                font-size: 34px;
+                border: none;
+                height: 1330px;
+                border-radius: 20px;
+
+                h1 {
+                    font-size: 125px;
+                }
+            }
+        }
+    }
 }

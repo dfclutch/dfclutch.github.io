@@ -1,6 +1,6 @@
 @import 'src/colors';
 
-.page-select {
+#page-select {
 		padding: 0px 10px;
 
 		#pages {
@@ -17,8 +17,8 @@
 				padding: 5px 20px;
 				color: $light-theme;
 				border: 1px solid $light-neutral;
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
 				border-top: 0;
 				min-width: 105px;
 				background-color: $dark-theme;
@@ -28,7 +28,7 @@
 				cursor: pointer;
 			}
 
-			.selected {
+			div.selected {
 				font-weight: 700;
 				border: 2px solid $dark-neutral;
 				border-top: 0;
@@ -39,8 +39,8 @@
 	}
 
 
-@media only screen and (max-device-width: 425px) {
-	.page-select {
+@media only screen and (max-device-width: 660px) {
+	#page-select {
 		#pages {
 			border-top: 5px solid $dark-neutral;
 
@@ -48,12 +48,12 @@
 				padding: 15px 20px;
 				font-size: 45px;
 				border: 3px solid $light-neutral;
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
 				border-top: 0;
 			}
 
-			.selected {
+			div.selected {
 				border: 6px solid $dark-neutral;
 				border-top: 0;
 			}

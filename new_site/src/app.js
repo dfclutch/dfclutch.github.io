@@ -24,9 +24,9 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="app-container">
                 <Content page_id={this.state.current_page_id}/>
-                <div className="page-select">
+                <div id="page-select">
                     <PageSelect changePage={this.changePage} current_page_id={this.state.current_page_id}/>
                 </div>
             </div>
