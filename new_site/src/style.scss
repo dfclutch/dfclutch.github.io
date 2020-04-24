@@ -20,18 +20,24 @@ body {
 	#content {
 		text-align: justify;
 		border: 1px solid $light-neutral;
-		padding: 10px;
 		background-color: $light-theme;
 		color: white;
 		min-height: 510px;
+		border-radius: 6px;
+		box-shadow: 10px 10px $light-neutral;
+		margin-bottom: 15px;
 	}
 
 	h1 {
 		margin: 0;
+		padding: 20px;
 	}
 
 	h4 {
-		color: $light-neutral;
+		color: white;
+		background-color: $dark-theme;
+		margin: 0;
+		padding: 20px;
 	}
 
 	a {
@@ -45,6 +51,10 @@ body {
 	a:active {
 		color: $dark-neutral;
 	}
+
+	p {
+		padding: 0 20px;
+	}
 }
 
 @media only screen and (max-device-width: 425px) {
@@ -57,14 +67,10 @@ body {
 		margin: 0 auto;
 		font-size: 35px;
 
-		h4 {
-			color: white;
-		}
-
 		#content {
 			border: none;
 			background-color: $theme;
-			height: 1700px;
+			height: 1200px;
 		}
 	}
 	
