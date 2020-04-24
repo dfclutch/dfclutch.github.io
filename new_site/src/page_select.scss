@@ -6,7 +6,7 @@
 		#pages {
 			margin: 6px 0;
 			padding: 0;
-			border-top: 2px solid $light-theme;
+			border-top: 2px solid $dark-neutral;
 			font-weight: 400;
 
 			div {
@@ -15,12 +15,13 @@
 				display: inline;
 				list-style-type: none;
 				padding: 5px 20px;
-				color: $light-grey;
-				border: 1px solid $light-grey;
+				color: $light-theme;
+				border: 1px solid $light-neutral;
 				border-bottom-left-radius: 6px;
 				border-bottom-right-radius: 6px;
 				border-top: 0;
-				width: 105px;
+				min-width: 105px;
+				background-color: $dark-theme;
 			}
 
 			div:hover {
@@ -29,10 +30,28 @@
 
 			.selected {
 				font-weight: 700;
-				border: 2px solid $light-theme;
+				border: 2px solid $dark-neutral;
 				border-top: 0;
-				color: black;
-				max-width: 103px;
+				color: white;
 			}
 		}
 	}
+
+
+@media only screen and (max-device-width: 425px) {
+	.page-select {
+		#pages {
+			border-top: 5px solid $dark-neutral;
+
+			div {
+				padding: 15px 25px;
+				font-size: 50px;
+			}
+
+			.selected {
+				border: 5px solid $dark-neutral;
+				border-top: 0;
+			}
+		}
+	}
+}

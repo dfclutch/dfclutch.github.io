@@ -13,12 +13,12 @@
   #next, #prev {
     padding: 8px 20px;
     text-align: center;
-    border: 1px solid $light-grey;
+    border: 1px solid $light-neutral;
     display: inline;
   }
 
-  #next:hover, #prev:hover {
-    background-color: $grey;
+  #next:active, #prev:active {
+    background-color: $neutral;
     color: white;
   }
 }

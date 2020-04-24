@@ -8,14 +8,6 @@ class HomeContent extends React.Component {
         return (
             <div className="home-content">
                 <h1>Dan Filler</h1>
-                <ul>
-                    <li>The Ohio State University</li>
-                    <li>|</li>
-                    <li>Computer Science Engineering</li>
-                    <li>|</li>
-                    <li>Front-end Web App Developer</li>
-                </ul>
-
                 <p>
                     Pennsylvania native living in Columbus, Ohio. Actively looking for employment in full-stack or
                     front-end web development. Passionate about Network Science, Agrotech, and Artificial Intelligence.
@@ -23,10 +15,6 @@ class HomeContent extends React.Component {
                 <p>
                     Frameworks and tech I use: React, Express, Hapi.js, Flask, Mongo, Axios, D3js, three.js, Webpack,
                     Babel, Sass, Bootstrap, Mocha, Chai, Enzyme, Sinon, Pact, JWT, Passport, AWS, Heroku
-                </p>
-                <p>
-                    <strong>NOTE:</strong> This webpage is currently under construction. It is the working result of a
-                    React component built for content presentation.
                 </p>
             </div>
         );

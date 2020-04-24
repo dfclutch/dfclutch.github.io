@@ -1,17 +1,27 @@
 @import 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;700&display=swap');
 
-section {
-	width: 775px;
-	margin: auto;
-	font-family: 'Overpass', sans-serif;
-	font-weight: 200;
+html,body {
+	margin: 0;
+	height: 100%;
+}
 
-	#content {	
+body {
+	background-color: $theme;
+	padding: 20px;
+}
+
+#root {
+	width: 775px;
+	font-family: 'Overpass', sans-serif;
+	font-weight: 400;
+	margin: auto;
+
+	#content {
 		text-align: justify;
-		border: 1px solid $light-grey;
+		border: 1px solid $light-neutral;
 		padding: 10px;
-		background-color: $theme;
+		background-color: $light-theme;
 		color: white;
 		min-height: 510px;
 	}
@@ -21,38 +31,40 @@ section {
 	}
 
 	h4 {
-		color: $light-grey;
+		color: $light-neutral;
 	}
 
 	a {
-		text-decoration: none;
-		color: $light-theme;
+		color: $light-neutral;
 	}
 
 	a:visited {
-		text-decoration: none;
-		color: $light-theme;
-	}
-
-	a:hover {
-		text-decoration: none;
-		color: $theme;
+		color: $light-neutral;
 	}
 
 	a:active {
-		text-decoration: none;
-		color: $dark-theme;
+		color: $dark-neutral;
 	}
 }
 
-@media only screen and (max-width: 425px) {
-	section {
-		width: 95%;
-		margin: 0;
-		font-size: 30px;
+@media only screen and (max-device-width: 425px) {
+	body {
+		padding: 5px 0;
+	}
+
+	#root {
+		min-width: 95%;
+		margin: 0 auto;
+		font-size: 35px;
+
+		h4 {
+			color: white;
+		}
 
 		#content {
-			min-height: 80%;
+			border: none;
+			background-color: $theme;
+			height: 1955px;
 		}
 	}
 	
