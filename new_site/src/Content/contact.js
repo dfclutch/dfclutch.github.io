@@ -5,7 +5,7 @@ class ContactContent extends React.Component {
     render() {
         return (
             <div>
-                <h1>Contact</h1>
+                <h4>Contact</h4>
                 <p>
                     <a href="http://github.com/dfclutch">github</a>
                     <br />

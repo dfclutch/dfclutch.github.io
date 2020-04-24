@@ -6,7 +6,6 @@ class AboutContent extends React.Component {
     render() {
         return (
             <div>
-                <h1>About</h1>
                 <Carousel
                     slides={
                         [(

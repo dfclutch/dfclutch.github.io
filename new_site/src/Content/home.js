@@ -7,7 +7,6 @@ class HomeContent extends React.Component {
     render() {
         return (
             <div className="home-content">
-                <h1>Dan Filler</h1>
                 <p>
                     Pennsylvania native living in Columbus, Ohio. Actively looking for employment in full-stack or
                     front-end web development. Passionate about Network Science, Agrotech, and Artificial Intelligence.

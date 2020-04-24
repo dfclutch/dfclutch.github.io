@@ -21,7 +21,7 @@ body {
         width: 800px;
         margin: auto;
 
-        #content {
+        #content-container {
             text-align: justify;
             font-weight: 400;
             font-size: 18px;
@@ -78,7 +78,7 @@ body {
         #app-container {
             min-width: 100%;
 
-            #content {
+            #content-container {
                 font-size: 34px;
                 border: none;
                 height: 1330px;
