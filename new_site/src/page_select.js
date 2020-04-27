@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import {PAGES} from "./config";
-import "./page_select.scss";
 
 class PageSelect extends React.Component {
 

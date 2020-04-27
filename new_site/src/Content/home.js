@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import "./home.scss";
 
 class HomeContent extends React.Component {
     render() {

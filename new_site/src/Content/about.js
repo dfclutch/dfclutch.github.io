@@ -49,7 +49,7 @@ class AboutContent extends React.Component {
                                 <p>
                                     Beyond Computer Science I have a lot of other hobbies. I invest a large amount
                                     of time and
-                                    money into ultralight backpacking, <a href="https://lighterpack.com/r/73c46t">here
+                                    money into ultralight backpacking, <a target="_blank" href="https://lighterpack.com/r/73c46t">here
                                     is my
                                     lighterpack.</a> To go along with long distance hiking, I've been a runner for most
                                     of
@@ -59,7 +59,7 @@ class AboutContent extends React.Component {
                                     and
                                     grinder, and I prefer Ethiopian natural process coffees. I play a host of musical
                                     instruments,
-                                    mostly guitar, where I study the <a
+                                    mostly guitar, where I study the <a target="_blank"
                                     href="https://rateyourmusic.com/genre/American+Primitivism/">American
                                     Primitivism style.</a>
                                 

@@ -7,9 +7,9 @@ class ContactContent extends React.Component {
             <div>
                 <h4>Contact</h4>
                 <p>
-                    <a href="http://github.com/dfclutch">github</a>
+                    <a href="http://github.com/dfclutch" target="_blank">github</a>
                     <br />
-                    <a href="https://www.linkedin.com/in/dan-filler/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/dan-filler/" target="_blank">LinkedIn</a>
                     <br />
                     <a href="mailto:filler.7@osu.edu">Email</a>
                     <br />

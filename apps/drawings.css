@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaldi&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gallery {
+  font-family: "Jaldi", sans-serif;
+  width: 45%;
+  margin: auto;
+}
+#gallery h1 {
+  margin: 10px 0;
+  padding: 30px 0;
+}
+#gallery .figure {
+  margin: 20px 0;
+}
+#gallery .figure a {
+  color: #0267db;
+}
+#gallery .figure a:visited {
+  color: #0267db;
+}
+#gallery .figure a:active {
+  color: #0398fc;
+}
+#gallery .figure .info {
+  width: 25%;
+  margin: 0;
+}
+#gallery .figure .info div {
+  border: 1px solid black;
+}
+#gallery .figure .info div h1 {
+  margin: 0;
+  padding: 0 10px 5px;
+  font-size: 22px;
+}
+#gallery .figure .info div p {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+#gallery .figure .info div .date {
+  color: #999;
+}
+#gallery .figure .picture {
+  width: 75%;
+  margin: 0;
+}
+#gallery .figure .picture img {
+  max-width: 100%;
+  padding: 0;
+}
+#gallery .figure .picture.full {
+  width: 100%;
+}
+#gallery .figure .picture.full img {
+  width: 100%;
+}
+#gallery .figure .picture:hover {
+  transform: scale(1.5);
+}
+#gallery .figure .info.left {
+  padding-left: 5px;
+  float: left;
+}
+#gallery .figure .picture.left {
+  float: left;
+}
+#gallery .figure .info.right {
+  padding-right: 5px;
+  float: right;
+}
+#gallery .figure .picture.right {
+  float: right;
+}
+#gallery .figure .clear {
+  clear: both;
+}
+
+/*# sourceMappingURL=drawings.css.map */
