@@ -4,7 +4,6 @@ import SidebarBlock from "./sidebar_block";
 class Sidebar extends React.Component {
     
     setContainerWidth() {
-        console.log("set width")
         /*
             Vanilla JS width calculation because it's easy
          */
@@ -21,6 +20,11 @@ class Sidebar extends React.Component {
     }
     
     render() {
+        if (document.getElementById("root").scrollWidth < 460){
+            console.log("here");
+            return;
+        }
+        
         let mystuff_blocks = [
             <SidebarBlock
                 heading="Drawings"
