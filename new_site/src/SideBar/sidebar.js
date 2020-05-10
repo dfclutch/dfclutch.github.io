@@ -46,9 +46,14 @@ class Sidebar extends React.Component {
                 link="http://solarbotics.net/library/pdflib/pdf/living_machines.pdf"
                 text="The classic Tilden publication on BEAM robotics: eletronic circuits that can approximate the intelligence of simple insects."
                 key={1}
-            />,
-            
-        ]
+            />,<SidebarBlock
+                heading="Network Science"
+                link="http://networksciencebook.com/"
+                text="An excellent online textbook covering network science by Barabasi."
+                key={2}
+            />
+        ];
+        
         return (
             <div id="sidebar-container">
                 <div id="sidebar">
