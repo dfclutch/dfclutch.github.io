@@ -24,6 +24,8 @@ class HomeContent extends React.Component {
                     <img src="./img/sass.png" alt="Sass" title="Sass"/>
                     <img src="./img/express.png" alt="Express" title="ExpressJS"/>
                     <img src="./img/babel.jpg" alt="Babel" title="Babel"/>
+                    <img src="./img/intellij.png" alt="Intellij" title="IntelliJ Idea"/>
+                    <img src="./img/redux.png" alt="Redux" title="Redux"/>
                 </div>
             </div>
         );
