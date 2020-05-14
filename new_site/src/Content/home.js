@@ -1,4 +1,5 @@
 import React from 'react';
+import "./img_grid.scss";
 
 class HomeContent extends React.Component {
     render() {
@@ -9,9 +10,21 @@ class HomeContent extends React.Component {
                     front-end web development. Passionate about Network Science, Agrotech, and Artificial Intelligence.
                 </p>
                 <p>
-                    Frameworks and tech I use: React, Express, Hapi.js, Flask, Mongo, Axios, D3js, three.js, Webpack,
-                    Babel, Sass, Bootstrap, Mocha, Chai, Enzyme, Sinon, Pact, JWT, Passport, AWS, Heroku
+                    Frameworks and tech that I use:
                 </p>
+                <div className="gallery">
+                    <img src="./img/react.png" alt="React" title="ReactJs"/>
+                    <img src="./img/node.png" alt="Node" title="NodeJs"/>
+                    <img src="./img/python.png" alt="Python" title="Python"/>
+                    <img src="./img/mongo.png" alt="MongoDb" title="MongoDb"/>
+                    <img src="./img/webpack.png" alt="Webpack" title="Webpack"/>
+                    <img src="./img/d3.png" alt="D3js" title="D3js"/>
+                    <img src="./img/hapi.png" alt="Hapi" title="HapiJS"/>
+                    <img src="./img/jwt.png" alt="JWT" title="JSON Web Tokens"/>
+                    <img src="./img/sass.png" alt="Sass" title="Sass"/>
+                    <img src="./img/express.png" alt="Express" title="ExpressJS"/>
+                    <img src="./img/babel.jpg" alt="Babel" title="Babel"/>
+                </div>
             </div>
         );
     }
