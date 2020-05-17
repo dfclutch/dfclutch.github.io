@@ -26,6 +26,12 @@ const chance = {
 			green = chance.intBetween(b,255),
 			blue = chance.intBetween(b,255);
 		return `rgb(${red},${green},${blue})`;
+	},
+	coinflip: () => {
+		return chance.between(0,1) > .5
+	},
+	weightedCoinflip: (p) => {
+		return chance.between(0,1) < p;
 	}
 }
 

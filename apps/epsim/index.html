@@ -8,7 +8,7 @@
 
 <div class="content">
     <h1>Covid-19 SAIRD Epidemic Simulation</h1>
-    <h4>Dan Filler</h4>
+    <h4>Dan Filler | Version 0.1</h4>
     <p>
         <strong>Disclaimer:</strong> I am a programmer, not a medical doctor. I made this after reading a few papers from
         the Network Science and Datamining community, particularly <a
@@ -70,7 +70,7 @@
         </ul>
         <br>
         The flowchart below shows how an individual can progress through the compartments:
-        <img src="SAIRD.png" alt="compartmental flow"/>
+        <img src="SAIRD.svg" alt="compartmental flow"/>
     </p>
     <p>
         Use the sliders below to set each parameter.
@@ -82,26 +82,26 @@
         <div class="col">
             <div class="param">
                 <label for="I0">Initial Infection Size:</label> <span id="I0-text"></span> people infected<br>
-                <input class="slider" type="range" id="I0" min="1" max="100" step="1" value="10">
+                <input class="slider" type="range" id="I0" min="1" max="30" step="1" value="5">
             </div>
             <div class="param">
                 <label for="pI">Infection Probability:</label> <span id="pI-text"></span><br>
-                <input class="slider" type="range" id="pI" min="0" max="1" step=".05" value=".65">
+                <input class="slider" type="range" id="pI" min="0" max="1" step=".01" value=".05">
             </div>
             <div class="param">
                 <label for="pR">Recovery Probability:</label> <span id="pR-text"></span><br>
                 Mortality Probability: <span id="pM-text"></span><br>
-                <input class="slider" type="range" id="pR" min="0" max="1" step=".05" value=".9">
+                <input class="slider" type="range" id="pR" min="0" max="1" step=".01" value=".9">
             </div>
         </div>
         <div class="col">
             <div class="param">
                 <label for="AHCR">Assumed Healthy Contact Rate:</label> <span id="AHCR-text"></span> people contacted daily<br>
-                <input class="slider" type="range" id="AHCR" min="0" max="15" step=".5" value="3">
+                <input class="slider" type="range" id="AHCR" min="0" max="15" step="1" value="3">
             </div>
             <div class="param">
                 <label for="CCR">Confirmed Infectious Contact Rate:</label> <span id="CCR-text"></span> people contacted daily<br>
-                <input class="slider" type="range" id="CCR" min="0" max="20" step=".5" value=".5">
+                <input class="slider" type="range" id="CCR" min="0" max="20" step="1" value=".5">
             </div>
         </div>
         <div class="col">
@@ -113,6 +113,9 @@
                 <label for="Tc">Contagious Time:</label> <span id="Tc-text"></span> days<br>
                 <input class="slider" type="range" id="Tc" min="0" max="21" value="10">
             </div>
+
+            <button id="run">Run</button>
+
         </div>
         <br style="clear:both;"/>
     </div>
@@ -153,6 +156,9 @@
             Tc: parseFloat(param_elements.Tc.value)
         };
 
+        /* Run button */
+        let run_button = document.getElementById("run");
+
         /* update parameter value on slider change */
         function paramUpdate() {
             Object.keys(param_elements).forEach(key => {
@@ -163,6 +169,8 @@
             params.pM = 1 - params.pR;
             param_text.pM.innerHTML = params.pM.toFixed(2);
             buildIndividuals();
+            drawIndividuals();
+            resetAnimation();
         }
 
         /* add event listeners */
@@ -173,7 +181,13 @@
         /* call paramUpdate to set initial parameters */
         paramUpdate();
     </script>
-
+    <div class="stats">
+        <span >Population Size: 1600</span>
+        <span >Total Infected: </span><span id="infected_stat"></span>
+        <span >Active Infected: </span><span id="active_infected_stat"></span>
+        <span >Recovered: </span><span id="recovered_stat"></span>
+        <span >Deceased: </span><span id="deceased_stat"></span>
+    </div>
     <div id="renderArea">
         <!-- SVG animation goes here! -->
     </div>
@@ -181,10 +195,13 @@
     <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
     <script type="text/javascript" src="../chance.js"></script>
     <script>
+        /*
+        *   D3 Setup
+         */
 
         let width = document.getElementById("renderArea").scrollWidth;
         let height = width / 2;
-        let r = 7;
+        let r = 5;
         let yellow = "#fe0",
             orange = "#f70",
             red    = "#f00",
@@ -204,10 +221,10 @@
         let individuals =[],
             infected = [];
 
-        const N = 600;
+        const N = 1600;
         // these must multiply to N
-        const rows = 20,
-            cols = 30;
+        const rows = 32,
+            cols = 50;
 
         function setupRenderArea() {
             d3.selectAll("svg").remove();
@@ -224,9 +241,12 @@
                 .attr("y", 0)
                 .attr("width", width)
                 .attr("height", height)
-                .attr("stroke", "#333")
+                .attr("stroke", "#ddd")
+                .attr("rx", 8)
                 .attr("stroke-width", 1)
-                .attr("fill", "#333");
+                .attr("fill", "#444");
+
+            updateStats();
         }
 
 
@@ -272,10 +292,9 @@
             infected = chance.nOf(params.I0, individuals);
             infected.forEach(individual => {
                 individual.state = states.a;
+                individual.infectedAt = 0; // timestamp for infection
             });
-
-            drawIndividuals();
-        };
+        }
 
         function drawIndividuals() {
             if (circles) {
@@ -295,13 +314,108 @@
 
         window.onresize = () => {
             setupRenderArea();
-        }
+            buildIndividuals();
+            drawIndividuals();
+        };
 
         window.onload = () => {
             setupRenderArea();
             buildIndividuals();
+            drawIndividuals();
+        }
+    </script>
+
+    <script>
+        /*
+            ANIMATION STUFF
+         */
+        var animationTimer;
+
+        let total_infected = params.I0;
+            total_recovered = 0;
+            total_deceased = 0;
+
+        function updateStats() {
+            document.getElementById("infected_stat").innerHTML = total_infected;
+            document.getElementById("recovered_stat").innerHTML = total_recovered;
+            document.getElementById("deceased_stat").innerHTML = total_deceased;
+            document.getElementById("active_infected_stat").innerHTML = (total_infected - total_deceased - total_recovered);
         }
 
+        function run() {
+            resetAnimation();
+            buildIndividuals();
+            drawIndividuals();
+
+            let current_time = 0;
+
+            animationTimer = setInterval(() => {
+                console.log("timestep");
+                infected.forEach(individual => {
+                    if (individual.state === states.a) {
+                        if (current_time - individual.infectedAt === params.To) {
+                            individual.state = states.i;
+                            individual.onsetAt = current_time;
+                        }
+                        // select AHCR from the population to contact
+                        let contacted = chance.nOf(params.AHCR, individuals);
+                        contacted.forEach(contactedIndividual => {
+                            if (contactedIndividual.state === states.s) {
+                                if (chance.weightedCoinflip(params.pI)) {
+                                    infected.push(contactedIndividual);
+                                    total_infected++;
+                                    contactedIndividual.state = states.a;
+                                    contactedIndividual.infectedAt = current_time;
+                                }
+                            }
+                        });
+
+                    }
+                    if (individual.state === states.i) {
+                        if (current_time - individual.onsetAt > 3 && chance.weightedCoinflip(.35)) {
+                            // decide fate after at least 3 days
+                            if (chance.weightedCoinflip(params.pR)) {
+                                individual.state = states.r;
+                                total_recovered++;
+                            } else{
+                                individual.state = states.d;
+                                total_deceased++;
+                            }
+                        }
+
+                        let contacted = chance.nOf(params.CCR, individuals);
+                        contacted.forEach(contactedIndividual => {
+                            if (contactedIndividual.state === states.s) {
+                                if (chance.weightedCoinflip(params.pI)) {
+                                    total_infected++;
+                                    infected.push(contactedIndividual);
+                                    contactedIndividual.state = states.a;
+                                    contactedIndividual.infectedAt = current_time;
+                                }
+                            }
+                        });
+                    }
+                });
+
+                updateStats();
+                drawIndividuals();
+                current_time++;
+
+                if (total_infected - total_recovered - total_deceased <= 0) {
+                    clearInterval(animationTimer);
+                }
+            }, 500);
+        }
+
+        function resetAnimation() {
+            clearInterval(animationTimer);
+            total_infected = params.I0;
+            total_deceased = 0;
+            total_recovered = 0;
+            updateStats();
+        }
+
+        run_button.addEventListener("click", run);
     </script>
 </div>
 </body>

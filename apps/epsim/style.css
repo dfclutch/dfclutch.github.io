@@ -1,3 +1,8 @@
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .content {
     width: 80%;
     margin: auto;
@@ -12,7 +17,7 @@
 .parameters {
     width: 75%;
     margin: auto;
-    background-color: #999;
+    background-color: #888;
     border-radius: 8px;
 }
 
@@ -21,8 +26,28 @@
     float: left;
 }
 
-.param {
+.param, button {
     margin: 10px;
+}
+
+button {
+    margin: 4px;
+    padding: 8px 15px;
+    border: 0;
+    background-color: #666;
+    box-shadow: none;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1.5em;
+}
+
+button:active {
+    background-color: #333;
+}
+
+button:focus {
+    outline: 0;
 }
 
 #renderArea {
@@ -42,4 +67,41 @@ a {
 
 a:visited {
     color: white;
+}
+
+.stats {
+    background-color: #888;
+    border-radius: 8px;
+    width: 75%;
+    margin: 10px auto;
+    padding: 20px 0;
+}
+
+.stats span {
+    margin: 0 10px;
+}
+
+
+@media only screen and (max-device-width: 660px) {
+    .content {
+        width: 95%;
+    }
+
+    .content img {
+        width: 100%;
+    }
+
+    .parameters {
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+    .stats {
+        width: 100%;
+    }
+
+    #renderArea {
+        width: 100%;
+    }
+
 }
