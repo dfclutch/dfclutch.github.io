@@ -48,7 +48,7 @@
     </ul>
 
     <br>
-    * Recovery + Mortality rates must sum to 1 because everyone infected person either dies or recovers.
+    * Recovery + Mortality rates must sum to 1 because every infected person either dies or recovers.
     <br>
     ** The assumed rate should be higher than the confirmed rate, once a person knows they are sick, their contact rate should be nearly zero.
     <br>
@@ -187,6 +187,7 @@
         <span >Active Infected: </span><span id="active_infected_stat"></span>
         <span >Recovered: </span><span id="recovered_stat"></span>
         <span >Deceased: </span><span id="deceased_stat"></span>
+        <span >Day: </span><span id="day_stat"></span>
     </div>
     <div id="renderArea">
         <!-- SVG animation goes here! -->
@@ -201,7 +202,7 @@
 
         let width = document.getElementById("renderArea").scrollWidth;
         let height = width / 2;
-        let r = 5;
+        let r = 7;
         let yellow = "#fe0",
             orange = "#f70",
             red    = "#f00",
@@ -243,6 +244,7 @@
                 .attr("height", height)
                 .attr("stroke", "#ddd")
                 .attr("rx", 8)
+                .attr("ry", 8)
                 .attr("stroke-width", 1)
                 .attr("fill", "#444");
 
@@ -313,6 +315,7 @@
         }
 
         window.onresize = () => {
+            resetAnimation();
             setupRenderArea();
             buildIndividuals();
             drawIndividuals();
@@ -331,15 +334,17 @@
          */
         var animationTimer;
 
-        let total_infected = params.I0;
-            total_recovered = 0;
-            total_deceased = 0;
+        let total_infected = params.I0,
+            total_recovered = 0,
+            total_deceased = 0,
+            current_time = 0;
 
         function updateStats() {
             document.getElementById("infected_stat").innerHTML = total_infected;
             document.getElementById("recovered_stat").innerHTML = total_recovered;
             document.getElementById("deceased_stat").innerHTML = total_deceased;
             document.getElementById("active_infected_stat").innerHTML = (total_infected - total_deceased - total_recovered);
+            document.getElementById("day_stat").innerHTML = current_time;
         }
 
         function run() {
@@ -347,10 +352,9 @@
             buildIndividuals();
             drawIndividuals();
 
-            let current_time = 0;
+            current_time = 0;
 
             animationTimer = setInterval(() => {
-                console.log("timestep");
                 infected.forEach(individual => {
                     if (individual.state === states.a) {
                         if (current_time - individual.infectedAt === params.To) {
@@ -412,6 +416,7 @@
             total_infected = params.I0;
             total_deceased = 0;
             total_recovered = 0;
+            current_time = 0;
             updateStats();
         }
 
