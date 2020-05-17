@@ -3,6 +3,7 @@
 <head>
     <title>Epidemic Simulator</title>
     <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="../../mobile_check.js"></script>
 </head>
 <body>
 
@@ -182,7 +183,7 @@
         paramUpdate();
     </script>
     <div class="stats">
-        <span >Population Size: 1600</span>
+        <span >Population Size: </span><span id="N_stat"></span>
         <span >Total Infected: </span><span id="infected_stat"></span>
         <span >Active Infected: </span><span id="active_infected_stat"></span>
         <span >Recovered: </span><span id="recovered_stat"></span>
@@ -200,9 +201,12 @@
         *   D3 Setup
          */
 
+        const isMobile = mobileCheck();
+        console.log(isMobile);
+
         let width = document.getElementById("renderArea").scrollWidth;
         let height = width / 2;
-        let r = 7;
+        let r = isMobile ? 5 : 6;
         let yellow = "#fe0",
             orange = "#f70",
             red    = "#f00",
@@ -222,10 +226,10 @@
         let individuals =[],
             infected = [];
 
-        const N = 1600;
+        const N = isMobile ? 1600 : 3200;
         // these must multiply to N
-        const rows = 32,
-            cols = 50;
+        const rows = isMobile ? 32 : 40;
+            cols = isMobile ? 50 : 80;
 
         function setupRenderArea() {
             d3.selectAll("svg").remove();
@@ -340,6 +344,7 @@
             current_time = 0;
 
         function updateStats() {
+            document.getElementById("N_stat").innerHTML = N;
             document.getElementById("infected_stat").innerHTML = total_infected;
             document.getElementById("recovered_stat").innerHTML = total_recovered;
             document.getElementById("deceased_stat").innerHTML = total_deceased;
@@ -408,7 +413,7 @@
                 if (total_infected - total_recovered - total_deceased <= 0) {
                     clearInterval(animationTimer);
                 }
-            }, 500);
+            }, 250);
         }
 
         function resetAnimation() {
