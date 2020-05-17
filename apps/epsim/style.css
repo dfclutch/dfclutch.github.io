@@ -1,0 +1,37 @@
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.content img {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.parameters {
+    width: 75%;
+    margin: auto;
+    background-color: #999;
+    border-radius: 8px;
+}
+
+.col {
+    width: 33%;
+    float: left;
+}
+
+.param {
+    margin: 10px;
+}
+
+#renderArea {
+    width: 75%;
+    margin: 10px auto;
+}
+
+body {
+    background-color: #454545;
+    color: white;
+    font-family: sans-serif;
+}

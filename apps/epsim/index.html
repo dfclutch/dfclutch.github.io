@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+    <title>Epidemic Simulator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="content">
+    <h1>Covid-19 SAIRD Epidemic Simulation</h1>
+    <h4>Dan Filler</h4>
+    <p>
+        <strong>Disclaimer:</strong> I am a programmer, not a medical doctor. I made this after reading a few papers from
+        the Network Science and Datamining community, particularly <a
+            href="https://www.kdd.org/kdd2018/accepted-papers/view/inferring-metapopulation-propagation-network-for-intra-city-epidemic-contro">this
+        paper</a>. This work is for entertainment and educational purposes only and I do not claim scientific or medical accuracy.<br/>
+        <br/>
+
+        This webpage provides a visualization of my variant of the <a
+            href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIRD_model"><em>Susceptible-Infectious-Recovered-Deceased</em>
+        (SIRD) model</a>. SIRD (and many related versions) is a simple compartmental model of epidemic spread. Models like these allow us to predict the spread and danger of a disease based off a few parameters. The canonical parameters are:
+    <ul>
+        <li><strong>Initial Infection Size (I0):</strong> The starting number of people infected</li>
+        <li><strong>Contact Rate:</strong> The average number of other people contacted in a timestep by each individual</li>
+        <li><strong>Infection Probability (pI):</strong> The probability of contracting disease after contact with an infected individual</li>
+        <li><strong>Recovery Probability (pR):</strong> The probability of recover once infected*</li>
+        <li><strong>Mortality Probability (pM):</strong> The probability of death once infected*</li>
+    </ul>
+
+    Each <em>timestep</em> in the simulation is 1 day, so the contact rate is how many people each person is in contact with per day on
+    average. I have chosen to include a couple more parameters in the model inspired by some specific information about the
+    Covid-19 outbreak:
+
+    <ul>
+        <li><strong>Assumed Healthy Contact Rate (AHCR):</strong> Contact rate for those who assume they are healthy**</li>
+        <li><strong>Confirmed Infectious Contact Rate (CCR):</strong> Contact rate after showing symptoms or receiving a positive test**</li>
+        <li><strong>Symptomatic Offset Time (To):</strong> The number of timesteps that an infected individual takes to show symptoms. For covid this has been reported as 1-2 weeks.</li>
+        <li><strong>Contagious Time (Tc):</strong> The number of timesteps an individual is contagious for after being infected. I have this set at 3 weeks (2 weeks asymptomatic, 1 week symptomatic).</li>
+    </ul>
+
+    Finally, we have 5 <em>compartments</em> or groups of people***. When combined, the 5 groups make up the entire population (everyone is in exactly one group). Each variable (S, A, I,...) Represents the number of individuals in that compartment.
+    <ul>
+        <li>Susceptible (S)</li>
+        <li>Assumed Healthy but Infected (A)</li>
+        <li>Confirmed Infected (I)</li>
+        <li>Recovered (R)</li>
+        <li>Deceased (D)</li>
+    </ul>
+
+    <br>
+    * Recovery + Mortality rates must sum to 1 because everyone infected person either dies or recovers.
+    <br>
+    ** The assumed rate should be higher than the confirmed rate, once a person knows they are sick, their contact rate should be nearly zero.
+    <br>
+    *** <em>S + A + I + R + D = N</em>, in other words, <em>N</em> is the total number of people in the population
+    </p>
+
+    <p>
+        With these parameters, we can now build our model. The model predicts infections and deaths by using the parameters to define <em>tranisition rate functions</em>. Each timestep, the transition rate functions are used to calculate how many new infections, recoveries, and deaths there are. The transition rate functions are defined as:
+        <ul>
+            <li><strong>Newly infected:</strong> <em>AHCR * pI * A + CCR * pI * I</em><br/>
+                All newly infected individuals are put in the <em>A</em> compartment for <em>To</em> timestamps then they are moved to the <em>I</em> compartment.
+            </li>
+            <li><strong>Newly recovered:</strong> <em>pR * I</em><br/>
+                Infected individuals may recover. After <em>Tc</em> timestamps from the time of infection, these individuals stop being contagious. Recovered individuals are assumed to be immune to the disease (unknown if this is true in general for Covid).
+            </li>
+            <li><strong>Newly deceased:</strong> <em>pM * I</em><br/>
+                Infected individuals may also die, these individuals are removed from the population. I have assumed that death happens after <em>Tc</em> timestamps.
+            </li>
+        </ul>
+        <br>
+        The flowchart below shows how an individual can progress through the compartments:
+        <img src="SAIRD.png" alt="compartmental flow"/>
+    </p>
+    <p>
+        Use the sliders below to set each parameter.
+        When you are done, click the run button to watch the simulation at work. Each individual is represented by a dot. Individuals who are in contact during a given time stamp are connected with a line. A green line means the contact did NOT transmit the disease, while a red line means the contact DID transmit the disease.
+        As the individuals move from compartment to compartment each timestamp, their color will change corresponding to their condition.
+    </p>
+
+    <div class="parameters">
+        <div class="col">
+            <div class="param">
+                <label for="I0">Initial Infection Size:</label> <span id="I0-text"></span> people infected<br>
+                <input class="slider" type="range" id="I0" min="1" max="100" step="1" value="10">
+            </div>
+            <div class="param">
+                <label for="pI">Infection Probability:</label> <span id="pI-text"></span><br>
+                <input class="slider" type="range" id="pI" min="0" max="1" step=".05" value=".65">
+            </div>
+            <div class="param">
+                <label for="pR">Recovery Probability:</label> <span id="pR-text"></span><br>
+                Mortality Probability: <span id="pM-text"></span><br>
+                <input class="slider" type="range" id="pR" min="0" max="1" step=".05" value=".9">
+            </div>
+        </div>
+        <div class="col">
+            <div class="param">
+                <label for="AHCR">Assumed Healthy Contact Rate:</label> <span id="AHCR-text"></span> people contacted daily<br>
+                <input class="slider" type="range" id="AHCR" min="0" max="15" step=".5" value="3">
+            </div>
+            <div class="param">
+                <label for="CCR">Confirmed Infectious Contact Rate:</label> <span id="CCR-text"></span> people contacted daily<br>
+                <input class="slider" type="range" id="CCR" min="0" max="20" step=".5" value=".5">
+            </div>
+        </div>
+        <div class="col">
+            <div class="param">
+                <label for="To">Symptomatic Offset Time:</label> <span id="To-text"></span> days<br>
+                <input class="slider" type="range" id="To" min="4" max="21" value="14">
+            </div>
+            <div class="param">
+                <label for="Tc">Contagious Time:</label> <span id="Tc-text"></span> days<br>
+                <input class="slider" type="range" id="Tc" min="0" max="21" value="10">
+            </div>
+        </div>
+        <br style="clear:both;"/>
+    </div>
+
+    <script>
+        /* Parameter Slider Elements */
+        const param_elements = {
+            I0: document.getElementById("I0"),
+            pI: document.getElementById("pI"),
+            pR: document.getElementById("pR"),
+            AHCR: document.getElementById("AHCR"),
+            CCR: document.getElementById("CCR"),
+            To: document.getElementById("To"),
+            Tc: document.getElementById("Tc")
+        };
+
+        /* text output for each parameter */
+        const param_text = {
+            I0: document.getElementById("I0-text"),
+            pI: document.getElementById("pI-text"),
+            pR: document.getElementById("pR-text"),
+            pM: document.getElementById("pM-text"),
+            AHCR: document.getElementById("AHCR-text"),
+            CCR: document.getElementById("CCR-text"),
+            To: document.getElementById("To-text"),
+            Tc: document.getElementById("Tc-text")
+        };
+
+        /* Global Parameter Values */
+        const params = {
+            I0: parseFloat(param_elements.I0.value),
+            pI: parseFloat(param_elements.pI.value),
+            pR: parseFloat(param_elements.pR.value),
+            pM: 1 - parseFloat(param_elements.pR.value),
+            AHCR: parseFloat(param_elements.AHCR.value),
+            CCR: parseFloat(param_elements.CCR.value),
+            To: parseFloat(param_elements.To.value),
+            Tc: parseFloat(param_elements.Tc.value)
+        };
+
+        /* update parameter value on slider change */
+        function paramUpdate() {
+            Object.keys(param_elements).forEach(key => {
+                params[key] = parseFloat(param_elements[key].value);
+                param_text[key].innerHTML = params[key];
+            });
+
+            params.pM = 1 - params.pR;
+            param_text.pM.innerHTML = params.pM.toFixed(2);
+            buildIndividuals();
+        }
+
+        /* add event listeners */
+        Object.keys(param_elements).forEach(key => {
+            param_elements[key].addEventListener("change", paramUpdate);
+        })
+
+        /* call paramUpdate to set initial parameters */
+        paramUpdate();
+    </script>
+
+    <div id="renderArea">
+        <!-- SVG animation goes here! -->
+    </div>
+
+    <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
+    <script type="text/javascript" src="../chance.js"></script>
+    <script>
+
+        let width = document.getElementById("renderArea").scrollWidth;
+        let height = width / 2;
+        let r = 7;
+        let yellow = "#fe0",
+            orange = "#f70",
+            red    = "#f00",
+            green  = "#0f0",
+            blue   = "#0af";
+
+        const states = {
+            s: "s",
+            a: "a",
+            i: "i",
+            r: "r",
+            d: "d"
+        };
+
+        let svg, border, circles;
+
+        let individuals =[],
+            infected = [];
+
+        const N = 600;
+        // these must multiply to N
+        const rows = 20,
+            cols = 30;
+
+        function setupRenderArea() {
+            d3.selectAll("svg").remove();
+
+            width = document.getElementById("renderArea").scrollWidth;
+            height = width / 2;
+
+            svg = d3.select("#renderArea").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            border = svg.append("rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", width)
+                .attr("height", height)
+                .attr("stroke", "#333")
+                .attr("stroke-width", 1)
+                .attr("fill", "#333");
+        }
+
+
+        function Individual(pos) {
+            this.state = states.s;
+            this.pos = pos;
+            this.color = () => {
+                switch (this.state) {
+                    case states.s:
+                        return yellow;
+                    case states.a:
+                        return orange;
+                    case states.i:
+                        return red;
+                    case states.r:
+                        return green;
+                    case states.d:
+                        return blue;
+                }
+            }
+        }
+
+        function buildIndividuals() {
+            individuals = [];
+
+            let hdist = width / (cols + 1),
+                vdist = height / (rows + 1);
+
+            let cx = hdist;
+            let cy = vdist;
+            for (let i = 0; i < rows; i++) { // row
+                cx = hdist;
+                for (let j = 0; j < cols; j++) {
+                    individuals.push(
+                        new Individual({x: cx, y: cy})
+                    );
+                    cx += hdist;
+                }
+                cy += vdist;
+            }
+
+            // select random no. of infected
+            infected = chance.nOf(params.I0, individuals);
+            infected.forEach(individual => {
+                individual.state = states.a;
+            });
+
+            drawIndividuals();
+        };
+
+        function drawIndividuals() {
+            if (circles) {
+                circles.remove();
+            }
+
+            circles = svg.append("g")
+                .selectAll("circle")
+                .data(individuals)
+                .join("circle")
+                .attr("r", r)
+                .attr("cx", d => d.pos.x)
+                .attr("cy", d => d.pos.y)
+                .attr("fill", d => d.color())
+                .attr("stroke", "#333");
+        }
+
+        window.onresize = () => {
+            setupRenderArea();
+        }
+
+        window.onload = () => {
+            setupRenderArea();
+            buildIndividuals();
+        }
+
+    </script>
+</div>
+</body>
+</html>
