@@ -4,13 +4,13 @@
 
 html, body {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-image: linear-gradient($neutral, black);
+    background-image: linear-gradient($dark-neutral, black);
 }
 
 $border-radius: 8px;
@@ -126,6 +126,7 @@ $app-height: 550px;
 
             min-height: $app-height;
             margin-bottom: 25px;
+            overflow: hidden;
 
             border-radius: $border-radius;
             box-shadow: 10px 10px white;
@@ -140,7 +141,7 @@ $app-height: 550px;
 
         h4 {
             color: white;
-            background-image: linear-gradient(to right, $accent, white);
+            background-image: linear-gradient(to right, $dark-accent, $accent);
             margin: 0;
             padding: 20px;
         }
@@ -216,6 +217,7 @@ $app-height: 550px;
             display: inline;
             background-color: $accent;
             color: white;
+            margin-bottom: 10px;
         }
 
         #next:active, #prev:active {
@@ -258,12 +260,13 @@ $app-height: 550px;
             padding-top: 5px;
 
             #content-container {
-                font-size: 34px;
+                background-color: none;
+                font-size: 24px;
                 border: 3px solid black;
-                height: $app-height;
-                box-shadow:  $border-radius  $border-radius $light-neutral;
+                min-height: $app-height;
+                box-shadow: none;
                 border-radius: $border-radius;
-                margin: 0 25px 25px 0;
+                margin: auto;
 
                 h1 {
                     font-size: 125px;
@@ -292,8 +295,8 @@ $app-height: 550px;
 
             #carousel {
                 #next, #prev {
-                    border: 3px solid $light-neutral;
-                    padding: 12px 28px;
+                    font-size: 40px;
+                    padding: 20px 40px;
                 }
             }
         }

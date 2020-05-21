@@ -19,7 +19,7 @@ class HomeContent extends React.Component {
                     <img src="./img/mongo.png" alt="MongoDb" title="MongoDb"/>
                     <img src="./img/webpack.png" alt="Webpack" title="Webpack"/>
                     <img src="./img/d3.png" alt="D3js" title="D3js"/>
-                    <img src="./img/hapi.png" alt="Hapi" title="HapiJS"/>
+                    <img src="./img/git.png" alt="Git" title="Git"/>
                     <img src="./img/jwt.png" alt="JWT" title="JSON Web Tokens"/>
                     <img src="./img/sass.png" alt="Sass" title="Sass"/>
                     <img src="./img/npm.png" alt="npm" title="Node Package Manager"/>
