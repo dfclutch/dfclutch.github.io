@@ -12,16 +12,14 @@ class AboutContent extends React.Component {
                             <div>
                                 <h4>Software Engineering</h4>
                                 <p>
-                                    Although it shocks most of my friends and professors, JavaScript is my favorite
-                                    programming language.
-                                    In my personal work, I build webapps with the MERN
-                                    stack, which uses the language across the stack. I find JS extremely flexible and
-                                    expressive. I
-                                    particularly make use of Functional Programming and Object-as-datastructure
-                                    features. I have started
-                                    to dip my toes into TypeScript as a method of organization, but for fast,
-                                    prototyping development, I
-                                    find JS extremely useful.
+                                    Within Software Engineering my specialty is developing web applications. In personal projects, my tech stack generally includes React for frontend,
+                                    NodeJS + Express for backend APIs and serving static content, and MongoDB as an RDMS. Along with these I use tools like npm and webpack for module
+                                    management and bundling, Sass and bootstrap for CSS, and mongoose for database binding. Git + Github + Travis and Heroku are used
+                                    for deploying fullstack applications, though many smaller projects are simply deployed through Github Pages. I mainly use Mocha and Chai for general 
+                                    JavaScript testing, and Enzyme for testing React code. <br />
+                                    I am a follower the Robert C. Martin Clean Code philosophy. Although the age of the book is starting to show, I think it still provides the best
+                                    take on what is and isn't <em>clean</em>. I recently started reading back through <a href="https://goldbergyoni.com/">this incredible blog</a> by Yoni Goldberg
+                                    as a way to improve my knowledge of NodeJS best practices.
                                 </p>
                             </div>),
                             (
