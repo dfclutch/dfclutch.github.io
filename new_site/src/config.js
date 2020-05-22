@@ -5,6 +5,7 @@ import AboutContent from "./Content/about";
 import ProjectsContent from "./Content/projects";
 import ContactContent from "./Content/contact";
 
+
 const PAGES = {
     home: {
         id: "home",

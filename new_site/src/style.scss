@@ -1,6 +1,6 @@
 @import 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 html, body {
     margin: 0;
@@ -63,7 +63,7 @@ $app-height: 550px;
 
                 h1 {
                     background-color: $dark-neutral;
-                    font-family: 'Arvo', serif;
+                    font-family: 'Montserrat', sans-serif;
                     margin: 0;
                     padding: 10px;
                     border-top-left-radius: $border-radius;
@@ -121,22 +121,20 @@ $app-height: 550px;
             text-align: justify;
             font-weight: 400;
             font-size: 18px;
-            background-color: black;
             color: white;
 
             min-height: $app-height;
             margin-bottom: 25px;
             overflow: hidden;
-
+            border: 1px solid $accent;
             border-radius: $border-radius;
-            box-shadow: 10px 10px white;
         }
 
         h1 {
             margin: 0;
             padding: 20px;
             font-size: 70px;
-            font-family: 'Arvo', serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         h4 {
@@ -151,8 +149,6 @@ $app-height: 550px;
             PAGE SELECT
          */
     #page-select-container {
-        padding: 0 10px;
-
         #pages {
             margin: 8px 0;
             padding: 0;
@@ -236,7 +232,7 @@ $app-height: 550px;
     $app-height: 1330px;
 
     body {
-        padding: 20px;
+        padding: 0 20px;
     }
 
     #root {
@@ -257,14 +253,12 @@ $app-height: 550px;
 
         #app-container {
             min-width: 100%;
-            padding-top: 5px;
 
             #content-container {
-                background-color: none;
                 font-size: 24px;
-                border: 3px solid black;
                 min-height: $app-height;
                 box-shadow: none;
+                border: 3px solid $accent;
                 border-radius: $border-radius;
                 margin: auto;
 
