@@ -17,6 +17,8 @@ $border-radius: 8px;
 $app-height: 550px;
 
 #root {
+    margin: 0;
+    min-height: 100%;
     font-family: 'Overpass', sans-serif;
     width: 100%;
     padding-top: 30px;
@@ -47,36 +49,34 @@ $app-height: 550px;
      */
     #sidebar-container {
         float: right;
+        color: white;
 
         #sidebar {
             border-radius: $border-radius;
             margin: 0 40px;
             width: 210px;
-            color: white;
 
             .sidebar-section {
                 border-radius: $border-radius;
-                border: 1px solid black;
-                background-color: black;
                 padding: 0;
                 margin: 0 0 20px 0;
+                border: 1px solid $accent;
 
                 h1 {
-                    background-color: $dark-neutral;
                     font-family: 'Montserrat', sans-serif;
                     margin: 0;
                     padding: 10px;
                     border-top-left-radius: $border-radius;
                     border-top-right-radius: $border-radius;
+                    border-bottom: 1px solid $accent;
                 }
 
                 .sidebar-block {
-                    background-color: $dark-neutral;
                     margin: 2px 0 0 0;
                     padding: 1px;
+                    border-bottom: 1px solid $accent;
 
                     h4 {
-                        color: $accent;
                         margin: 10px;
                     }
 
@@ -90,6 +90,7 @@ $app-height: 550px;
                     border-bottom-left-radius: $border-radius;
                     border-bottom-right-radius: $border-radius;
                     margin-bottom: 0;
+                    border-bottom: none;
                 }
             }
         }
@@ -98,6 +99,7 @@ $app-height: 550px;
     #app-container {
         width: 50%;
         margin: auto;
+        color: white;
 
         .content-enter {
             opacity: 0.01;
@@ -121,7 +123,6 @@ $app-height: 550px;
             text-align: justify;
             font-weight: 400;
             font-size: 18px;
-            color: white;
 
             min-height: $app-height;
             margin-bottom: 25px;
@@ -138,7 +139,6 @@ $app-height: 550px;
         }
 
         h4 {
-            color: white;
             background-image: linear-gradient(to right, $dark-accent, $accent);
             margin: 0;
             padding: 20px;
@@ -146,8 +146,8 @@ $app-height: 550px;
     }
 
     /*
-            PAGE SELECT
-         */
+        PAGE SELECT
+     */
     #page-select-container {
         #pages {
             margin: 8px 0;
@@ -227,6 +227,36 @@ $app-height: 550px;
     }
 }
 
+/*
+    Light-mode
+ */
+body.light {
+    background-image: linear-gradient(#FFF, #AAA);
+
+    a {
+        color: #222 !important;
+    }
+
+    a:visited {
+        color: #222 !important;
+    }
+
+    #app-container {
+        color: #222 !important;
+
+        h4 {
+            color: white !important;
+        }
+    }
+
+    #sidebar-container {
+        color: #222 !important;
+    }
+}
+
+/*
+    Mobile
+ */
 @media only screen and (max-device-width: 660px) {
     $border-radius: 20px;
     $app-height: 1330px;

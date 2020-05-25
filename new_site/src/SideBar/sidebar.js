@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
             />,<SidebarBlock
                 heading="My favorite coffee"
                 link="http://briosocoffee.com/"
-                text="Brioso Coffee is Columbus, OH is consistently my favorite coffee, and I've tried a lot of them. Order online and support a small business!"
+                text="Brioso Coffee in Columbus, OH are consistently my favorite roasters, and I've tried a lot of them. Order online and support a small business!"
                 key={2}
                 />
         ];
