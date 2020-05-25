@@ -103,7 +103,7 @@ $app-height: 550px;
             opacity: 0.01;
         }
 
-        .content-enter.content-enter-active {
+        .content-enter-active {
             opacity: 1;
             transition: opacity 500ms ease-in;
         }
@@ -112,7 +112,7 @@ $app-height: 550px;
             opacity: 1;
         }
 
-        .content-leave.content-exit-active {
+        .content-exit-active {
             opacity: 0.01;
             transition: opacity 300ms ease-in;
         }
@@ -240,6 +240,7 @@ $app-height: 550px;
             float: none;
             margin: auto;
             min-width: 100%;
+            font-size: 28px;
 
             #sidebar {
                 min-width: 100%;
@@ -255,7 +256,7 @@ $app-height: 550px;
             min-width: 100%;
 
             #content-container {
-                font-size: 24px;
+                font-size: 28px;
                 min-height: $app-height;
                 box-shadow: none;
                 border: 3px solid $accent;

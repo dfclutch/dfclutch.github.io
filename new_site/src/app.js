@@ -59,14 +59,18 @@ class App extends React.Component {
     }
     
     render() {
-        
         return (
             <div>
-                {!this.state.small_screen ? <Sidebar /> : null}
+                {this.state.small_screen ? null : <Sidebar /> }
                 <div id="app-container">
                     <div id="content-container">
                         <h1>Dan Filler</h1>
-                        <Content key={0} page_id={this.state.current_page_id}/>
+                        <CSSTransition
+                            classNames="content"
+                            in={true}
+                            timeout={200}>
+                            <Content key={0} page_id={this.state.current_page_id}/>
+                        </CSSTransition>
                     </div>
                     <div id="page-select-container">
                         <PageSelect changePage={this.changePage} current_page_id={this.state.current_page_id}/>

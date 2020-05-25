@@ -51,7 +51,12 @@ class Sidebar extends React.Component {
                 link="http://networksciencebook.com/"
                 text="An excellent online textbook covering network science by Barabasi."
                 key={2}
-            />
+            />,<SidebarBlock
+                heading="My favorite coffee"
+                link="http://briosocoffee.com/"
+                text="Brioso Coffee is Columbus, OH is consistently my favorite coffee, and I've tried a lot of them. Order online and support a small business!"
+                key={2}
+                />
         ];
         
         return (

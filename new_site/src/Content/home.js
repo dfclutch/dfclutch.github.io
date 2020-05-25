@@ -6,7 +6,7 @@ class HomeContent extends React.Component {
         return (
             <div className="home-content">
                 <p>
-                    Pennsylvania native living in Columbus, Ohio. Actively looking for employment in full-stack or
+                    Pennsylvania native and Ohio State . Actively looking for employment in full-stack or
                     front-end web development. Passionate about Network Science, Agrotech, and Artificial Intelligence.
                 </p>
                 <p>
