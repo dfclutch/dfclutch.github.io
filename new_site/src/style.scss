@@ -259,7 +259,7 @@ body.light {
  */
 @media only screen and (max-device-width: 660px) {
     $border-radius: 20px;
-    $app-height: 1330px;
+    $app-height: 1415px;
 
     body {
         padding: 0 20px;
@@ -277,7 +277,16 @@ body.light {
                 margin: 0;
 
                 .sidebar-section {
-                    border: 3px solid black;
+                    border-radius: $border-radius;
+                    border: 3px solid $accent;
+
+                    h1 {
+                        border-bottom: 2px solid $accent;
+                    }
+
+                    .sidebar-block {
+                        border-bottom: 2px solid $accent;
+                    }
                 }
             }
         }
@@ -291,7 +300,7 @@ body.light {
                 box-shadow: none;
                 border: 3px solid $accent;
                 border-radius: $border-radius;
-                margin: auto;
+                margin: 0 auto 20px;
 
                 h1 {
                     font-size: 125px;
@@ -303,8 +312,10 @@ body.light {
                     border-top: 5px solid $accent;
 
                     div {
-                        padding: 15px 20px;
-                        font-size: 45px;
+                        text-align: center;
+                        padding: 15px 0;
+                        width: 19%;
+                        font-size: 40px;
                         border: 3px solid $light-neutral;
                         border-bottom-left-radius: $border-radius;
                         border-bottom-right-radius:  $border-radius;
