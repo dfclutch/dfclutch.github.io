@@ -6,8 +6,8 @@ class HomeContent extends React.Component {
         return (
             <div className="home-content">
                 <p>
-                    Pennsylvania native and Ohio State Graduate. Actively looking for employment in full-stack or
-                    front-end web development. Passionate about Network Science, Agrotech, and Artificial Intelligence.
+                    Pennsylvania native and Ohio State Graduate. Currently working as a front end developer at <a
+                    href={"http://www.xant.ai"}>XANT</a>.
                     <br/>
                     <a href="https://drive.google.com/open?id=1Imicuu77yu0kSi8r-0ahMvY5AD5L-V7C">Resume</a>
                 </p>
