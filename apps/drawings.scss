@@ -65,20 +65,20 @@ body, html {
 
         .picture {
             margin: 0;
+            height: 80vh;
 
             img {
-                max-width: 100%;
                 padding: 0;
             }
         }
 
-        .picture.full {
+        /*.picture.full {
             width: 100%;
 
             img {
                 width: 100%;
             }
-        }
+        }*/
 
         .picture:hover {
             transform: scale(1.5);

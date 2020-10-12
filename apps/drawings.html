@@ -57,16 +57,45 @@
         </div>
     </div>
 
+    <div class="figure">
+        <div class="picture full">
+            <img src="drawings/slate_canyon.jpg" alt="slate canyon"/>
+        </div>
+    </div>
+
+    <div class="figure">
+        <div class="picture full">
+            <img src="drawings/slate_canyon_2.jpg" alt="slate canyon 2"/>
+        </div>
+    </div>
+
+    <div class="figure">
+        <div class="picture full">
+            <img src="drawings/slate_canyon_3.jpg" alt="slate canyon 3"/>
+        </div>
+    </div>
+
+    <div class="figure">
+        <div class="picture full">
+            <img src="drawings/grave_ridge.jpg" alt="grave ridge"/>
+        </div>
+    </div>
+
     <script>
-        var images = Array.from(document.getElementsByTagName("img"));
-        console.log(images);
-        images.forEach(img => {
-            if (img.height > window.innerHeight) {
-                console.log(img.height);
-                console.log(window.innerHeight);
-                img.maxHeight = window.innerHeight;
-            }
-        })
+        /*function setFigureSize() {
+            var figs = Array.from(document.getElementsByClassName("figure"));
+            console.log(figs);
+            figs.forEach(fig => {
+                if (fig.height > window.innerHeight) {
+                    console.log(fig.height);
+                    console.log(window.innerHeight);
+                    fig.style.height = window.innerHeight;
+                }
+            })
+        }
+
+        window.onload = setFigureSize;
+        window.onresize = setFigureSize;*/
     </script>
 
 </div>
