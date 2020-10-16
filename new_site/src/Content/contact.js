@@ -11,7 +11,7 @@ class ContactContent extends React.Component {
                     <br />
                     <a href="https://www.linkedin.com/in/dan-filler/" target="_blank">LinkedIn</a>
                     <br />
-                    <a href="mailto:filler.7@osu.edu">Email</a>
+                    <a href="mailto:dwfiller@gmail.com">Email</a>
                     <br />
                     Phone: +1 (717) 778-1220
                 </p>

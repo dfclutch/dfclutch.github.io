@@ -6,10 +6,10 @@ class HomeContent extends React.Component {
         return (
             <div className="home-content">
                 <p>
-                    Pennsylvania native and Ohio State Graduate. Currently working as a front end developer at <a
+                    Pennsylvania native and Ohio State Graduate. Currently working as a front end engineer at <a
                     href={"http://www.xant.ai"}>XANT</a>.
                     <br/>
-                    <a href="https://drive.google.com/open?id=1Imicuu77yu0kSi8r-0ahMvY5AD5L-V7C">Resume</a>
+                    <a href="https://dfclutch.github.io/dan-filler-resume.pdf" target="_blank">Resume</a>
                 </p>
                 <p>
                     Frameworks and tech that I use:

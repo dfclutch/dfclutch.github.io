@@ -163,8 +163,8 @@ $app-height: 550px;
                 padding: 5px 20px;
                 color: $neutral;
                 border: 1px solid $light-neutral;
-                border-bottom-left-radius:  $border-radius;
-                border-bottom-right-radius:  $border-radius;
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
                 border-top: 0;
                 background-color: none;
 
@@ -209,7 +209,7 @@ $app-height: 550px;
             padding: 8px 20px;
             text-align: center;
             border: 1px solid $light-neutral;
-            border-radius:  $border-radius;
+            border-radius: $border-radius;
             display: inline;
             background-color: $accent;
             color: white;
@@ -231,7 +231,7 @@ $app-height: 550px;
     Light-mode
  */
 body.light {
-    background-image: linear-gradient(#FFF, #AAA);
+    background-image: linear-gradient(#FFF, #CCC);
 
     a {
         color: #222 !important;
@@ -246,6 +246,14 @@ body.light {
 
         h4 {
             color: white !important;
+        }
+
+        #page-select-container {
+            #pages {
+                div {
+                    border: 1px solid $neutral;
+                }
+            }
         }
     }
 
@@ -318,7 +326,7 @@ body.light {
                         font-size: 40px;
                         border: 3px solid $light-neutral;
                         border-bottom-left-radius: $border-radius;
-                        border-bottom-right-radius:  $border-radius;
+                        border-bottom-right-radius: $border-radius;
                         border-top: 0;
                     }
 

@@ -37,7 +37,13 @@ class Sidebar extends React.Component {
                 link="https://danfiller.bandcamp.com/releases"
                 text="My bandcamp page for American Primitive guitar music"
                 key={1}
-            />
+            />,
+            <SidebarBlock
+                heading="Michaux State Forest Guide"
+                link="https://dfclutch.github.io/michaux"
+                text="A guide to recreation and history of one of my favorite places in the world, southern Pennsylvania's Michaux State Forest."
+                key={2}
+            />,
         ];
         
         let links_blocks = [
