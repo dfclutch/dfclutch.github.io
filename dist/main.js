@@ -2495,14 +2495,14 @@ var pageIds = {
 };
 var circleElements = {
   pages: {
-    home: {
-      id: pageIds.home,
-      text: "Home",
-      angle: "-120",
-      duration: "3s",
-      active: false,
-      content: /*#__PURE__*/react_default.a.createElement(home_HomeContent, null)
-    },
+    /*home: {   
+        id: pageIds.home,
+        text: "Home",
+        angle: "-120",
+        duration: "3s",
+        active: false,
+        content: <HomeContent />,
+    },*/
     about: {
       id: pageIds.about,
       text: "About",
@@ -2599,7 +2599,7 @@ var app_App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.setPage(pageIds.home);
+      this.setPage(pageIds.about);
     }
   }, {
     key: "setPage",

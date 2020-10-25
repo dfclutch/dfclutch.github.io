@@ -12,14 +12,14 @@ export const pageIds = {
 
 export const circleElements = {
     pages: {
-        home: {   
+        /*home: {   
             id: pageIds.home,
             text: "Home",
             angle: "-120",
             duration: "3s",
             active: false,
             content: <HomeContent />,
-        },
+        },*/
         about: {
             id: pageIds.about,
             text: "About",

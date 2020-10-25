@@ -23,7 +23,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setPage(pageIds.home);
+        this.setPage(pageIds.about);
     }
 
     setPage(id) {
