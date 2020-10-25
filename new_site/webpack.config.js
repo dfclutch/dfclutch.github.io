@@ -6,6 +6,9 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, '../dist'),
   },
+  optimization: {
+    minimize: false
+  },
   module: {
     rules: [
       {
