@@ -5,11 +5,11 @@ import CircleElement from './CircleElement';
 
 const CircleBorder = styled.div`
         position: absolute;
-        top: calc(50% - 32.5vh);
-        left: calc(50% - 32.5vh);
-        width: 65vh;
-        height: 65vh;
-        border-radius: 32.5vh;
+        top: calc(50% - ${() => window.mobileCheck() ? "34vw" : "32.5vh"});
+        left: calc(50% - ${() => window.mobileCheck() ? "34vw" : "32.5vh"});
+        width: ${() => window.mobileCheck() ? "68vw" : "65vh"};
+        height: ${() => window.mobileCheck() ? "68vw" : "65vh"};
+        border-radius: ${() => window.mobileCheck() ? "34vw" : "32.5vh"};
         border: 1px solid #FFFFCB;
         background-color: #407d71;
         z-index: "-1";
@@ -38,6 +38,7 @@ function buildCircleElements(elements, onPageClick) {
 }
 
 const Circle = (props) => {
+	console.log(props);
 	return (
 		<div>
 			<CircleBorder />

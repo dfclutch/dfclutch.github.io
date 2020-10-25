@@ -2260,7 +2260,7 @@ var colors = {
 };
 // CONCATENATED MODULE: ./src/circle-ui/CircleElementStyles.js
 function CircleElementStyles_templateObject2() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n\ttransform: rotate(180deg);\n    padding: 0;\n    margin-left: 70vh;\n    display: inline-block;\n    font-size: 28px;\n    color: ", ";\n\n    &:hover {\n        color: ", ";\n        font-weight: 700;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n\ttransform: rotate(180deg);\n    padding: 0;\n    margin-left: ", ";\n    display: inline-block;\n    font-size: ", "px;\n    color: ", ";\n\n    &:hover {\n        color: ", ";\n        font-weight: 700;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
 
   CircleElementStyles_templateObject2 = function _templateObject2() {
     return data;
@@ -2270,7 +2270,7 @@ function CircleElementStyles_templateObject2() {
 }
 
 function CircleElementStyles_templateObject() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(50% - 35vh);\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: 70vh;\n    animation: ", " ", ", ", " 2s;\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(50% - ", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 2s;\n"]);
 
   CircleElementStyles_templateObject = function _templateObject() {
     return data;
@@ -2284,14 +2284,22 @@ function CircleElementStyles_taggedTemplateLiteral(strings, raw) { if (!raw) { r
 
 
 
-var Rotated = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject(), function (props) {
+var Rotated = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject(), function () {
+  return window.mobileCheck() ? "36vw" : "35vh";
+}, function (props) {
   return props.angle;
+}, function () {
+  return window.mobileCheck() ? "72vw" : "70vh";
 }, fadeIn, function (props) {
   return props.duration;
 }, function (props) {
   return rotations[props.index];
 });
-var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject2(), function (props) {
+var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject2(), function () {
+  return window.mobileCheck() ? "72vw" : "70vh";
+}, function () {
+  return window.mobileCheck() ? "36" : "28";
+}, function (props) {
   return props.active ? colors.accent : colors.neutral;
 }, colors.accent, function (props) {
   return props.active ? colors.accent : colors.neutral;
@@ -2337,7 +2345,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function Circle_templateObject() {
-  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - 32.5vh);\n        left: calc(50% - 32.5vh);\n        width: 65vh;\n        height: 65vh;\n        border-radius: 32.5vh;\n        border: 1px solid #FFFFCB;\n        background-color: #407d71;\n        z-index: \"-1\";\n"]);
+  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(50% - ", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid #FFFFCB;\n        background-color: #407d71;\n        z-index: \"-1\";\n"]);
 
   Circle_templateObject = function _templateObject() {
     return data;
@@ -2351,7 +2359,17 @@ function Circle_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.
 
 
 
-var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject());
+var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject(), function () {
+  return window.mobileCheck() ? "34vw" : "32.5vh";
+}, function () {
+  return window.mobileCheck() ? "34vw" : "32.5vh";
+}, function () {
+  return window.mobileCheck() ? "68vw" : "65vh";
+}, function () {
+  return window.mobileCheck() ? "68vw" : "65vh";
+}, function () {
+  return window.mobileCheck() ? "34vw" : "32.5vh";
+});
 
 function buildCircleElements(elements, onPageClick) {
   var pageElementValues = Object.values(elements.pages);
@@ -2372,13 +2390,14 @@ function buildCircleElements(elements, onPageClick) {
 }
 
 var Circle_Circle = function Circle(props) {
+  console.log(props);
   return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(CircleBorder, null), props.content, buildCircleElements(props.elements, props.onPageClick));
 };
 
 /* harmony default export */ var circle_ui_Circle = (Circle_Circle);
 // CONCATENATED MODULE: ./src/Content/ContentContainer.js
 function ContentContainer_templateObject() {
-  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - 30vh);\n\tleft: calc(50% - 30vh);\n\twidth: 60vh;\n\tborder-radius: 30vh;\n\n\ta {\n\t    color: ", ";\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t}\n"]);
+  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(50% - ", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\n\ta {\n\t    color: ", ";\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t}\n"]);
 
   ContentContainer_templateObject = function _templateObject() {
     return data;
@@ -2391,25 +2410,43 @@ function ContentContainer_taggedTemplateLiteral(strings, raw) { if (!raw) { raw 
 
 
 
-var ContentContainer = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
+var ContentContainer = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), function () {
+  return window.mobileCheck() ? "31vw" : "30vh";
+}, function () {
+  return window.mobileCheck() ? "31vw" : "30vh";
+}, function () {
+  return window.mobileCheck() ? "62vw" : "60vh";
+}, function () {
+  return window.mobileCheck() ? "31vw" : "30vh";
+}, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
+// CONCATENATED MODULE: ./src/mobile_check.js
+/*
+    StackOverflow snippet to check if on a mobile. Works okay.
+ */
+var mobileCheck = function mobileCheck() {
+  var check = false;
+
+  (function (a) {
+    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+  })(navigator.userAgent || navigator.vendor || window.opera);
+
+  return check;
+};
 // CONCATENATED MODULE: ./src/Content/home.js
 
 
-/*
-            Pennsylvania native and Ohio State Graduate. Currently working as a front end engineer at <a
-            href={"http://www.xant.ai"}>XANT</a>.
-        </ContentContainer>
-*/
 
 var home_HomeContent = function HomeContent() {
+  var mobile = mobileCheck();
   return /*#__PURE__*/react_default.a.createElement(ContentContainer, {
     as: "img",
-    src: "./img/profile-image.jpeg"
+    src: "./img/profile-image.jpeg",
+    mobile: mobileCheck
   });
 };
 // CONCATENATED MODULE: ./src/Content/about.js
 function about_templateObject() {
-  var data = about_taggedTemplateLiteral(["\n\tbox-sizing: border-box;\n\tpadding: 3vh 5vh 0 5vh;\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n\n\ta {\n\t\tz-index: 1;\n\t\tpadding: 1rem;\n\t\tmargin: -1rem;\n\t}\n"]);
+  var data = about_taggedTemplateLiteral(["\n\tbox-sizing: border-box;\n\tpadding: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n\n\ta {\n\t\tz-index: 1;\n\t\tpadding: 1rem;\n\t\tmargin: -1rem;\n\t}\n"]);
 
   about_templateObject = function _templateObject() {
     return data;
@@ -2423,9 +2460,16 @@ function about_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.s
 
 
 
-var AboutContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(about_templateObject());
+
+var AboutContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(about_templateObject(), function () {
+  return window.mobileCheck() ? "0vw 5vw 0 5vw" : "5vh 6vh 0 6vh";
+}, function () {
+  return window.mobileCheck() ? "24px" : "16px";
+});
 var about_AboutContent = function AboutContent() {
-  return /*#__PURE__*/react_default.a.createElement(AboutContentContainer, null, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer, currently working at", /*#__PURE__*/react_default.a.createElement("a", {
+  return /*#__PURE__*/react_default.a.createElement(AboutContentContainer, {
+    mobile: mobileCheck()
+  }, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer, currently working at", /*#__PURE__*/react_default.a.createElement("a", {
     href: "https://www2.xant.ai/",
     target: "_blank"
   }, " Xant"), "."), /*#__PURE__*/react_default.a.createElement("p", null, "I specialize in building React/Redux applications and pride myself on writing performant and maintainable code at enterprise scale."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in other areas of computer science including comuptation theory and graph theory. I play ", /*#__PURE__*/react_default.a.createElement("a", {
@@ -2446,7 +2490,7 @@ var about_AboutContent = function AboutContent() {
 };
 // CONCATENATED MODULE: ./src/Content/projects.js
 function projects_templateObject() {
-  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    padding: 6vh 8vh 0 8vh;\n    text-align: justify;\n    max-height: 50vh;\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;    \n        z-index: 1;     \n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
+  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    padding: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;    \n        z-index: 1;     \n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
 
   projects_templateObject = function _templateObject() {
     return data;
@@ -2460,7 +2504,11 @@ function projects_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = string
 
 
 
-var ProjectsContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(projects_templateObject());
+var ProjectsContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(projects_templateObject(), function () {
+  return window.mobileCheck() ? "5vw 7.5vw 0 7.5vw" : "9vh 8vh 0 8vh";
+}, function () {
+  return window.mobileCheck() ? "24px" : "16px";
+});
 var projects_ProjectsContent = function ProjectsContent() {
   return /*#__PURE__*/react_default.a.createElement(ProjectsContentContainer, null, /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://dfclutch.github.io/apps/epsim",
@@ -2576,6 +2624,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var app_App = /*#__PURE__*/function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -2590,6 +2639,7 @@ var app_App = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       elements: circleElements
     };
+    window.mobileCheck = mobileCheck;
     _this.setPage = _this.setPage.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2597,7 +2647,7 @@ var app_App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.setPage(pageIds.projects);
+      this.setPage(pageIds.home);
     }
   }, {
     key: "setPage",

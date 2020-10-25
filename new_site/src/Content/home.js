@@ -1,18 +1,14 @@
 import React from 'react';
 import { ContentContainer } from './ContentContainer';
-
-
-/*
-            Pennsylvania native and Ohio State Graduate. Currently working as a front end engineer at <a
-            href={"http://www.xant.ai"}>XANT</a>.
-        </ContentContainer>
-*/
+import { mobileCheck } from '../mobile_check';
 
 export const HomeContent = () => {
-   return (
+    const mobile = mobileCheck();
+    return (
         <ContentContainer
         	as={"img"}
-        	src={"./img/profile-image.jpeg"}
+            src={"./img/profile-image.jpeg"}
+            mobile={ mobileCheck }
         />
     ); 
 }

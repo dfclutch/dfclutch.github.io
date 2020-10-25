@@ -5,7 +5,20 @@ import { ContentContainer } from './ContentContainer';
 
 const ProjectsContentContainer = styled(ContentContainer)`
     box-sizing: border-box;
-    padding: 6vh 8vh 0 8vh;
+    padding: ${
+		() => (
+			window.mobileCheck()
+			? "5vw 7.5vw 0 7.5vw"
+			: "9vh 8vh 0 8vh"
+		)
+	};
+	font-size: ${
+		() => (
+			window.mobileCheck()
+			? "24px"
+			: "16px"
+		)
+	};
     text-align: justify;
     max-height: 50vh;
     border-radius: 0px;

@@ -5,10 +5,10 @@ import { colors } from '../colors';
 export const Rotated = styled.div`
     position: absolute;
     top: calc(50% - 16px);
-    left: calc(50% - 35vh);
+    left: calc(50% - ${() => window.mobileCheck() ? "36vw" : "35vh"});
     transform-origin: 50% 50%;
     transform: rotate(${props => props.angle}deg);
-    width: 70vh;
+    width: ${() => window.mobileCheck() ? "72vw" : "70vh"};
     animation: ${fadeIn} ${props => props.duration}, ${
         props => rotations[props.index]
     } 2s;
@@ -17,9 +17,9 @@ export const Rotated = styled.div`
 export const RotatedText = styled.div`
 	transform: rotate(180deg);
     padding: 0;
-    margin-left: 70vh;
+    margin-left: ${() => window.mobileCheck() ? "72vw" : "70vh"};
     display: inline-block;
-    font-size: 28px;
+    font-size: ${() => window.mobileCheck() ? "36" : "28"}px;
     color: ${props => props.active ? colors.accent : colors.neutral};
 
     &:hover {

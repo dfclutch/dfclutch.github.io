@@ -2,10 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { ContentContainer } from './ContentContainer';
+import { mobileCheck } from '../mobile_check';
 
 const AboutContentContainer = styled(ContentContainer)`
 	box-sizing: border-box;
-	padding: 3vh 5vh 0 5vh;
+	padding: ${
+		() => (
+			window.mobileCheck()
+			? "0vw 5vw 0 5vw"
+			: "5vh 6vh 0 6vh"
+		)
+	};
+	font-size: ${
+		() => (
+			window.mobileCheck()
+			? "24px"
+			: "16px"
+		)
+	};
 	text-align: justify;
 	max-height: 50vh;
 	border-radius: 0px;
@@ -27,7 +41,7 @@ const AboutContentContainer = styled(ContentContainer)`
 
 export const AboutContent = () => {
 	return (
-		<AboutContentContainer>
+		<AboutContentContainer mobile={mobileCheck()}>
 			<h1>Dan Filler</h1>
 			<p> 
 				Pennsylvania native and Ohio State graduate. 

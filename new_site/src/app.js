@@ -9,19 +9,21 @@ import {
 } from './circleElements';
 
 import "./style.scss";
+import { mobileCheck } from './mobile_check';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            elements: circleElements
+            elements: circleElements,
         }
 
+        window.mobileCheck = mobileCheck;
         this.setPage = this.setPage.bind(this);
     }
 
     componentDidMount() {
-        this.setPage(pageIds.projects);
+        this.setPage(pageIds.home);
     }
 
     setPage(id) {

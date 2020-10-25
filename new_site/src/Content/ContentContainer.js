@@ -4,10 +4,10 @@ import { colors } from '../colors.js';
 
 export const ContentContainer = styled.div`
 	position: absolute;
-	top: calc(50% - 30vh);
-	left: calc(50% - 30vh);
-	width: 60vh;
-	border-radius: 30vh;
+	top: calc(50% - ${() => window.mobileCheck() ? "31vw" : "30vh"});
+	left: calc(50% - ${() => window.mobileCheck() ? "31vw" : "30vh"});
+	width: ${() => window.mobileCheck() ? "62vw" : "60vh"};
+	border-radius: ${() => window.mobileCheck() ? "31vw" : "30vh"};
 
 	a {
 	    color: ${colors.darkNeutral};
