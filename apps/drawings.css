@@ -54,36 +54,14 @@ body, html {
 }
 #gallery .figure .picture {
   margin: 0;
+  text-align: center;
 }
 #gallery .figure .picture img {
-  max-width: 100%;
   padding: 0;
-}
-#gallery .figure .picture.full {
-  width: 100%;
-}
-#gallery .figure .picture.full img {
-  width: 100%;
-}
-#gallery .figure .picture:hover {
-  transform: scale(1.5);
-}
-#gallery .figure .info.left {
-  padding-left: 5px;
-  float: left;
-}
-#gallery .figure .picture.left {
-  float: left;
-}
-#gallery .figure .info.right {
-  padding-right: 5px;
-  float: right;
-}
-#gallery .figure .picture.right {
-  float: right;
-}
-#gallery .figure .clear {
-  clear: both;
+  max-width: 100%;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
 }
 
 /*# sourceMappingURL=drawings.css.map */

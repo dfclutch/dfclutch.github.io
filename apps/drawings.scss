@@ -65,39 +65,15 @@ body, html {
 
         .picture {
             margin: 0;
-            height: 80vh;
+            text-align: center;
 
             img {
                 padding: 0;
+                max-width: 100%;
+                max-height: 95vh;
+                width: auto;
+                height: auto;
             }
         }
-        .picture:hover {
-            transform: scale(1.5);
-        }
-
-        .info.left {
-            padding-left: 5px;
-            float: left;
-        }
-
-        .picture.left {
-            float: left;
-        }
-
-        .info.right {
-            padding-right: 5px;
-            float: right;
-        }
-
-        .picture.right {
-            float: right;
-        }
-
-        .clear
-        {
-            clear: both;
-        }
     }
-
-
 }
