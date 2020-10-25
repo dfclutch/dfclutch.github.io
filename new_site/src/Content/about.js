@@ -5,12 +5,11 @@ import { ContentContainer } from './ContentContainer';
 import { mobileCheck } from '../mobile_check';
 
 const AboutContentContainer = styled(ContentContainer)`
-	box-sizing: border-box;
-	padding: ${
+	margin: ${
 		() => (
 			window.mobileCheck()
-			? "0vw 5vw 0 5vw"
-			: "5vh 6vh 0 6vh"
+			? "0vw 5vw"
+			: "5vh 6vh"
 		)
 	};
 	font-size: ${
@@ -22,6 +21,13 @@ const AboutContentContainer = styled(ContentContainer)`
 	};
 	text-align: justify;
 	max-height: 50vh;
+	max-width: ${
+		() => (
+			window.mobileCheck()
+			? "54vw"
+			: "48vh"
+		)
+	};
 	border-radius: 0px;
 
 	h1 {
@@ -30,12 +36,6 @@ const AboutContentContainer = styled(ContentContainer)`
 
 	div {
 		text-align: center;
-	}
-
-	a {
-		z-index: 1;
-		padding: 1rem;
-		margin: -1rem;
 	}
 `;
 
@@ -54,8 +54,8 @@ export const AboutContent = () => {
 			</p>
 			<p>
 				I am interested in other areas of computer science including 
-				comuptation theory and graph theory. I play <a href="" target="_blank">
-				American Primitive guitar</a>, practice <a href="" target="_blank"> ultralight backpacking </a> 
+				comuptation theory and graph theory. I play <a href="https://rateyourmusic.com/genre/American+Primitivism/" target="_blank">
+				American Primitive guitar</a>, practice <a href="https://lighterpack.com/r/73c46t" target="_blank"> ultralight backpacking </a> 
 				and draw landscapes and buildings.
 			</p>
 			<div>

@@ -2043,7 +2043,7 @@ module.exports = function (list, options) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Arial, Helvetica, sans-serif;color:#FFFFCB}body{background-color:#1F6356}a{text-decoration:none}\n", ""]);
+exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Arial, Helvetica, sans-serif;color:#FFFFCB}body{background-color:#1c4039}a{text-decoration:none}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2168,58 +2168,8 @@ var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 var styled_components_browser_esm = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./src/circle-ui/animationKeyframes.js
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        opacity: 0;\n    }\n\n    to {\n        opacity: 1;\n    }\n"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-220deg);\n    }\n"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-200deg);\n    }\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-180deg);\n    }\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-160deg);\n    }\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-140deg);\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    from {\n        opacity: 0;\n    }\n\n    to {\n        opacity: 1;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -2229,7 +2179,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        transform: rotate(-220deg);\n    }\n\n    to {\n        transform: rotate(-120deg);\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n        from {\n            transform: rotate(", "deg);\n        }\n\n        to {\n            transform: rotate(", "deg);\n        }\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2241,26 +2191,24 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var rotate1 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject());
-var rotate2 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject2());
-var rotate3 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject3());
-var rotate4 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject4());
-var rotate5 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject5());
-var rotate6 = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject6());
-var fadeIn = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject7());
-var rotations = [rotate1, rotate2, rotate3, rotate4, rotate5, rotate6];
+var startingAngle = "-220";
+function buildRotationKeyFrame(finalAngle) {
+  return Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject(), startingAngle, finalAngle);
+}
+var fadeIn = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject2());
 // CONCATENATED MODULE: ./src/colors.js
 var colors = {
   "theme": '#1F6356',
-  "lightTheme": '#407d71',
+  "lightTheme": '#76a39a',
   "darkTheme": '#1c4039',
   "neutral": '#FFFFCB',
   "darkNeutral": "#CBA45F",
-  "accent": '#FA4224'
+  "accent": '#FFF' //'#FA4224',
+
 };
 // CONCATENATED MODULE: ./src/circle-ui/CircleElementStyles.js
 function CircleElementStyles_templateObject2() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n\ttransform: rotate(180deg);\n    padding: 0;\n    margin-left: ", ";\n    display: inline-block;\n    font-size: ", "px;\n    color: ", ";\n\n    &:hover {\n        color: ", ";\n        font-weight: 700;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    transform: rotate(180deg);\n    position: relative\n    padding-top: 15px;\n    padding-bottom: 15px;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    margin-left: ", ";\n    display: inline-block;\n    font-size: ", "px;\n    color: ", ";\n    z-index: 100;\n\n    &:hover {\n        font-weight: 700;\n        cursor: pointer;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
 
   CircleElementStyles_templateObject2 = function _templateObject2() {
     return data;
@@ -2270,7 +2218,7 @@ function CircleElementStyles_templateObject2() {
 }
 
 function CircleElementStyles_templateObject() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(50% - ", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 2s;\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
 
   CircleElementStyles_templateObject = function _templateObject() {
     return data;
@@ -2285,23 +2233,23 @@ function CircleElementStyles_taggedTemplateLiteral(strings, raw) { if (!raw) { r
 
 
 var Rotated = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject(), function () {
-  return window.mobileCheck() ? "36vw" : "35vh";
+  return window.mobileCheck() ? "55% - 37vw" : "50% - 35vh";
 }, function (props) {
   return props.angle;
 }, function () {
-  return window.mobileCheck() ? "72vw" : "70vh";
+  return window.mobileCheck() ? "74vw" : "70vh";
 }, fadeIn, function (props) {
   return props.duration;
 }, function (props) {
-  return rotations[props.index];
+  return buildRotationKeyFrame(props.angle);
 });
 var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject2(), function () {
-  return window.mobileCheck() ? "72vw" : "70vh";
+  return window.mobileCheck() ? "74vw" : "70vh";
 }, function () {
   return window.mobileCheck() ? "36" : "28";
 }, function (props) {
-  return props.active ? colors.accent : colors.neutral;
-}, colors.accent, function (props) {
+  return props.active ? colors.accent : colors.lightTheme;
+}, function (props) {
   return props.active ? colors.accent : colors.neutral;
 }, function (props) {
   return props.active ? colors.accent : colors.neutral;
@@ -2345,7 +2293,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function Circle_templateObject() {
-  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(50% - ", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid #FFFFCB;\n        background-color: #407d71;\n        z-index: \"-1\";\n"]);
+  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid ", ";\n        background-color: ", ";\n\t\t\t\tz-index: -2;\n"]);
 
   Circle_templateObject = function _templateObject() {
     return data;
@@ -2359,17 +2307,18 @@ function Circle_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.
 
 
 
+
 var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject(), function () {
-  return window.mobileCheck() ? "34vw" : "32.5vh";
+  return window.mobileCheck() ? "35vw" : "32.5vh";
 }, function () {
-  return window.mobileCheck() ? "34vw" : "32.5vh";
+  return window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh";
 }, function () {
-  return window.mobileCheck() ? "68vw" : "65vh";
+  return window.mobileCheck() ? "70vw" : "65vh";
 }, function () {
-  return window.mobileCheck() ? "68vw" : "65vh";
+  return window.mobileCheck() ? "70vw" : "65vh";
 }, function () {
-  return window.mobileCheck() ? "34vw" : "32.5vh";
-});
+  return window.mobileCheck() ? "35vw" : "32.5vh";
+}, colors.neutral, colors.theme);
 
 function buildCircleElements(elements, onPageClick) {
   var pageElementValues = Object.values(elements.pages);
@@ -2397,7 +2346,7 @@ var Circle_Circle = function Circle(props) {
 /* harmony default export */ var circle_ui_Circle = (Circle_Circle);
 // CONCATENATED MODULE: ./src/Content/ContentContainer.js
 function ContentContainer_templateObject() {
-  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(50% - ", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\n\ta {\n\t    color: ", ";\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t}\n"]);
+  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\tz-index: 1;\n\n\ta {\n\t\t\tcolor: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n"]);
 
   ContentContainer_templateObject = function _templateObject() {
     return data;
@@ -2411,13 +2360,13 @@ function ContentContainer_taggedTemplateLiteral(strings, raw) { if (!raw) { raw 
 
 
 var ContentContainer = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), function () {
-  return window.mobileCheck() ? "31vw" : "30vh";
+  return window.mobileCheck() ? "32vw" : "30vh";
 }, function () {
-  return window.mobileCheck() ? "31vw" : "30vh";
+  return window.mobileCheck() ? "55% - 32vw" : "50% - 30vh";
 }, function () {
-  return window.mobileCheck() ? "62vw" : "60vh";
+  return window.mobileCheck() ? "64vw" : "60vh";
 }, function () {
-  return window.mobileCheck() ? "31vw" : "30vh";
+  return window.mobileCheck() ? "32vw" : "30vh";
 }, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*
@@ -2446,7 +2395,7 @@ var home_HomeContent = function HomeContent() {
 };
 // CONCATENATED MODULE: ./src/Content/about.js
 function about_templateObject() {
-  var data = about_taggedTemplateLiteral(["\n\tbox-sizing: border-box;\n\tpadding: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n\n\ta {\n\t\tz-index: 1;\n\t\tpadding: 1rem;\n\t\tmargin: -1rem;\n\t}\n"]);
+  var data = about_taggedTemplateLiteral(["\n\tmargin: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tmax-width: ", ";\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n"]);
 
   about_templateObject = function _templateObject() {
     return data;
@@ -2462,9 +2411,11 @@ function about_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.s
 
 
 var AboutContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(about_templateObject(), function () {
-  return window.mobileCheck() ? "0vw 5vw 0 5vw" : "5vh 6vh 0 6vh";
+  return window.mobileCheck() ? "0vw 5vw" : "5vh 6vh";
 }, function () {
   return window.mobileCheck() ? "24px" : "16px";
+}, function () {
+  return window.mobileCheck() ? "54vw" : "48vh";
 });
 var about_AboutContent = function AboutContent() {
   return /*#__PURE__*/react_default.a.createElement(AboutContentContainer, {
@@ -2473,10 +2424,10 @@ var about_AboutContent = function AboutContent() {
     href: "https://www2.xant.ai/",
     target: "_blank"
   }, " Xant"), "."), /*#__PURE__*/react_default.a.createElement("p", null, "I specialize in building React/Redux applications and pride myself on writing performant and maintainable code at enterprise scale."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in other areas of computer science including comuptation theory and graph theory. I play ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "",
+    href: "https://rateyourmusic.com/genre/American+Primitivism/",
     target: "_blank"
   }, "American Primitive guitar"), ", practice ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "",
+    href: "https://lighterpack.com/r/73c46t",
     target: "_blank"
   }, " ultralight backpacking "), "and draw landscapes and buildings."), /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://github.com/dfclutch",
@@ -2490,7 +2441,7 @@ var about_AboutContent = function AboutContent() {
 };
 // CONCATENATED MODULE: ./src/Content/projects.js
 function projects_templateObject() {
-  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    padding: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;    \n        z-index: 1;     \n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
+  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    margin: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    max-width: ", ";\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;\n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
 
   projects_templateObject = function _templateObject() {
     return data;
@@ -2505,9 +2456,11 @@ function projects_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = string
 
 
 var ProjectsContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(projects_templateObject(), function () {
-  return window.mobileCheck() ? "5vw 7.5vw 0 7.5vw" : "9vh 8vh 0 8vh";
+  return window.mobileCheck() ? "5vw 7.5vw" : "9vh 8vh";
 }, function () {
   return window.mobileCheck() ? "24px" : "16px";
+}, function () {
+  return window.mobileCheck() ? "49vw" : "44vh";
 });
 var projects_ProjectsContent = function ProjectsContent() {
   return /*#__PURE__*/react_default.a.createElement(ProjectsContentContainer, null, /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
@@ -2546,22 +2499,22 @@ var circleElements = {
       id: pageIds.home,
       text: "Home",
       angle: "-120",
-      duration: "6s",
+      duration: "3s",
       active: false,
       content: /*#__PURE__*/react_default.a.createElement(home_HomeContent, null)
     },
     about: {
       id: pageIds.about,
       text: "About",
-      angle: "-140",
-      duration: "6s",
+      angle: "-130",
+      duration: "3s",
       active: false,
       content: /*#__PURE__*/react_default.a.createElement(about_AboutContent, null)
     },
     projects: {
       id: pageIds.projects,
       text: "Projects",
-      angle: "-160",
+      angle: "-140",
       duration: "3s",
       active: false,
       content: /*#__PURE__*/react_default.a.createElement(projects_ProjectsContent, null)
@@ -2569,21 +2522,20 @@ var circleElements = {
   },
   links: [{
     text: "Resume",
-    angle: "-180",
-    duration: "4s",
+    angle: "-170",
+    duration: "3s",
     link: "http://dfclutch.github.io/dan-filler-resume.pdf"
   }, {
     text: "Drawings",
-    angle: "-200",
-    duration: "2s",
+    angle: "-180",
+    duration: "3s",
     link: "http://dfclutch.github.io/apps/drawings"
-  }
-  /*{
-      text: "Blog (eventually)",
-      angle: "-220",
-      duration: "1s",
-  },*/
-  ]
+  }, {
+    text: "Michaux",
+    angle: "-190",
+    duration: "3s",
+    link: "http://dfclutch.github.io/michaux"
+  }]
 };
 var setActivePage = function setActivePage(id) {
   return _objectSpread(_objectSpread({}, circleElements), {}, {

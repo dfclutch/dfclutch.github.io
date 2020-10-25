@@ -5,13 +5,13 @@ import { ContentContainer } from './ContentContainer';
 
 const ProjectsContentContainer = styled(ContentContainer)`
     box-sizing: border-box;
-    padding: ${
+    margin: ${
 		() => (
 			window.mobileCheck()
-			? "5vw 7.5vw 0 7.5vw"
-			: "9vh 8vh 0 8vh"
+			? "5vw 7.5vw"
+			: "9vh 8vh"
 		)
-	};
+    };
 	font-size: ${
 		() => (
 			window.mobileCheck()
@@ -21,12 +21,18 @@ const ProjectsContentContainer = styled(ContentContainer)`
 	};
     text-align: justify;
     max-height: 50vh;
+    max-width: ${
+		() => (
+			window.mobileCheck()
+			? "49vw"
+			: "44vh"
+		)
+    };
     border-radius: 0px;
 
     a {
         display: inline-block;     
-        position: relative;    
-        z-index: 1;     
+        position: relative;
         padding: 2em;     
         margin: -2em;
     }

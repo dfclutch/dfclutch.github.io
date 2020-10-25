@@ -1,30 +1,37 @@
 import styled from 'styled-components';
-import { fadeIn, rotations } from './animationKeyframes';
+import { fadeIn, buildRotationKeyFrame } from './animationKeyframes';
 import { colors } from '../colors';
 
 export const Rotated = styled.div`
     position: absolute;
     top: calc(50% - 16px);
-    left: calc(50% - ${() => window.mobileCheck() ? "36vw" : "35vh"});
+    left: calc(${() => window.mobileCheck() ? "55% - 37vw" : "50% - 35vh"});
     transform-origin: 50% 50%;
     transform: rotate(${props => props.angle}deg);
-    width: ${() => window.mobileCheck() ? "72vw" : "70vh"};
+    width: ${() => window.mobileCheck() ? "74vw" : "70vh"};
     animation: ${fadeIn} ${props => props.duration}, ${
-        props => rotations[props.index]
-    } 2s;
+        props => buildRotationKeyFrame(props.angle)
+    } 1s;
+
+    z-index: -100;
 `;
 
 export const RotatedText = styled.div`
-	transform: rotate(180deg);
-    padding: 0;
-    margin-left: ${() => window.mobileCheck() ? "72vw" : "70vh"};
+    transform: rotate(180deg);
+    position: relative
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    margin-left: ${() => window.mobileCheck() ? "74vw" : "70vh"};
     display: inline-block;
     font-size: ${() => window.mobileCheck() ? "36" : "28"}px;
-    color: ${props => props.active ? colors.accent : colors.neutral};
+    color: ${props => props.active ? colors.accent : colors.lightTheme};
+    z-index: 100;
 
     &:hover {
-        color: ${colors.accent};
         font-weight: 700;
+        cursor: pointer;
     }
 
     & a {

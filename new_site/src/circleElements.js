@@ -16,22 +16,22 @@ export const circleElements = {
             id: pageIds.home,
             text: "Home",
             angle: "-120",
-            duration: "6s",
+            duration: "3s",
             active: false,
             content: <HomeContent />,
         },
         about: {
             id: pageIds.about,
             text: "About",
-            angle: "-140",
-            duration: "6s",
+            angle: "-130",
+            duration: "3s",
             active: false,
             content: <AboutContent />,
         },
         projects: {
             id: pageIds.projects,
             text: "Projects",
-            angle: "-160",
+            angle: "-140",
             duration: "3s",
             active: false,
             content: <ProjectsContent />,
@@ -40,20 +40,21 @@ export const circleElements = {
     links: [
         {
             text: "Resume",
-            angle: "-180",
-            duration: "4s",
+            angle: "-170",
+            duration: "3s",
             link: "http://dfclutch.github.io/dan-filler-resume.pdf",
         },{
             text: "Drawings",
-            angle: "-200",
-            duration: "2s",
+            angle: "-180",
+            duration: "3s",
             link: "http://dfclutch.github.io/apps/drawings",
         },
-        /*{
-            text: "Blog (eventually)",
-            angle: "-220",
-            duration: "1s",
-        },*/
+        {
+            text: "Michaux",
+            angle: "-190",
+            duration: "3s",
+            link: "http://dfclutch.github.io/michaux",
+        },
     ]
 };
 

@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CircleElement from './CircleElement';
+import { colors } from '../colors'
 
 const CircleBorder = styled.div`
         position: absolute;
-        top: calc(50% - ${() => window.mobileCheck() ? "34vw" : "32.5vh"});
-        left: calc(50% - ${() => window.mobileCheck() ? "34vw" : "32.5vh"});
-        width: ${() => window.mobileCheck() ? "68vw" : "65vh"};
-        height: ${() => window.mobileCheck() ? "68vw" : "65vh"};
-        border-radius: ${() => window.mobileCheck() ? "34vw" : "32.5vh"};
-        border: 1px solid #FFFFCB;
-        background-color: #407d71;
-        z-index: "-1";
+        top: calc(50% - ${() => window.mobileCheck() ? "35vw" : "32.5vh"});
+        left: calc(${() => window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh"});
+        width: ${() => window.mobileCheck() ? "70vw" : "65vh"};
+        height: ${() => window.mobileCheck() ? "70vw" : "65vh"};
+        border-radius: ${() => window.mobileCheck() ? "35vw" : "32.5vh"};
+        border: 1px solid ${colors.neutral};
+        background-color: ${colors.theme};
+				z-index: -2;
 `;
 
 function buildCircleElements(elements, onPageClick) {
