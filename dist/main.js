@@ -2219,7 +2219,7 @@ function CircleElementStyles_templateObject2() {
 }
 
 function CircleElementStyles_templateObject() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% ", " );\n    left: calc(", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
 
   CircleElementStyles_templateObject = function _templateObject() {
     return data;
@@ -2234,6 +2234,8 @@ function CircleElementStyles_taggedTemplateLiteral(strings, raw) { if (!raw) { r
 
 
 var Rotated = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject(), function () {
+  return window.mobileCheck() ? "- 4vw - 16px" : "- 16px";
+}, function () {
   return window.mobileCheck() ? "55% - 37vw" : "50% - 35vh";
 }, function (props) {
   return props.angle;
@@ -2310,13 +2312,13 @@ function Circle_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.
 
 
 var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject(), function () {
-  return window.mobileCheck() ? "35vw" : "32.5vh";
+  return window.mobileCheck() ? "40vw" : "32.5vh";
 }, function () {
   return window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh";
 }, function () {
   return window.mobileCheck() ? "70vw" : "65vh";
 }, function () {
-  return window.mobileCheck() ? "70vw" : "65vh";
+  return window.mobileCheck() ? "85vw" : "65vh";
 }, function () {
   return window.mobileCheck() ? "35vw" : "32.5vh";
 }, colors.neutral, colors.theme);
@@ -2361,7 +2363,7 @@ function ContentContainer_taggedTemplateLiteral(strings, raw) { if (!raw) { raw 
 
 
 var ContentContainer = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), function () {
-  return window.mobileCheck() ? "32vw" : "30vh";
+  return window.mobileCheck() ? "35vw" : "30vh";
 }, function () {
   return window.mobileCheck() ? "55% - 32vw" : "50% - 30vh";
 }, function () {

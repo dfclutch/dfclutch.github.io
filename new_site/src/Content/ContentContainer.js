@@ -4,7 +4,7 @@ import { colors } from '../colors.js';
 
 export const ContentContainer = styled.div`
 	position: absolute;
-	top: calc(50% - ${() => window.mobileCheck() ? "32vw" : "30vh"});
+	top: calc(50% - ${() => window.mobileCheck() ? "35vw" : "30vh"});
 	left: calc(${() => window.mobileCheck() ? "55% - 32vw" : "50% - 30vh"});
 	width: ${() => window.mobileCheck() ? "64vw" : "60vh"};
 	border-radius: ${() => window.mobileCheck() ? "32vw" : "30vh"};

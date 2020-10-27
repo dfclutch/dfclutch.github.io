@@ -6,10 +6,10 @@ import { colors } from '../colors'
 
 const CircleBorder = styled.div`
         position: absolute;
-        top: calc(50% - ${() => window.mobileCheck() ? "35vw" : "32.5vh"});
+        top: calc(50% - ${() => window.mobileCheck() ? "40vw" : "32.5vh"});
         left: calc(${() => window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh"});
         width: ${() => window.mobileCheck() ? "70vw" : "65vh"};
-        height: ${() => window.mobileCheck() ? "70vw" : "65vh"};
+        height: ${() => window.mobileCheck() ? "85vw" : "65vh"};
         border-radius: ${() => window.mobileCheck() ? "35vw" : "32.5vh"};
         border: 1px solid ${colors.neutral};
         background-color: ${colors.theme};

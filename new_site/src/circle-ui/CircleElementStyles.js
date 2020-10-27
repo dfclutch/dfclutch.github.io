@@ -4,7 +4,7 @@ import { colors } from '../colors';
 
 export const Rotated = styled.div`
     position: absolute;
-    top: calc(50% - 16px);
+    top: calc(50% ${() => window.mobileCheck() ? "- 4vw - 16px" : "- 16px"} );
     left: calc(${() => window.mobileCheck() ? "55% - 37vw" : "50% - 35vh"});
     transform-origin: 50% 50%;
     transform: rotate(${props => props.angle}deg);
