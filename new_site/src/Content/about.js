@@ -9,7 +9,14 @@ const AboutContentContainer = styled(ContentContainer)`
 		() => (
 			window.mobileCheck()
 			? "0vw 5vw"
-			: "5vh 6vh"
+			: "0vh 6vh"
+		)
+	};
+	padding-top: ${
+		() => (
+			window.mobileCheck()
+			? "2vw"
+			: "3vh"
 		)
 	};
 	font-size: ${

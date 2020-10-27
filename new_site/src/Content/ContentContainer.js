@@ -9,6 +9,7 @@ export const ContentContainer = styled.div`
 	width: ${() => window.mobileCheck() ? "64vw" : "60vh"};
 	border-radius: ${() => window.mobileCheck() ? "32vw" : "30vh"};
 	z-index: 1;
+	line-height: ${() => window.mobileCheck() ? "100%;" : "110%;"};
 
 	a {
 			color: ${colors.darkNeutral};

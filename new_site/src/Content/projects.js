@@ -8,9 +8,16 @@ const ProjectsContentContainer = styled(ContentContainer)`
     margin: ${
 		() => (
 			window.mobileCheck()
-			? "5vw 7.5vw"
-			: "9vh 8vh"
+			? "0vw 7.5vw"
+			: "0vh 8vh"
 		)
+    };
+    padding-top: ${
+        () => (
+            window.mobileCheck()
+            ? "4vw"
+            : "6vh"
+        )
     };
 	font-size: ${
 		() => (

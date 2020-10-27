@@ -2296,7 +2296,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function Circle_templateObject() {
-  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid ", ";\n        background-color: ", ";\n\t\t\t\tz-index: -2;\n"]);
+  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid ", ";\n        background-color: ", ";\n\t\tz-index: -2;\n"]);
 
   Circle_templateObject = function _templateObject() {
     return data;
@@ -2318,7 +2318,7 @@ var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_t
 }, function () {
   return window.mobileCheck() ? "70vw" : "65vh";
 }, function () {
-  return window.mobileCheck() ? "85vw" : "65vh";
+  return window.mobileCheck() ? "70vw" : "65vh";
 }, function () {
   return window.mobileCheck() ? "35vw" : "32.5vh";
 }, colors.neutral, colors.theme);
@@ -2349,7 +2349,7 @@ var Circle_Circle = function Circle(props) {
 /* harmony default export */ var circle_ui_Circle = (Circle_Circle);
 // CONCATENATED MODULE: ./src/Content/ContentContainer.js
 function ContentContainer_templateObject() {
-  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\tz-index: 1;\n\n\ta {\n\t\t\tcolor: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n"]);
+  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\tz-index: 1;\n\tline-height: ", ";\n\n\ta {\n\t\t\tcolor: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n"]);
 
   ContentContainer_templateObject = function _templateObject() {
     return data;
@@ -2370,6 +2370,8 @@ var ContentContainer = styled_components_browser_esm["a" /* default */].div(Cont
   return window.mobileCheck() ? "64vw" : "60vh";
 }, function () {
   return window.mobileCheck() ? "32vw" : "30vh";
+}, function () {
+  return window.mobileCheck() ? "100%;" : "110%;";
 }, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*
@@ -2398,7 +2400,7 @@ var home_HomeContent = function HomeContent() {
 };
 // CONCATENATED MODULE: ./src/Content/about.js
 function about_templateObject() {
-  var data = about_taggedTemplateLiteral(["\n\tmargin: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tmax-width: ", ";\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n"]);
+  var data = about_taggedTemplateLiteral(["\n\tmargin: ", ";\n\tpadding-top: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tmax-width: ", ";\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n"]);
 
   about_templateObject = function _templateObject() {
     return data;
@@ -2414,7 +2416,9 @@ function about_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.s
 
 
 var AboutContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(about_templateObject(), function () {
-  return window.mobileCheck() ? "0vw 5vw" : "5vh 6vh";
+  return window.mobileCheck() ? "0vw 5vw" : "0vh 6vh";
+}, function () {
+  return window.mobileCheck() ? "2vw" : "3vh";
 }, function () {
   return window.mobileCheck() ? "24px" : "16px";
 }, function () {
@@ -2444,7 +2448,7 @@ var about_AboutContent = function AboutContent() {
 };
 // CONCATENATED MODULE: ./src/Content/projects.js
 function projects_templateObject() {
-  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    margin: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    max-width: ", ";\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;\n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
+  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    margin: ", ";\n    padding-top: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    max-width: ", ";\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;\n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
 
   projects_templateObject = function _templateObject() {
     return data;
@@ -2459,7 +2463,9 @@ function projects_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = string
 
 
 var ProjectsContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(projects_templateObject(), function () {
-  return window.mobileCheck() ? "5vw 7.5vw" : "9vh 8vh";
+  return window.mobileCheck() ? "0vw 7.5vw" : "0vh 8vh";
+}, function () {
+  return window.mobileCheck() ? "4vw" : "6vh";
 }, function () {
   return window.mobileCheck() ? "24px" : "16px";
 }, function () {
