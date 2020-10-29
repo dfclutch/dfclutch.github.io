@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Michaux State Forest Recreation</title>
     <style>
       h1, h2, h3 {
@@ -68,18 +69,19 @@
         width: 90%;
         margin: auto;
       }
-    </style>
-    <script src="../mobile_check.js"></script>
-    <script>
-      window.onload = () => {
-        if (window.mobileCheck()) {
-          const contentElement = document.getElementById("content");
-          contentElement.style.width = "95%";
-          const bodyElement = document.body;
-          bodyElement.style.fontSize = "20px";
+
+      @media only screen and (max-width: 600px) {
+        #content {
+            width: 100%;
+            padding: 5px;
+        }
+
+        body {
+          font-size: 18px;
         }
       }
-    </script>
+
+    </style>
   </head>
   <body>
     <div id="content">
