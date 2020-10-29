@@ -2395,6 +2395,7 @@ function buildCircleElements(elements, onPageClick, r) {
 function calculateRadius(factor) {
   var width = window.innerWidth;
   var height = window.innerHeight;
+  if (width < 600) return 510;
   var r = width > height ? factor * height : factor * width;
   return r > 575 ? r : 575;
 }
