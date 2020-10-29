@@ -34,22 +34,22 @@ const ContentContainerWrapper = styled.div`
 	}
 
 	a {
-		color: ${colors.darkNeutral};
+		color: ${colors.lightGrey};
 		z-index: 100;
 	}
 
 	a:visited {
-		color: ${colors.darkNeutral};
+		color: ${colors.lightGrey};
 		z-index: 100;
 	}
 
 	a:hover {
-		color: ${colors.accent};
+		color: ${colors.lightTheme};
 		z-index: 100;
 	}
 
 	a:active {
-		color: ${colors.accent};
+		color: ${colors.theme};
 		z-index: 100;
 	}
 `;

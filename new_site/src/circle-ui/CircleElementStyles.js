@@ -13,14 +13,14 @@ export const Rotated = styled.div`
     width: ${props => props.radius - 10 + "px"};
     animation: ${fadeIn} ${props => props.duration}, ${
         props => buildRotationKeyFrame(props.angle)
-    } 1s;
+    } 2s;
 
     z-index: -100;
 `;
 
 export const RotatedText = styled.div`
     transform: rotate(180deg);
-    position: relative
+    position: relative;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: -15px;
@@ -28,7 +28,7 @@ export const RotatedText = styled.div`
     margin-left: ${props => props.radius + 10 + "px"};
     display: inline-block;
 	font-size: ${() => window.mobileCheck() ? "34px" : "28px"};
-    color: ${props => props.active ? colors.accent : colors.lightTheme};
+    color: ${props => props.active ? colors.theme : colors.lightGrey};
     z-index: 100;
 
     &:hover {
@@ -37,10 +37,10 @@ export const RotatedText = styled.div`
     }
 
     & a {
-        color: ${props => props.active ? colors.accent : colors.neutral};
+        color: ${props => props.active ? colors.theme : colors.lightGrey};
     }
 
     & a:visited {
-        color: ${props => props.active ? colors.accent : colors.neutral};
+        color: ${props => props.active ? colors.theme : colors.lightGrey};
     }
 `;

@@ -1,5 +1,7 @@
 import { keyframes } from 'styled-components';
 
+import { colors } from '../colors';
+
 const startingAngle = "-220";
 
 export function buildRotationKeyFrame(finalAngle) {
@@ -15,11 +17,21 @@ export function buildRotationKeyFrame(finalAngle) {
 }
 
 export const fadeIn = keyframes`
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
+    }
+`;
+
+export const contentFade = keyframes`
+    0% {
+        background-color: ${colors.white};
+    }
+
+    100% {
+        background-color: ${colors.black};
     }
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CircleElement from './CircleElement';
 import { colors } from '../colors'
 import { ContentContainer } from '../Content/ContentContainer';
+import { contentFade } from './animationKeyframes';
 
 const CircleBorder = styled.div`
 	position: absolute;
@@ -12,9 +13,10 @@ const CircleBorder = styled.div`
 	width: ${props => props.radius + "px"};
 	height: ${props => props.radius + "px"};
 	border-radius: ${props => props.radius / 2 + "px"};
-	border: 1px solid ${colors.neutral};
-	background-color: ${colors.theme};
+	border: 1px solid ${colors.lightGrey};
+	background-color: ${colors.black};
 	z-index: -2;
+	animation: ${contentFade} 2s;
 `;
 
 function buildCircleElements(elements, onPageClick, r) {
@@ -50,7 +52,7 @@ function calculateRadius (factor) {
 	const width = window.innerWidth;
 	const height = window.innerHeight;
 
-	if (width < 600) return 510;
+	if (width < 600) return factor * width;
 	const r = (width > height) ? (factor * height) : (factor * width);
 	return r > 575 ? r : 575;
 }

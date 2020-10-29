@@ -2044,7 +2044,7 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);"]);
 // Module
-exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Poppins, Helvetica, Arial, sans-serif;color:#FFFFCB}body{background-color:#1c4039}a{text-decoration:none}\n", ""]);
+exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Poppins, Helvetica, Arial, sans-serif;color:#fff}body{background-color:#fff;animation:backgroundFade 2s}@keyframes backgroundFade{0%{background-color:#999}100%{background-color:#fff}}a{text-decoration:none}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2168,9 +2168,32 @@ var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 // EXTERNAL MODULE: ./node_modules/styled-components/dist/styled-components.browser.esm.js
 var styled_components_browser_esm = __webpack_require__(1);
 
+// CONCATENATED MODULE: ./src/colors.js
+var colors = {
+  "theme": '#1F6356',
+  "lightTheme": '#76a39a',
+  "darkTheme": '#1c4039',
+  "neutral": '#FFFFCB',
+  "darkNeutral": "#CBA45F",
+  "accent": '#FFF',
+  "white": '#FFF',
+  "black": '#000',
+  "darkGrey": '#333',
+  "lightGrey": '#999'
+};
 // CONCATENATED MODULE: ./src/circle-ui/animationKeyframes.js
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    0% {\n        background-color: ", ";\n    }\n\n    100% {\n        background-color: ", ";\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    from {\n        opacity: 0;\n    }\n\n    to {\n        opacity: 1;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    0% {\n        opacity: 0;\n    }\n\n    100% {\n        opacity: 1;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -2192,24 +2215,16 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
+
 var startingAngle = "-220";
 function buildRotationKeyFrame(finalAngle) {
   return Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject(), startingAngle, finalAngle);
 }
 var fadeIn = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject2());
-// CONCATENATED MODULE: ./src/colors.js
-var colors = {
-  "theme": '#1F6356',
-  "lightTheme": '#76a39a',
-  "darkTheme": '#1c4039',
-  "neutral": '#FFFFCB',
-  "darkNeutral": "#CBA45F",
-  "accent": '#FFF' //'#FA4224',
-
-};
+var contentFade = Object(styled_components_browser_esm["b" /* keyframes */])(_templateObject3(), colors.white, colors.black);
 // CONCATENATED MODULE: ./src/circle-ui/CircleElementStyles.js
 function CircleElementStyles_templateObject2() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    transform: rotate(180deg);\n    position: relative\n    padding-top: 15px;\n    padding-bottom: 15px;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    margin-left: ", ";\n    display: inline-block;\n\tfont-size: ", ";\n    color: ", ";\n    z-index: 100;\n\n    &:hover {\n        font-weight: 700;\n        cursor: pointer;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    transform: rotate(180deg);\n    position: relative;\n    padding-top: 15px;\n    padding-bottom: 15px;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    margin-left: ", ";\n    display: inline-block;\n\tfont-size: ", ";\n    color: ", ";\n    z-index: 100;\n\n    &:hover {\n        font-weight: 700;\n        cursor: pointer;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
 
   CircleElementStyles_templateObject2 = function _templateObject2() {
     return data;
@@ -2219,7 +2234,7 @@ function CircleElementStyles_templateObject2() {
 }
 
 function CircleElementStyles_templateObject() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(", " - ", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(", " - ", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 2s;\n\n    z-index: -100;\n"]);
 
   CircleElementStyles_templateObject = function _templateObject() {
     return data;
@@ -2251,11 +2266,11 @@ var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleEle
 }, function () {
   return window.mobileCheck() ? "34px" : "28px";
 }, function (props) {
-  return props.active ? colors.accent : colors.lightTheme;
+  return props.active ? colors.theme : colors.lightGrey;
 }, function (props) {
-  return props.active ? colors.accent : colors.neutral;
+  return props.active ? colors.theme : colors.lightGrey;
 }, function (props) {
-  return props.active ? colors.accent : colors.neutral;
+  return props.active ? colors.theme : colors.lightGrey;
 });
 // CONCATENATED MODULE: ./src/circle-ui/CircleElement.js
 
@@ -2316,7 +2331,7 @@ var ContentContainerWrapper = styled_components_browser_esm["a" /* default */].d
   return (d - d / Math.sqrt(2)) / 4 + "px";
 }, PADDING_WIDTH, function () {
   return window.mobileCheck() ? "19px" : "16px";
-}, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
+}, colors.lightGrey, colors.lightGrey, colors.lightTheme, colors.theme);
 var ContentContainer_ContentContainer = function ContentContainer(props) {
   return /*#__PURE__*/react_default.a.createElement(ContentContainerWrapper, props, props.children);
 };
@@ -2336,7 +2351,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function Circle_templateObject() {
-  var data = Circle_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", " - ", ");\n\twidth: ", ";\n\theight: ", ";\n\tborder-radius: ", ";\n\tborder: 1px solid ", ";\n\tbackground-color: ", ";\n\tz-index: -2;\n"]);
+  var data = Circle_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", " - ", ");\n\twidth: ", ";\n\theight: ", ";\n\tborder-radius: ", ";\n\tborder: 1px solid ", ";\n\tbackground-color: ", ";\n\tz-index: -2;\n\tanimation: ", " 2s;\n"]);
 
   Circle_templateObject = function _templateObject() {
     return data;
@@ -2346,6 +2361,7 @@ function Circle_templateObject() {
 }
 
 function Circle_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -2364,7 +2380,7 @@ var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_t
   return props.radius + "px";
 }, function (props) {
   return props.radius / 2 + "px";
-}, colors.neutral, colors.theme);
+}, colors.lightGrey, colors.black, contentFade);
 
 function buildCircleElements(elements, onPageClick, r) {
   var pageElementValues = Object.values(elements.pages);
@@ -2395,7 +2411,7 @@ function buildCircleElements(elements, onPageClick, r) {
 function calculateRadius(factor) {
   var width = window.innerWidth;
   var height = window.innerHeight;
-  if (width < 600) return 510;
+  if (width < 600) return factor * width;
   var r = width > height ? factor * height : factor * width;
   return r > 575 ? r : 575;
 }

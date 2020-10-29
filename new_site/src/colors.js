@@ -4,5 +4,9 @@ export const colors = {
 	"darkTheme": '#1c4039',
 	"neutral": '#FFFFCB',
 	"darkNeutral": "#CBA45F",
-	"accent": '#FFF'//'#FA4224',
+	"accent": '#FFF',
+	"white": '#FFF',
+	"black": '#000',
+	"darkGrey": '#333',
+	"lightGrey": '#999',
 };

@@ -7,11 +7,23 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Poppins, Helvetica, Arial, sans-serif;
-    color: $neutral;
+    color: $white;
 }
 
 body {
-    background-color: $dark-theme;
+    background-color: $white;
+    animation: backgroundFade 2s;
+}
+
+@keyframes backgroundFade {
+	0% {
+        background-color: $lightGrey;
+    };
+
+
+    100% {
+        background-color: $white;
+    };
 }
 
 a {
