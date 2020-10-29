@@ -12,19 +12,8 @@ html, body {
 
 body {
     background-color: $white;
-    animation: backgroundFade 2s;
 }
 
-@keyframes backgroundFade {
-	0% {
-        background-color: $lightGrey;
-    };
-
-
-    100% {
-        background-color: $white;
-    };
-}
 
 a {
 	text-decoration: none

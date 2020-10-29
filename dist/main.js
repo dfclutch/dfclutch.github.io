@@ -2044,7 +2044,7 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);"]);
 // Module
-exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Poppins, Helvetica, Arial, sans-serif;color:#fff}body{background-color:#fff;animation:backgroundFade 2s}@keyframes backgroundFade{0%{background-color:#999}100%{background-color:#fff}}a{text-decoration:none}\n", ""]);
+exports.push([module.i, "html,body{margin:0;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Poppins, Helvetica, Arial, sans-serif;color:#fff}body{background-color:#fff}a{text-decoration:none}\n", ""]);
 // Exports
 module.exports = exports;
 
