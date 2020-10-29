@@ -49,12 +49,8 @@ function buildCircleElements(elements, onPageClick, r) {
 function calculateRadius (factor) {
 	const width = window.innerWidth;
 	const height = window.innerHeight;
-
-	if (width > height) {
-		return  factor * height;
-	}
-
-	return factor * width;
+	const r = width > height ? factor * height : factor * width;
+	return r > 575 ? r : 575;
 }
 
 const Circle = (props) => {
