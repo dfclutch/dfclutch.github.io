@@ -2209,7 +2209,7 @@ var colors = {
 };
 // CONCATENATED MODULE: ./src/circle-ui/CircleElementStyles.js
 function CircleElementStyles_templateObject2() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    transform: rotate(180deg);\n    position: relative\n    padding-top: 15px;\n    padding-bottom: 15px;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    margin-left: ", ";\n    display: inline-block;\n    font-size: ", "px;\n    color: ", ";\n    z-index: 100;\n\n    &:hover {\n        font-weight: 700;\n        cursor: pointer;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    transform: rotate(180deg);\n    position: relative\n    padding-top: 15px;\n    padding-bottom: 15px;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    margin-left: ", ";\n    display: inline-block;\n\tfont-size: ", ";\n    color: ", ";\n    z-index: 100;\n\n    &:hover {\n        font-weight: 700;\n        cursor: pointer;\n    }\n\n    & a {\n        color: ", ";\n    }\n\n    & a:visited {\n        color: ", ";\n    }\n"]);
 
   CircleElementStyles_templateObject2 = function _templateObject2() {
     return data;
@@ -2219,7 +2219,7 @@ function CircleElementStyles_templateObject2() {
 }
 
 function CircleElementStyles_templateObject() {
-  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% ", " );\n    left: calc(", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
+  var data = CircleElementStyles_taggedTemplateLiteral(["\n    position: absolute;\n    top: calc(50% - 16px);\n    left: calc(", " - ", ");\n    transform-origin: 50% 50%;\n    transform: rotate(", "deg);\n    width: ", ";\n    animation: ", " ", ", ", " 1s;\n\n    z-index: -100;\n"]);
 
   CircleElementStyles_templateObject = function _templateObject() {
     return data;
@@ -2234,22 +2234,22 @@ function CircleElementStyles_taggedTemplateLiteral(strings, raw) { if (!raw) { r
 
 
 var Rotated = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject(), function () {
-  return window.mobileCheck() ? "- 4vw - 16px" : "- 16px";
-}, function () {
-  return window.mobileCheck() ? "55% - 37vw" : "50% - 35vh";
+  return window.mobileCheck() ? "55%" : "50%";
+}, function (props) {
+  return props.radius / 2 + "px";
 }, function (props) {
   return props.angle;
-}, function () {
-  return window.mobileCheck() ? "74vw" : "70vh";
+}, function (props) {
+  return props.radius - 10 + "px";
 }, fadeIn, function (props) {
   return props.duration;
 }, function (props) {
   return buildRotationKeyFrame(props.angle);
 });
-var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject2(), function () {
-  return window.mobileCheck() ? "74vw" : "70vh";
+var RotatedText = styled_components_browser_esm["a" /* default */].div(CircleElementStyles_templateObject2(), function (props) {
+  return props.radius + 10 + "px";
 }, function () {
-  return window.mobileCheck() ? "36" : "28";
+  return window.mobileCheck() ? "34px" : "28px";
 }, function (props) {
   return props.active ? colors.accent : colors.lightTheme;
 }, function (props) {
@@ -2265,7 +2265,8 @@ var CircleElement_CircleElement = function CircleElement(props) {
   return /*#__PURE__*/react_default.a.createElement(Rotated, {
     angle: props.angle,
     index: props.index,
-    duration: props.duration
+    duration: props.duration,
+    radius: props.radius
   }, /*#__PURE__*/react_default.a.createElement(RotatedText, {
     as: props.link ? "a" : "",
     href: props.link,
@@ -2275,11 +2276,50 @@ var CircleElement_CircleElement = function CircleElement(props) {
       if (props.page) {
         props.onClick(props.id);
       }
-    }
+    },
+    radius: props.radius
   }, props.text));
 };
 
 /* harmony default export */ var circle_ui_CircleElement = (CircleElement_CircleElement);
+// CONCATENATED MODULE: ./src/Content/ContentContainer.js
+function ContentContainer_templateObject() {
+  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", " - ", ");\n\twidth: ", ";\n\theight: ", ";\n\tborder-radius: ", ";\n\tmargin: ", ";\n\tpadding: ", "px;\n\tsizing: border-box;\n\tz-index: 1;\n\tline-height: \"115%;\";\n\ttext-align: justify;\n\tfont-size: ", ";\n\n\th1, h3 {\n\t\tmargin: 0;\n\t\tmargin-bottom: 6px;\n\t}\n\n\tp {\n\t\tmargin: 0;\n\t\tmargin-bottom: 8px;\n\t}\n\n\ta {\n\t\tcolor: ", ";\n\t\tz-index: 100;\n\t}\n\n\ta:visited {\n\t\tcolor: ", ";\n\t\tz-index: 100;\n\t}\n\n\ta:hover {\n\t\tcolor: ", ";\n\t\tz-index: 100;\n\t}\n\n\ta:active {\n\t\tcolor: ", ";\n\t\tz-index: 100;\n\t}\n"]);
+
+  ContentContainer_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function ContentContainer_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var PADDING_WIDTH = 10;
+var ContentContainerWrapper = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), function (props) {
+  return props.radius / 2 + "px";
+}, function () {
+  return window.mobileCheck() ? "55%" : "50%";
+}, function (props) {
+  return props.radius / 2 + "px";
+}, function (props) {
+  return props.radius / Math.sqrt(2) - 2 * PADDING_WIDTH + "px";
+}, function (props) {
+  return props.radius / Math.sqrt(2) - 2 * PADDING_WIDTH + "px";
+}, function (props) {
+  return props.radius / 2 + "px";
+}, function (props) {
+  var d = props.radius * 2;
+  return (d - d / Math.sqrt(2)) / 4 + "px";
+}, PADDING_WIDTH, function () {
+  return window.mobileCheck() ? "19px" : "16px";
+}, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
+var ContentContainer_ContentContainer = function ContentContainer(props) {
+  return /*#__PURE__*/react_default.a.createElement(ContentContainerWrapper, props, props.children);
+};
 // CONCATENATED MODULE: ./src/circle-ui/Circle.js
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -2296,7 +2336,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function Circle_templateObject() {
-  var data = Circle_taggedTemplateLiteral(["\n        position: absolute;\n        top: calc(50% - ", ");\n        left: calc(", ");\n        width: ", ";\n        height: ", ";\n        border-radius: ", ";\n        border: 1px solid ", ";\n        background-color: ", ";\n\t\tz-index: -2;\n"]);
+  var data = Circle_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", " - ", ");\n\twidth: ", ";\n\theight: ", ";\n\tborder-radius: ", ";\n\tborder: 1px solid ", ";\n\tbackground-color: ", ";\n\tz-index: -2;\n"]);
 
   Circle_templateObject = function _templateObject() {
     return data;
@@ -2311,68 +2351,69 @@ function Circle_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.
 
 
 
-var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject(), function () {
-  return window.mobileCheck() ? "40vw" : "32.5vh";
+
+var CircleBorder = styled_components_browser_esm["a" /* default */].div(Circle_templateObject(), function (props) {
+  return props.radius / 2 + "px";
 }, function () {
-  return window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh";
-}, function () {
-  return window.mobileCheck() ? "70vw" : "65vh";
-}, function () {
-  return window.mobileCheck() ? "70vw" : "65vh";
-}, function () {
-  return window.mobileCheck() ? "35vw" : "32.5vh";
+  return window.mobileCheck() ? "55%" : "50%";
+}, function (props) {
+  return props.radius / 2 + "px";
+}, function (props) {
+  return props.radius + "px";
+}, function (props) {
+  return props.radius + "px";
+}, function (props) {
+  return props.radius / 2 + "px";
 }, colors.neutral, colors.theme);
 
-function buildCircleElements(elements, onPageClick) {
+function buildCircleElements(elements, onPageClick, r) {
   var pageElementValues = Object.values(elements.pages);
   var pageElements = pageElementValues.map(function (element, index) {
     return /*#__PURE__*/react_default.a.createElement(circle_ui_CircleElement, _extends({}, element, {
       index: index,
       page: true,
-      onClick: onPageClick
+      onClick: onPageClick,
+      radius: r
     }));
   });
   var linkElementValues = elements.links;
   var linkElements = linkElementValues.map(function (element, index) {
     return /*#__PURE__*/react_default.a.createElement(circle_ui_CircleElement, _extends({}, element, {
-      index: index + pageElements.length
+      index: index + pageElements.length,
+      radius: r
     }));
   });
   return [].concat(_toConsumableArray(pageElements), _toConsumableArray(linkElements));
 }
+/*
+	Returns radius of circle UI to look good on wide and tall screens
+	params:
+		factor - the percentage of the smaller dimension of the radius
+*/
+
+
+function calculateRadius(factor) {
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+
+  if (width > height) {
+    return factor * height;
+  }
+
+  return factor * width;
+}
 
 var Circle_Circle = function Circle(props) {
-  console.log(props);
-  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(CircleBorder, null), props.content, buildCircleElements(props.elements, props.onPageClick));
+  var CIRCLE_RADIUS_FACTOR = window.mobileCheck() ? 0.70 : 0.60;
+  var r = calculateRadius(CIRCLE_RADIUS_FACTOR);
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(CircleBorder, {
+    radius: r
+  }), /*#__PURE__*/react_default.a.createElement(ContentContainer_ContentContainer, {
+    radius: r
+  }, props.content), buildCircleElements(props.elements, props.onPageClick, r));
 };
 
 /* harmony default export */ var circle_ui_Circle = (Circle_Circle);
-// CONCATENATED MODULE: ./src/Content/ContentContainer.js
-function ContentContainer_templateObject() {
-  var data = ContentContainer_taggedTemplateLiteral(["\n\tposition: absolute;\n\ttop: calc(50% - ", ");\n\tleft: calc(", ");\n\twidth: ", ";\n\tborder-radius: ", ";\n\tz-index: 1;\n\tline-height: ", ";\n\n\ta {\n\t\t\tcolor: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:visited {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:hover {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n\n\ta:active {\n\t    color: ", ";\n\t\t\tz-index: 100;\n\t}\n"]);
-
-  ContentContainer_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function ContentContainer_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var ContentContainer = styled_components_browser_esm["a" /* default */].div(ContentContainer_templateObject(), function () {
-  return window.mobileCheck() ? "35vw" : "30vh";
-}, function () {
-  return window.mobileCheck() ? "55% - 32vw" : "50% - 30vh";
-}, function () {
-  return window.mobileCheck() ? "64vw" : "60vh";
-}, function () {
-  return window.mobileCheck() ? "32vw" : "30vh";
-}, function () {
-  return window.mobileCheck() ? "100%;" : "110%;";
-}, colors.darkNeutral, colors.darkNeutral, colors.accent, colors.accent);
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*
     StackOverflow snippet to check if on a mobile. Works okay.
@@ -2392,42 +2433,17 @@ var mobileCheck = function mobileCheck() {
 
 var home_HomeContent = function HomeContent() {
   var mobile = mobileCheck();
-  return /*#__PURE__*/react_default.a.createElement(ContentContainer, {
+  return /*#__PURE__*/react_default.a.createElement(ContentContainer_ContentContainer, {
     as: "img",
     src: "./img/profile-image.jpeg",
     mobile: mobileCheck
   });
 };
 // CONCATENATED MODULE: ./src/Content/about.js
-function about_templateObject() {
-  var data = about_taggedTemplateLiteral(["\n\tmargin: ", ";\n\tpadding-top: ", ";\n\tfont-size: ", ";\n\ttext-align: justify;\n\tmax-height: 50vh;\n\tmax-width: ", ";\n\tborder-radius: 0px;\n\n\th1 {\n\t\ttext-align: center;\n\t}\n\n\tdiv {\n\t\ttext-align: center;\n\t}\n"]);
-
-  about_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function about_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-
-
-
-var AboutContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(about_templateObject(), function () {
-  return window.mobileCheck() ? "0vw 5vw" : "0vh 6vh";
-}, function () {
-  return window.mobileCheck() ? "2vw" : "3vh";
-}, function () {
-  return window.mobileCheck() ? "24px" : "16px";
-}, function () {
-  return window.mobileCheck() ? "54vw" : "48vh";
-});
 var about_AboutContent = function AboutContent() {
-  return /*#__PURE__*/react_default.a.createElement(AboutContentContainer, {
-    mobile: mobileCheck()
-  }, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer, currently working at", /*#__PURE__*/react_default.a.createElement("a", {
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer, currently working at", /*#__PURE__*/react_default.a.createElement("a", {
     href: "https://www2.xant.ai/",
     target: "_blank"
   }, " Xant"), "."), /*#__PURE__*/react_default.a.createElement("p", null, "I specialize in building React/Redux applications and pride myself on writing performant and maintainable code at enterprise scale."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in other areas of computer science including comuptation theory and graph theory. I play ", /*#__PURE__*/react_default.a.createElement("a", {
@@ -2447,44 +2463,22 @@ var about_AboutContent = function AboutContent() {
   }, " dwfiller@gmail.com")));
 };
 // CONCATENATED MODULE: ./src/Content/projects.js
-function projects_templateObject() {
-  var data = projects_taggedTemplateLiteral(["\n    box-sizing: border-box;\n    margin: ", ";\n    padding-top: ", ";\n\tfont-size: ", ";\n    text-align: justify;\n    max-height: 50vh;\n    max-width: ", ";\n    border-radius: 0px;\n\n    a {\n        display: inline-block;     \n        position: relative;\n        padding: 2em;     \n        margin: -2em;\n    }\n\n    h3 {\n        margin: 0;\n        padding: 0;\n    }\n"]);
-
-  projects_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function projects_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-
-
-var ProjectsContentContainer = Object(styled_components_browser_esm["a" /* default */])(ContentContainer)(projects_templateObject(), function () {
-  return window.mobileCheck() ? "0vw 7.5vw" : "0vh 8vh";
-}, function () {
-  return window.mobileCheck() ? "4vw" : "6vh";
-}, function () {
-  return window.mobileCheck() ? "24px" : "16px";
-}, function () {
-  return window.mobileCheck() ? "49vw" : "44vh";
-});
 var projects_ProjectsContent = function ProjectsContent() {
-  return /*#__PURE__*/react_default.a.createElement(ProjectsContentContainer, null, /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://dfclutch.github.io/apps/epsim",
     target: "_blank"
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Covid SAIRD simulation")), /*#__PURE__*/react_default.a.createElement("br", null), "D3js-based interactive graphical simulation based on the SIR epidemic model."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Covid SAIRD simulation")), "D3js-based interactive graphical simulation based on the SIR epidemic model."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://dfclutch.github.io/apps/d3",
     target: "_blank"
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Network Generation Models")), /*#__PURE__*/react_default.a.createElement("br", null), "An interactive visualization of several random network generation models."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Network Generation Models")), "An interactive visualization of several random network generation models."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://dfclutch.github.io/apps/graphs",
     target: "_blank"
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Graph Algorithms")), /*#__PURE__*/react_default.a.createElement("br", null), "Vanilla JS visualization of some graph algorithms, implements a geograph graph generation model I created."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Graph Algorithms")), "Vanilla JS visualization of some graph algorithms, implements a geograph graph generation model I created."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://java-docs.herokuapp.com",
     target: "_blank"
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Java Docs")), /*#__PURE__*/react_default.a.createElement("br", null), "Basic fullstack app for recording coffee recipes."));
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Java Docs")), "Basic fullstack app for recording coffee recipes."));
 };
 // CONCATENATED MODULE: ./src/circleElements.js
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }

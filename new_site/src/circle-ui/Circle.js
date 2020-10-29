@@ -3,48 +3,71 @@ import styled from 'styled-components';
 
 import CircleElement from './CircleElement';
 import { colors } from '../colors'
+import { ContentContainer } from '../Content/ContentContainer';
 
 const CircleBorder = styled.div`
-        position: absolute;
-        top: calc(50% - ${() => window.mobileCheck() ? "40vw" : "32.5vh"});
-        left: calc(${() => window.mobileCheck() ? "55% - 35vw" : "50% - 32.5vh"});
-        width: ${() => window.mobileCheck() ? "70vw" : "65vh"};
-        height: ${() => window.mobileCheck() ? "70vw" : "65vh"};
-        border-radius: ${() => window.mobileCheck() ? "35vw" : "32.5vh"};
-        border: 1px solid ${colors.neutral};
-        background-color: ${colors.theme};
-		z-index: -2;
+	position: absolute;
+	top: calc(50% - ${props => props.radius / 2 + "px"});
+	left: calc(${() => window.mobileCheck() ? "55%" : "50%"} - ${props => props.radius / 2 + "px"});
+	width: ${props => props.radius + "px"};
+	height: ${props => props.radius + "px"};
+	border-radius: ${props => props.radius / 2 + "px"};
+	border: 1px solid ${colors.neutral};
+	background-color: ${colors.theme};
+	z-index: -2;
 `;
 
-function buildCircleElements(elements, onPageClick) {
+function buildCircleElements(elements, onPageClick, r) {
 	const pageElementValues = Object.values(elements.pages);
 	const pageElements = pageElementValues.map((element, index) => (
-			<CircleElement
-				{ ...element }
-				index={ index }
-				page
-				onClick={ onPageClick }
-			/>
-		));
+		<CircleElement
+			{ ...element }
+			index={ index }
+			page
+			onClick={ onPageClick }
+			radius={r}
+		/>
+	));
 
 	const linkElementValues = elements.links;
 	const linkElements = linkElementValues.map((element, index) => (
-			<CircleElement
-				{ ...element }
-				index={index + pageElements.length}
-			/>
-		));
+		<CircleElement
+			{ ...element }
+			index={index + pageElements.length}
+			radius={r}
+		/>
+	));
 
 	return [ ...pageElements, ...linkElements ];
 }
 
+/*
+	Returns radius of circle UI to look good on wide and tall screens
+	params:
+		factor - the percentage of the smaller dimension of the radius
+*/
+function calculateRadius (factor) {
+	const width = window.innerWidth;
+	const height = window.innerHeight;
+
+	if (width > height) {
+		return  factor * height;
+	}
+
+	return factor * width;
+}
+
 const Circle = (props) => {
-	console.log(props);
+	const CIRCLE_RADIUS_FACTOR = window.mobileCheck() ? 0.70 : 0.60;
+
+	const r = calculateRadius(CIRCLE_RADIUS_FACTOR)
 	return (
 		<div>
-			<CircleBorder />
-			{ props.content }
-			{ buildCircleElements(props.elements, props.onPageClick) }
+			<CircleBorder radius={r}/>
+			<ContentContainer radius={r}>
+				{ props.content }
+			</ContentContainer>
+			{ buildCircleElements(props.elements, props.onPageClick, r) }
 		</div>
 	);
 }

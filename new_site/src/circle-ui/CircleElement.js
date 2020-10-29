@@ -11,6 +11,7 @@ const CircleElement = (props) => {
 			angle={props.angle}
 			index={props.index}
 			duration={props.duration}
+			radius={props.radius}
 		>
 			<RotatedText
 				as={ props.link ? "a" : ""}
@@ -22,6 +23,7 @@ const CircleElement = (props) => {
 						props.onClick(props.id);
 					}
 				}}
+				radius={props.radius}
 			>
 				{ props.text }
 			</RotatedText>

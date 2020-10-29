@@ -4,11 +4,13 @@ import { colors } from '../colors';
 
 export const Rotated = styled.div`
     position: absolute;
-    top: calc(50% ${() => window.mobileCheck() ? "- 4vw - 16px" : "- 16px"} );
-    left: calc(${() => window.mobileCheck() ? "55% - 37vw" : "50% - 35vh"});
+    top: calc(50% - 16px);
+    left: calc(${() => (
+        window.mobileCheck() ? "55%" : "50%"
+    )} - ${props => (props.radius / 2) + "px"});
     transform-origin: 50% 50%;
     transform: rotate(${props => props.angle}deg);
-    width: ${() => window.mobileCheck() ? "74vw" : "70vh"};
+    width: ${props => props.radius - 10 + "px"};
     animation: ${fadeIn} ${props => props.duration}, ${
         props => buildRotationKeyFrame(props.angle)
     } 1s;
@@ -23,9 +25,9 @@ export const RotatedText = styled.div`
     padding-bottom: 15px;
     margin-top: -15px;
     margin-bottom: -15px;
-    margin-left: ${() => window.mobileCheck() ? "74vw" : "70vh"};
+    margin-left: ${props => props.radius + 10 + "px"};
     display: inline-block;
-    font-size: ${() => window.mobileCheck() ? "36" : "28"}px;
+	font-size: ${() => window.mobileCheck() ? "34px" : "28px"};
     color: ${props => props.active ? colors.accent : colors.lightTheme};
     z-index: 100;
 

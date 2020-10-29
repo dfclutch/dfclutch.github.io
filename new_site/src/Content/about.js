@@ -1,54 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ContentContainer } from './ContentContainer';
-import { mobileCheck } from '../mobile_check';
-
-const AboutContentContainer = styled(ContentContainer)`
-	margin: ${
-		() => (
-			window.mobileCheck()
-			? "0vw 5vw"
-			: "0vh 6vh"
-		)
-	};
-	padding-top: ${
-		() => (
-			window.mobileCheck()
-			? "2vw"
-			: "3vh"
-		)
-	};
-	font-size: ${
-		() => (
-			window.mobileCheck()
-			? "24px"
-			: "16px"
-		)
-	};
-	text-align: justify;
-	max-height: 50vh;
-	max-width: ${
-		() => (
-			window.mobileCheck()
-			? "54vw"
-			: "48vh"
-		)
-	};
-	border-radius: 0px;
-
-	h1 {
-		text-align: center;
-	}
-
-	div {
-		text-align: center;
-	}
-`;
-
 export const AboutContent = () => {
 	return (
-		<AboutContentContainer mobile={mobileCheck()}>
+		<div>
 			<h1>Dan Filler</h1>
 			<p> 
 				Pennsylvania native and Ohio State graduate. 
@@ -66,10 +21,10 @@ export const AboutContent = () => {
 				and draw landscapes and buildings.
 			</p>
 			<div>
-			<a href="http://github.com/dfclutch" target="_blank">github</a> | 
-           	<a href="https://www.linkedin.com/in/dan-filler/" target="_blank"> LinkedIn</a> | 
-           	<a href="mailto:dwfiller@gmail.com"> dwfiller@gmail.com</a>
-           	</div>
-		</AboutContentContainer>
+				<a href="http://github.com/dfclutch" target="_blank">github</a> | 
+				<a href="https://www.linkedin.com/in/dan-filler/" target="_blank"> LinkedIn</a> | 
+				<a href="mailto:dwfiller@gmail.com"> dwfiller@gmail.com</a>
+			</div>
+		</div>
 	);
 }
