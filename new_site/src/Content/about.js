@@ -16,7 +16,7 @@ export const AboutContent = () => {
 			</p>
 			<p>
 				I am interested in other areas of computer science including 
-				comuptation theory and graph theory. I play <a href="https://rateyourmusic.com/genre/American+Primitivism/" target="_blank">
+				computation theory and graph theory. I play <a href="https://rateyourmusic.com/genre/American+Primitivism/" target="_blank">
 				American Primitive guitar</a>, practice <a href="https://lighterpack.com/r/73c46t" target="_blank"> ultralight backpacking </a> 
 				and draw landscapes and buildings.
 			</p>
