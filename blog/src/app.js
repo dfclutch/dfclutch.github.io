@@ -69,8 +69,8 @@ class App extends React.Component {
     	return (
     		<div>
 	    		<Content>
-	    		<Title>
-	    			
+	    		<Title onClick={this.backToArticleList}>
+	    			Placeholder Title
 	    		</Title>
 	        		{ content }
 	    		{	this.state.onArticleList 

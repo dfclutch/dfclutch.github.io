@@ -6,7 +6,7 @@ import colors from '../colors';
 const BackWrapper = styled.div`
 	text-align: center;
 	color: ${colors.grey};
-	padding: 10px 0;
+	padding: 18px 0;
 	font-size: 18px;
 
 	&:hover {

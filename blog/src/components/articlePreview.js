@@ -8,11 +8,15 @@ const ArticlePreviewContainer = styled.div`
 	border: 1px solid ${colors.darkGrey};
 	border-radius: 5px;
 	background-color: ${colors.lightGrey};
-	padding: 6px 8px;
+	padding: 6px 12px;
 	font-size: 16px;
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	&:hover h2 {
+			color: ${colors.yellow};
 	}
 `;
 
@@ -24,6 +28,7 @@ const ArticleTitle = styled.h2`
 
 const PreviewText = styled.p`
 	text-align: justify;
+	font-family: 'Vollkorn', serif;
 `;
 
 export const ArticlePreview = (props) => {

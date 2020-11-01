@@ -6,6 +6,7 @@ import colors from '../colors';
 const CounterWrapper = styled.div`
 	text-align: center;
 	font-size: 18px;
+	margin: 16px 0;
 `;
 
 const ChangePageWrapper = styled.div`
@@ -17,18 +18,24 @@ const ChangePageWrapper = styled.div`
 		cursor: pointer;
 		color: ${colors.red};
 	}
+
+
 `;
 
 export const PageCounter = (props) => {
 	return (
 		<CounterWrapper>
-			<ChangePageWrapper onClick={props.prevPage}>
-				prev 
-			</ChangePageWrapper>
+			{ props.page > 0 &&
+				<ChangePageWrapper onClick={props.prevPage}>
+					prev 
+				</ChangePageWrapper>
+			}
 			{props.page + 1}
-			<ChangePageWrapper onClick={props.nextPage}>
-				next 
-			</ChangePageWrapper>
+			{ props.page < props.maxPageIndex &&
+				<ChangePageWrapper onClick={props.nextPage}>
+					next 
+				</ChangePageWrapper>
+			}
 		</CounterWrapper>
 	)
 }

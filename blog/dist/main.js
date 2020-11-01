@@ -2181,6 +2181,16 @@ var styled_components_browser_esm = __webpack_require__(1);
   red: "#eb4034"
 });
 // CONCATENATED MODULE: ./src/components/article.js
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-style: italic;\n\tfont-family: 'Vollkorn', serif;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-size: 2.6rem;\n"]);
 
@@ -2192,7 +2202,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\tpadding: 0 10px 10px 10px;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\tpadding: ", ";\n\tpadding-top: 0;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n\n\tp {\n\t\tfont-family: 'Vollkorn', serif;\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2206,17 +2216,19 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), colors.darkGrey, colors.lightGrey);
+var ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), function () {
+  return window.mobileCheck() ? "10px" : "24px";
+}, colors.darkGrey, colors.lightGrey);
 var ArticleTitle = styled_components_browser_esm["a" /* default */].h1(_templateObject2(), colors.blue);
+var article_Date = styled_components_browser_esm["a" /* default */].div(_templateObject3(), colors.darkGrey);
 var article_Article = function Article(props) {
-  console.log(props);
-  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, props.title), /*#__PURE__*/react_default.a.createElement("hr", null), props.fullContent);
+  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, props.title), /*#__PURE__*/react_default.a.createElement(article_Date, null, props.date), /*#__PURE__*/react_default.a.createElement("hr", null), props.fullContent);
 };
 // CONCATENATED MODULE: ./src/components/articlePreview.js
-function _templateObject3() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\ttext-align: justify;\n"]);
+function articlePreview_templateObject3() {
+  var data = articlePreview_taggedTemplateLiteral(["\n\ttext-align: justify;\n\tfont-family: 'Vollkorn', serif;\n"]);
 
-  _templateObject3 = function _templateObject3() {
+  articlePreview_templateObject3 = function _templateObject3() {
     return data;
   };
 
@@ -2234,7 +2246,7 @@ function articlePreview_templateObject2() {
 }
 
 function articlePreview_templateObject() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n\tpadding: 6px 8px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n"]);
+  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n\tpadding: 6px 12px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n\n\t&:hover h2 {\n\t\t\tcolor: ", ";\n\t}\n"]);
 
   articlePreview_templateObject = function _templateObject() {
     return data;
@@ -2248,9 +2260,9 @@ function articlePreview_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = 
 
 
 
-var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.darkGrey, colors.lightGrey);
+var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.darkGrey, colors.lightGrey, colors.yellow);
 var articlePreview_ArticleTitle = styled_components_browser_esm["a" /* default */].h2(articlePreview_templateObject2(), colors.blue);
-var PreviewText = styled_components_browser_esm["a" /* default */].p(_templateObject3());
+var PreviewText = styled_components_browser_esm["a" /* default */].p(articlePreview_templateObject3());
 var articlePreview_ArticlePreview = function ArticlePreview(props) {
   var _props$article = props.article,
       title = _props$article.title,
@@ -2279,7 +2291,7 @@ var articleList_ArticleList = function ArticleList(props) {
 };
 // CONCATENATED MODULE: ./src/components/content.js
 function content_templateObject() {
-  var data = content_taggedTemplateLiteral(["\n\twidth: ", ";\n\tpadding: ", ";\n\tbox-sizing: border-box;\n\tmargin: 0 auto;\n\tmin-height: 100vh;\n\tbackground-color: ", ";\n"]);
+  var data = content_taggedTemplateLiteral(["\n\twidth: ", ";\n\tpadding: ", ";\n\tbox-sizing: border-box;\n\tmargin: 0 auto;\n\tmin-height: 100vh;\n\tbackground-color: white;\n"]);
 
   content_templateObject = function _templateObject() {
     return data;
@@ -2293,15 +2305,13 @@ function content_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings
 
 
 var Content = styled_components_browser_esm["a" /* default */].div(content_templateObject(), function () {
-  return window.mobileCheck() ? "100%" : "50%";
+  return window.mobileCheck() ? "100vw" : "50vw";
 }, function () {
   return window.mobileCheck() ? "5px" : "10px";
-}, function () {
-  return window.mobileCheck() ? colors.yellow : "white";
 });
 // CONCATENATED MODULE: ./src/components/pageCounter.js
 function pageCounter_templateObject2() {
-  var data = pageCounter_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 0 8px;\n\tdisplay: inline-block;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
+  var data = pageCounter_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 0 8px;\n\tdisplay: inline-block;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n\n\n"]);
 
   pageCounter_templateObject2 = function _templateObject2() {
     return data;
@@ -2311,7 +2321,7 @@ function pageCounter_templateObject2() {
 }
 
 function pageCounter_templateObject() {
-  var data = pageCounter_taggedTemplateLiteral(["\n\ttext-align: center;\n\tfont-size: 18px;\n"]);
+  var data = pageCounter_taggedTemplateLiteral(["\n\ttext-align: center;\n\tfont-size: 18px;\n\tmargin: 16px 0;\n"]);
 
   pageCounter_templateObject = function _templateObject() {
     return data;
@@ -2328,15 +2338,15 @@ function pageCounter_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = str
 var CounterWrapper = styled_components_browser_esm["a" /* default */].div(pageCounter_templateObject());
 var ChangePageWrapper = styled_components_browser_esm["a" /* default */].div(pageCounter_templateObject2(), colors.grey, colors.red);
 var pageCounter_PageCounter = function PageCounter(props) {
-  return /*#__PURE__*/react_default.a.createElement(CounterWrapper, null, /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
+  return /*#__PURE__*/react_default.a.createElement(CounterWrapper, null, props.page > 0 && /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
     onClick: props.prevPage
-  }, "prev"), props.page + 1, /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
+  }, "prev"), props.page + 1, props.page < props.maxPageIndex && /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
     onClick: props.nextPage
   }, "next"));
 };
 // CONCATENATED MODULE: ./src/components/back.js
 function back_templateObject() {
-  var data = back_taggedTemplateLiteral(["\n\ttext-align: center;\n\tcolor: ", ";\n\tpadding: 10px 0;\n\tfont-size: 18px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
+  var data = back_taggedTemplateLiteral(["\n\ttext-align: center;\n\tcolor: ", ";\n\tpadding: 18px 0;\n\tfont-size: 18px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
 
   back_templateObject = function _templateObject() {
     return data;
@@ -2358,7 +2368,7 @@ var back_Back = function Back(props) {
 };
 // CONCATENATED MODULE: ./src/components/title.js
 function title_templateObject() {
-  var data = title_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 10px 0;\n\twidth: 75%;\n\tfont-size: 2.6rem;\n"]);
+  var data = title_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 10px 0;\n\twidth: 75%;\n\tfont-size: 2.6rem;\n\t\n\t&:hover {\n\t    cursor: pointer;\n\t    color: ", ";\n\t}\n"]);
 
   title_templateObject = function _templateObject() {
     return data;
@@ -2372,7 +2382,7 @@ function title_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.s
 
 
 
-var Title = styled_components_browser_esm["a" /* default */].h1(title_templateObject(), colors.green);
+var Title = styled_components_browser_esm["a" /* default */].h1(title_templateObject(), colors.green, colors.red);
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*
     StackOverflow snippet to check if on a mobile. Works okay.
@@ -2386,44 +2396,17 @@ var mobileCheck = function mobileCheck() {
 
   return check;
 };
+// CONCATENATED MODULE: ./src/articles/firstArticle.js
+
+var firstArticle = {
+  title: "Article No. 1",
+  previewText: "It's just a rambling introduction.",
+  date: "31 October, 2020",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "Since I forgot it was 2020 and not 2006 I decided to start a blog. There's a lot of blogs out there and I can't promise that this one will be anything special. By way of introduction, my name is Dan Filler and I am a software engineer specializing in frontend React/Redux apps. Personally, I think the CS blog culture is filled with terribly written, unhelpful blogs that only hurt new developers (not that there aren't exceptions, I'll compile a list eventually). I don't plan on writing a standard Medium blog about building todo apps in React. In fact, I don't plan on keeping this blog to even a majority of computer science-topics."), /*#__PURE__*/react_default.a.createElement("p", null, "I plan on this being a very impractical CS blog, when it is CS-focused. I do enough practical engineering at work, so when I think about Computer Science outside of work the last thing I want to consider is scalability, usefulness, or efficiency (except in theory). I am interested in discrete mathematics surrounding computation. My biggest interest is in computability/automata theory and it's intersection with information theory. These concepts also intersect highly with programming languages in both implementation and the underlying models that give them power. I enjoy graph theory and network science, particularly the algorithms used to compute properties. Although I specialized in Artificial Intelligence during undergrad (At Ohio State, GO BUCKS), I am not interested in machine learning. I find that AI techniques that involve training statistical models on massive data sets are unsatisfying and inelegant. Not that these techniques aren't powerful and successful, but I simply don't find them exciting."), /*#__PURE__*/react_default.a.createElement("p", null, "Outside of computer science, I have far too many interests to keep up with. One of my biggest interests is maps, geography, and topology. I like learning about places, the streets and neighborhoods of cities, the layout of the landscape, and the aesthetics of maps that record them. This is coupled with and interest of ", /*#__PURE__*/react_default.a.createElement("em", null, "Local History"), ". I was never very interested in major historic events, but I enjoy learning the history of towns (particularly the places I live) and how they have shifted and shaped. This is well matched with a love of hiking and running. I used to be terrible with directions until I started running in high school and using Google Earth to layout and measure runs. Hiking in the mountains (especially here in Utah) makes topology utterly real. It's one thing to see a 3000' continuous climb on a map and think \"yeah, I can hike that\" but really doing it is, well, not that straightforward."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in design and architecture (however unsophisticated my knowledge of the field). Furniture design is something I am very interested in, and I follow at least 10 instagram pages devoted to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I had the resources, I would love to put together a wood and machine shop to design and build my own furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Mies Van Der Rohe. I like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and Cor Alons. My favorite artist has long been JWM Turner. I am also passively intersted in fashion. I have a massive collection of flannels, mostly from LL Bean, ranging from vintage american-made pieces to my yearly christmas gift flannel. I haven't put a lot of effort into my wardrobe recently, but I like to sit somewhere in the normcore to heritage techware to traditional Pennsylvania woodsman range. My favorite brands (that I cannot afford) include Gitman Vintage, Visvim, and Story MFG."), /*#__PURE__*/react_default.a.createElement("p", null, "The last of my major hobbies is music. I both appreciate and play music. My main outlet is through guitar, I mostly play ", /*#__PURE__*/react_default.a.createElement("em", null, "American Primitive Guitar"), ". This genre (pioneered in the late 50s by John Fahey) is focused around instrumental fingerstyle guitar. I tend to shift the standard \"droning\" style of the genre toward more melodic, bluegrass-inspired arrangements. I have rearranged several banjo or violin standards for the guitar, and I mostly play in open tunings. Currently, my main guitar is a 1954 Silvertone 696. I listen to just about everything. Some of my favorite genres are bluegrass/old time/appalachian folk, jazz (mainly bebop), shoegaze, americana, glitch, minimalist composition, and noise rock. My all-time favorite band is Pavement. Other artists I love are (in somewhat descending order): The Microphones/Mount Eerie, Parquet Courts, Fennesz, Townes Van Zandt, Songs: Ohia (and other Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, Madvillian, Kendrick Lamar, Frank Ocean, and Yung Lean."), /*#__PURE__*/react_default.a.createElement("hr", null), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have much of a plan for this blog. I enjoy writing and talking about things I care about. I also enjoy teaching and explaining. I often find myself writing things down with no real end, other than just to get out the need to explain them. So, the goal of this page is simply to be a place to express that need. I have a number of ideas for posts that I would like to make, mostly centered around computer science. Here's a list I can think of off the top of my head (partially for my own reference):", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "Implementing literal Neural Networks in JavaScript"), /*#__PURE__*/react_default.a.createElement("li", null, "Ideas on an JSON structured programming language"), /*#__PURE__*/react_default.a.createElement("li", null, "An information theoretic look at JSON, YAML, TOML, XML, and other structured data containers"), /*#__PURE__*/react_default.a.createElement("li", null, "Architectures for Vanilla JS + HTML Canvas animation"), /*#__PURE__*/react_default.a.createElement("li", null, "Compression algorithms"), /*#__PURE__*/react_default.a.createElement("li", null, "Node- and global-level graph measures and a novel method for measuring them against each other"), /*#__PURE__*/react_default.a.createElement("li", null, "Existing and Novel methods of random graph generation"), /*#__PURE__*/react_default.a.createElement("li", null, "RFC, TBL, HTTP a.k.a. the history and essence of the internet"), /*#__PURE__*/react_default.a.createElement("li", null, "Implementing an analog synth with the Web Audio API")), "Topics not relating to CS:", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "The growth of Gettysburg, PA as a function of Battlefield protected land"), /*#__PURE__*/react_default.a.createElement("li", null, "Compiled list of great Chairs, Desks"), /*#__PURE__*/react_default.a.createElement("li", null, "Houses of the Victorian and German Villages of Columbus, Ohio."), /*#__PURE__*/react_default.a.createElement("li", null, "National Park Rustic architecture"), /*#__PURE__*/react_default.a.createElement("li", null, "Graphing the SadBoys, Uncle Tupelo, and other splintering groups")), "That's probably it for this post. I'm hoping to write a couple of posts a month. Some will require a lot more work than others, particularly ones that require programming efforts. Stay tuned and see what happens!"), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
+};
 // CONCATENATED MODULE: ./src/articles.js
-/* harmony default export */ var src_articles = ([[{
-  title: "First Article",
-  previewText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum mauris felis, ut tempus sapien posuere nec. Cras volutpat vitae ligula et ullamcorper. Etiam vel aliquam dui, vel gravida nunc. Mauris mauris dui, placerat et odio eu, elementum egestas lacus. Duis molestie porta volutpat. Ut et ex quis lorem luctus interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam egestas erat nec dictum sollicitudin. Sed pulvinar nec nisi vulputate faucibus. Vestibulum ut interdum mi. Mauris gravida leo orci, in blandit nulla vulputate ut.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "First Article",
-  previewText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum mauris felis, ut tempus sapien posuere nec. Cras volutpat vitae ligula et ullamcorper. Etiam vel aliquam dui, vel gravida nunc. Mauris mauris dui, placerat et odio eu, elementum egestas lacus. Duis molestie porta volutpat. Ut et ex quis lorem luctus interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam egestas erat nec dictum sollicitudin. Sed pulvinar nec nisi vulputate faucibus. Vestibulum ut interdum mi. Mauris gravida leo orci, in blandit nulla vulputate ut.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "First Article",
-  previewText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum mauris felis, ut tempus sapien posuere nec. Cras volutpat vitae ligula et ullamcorper. Etiam vel aliquam dui, vel gravida nunc. Mauris mauris dui, placerat et odio eu, elementum egestas lacus. Duis molestie porta volutpat. Ut et ex quis lorem luctus interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam egestas erat nec dictum sollicitudin. Sed pulvinar nec nisi vulputate faucibus. Vestibulum ut interdum mi. Mauris gravida leo orci, in blandit nulla vulputate ut.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "First Article",
-  previewText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum mauris felis, ut tempus sapien posuere nec. Cras volutpat vitae ligula et ullamcorper. Etiam vel aliquam dui, vel gravida nunc. Mauris mauris dui, placerat et odio eu, elementum egestas lacus. Duis molestie porta volutpat. Ut et ex quis lorem luctus interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam egestas erat nec dictum sollicitudin. Sed pulvinar nec nisi vulputate faucibus. Vestibulum ut interdum mi. Mauris gravida leo orci, in blandit nulla vulputate ut.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "First Article",
-  previewText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum mauris felis, ut tempus sapien posuere nec. Cras volutpat vitae ligula et ullamcorper. Etiam vel aliquam dui, vel gravida nunc. Mauris mauris dui, placerat et odio eu, elementum egestas lacus. Duis molestie porta volutpat. Ut et ex quis lorem luctus interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam egestas erat nec dictum sollicitudin. Sed pulvinar nec nisi vulputate faucibus. Vestibulum ut interdum mi. Mauris gravida leo orci, in blandit nulla vulputate ut.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}], [{
-  title: "Page two First Article",
-  previewText: "This is some preview content. This is just going to be unformatted text, not React component content. This will be rendered as the content in the article preview.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "page 2 Second Article",
-  previewText: "This is some preview content. Article 2.",
-  fullContent: "This is the full content of the article 2."
-}], [{
-  title: "Page three First Article",
-  previewText: "This is some preview content. This is just going to be unformatted text, not React component content. This will be rendered as the content in the article preview.",
-  fullContent: "This is the full content of the article. This will eventually be react content to be rendered as HTML."
-}, {
-  title: "page 3  Article numero dos",
-  previewText: "This is some preview content. Article 2.",
-  fullContent: "This is the full content of the article 2."
-}]]);
+
+/* harmony default export */ var src_articles = ([[firstArticle]]);
 // CONCATENATED MODULE: ./src/app.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -2536,7 +2519,9 @@ var app_App = /*#__PURE__*/function (_React$Component) {
       :
       /*#__PURE__*/
       react_default.a.createElement(article_Article, getCurrentArticle(page, articleIndex));
-      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(Content, null, /*#__PURE__*/react_default.a.createElement(Title, null), content, this.state.onArticleList ? /*#__PURE__*/react_default.a.createElement(pageCounter_PageCounter, {
+      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(Content, null, /*#__PURE__*/react_default.a.createElement(Title, {
+        onClick: this.backToArticleList
+      }, "Placeholder Title"), content, this.state.onArticleList ? /*#__PURE__*/react_default.a.createElement(pageCounter_PageCounter, {
         page: page,
         maxPageIndex: src_articles.length - 1,
         prevPage: this.prevPage,
