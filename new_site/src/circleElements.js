@@ -43,15 +43,22 @@ export const circleElements = {
             angle: "-170",
             duration: "3s",
             link: "http://dfclutch.github.io/dan-filler-resume.pdf",
-        },{
-            text: "Drawings",
+        },
+        {
+            text: "Blog",
             angle: "-180",
+            duration: "3s",
+            link: "http://dfclutch.github.io/blog",
+        },
+        {
+            text: "Drawings",
+            angle: "-190",
             duration: "3s",
             link: "http://dfclutch.github.io/apps/drawings",
         },
         {
             text: "Michaux",
-            angle: "-190",
+            angle: "-200",
             duration: "3s",
             link: "http://dfclutch.github.io/michaux",
         },
