@@ -7,12 +7,23 @@ const ArticleWrapper = styled.div`
 	margin-top: 10px;
 	padding: ${() => window.mobileCheck() ? "10px" : "24px" };
 	padding-top: 0;
-	border: 1px solid ${colors.darkGrey};
-	border-radius: 5px;
-	background-color: ${colors.lightGrey};
 
 	p {
 		font-family: 'Vollkorn', serif;
+		text-align: justify;
+	}
+	
+	a {
+		text-decoration: none;
+		color: ${colors.blue};
+	}
+	
+	a:visited {
+		color: ${colors.blue};
+	}
+	
+	a:hover {
+		color: ${colors.yellow};
 	}
 `;
 

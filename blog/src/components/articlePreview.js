@@ -5,8 +5,6 @@ import colors from '../colors.js'
 
 const ArticlePreviewContainer = styled.div`
 	margin: 0 0 10px 0;
-	border: 1px solid ${colors.darkGrey};
-	border-radius: 5px;
 	background-color: ${colors.lightGrey};
 	padding: 6px 12px;
 	font-size: 16px;

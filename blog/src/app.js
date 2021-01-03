@@ -23,10 +23,10 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			onArticleList: true,
+			onArticleList: false,
 			page: 0,
 			articleIndex: 0
-		}
+		};
 
         window.mobileCheck = mobileCheck;
         this.prevPage = this.prevPage.bind(this);

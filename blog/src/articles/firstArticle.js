@@ -48,7 +48,7 @@ export const firstArticle = {
                 Furniture design is something I am very interested in, and I follow at least 10 instagram pages devoted
                 to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I
                 had the resources, I would love to put together a wood and machine shop to design and build my own
-                furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Mies Van Der Rohe. I
+                furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Ludwig Mies Van Der Rohe. I
                 like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and
                 Cor Alons. My favorite artist has long been JWM Turner. I am also passively intersted in fashion. I have
                 a massive collection of flannels, mostly from LL Bean, ranging from vintage american-made pieces to my

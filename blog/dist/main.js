@@ -2170,7 +2170,7 @@ var styled_components_browser_esm = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./src/colors.js
 /* harmony default export */ var colors = ({
-  lightGrey: "#eee",
+  lightGrey: "#efefef",
   darkGrey: "#555",
   grey: "#888",
   white: "#FFF",
@@ -2202,7 +2202,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\tpadding: ", ";\n\tpadding-top: 0;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n\n\tp {\n\t\tfont-family: 'Vollkorn', serif;\n\t}\n"]);
+  var data = _taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\tpadding: ", ";\n\tpadding-top: 0;\n\n\tp {\n\t\tfont-family: 'Vollkorn', serif;\n\t\ttext-align: justify;\n\t}\n\t\n\ta {\n\t\ttext-decoration: none;\n\t\tcolor: ", ";\n\t}\n\t\n\ta:visited {\n\t\tcolor: ", ";\n\t}\n\t\n\ta:hover {\n\t\tcolor: ", ";\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2218,7 +2218,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), function () {
   return window.mobileCheck() ? "10px" : "24px";
-}, colors.darkGrey, colors.lightGrey);
+}, colors.blue, colors.blue, colors.yellow);
 var ArticleTitle = styled_components_browser_esm["a" /* default */].h1(_templateObject2(), colors.blue);
 var article_Date = styled_components_browser_esm["a" /* default */].div(_templateObject3(), colors.darkGrey);
 var article_Article = function Article(props) {
@@ -2246,7 +2246,7 @@ function articlePreview_templateObject2() {
 }
 
 function articlePreview_templateObject() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tborder: 1px solid ", ";\n\tborder-radius: 5px;\n\tbackground-color: ", ";\n\tpadding: 6px 12px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n\n\t&:hover h2 {\n\t\t\tcolor: ", ";\n\t}\n"]);
+  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tbackground-color: ", ";\n\tpadding: 6px 12px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n\n\t&:hover h2 {\n\t\t\tcolor: ", ";\n\t}\n"]);
 
   articlePreview_templateObject = function _templateObject() {
     return data;
@@ -2260,7 +2260,7 @@ function articlePreview_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = 
 
 
 
-var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.darkGrey, colors.lightGrey, colors.yellow);
+var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.lightGrey, colors.yellow);
 var articlePreview_ArticleTitle = styled_components_browser_esm["a" /* default */].h2(articlePreview_templateObject2(), colors.blue);
 var PreviewText = styled_components_browser_esm["a" /* default */].p(articlePreview_templateObject3());
 var articlePreview_ArticlePreview = function ArticlePreview(props) {
@@ -2402,11 +2402,100 @@ var firstArticle = {
   title: "Article No. 1",
   previewText: "It's just a rambling introduction.",
   date: "31 October, 2020",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "Since I forgot it was 2020 and not 2006 I decided to start a blog. There's a lot of blogs out there and I can't promise that this one will be anything special. By way of introduction, my name is Dan Filler and I am a software engineer specializing in frontend React/Redux apps. Personally, I think the CS blog culture is filled with terribly written, unhelpful blogs that only hurt new developers (not that there aren't exceptions, I'll compile a list eventually). I don't plan on writing a standard Medium blog about building todo apps in React. In fact, I don't plan on keeping this blog to even a majority of computer science-topics."), /*#__PURE__*/react_default.a.createElement("p", null, "I plan on this being a very impractical CS blog, when it is CS-focused. I do enough practical engineering at work, so when I think about Computer Science outside of work the last thing I want to consider is scalability, usefulness, or efficiency (except in theory). I am interested in discrete mathematics surrounding computation. My biggest interest is in computability/automata theory and it's intersection with information theory. These concepts also intersect highly with programming languages in both implementation and the underlying models that give them power. I enjoy graph theory and network science, particularly the algorithms used to compute properties. Although I specialized in Artificial Intelligence during undergrad (At Ohio State, GO BUCKS), I am not interested in machine learning. I find that AI techniques that involve training statistical models on massive data sets are unsatisfying and inelegant. Not that these techniques aren't powerful and successful, but I simply don't find them exciting."), /*#__PURE__*/react_default.a.createElement("p", null, "Outside of computer science, I have far too many interests to keep up with. One of my biggest interests is maps, geography, and topology. I like learning about places, the streets and neighborhoods of cities, the layout of the landscape, and the aesthetics of maps that record them. This is coupled with and interest of ", /*#__PURE__*/react_default.a.createElement("em", null, "Local History"), ". I was never very interested in major historic events, but I enjoy learning the history of towns (particularly the places I live) and how they have shifted and shaped. This is well matched with a love of hiking and running. I used to be terrible with directions until I started running in high school and using Google Earth to layout and measure runs. Hiking in the mountains (especially here in Utah) makes topology utterly real. It's one thing to see a 3000' continuous climb on a map and think \"yeah, I can hike that\" but really doing it is, well, not that straightforward."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in design and architecture (however unsophisticated my knowledge of the field). Furniture design is something I am very interested in, and I follow at least 10 instagram pages devoted to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I had the resources, I would love to put together a wood and machine shop to design and build my own furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Mies Van Der Rohe. I like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and Cor Alons. My favorite artist has long been JWM Turner. I am also passively intersted in fashion. I have a massive collection of flannels, mostly from LL Bean, ranging from vintage american-made pieces to my yearly christmas gift flannel. I haven't put a lot of effort into my wardrobe recently, but I like to sit somewhere in the normcore to heritage techware to traditional Pennsylvania woodsman range. My favorite brands (that I cannot afford) include Gitman Vintage, Visvim, and Story MFG."), /*#__PURE__*/react_default.a.createElement("p", null, "The last of my major hobbies is music. I both appreciate and play music. My main outlet is through guitar, I mostly play ", /*#__PURE__*/react_default.a.createElement("em", null, "American Primitive Guitar"), ". This genre (pioneered in the late 50s by John Fahey) is focused around instrumental fingerstyle guitar. I tend to shift the standard \"droning\" style of the genre toward more melodic, bluegrass-inspired arrangements. I have rearranged several banjo or violin standards for the guitar, and I mostly play in open tunings. Currently, my main guitar is a 1954 Silvertone 696. I listen to just about everything. Some of my favorite genres are bluegrass/old time/appalachian folk, jazz (mainly bebop), shoegaze, americana, glitch, minimalist composition, and noise rock. My all-time favorite band is Pavement. Other artists I love are (in somewhat descending order): The Microphones/Mount Eerie, Parquet Courts, Fennesz, Townes Van Zandt, Songs: Ohia (and other Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, Madvillian, Kendrick Lamar, Frank Ocean, and Yung Lean."), /*#__PURE__*/react_default.a.createElement("hr", null), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have much of a plan for this blog. I enjoy writing and talking about things I care about. I also enjoy teaching and explaining. I often find myself writing things down with no real end, other than just to get out the need to explain them. So, the goal of this page is simply to be a place to express that need. I have a number of ideas for posts that I would like to make, mostly centered around computer science. Here's a list I can think of off the top of my head (partially for my own reference):", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "Implementing literal Neural Networks in JavaScript"), /*#__PURE__*/react_default.a.createElement("li", null, "Ideas on an JSON structured programming language"), /*#__PURE__*/react_default.a.createElement("li", null, "An information theoretic look at JSON, YAML, TOML, XML, and other structured data containers"), /*#__PURE__*/react_default.a.createElement("li", null, "Architectures for Vanilla JS + HTML Canvas animation"), /*#__PURE__*/react_default.a.createElement("li", null, "Compression algorithms"), /*#__PURE__*/react_default.a.createElement("li", null, "Node- and global-level graph measures and a novel method for measuring them against each other"), /*#__PURE__*/react_default.a.createElement("li", null, "Existing and Novel methods of random graph generation"), /*#__PURE__*/react_default.a.createElement("li", null, "RFC, TBL, HTTP a.k.a. the history and essence of the internet"), /*#__PURE__*/react_default.a.createElement("li", null, "Implementing an analog synth with the Web Audio API")), "Topics not relating to CS:", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "The growth of Gettysburg, PA as a function of Battlefield protected land"), /*#__PURE__*/react_default.a.createElement("li", null, "Compiled list of great Chairs, Desks"), /*#__PURE__*/react_default.a.createElement("li", null, "Houses of the Victorian and German Villages of Columbus, Ohio."), /*#__PURE__*/react_default.a.createElement("li", null, "National Park Rustic architecture"), /*#__PURE__*/react_default.a.createElement("li", null, "Graphing the SadBoys, Uncle Tupelo, and other splintering groups")), "That's probably it for this post. I'm hoping to write a couple of posts a month. Some will require a lot more work than others, particularly ones that require programming efforts. Stay tuned and see what happens!"), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "Since I forgot it was 2020 and not 2006 I decided to start a blog. There's a lot of blogs out there and I can't promise that this one will be anything special. By way of introduction, my name is Dan Filler and I am a software engineer specializing in frontend React/Redux apps. Personally, I think the CS blog culture is filled with terribly written, unhelpful blogs that only hurt new developers (not that there aren't exceptions, I'll compile a list eventually). I don't plan on writing a standard Medium blog about building todo apps in React. In fact, I don't plan on keeping this blog to even a majority of computer science-topics."), /*#__PURE__*/react_default.a.createElement("p", null, "I plan on this being a very impractical CS blog, when it is CS-focused. I do enough practical engineering at work, so when I think about Computer Science outside of work the last thing I want to consider is scalability, usefulness, or efficiency (except in theory). I am interested in discrete mathematics surrounding computation. My biggest interest is in computability/automata theory and it's intersection with information theory. These concepts also intersect highly with programming languages in both implementation and the underlying models that give them power. I enjoy graph theory and network science, particularly the algorithms used to compute properties. Although I specialized in Artificial Intelligence during undergrad (At Ohio State, GO BUCKS), I am not interested in machine learning. I find that AI techniques that involve training statistical models on massive data sets are unsatisfying and inelegant. Not that these techniques aren't powerful and successful, but I simply don't find them exciting."), /*#__PURE__*/react_default.a.createElement("p", null, "Outside of computer science, I have far too many interests to keep up with. One of my biggest interests is maps, geography, and topology. I like learning about places, the streets and neighborhoods of cities, the layout of the landscape, and the aesthetics of maps that record them. This is coupled with and interest of ", /*#__PURE__*/react_default.a.createElement("em", null, "Local History"), ". I was never very interested in major historic events, but I enjoy learning the history of towns (particularly the places I live) and how they have shifted and shaped. This is well matched with a love of hiking and running. I used to be terrible with directions until I started running in high school and using Google Earth to layout and measure runs. Hiking in the mountains (especially here in Utah) makes topology utterly real. It's one thing to see a 3000' continuous climb on a map and think \"yeah, I can hike that\" but really doing it is, well, not that straightforward."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in design and architecture (however unsophisticated my knowledge of the field). Furniture design is something I am very interested in, and I follow at least 10 instagram pages devoted to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I had the resources, I would love to put together a wood and machine shop to design and build my own furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Ludwig Mies Van Der Rohe. I like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and Cor Alons. My favorite artist has long been JWM Turner. I am also passively intersted in fashion. I have a massive collection of flannels, mostly from LL Bean, ranging from vintage american-made pieces to my yearly christmas gift flannel. I haven't put a lot of effort into my wardrobe recently, but I like to sit somewhere in the normcore to heritage techware to traditional Pennsylvania woodsman range. My favorite brands (that I cannot afford) include Gitman Vintage, Visvim, and Story MFG."), /*#__PURE__*/react_default.a.createElement("p", null, "The last of my major hobbies is music. I both appreciate and play music. My main outlet is through guitar, I mostly play ", /*#__PURE__*/react_default.a.createElement("em", null, "American Primitive Guitar"), ". This genre (pioneered in the late 50s by John Fahey) is focused around instrumental fingerstyle guitar. I tend to shift the standard \"droning\" style of the genre toward more melodic, bluegrass-inspired arrangements. I have rearranged several banjo or violin standards for the guitar, and I mostly play in open tunings. Currently, my main guitar is a 1954 Silvertone 696. I listen to just about everything. Some of my favorite genres are bluegrass/old time/appalachian folk, jazz (mainly bebop), shoegaze, americana, glitch, minimalist composition, and noise rock. My all-time favorite band is Pavement. Other artists I love are (in somewhat descending order): The Microphones/Mount Eerie, Parquet Courts, Fennesz, Townes Van Zandt, Songs: Ohia (and other Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, Madvillian, Kendrick Lamar, Frank Ocean, and Yung Lean."), /*#__PURE__*/react_default.a.createElement("hr", null), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have much of a plan for this blog. I enjoy writing and talking about things I care about. I also enjoy teaching and explaining. I often find myself writing things down with no real end, other than just to get out the need to explain them. So, the goal of this page is simply to be a place to express that need. I have a number of ideas for posts that I would like to make, mostly centered around computer science. Here's a list I can think of off the top of my head (partially for my own reference):", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "Implementing literal Neural Networks in JavaScript"), /*#__PURE__*/react_default.a.createElement("li", null, "Ideas on an JSON structured programming language"), /*#__PURE__*/react_default.a.createElement("li", null, "An information theoretic look at JSON, YAML, TOML, XML, and other structured data containers"), /*#__PURE__*/react_default.a.createElement("li", null, "Architectures for Vanilla JS + HTML Canvas animation"), /*#__PURE__*/react_default.a.createElement("li", null, "Compression algorithms"), /*#__PURE__*/react_default.a.createElement("li", null, "Node- and global-level graph measures and a novel method for measuring them against each other"), /*#__PURE__*/react_default.a.createElement("li", null, "Existing and Novel methods of random graph generation"), /*#__PURE__*/react_default.a.createElement("li", null, "RFC, TBL, HTTP a.k.a. the history and essence of the internet"), /*#__PURE__*/react_default.a.createElement("li", null, "Implementing an analog synth with the Web Audio API")), "Topics not relating to CS:", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "The growth of Gettysburg, PA as a function of Battlefield protected land"), /*#__PURE__*/react_default.a.createElement("li", null, "Compiled list of great Chairs, Desks"), /*#__PURE__*/react_default.a.createElement("li", null, "Houses of the Victorian and German Villages of Columbus, Ohio."), /*#__PURE__*/react_default.a.createElement("li", null, "National Park Rustic architecture"), /*#__PURE__*/react_default.a.createElement("li", null, "Graphing the SadBoys, Uncle Tupelo, and other splintering groups")), "That's probably it for this post. I'm hoping to write a couple of posts a month. Some will require a lot more work than others, particularly ones that require programming efforts. Stay tuned and see what happens!"), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
 };
+// CONCATENATED MODULE: ./src/components/figure.js
+function figure_templateObject() {
+  var data = figure_taggedTemplateLiteral(["\n    width: 100%;\n    margin: 10px 0;\n    box-sizing: border-box;\n    \n    & img {\n        max-width: 100%;\n    }\n    \n    & figcaption {\n\t\tfont-family: 'Vollkorn', serif;\n\t\tfont-size: .8rem;\n\t\tcolor: ", ";\n\t\tpadding: 5px 0;\n    }\n"]);
+
+  figure_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function figure_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var Figure = styled_components_browser_esm["a" /* default */].figure(figure_templateObject(), colors.darkGrey);
+// CONCATENATED MODULE: ./src/articles/chairs/index.js
+
+
+/* harmony default export */ var chairs = ({
+  title: "Chipotle Chairs ",
+  previewText: "Where my love of chairs intersects with my love of fast-casual burritos.",
+  date: "6 November, 2020",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Out of all restaurants, I've easily eaten at Chipotle 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants during high school, college, and in my time since. The ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "https://en.wikipedia.org/wiki/Mission_burrito"
+  }, "Mission Burrito"), " is one of my all time favorite foods, even if it is exemplary food gentrification at it's worst."), /*#__PURE__*/react_default.a.createElement("p", null, "One distinguishing factor of Chipotle over any other restaurant is it's interior design. The restaurant is plainly different to any other major restaurant chain in it's design. The industrial look stretches back to the second location, opened in Denver, when founder Steven Sell brought in an architect. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, stainless steel, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/chipotle-interior.jpg",
+    alt: "Chipotle Mexican Restaurant interior"
+  })), /*#__PURE__*/react_default.a.createElement("p", null, "The current iteration of Chipotle's interior design language was refined in 2007 by ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.architectureoutfit.com/"
+  }, "Architecture Outfit"), ". While the exact design of each franchise location is left up to the franchisee, the firm put together a \"kit of parts\" and a set of guidelines to provide cohesion across locations. One of the most interesting influences on the design was Mies Van Der Rohe's ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "https://farnsworthhouse.org/"
+  }, "Farnsworth House"), ". The house is composed from a glass facade and plywood \"core volume\" containing the kitchen, bathroom and fireplace."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/farnsworth-house-exterior.jpg",
+    alt: "Interior view of the Farnsworth House"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The Farnsworth House, a floating box of a building.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/farnsworth-house-interior.jpg",
+    alt: "Interior view of the Farnsworth House"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box.")), /*#__PURE__*/react_default.a.createElement("p", null, "The design influence here is clear, and referenced in AO's project page on the ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.architectureoutfit.com/eating#/chipotle"
+  }, "Chipotle Re-Wrap"), "."), /*#__PURE__*/react_default.a.createElement("p", null, "A much older aspect of Chipotle design is the chair."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/chipotle-chair.jpg",
+    alt: "The Chipotle Chair"
+  })), /*#__PURE__*/react_default.a.createElement("p", null, "The chair is a surprisingly excellent piece of design for a mass produced piece of fast-casual restaurant furniture. The Chipotle Wikipedia article, and most information available incorrectly references only Bruce Gueswel as the designer of the chair. However, it has a much lengthier history than that. The basis of the design was by Frank Lloyd Wright as a set of dining chairs made for the Seth Peterson Cottage."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-exterior.jpg",
+    alt: "Peterson Cottage"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Seth Peterson Cottage")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-interior.jpg",
+    alt: "Peterson Cottage Interior"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The dining chairs referenced in the design of the Chipotle chair.")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were made of plywood and contribute to a motif of furniture designs by FLW which extends to the tables, lounge chairs around the fireplace, and several other pieces of furniture from Wright's portfolio."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-fireplace.jpg",
+    alt: "Peterson Cottage fireplace lounge chairs"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Peterson Cottage fireplace lounge chairs.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/flw-chairs.jpg",
+    alt: "Frank Lloyd Wright chairs"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Wright designed chairs from the Clarence Sondern House.")), /*#__PURE__*/react_default.a.createElement("p", null, "Bruce Gueswel (the man often referenced as the designer of the Chipotle chair) built a copy of this chair that became the model for the ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.oixio.com/habitat-solutions/form/form-chair.html"
+  }, /*#__PURE__*/react_default.a.createElement("em", null, "for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair")), " designed by the true creator, Steve Sauer. Sauer was the designer who took the plywood leg pieces of the original FLW chair and redesigned them in skeletal, galvanized steel. The chair was also designed with a wider base, making it more stable. The chair's name is stylized as for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), ", as seen on Sauer's webpage and the stamp he created to mark them."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-chair.jpg",
+    alt: "Form chair"
+  })), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-chair-2.jpg",
+    alt: "Form chair"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-stamp.jpg",
+    alt: "Form stamp"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The stamp Sauer used to identify his chairs.")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were put into production for the first 7 Chipotle locations, with a run of 244 examples. The chairs were quite noisy, so Steven Sell (Chipotle Founder) asked Sauer to design feet to quite them. At this point, Gueswel took over the design and manufacture of the chairs, adding feet and rubber components under the seatpan. The key difference between the modern Chipotle chair and the original for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair is the shape of the skeletal legs. The current chair dropped the central convergence of all four legs in the center of the chair for two separate leg components connected in the front and back by cross struts."), /*#__PURE__*/react_default.a.createElement("p", null, "The chairs continue to be manufactured and used in every Chipotle location as a key feature of the restaurant. Perhaps those less interested in chairs than myself fail to notice them, but I urge you, the next time you are in a Chipotle, to take a look at the chairs. They are a great piece of design steeped in architectural and furniture design history and reference."))
+});
 // CONCATENATED MODULE: ./src/articles.js
 
-/* harmony default export */ var src_articles = ([[firstArticle]]);
+
+var allArticles = [chairs, firstArticle];
+var ARTICLES_PER_PAGE = 10;
+
+function buildPaginatedArticles(allArticles) {
+  var paginatedArticles = [];
+  var pageCounter = -1;
+  allArticles.forEach(function (article, i) {
+    var pageIndex = i % ARTICLES_PER_PAGE;
+
+    if (pageIndex === 0) {
+      paginatedArticles.push([]);
+      pageCounter++;
+    }
+
+    paginatedArticles[pageCounter].push(article);
+  });
+  console.log(paginatedArticles);
+  return paginatedArticles;
+}
+
+/* harmony default export */ var src_articles = (buildPaginatedArticles(allArticles));
 // CONCATENATED MODULE: ./src/app.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -2459,7 +2548,7 @@ var app_App = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      onArticleList: true,
+      onArticleList: false,
       page: 0,
       articleIndex: 0
     };
