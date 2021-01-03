@@ -23,6 +23,8 @@ const ChangePageWrapper = styled.div`
 `;
 
 export const PageCounter = (props) => {
+	console.log(props.maxPageIndex)
+	console.log(props.page)
 	return (
 		<CounterWrapper>
 			{ props.page > 0 &&
@@ -31,7 +33,7 @@ export const PageCounter = (props) => {
 				</ChangePageWrapper>
 			}
 			{props.page + 1}
-			{ props.page < props.maxPageIndex &&
+			{ props.page + 1 < props.maxPageIndex &&
 				<ChangePageWrapper onClick={props.nextPage}>
 					next 
 				</ChangePageWrapper>

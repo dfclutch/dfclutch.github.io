@@ -16,6 +16,10 @@ const ArticlePreviewContainer = styled.div`
 	&:hover h2 {
 			color: ${colors.yellow};
 	}
+	
+	> p {
+		color: black;
+	}
 `;
 
 const ArticleTitle = styled.h2`

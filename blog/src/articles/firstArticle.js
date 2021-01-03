@@ -2,6 +2,7 @@ import React from 'react';
 
 export const firstArticle = {
     title: "Article No. 1",
+    id: "article-no-1",
     previewText: "It's just a rambling introduction.",
     date: "31 October, 2020",
     fullContent: (

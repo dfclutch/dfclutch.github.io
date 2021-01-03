@@ -1,12 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+	Link,
+	useParams,
+} from 'react-router-dom';
 
 import colors from '../colors';
+import {Back} from "./back";
+import articles from "../articles";
+
+function getArticleById(page, id) {
+	return articles[page].find(article => article.id === id);
+}
 
 const ArticleWrapper = styled.div`
 	margin-top: 10px;
-	padding: ${() => window.mobileCheck() ? "10px" : "24px" };
-	padding-top: 0;
 
 	p {
 		font-family: 'Vollkorn', serif;
@@ -39,12 +47,23 @@ const Date = styled.div`
 `;
 
 export const Article = (props) => {
+	const { id } = useParams();
+	console.log(id);
+	const {
+		title,
+		date,
+		fullContent
+	} = getArticleById(props.page, id);
+
 	return (
 		<ArticleWrapper>
-			<ArticleTitle>{props.title}</ArticleTitle>
-			<Date>{props.date}</Date>
+			<ArticleTitle>{ title }</ArticleTitle>
+			<Date>{ date }</Date>
 			<hr />
-			{props.fullContent}
+			{ fullContent }
+			<Link to="/">
+				<Back />
+			</Link>
 		</ArticleWrapper>
-	)
-}
+	);
+};

@@ -1,8 +1,8 @@
 import { firstArticle } from './articles/firstArticle';
-import chairs from './articles/chairs';
+import chipotle from './articles/chipotle';
 
 const allArticles = [
-	chairs,
+	chipotle,
 	firstArticle,
 ];
 

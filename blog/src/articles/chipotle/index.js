@@ -3,16 +3,17 @@ import React from 'react';
 import { Figure } from "../../components/figure";
 
 export default {
-    title: "Chipotle Chairs ",
-    previewText: "Where my love of chairs intersects with my love of fast-casual burritos.",
+    title: "Chipotle Design Language",
+    id: "chipotle-design",
+    previewText: "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
     date: "6 November, 2020",
     fullContent: (
         <div>
             <p>
-                Out of all restaurants, I've easily eaten at Chipotle 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants during high school, college, and in my time since. The <a href="https://en.wikipedia.org/wiki/Mission_burrito">Mission Burrito</a> is one of my all time favorite foods, even if it is exemplary food gentrification at it's worst.
+                Out of all restaurants, I've easily eaten at Chipotle 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants during high school, college, and in my time since. The <a href="https://en.wikipedia.org/wiki/Mission_burrito">Mission Burrito</a> is one of my all time favorite foods, even if it is an example of food gentrification at it's worst.
             </p>
             <p>
-                One distinguishing factor of Chipotle over any other restaurant is it's interior design. The restaurant is plainly different to any other major restaurant chain in it's design. The industrial look stretches back to the second location, opened in Denver, when founder Steven Sell brought in an architect. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, stainless steel, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent.
+                One distinguishing factor of Chipotle over any other restaurant is it's interior design. The restaurant is plainly different from any other major restaurant chain in it's design. The industrial look stretches back to the second location, opened in Denver, when founder Steve Ells brought in an architect. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent.
             </p>
             <Figure>
                 <img src="./img/chipotle-interior.jpg" alt="Chipotle Mexican Restaurant interior" />
@@ -29,16 +30,16 @@ export default {
                 <figcaption>The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box.</figcaption>
             </Figure>
             <p>
-                The design influence here is clear, and referenced in AO's project page on the <a href="http://www.architectureoutfit.com/eating#/chipotle">Chipotle Re-Wrap</a>.
+                The design influence here is clear, and referenced in AO's project page on the <a href="http://www.architectureoutfit.com/eating#/chipotle">Chipotle Re-Wrap</a>. Chipotle restaurants adopted the large plywood mass, often housing drink stations, bathroom entrances, and separators between the dining area and kitchen. The transparency of the Farnsworth house's glass exterior is also mirrored by the restaurant. Diners can see almost everything the chefs do.
             </p>
             <p>
-                A much older aspect of Chipotle design is the chair.
+                A much older aspect of Chipotle design is the chair:
             </p>
             <Figure>
                 <img src="./img/chipotle-chair.jpg" alt="The Chipotle Chair"/>
             </Figure>
             <p>
-                The chair is a surprisingly excellent piece of design for a mass produced piece of fast-casual restaurant furniture. The Chipotle Wikipedia article, and most information available incorrectly references only Bruce Gueswel as the designer of the chair. However, it has a much lengthier history than that. The basis of the design was by Frank Lloyd Wright as a set of dining chairs made for the Seth Peterson Cottage.
+                The chair is a surprisingly excellent piece of design for a mass produced piece of fast-casual restaurant furniture. The Chipotle Wikipedia article, and most information available, incorrectly references only Bruce Gueswel as the designer of the chair. However, it has a much lengthier history than that. The basis of the design was a set of dining chairs made for Frank Lloyd Wright's Seth Peterson Cottage.
             </p>
             <Figure>
                 <img src="./img/peterson-exterior.jpg" alt="Peterson Cottage"/>

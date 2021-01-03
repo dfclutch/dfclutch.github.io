@@ -15,9 +15,9 @@ const BackWrapper = styled.div`
 	}
 `;
 
-export const Back = (props) => {
+export const Back = () => {
 	return (
-		<BackWrapper onClick={props.onClick}>
+		<BackWrapper>
 			back
 		</BackWrapper>
 	)

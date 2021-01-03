@@ -1,16 +1,29 @@
 import React from 'react';
-import { ArticlePreview } from "./articlePreview";
+import {
+	Link
+} from 'react-router-dom';
 
-function renderArticlePreviews(articles, onClick) {
-	return articles.map((article, index) => (
-		<ArticlePreview article={article} onClick={() => onClick(index) }/>
-	))
+import { ArticlePreview } from "./articlePreview";
+import {PageCounter} from "./pageCounter";
+
+function renderArticlePreviews(articles) {
+	return articles.map((article) => (
+		<Link to={'articles/' + article.id}>
+			<ArticlePreview article={article} />
+		</Link>
+	));
 }
 
 export const ArticleList = (props) => {
 	return (
 		<div>
-			{ renderArticlePreviews(props.articles, props.openArticle) }
+			{ renderArticlePreviews(props.articles) }
+			<PageCounter
+				page={props.page}
+				maxPageIndex={props.articles.length - 1}
+				prevPage={props.prevPage}
+				nextPage={props.nextPage}
+			/>
 		</div>
-	)
-}
+	);
+};
