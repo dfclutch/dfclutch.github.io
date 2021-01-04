@@ -5037,7 +5037,7 @@ var Figure = styled_components_browser_esm["a" /* default */].figure(figure_temp
   title: "Chipotle Design Language",
   id: "chipotle-design",
   previewText: "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
-  date: "6 November, 2020",
+  date: "3 January, 2021",
   fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Out of all restaurants, I've easily eaten at Chipotle 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants during high school, college, and in my time since. The ", /*#__PURE__*/react_default.a.createElement("a", {
     href: "https://en.wikipedia.org/wiki/Mission_burrito"
   }, "Mission Burrito"), " is one of my all time favorite foods, even if it is an example of food gentrification at it's worst."), /*#__PURE__*/react_default.a.createElement("p", null, "One distinguishing factor of Chipotle over any other restaurant is it's interior design. The restaurant is plainly different from any other major restaurant chain in it's design. The industrial look stretches back to the second location, opened in Denver, when founder Steve Ells brought in an architect. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {

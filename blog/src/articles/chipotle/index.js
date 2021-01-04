@@ -6,7 +6,7 @@ export default {
     title: "Chipotle Design Language",
     id: "chipotle-design",
     previewText: "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
-    date: "6 November, 2020",
+    date: "3 January, 2021",
     fullContent: (
         <div>
             <p>
