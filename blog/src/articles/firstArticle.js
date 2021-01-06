@@ -35,27 +35,26 @@ export const firstArticle = {
             <p>
                 Outside of computer science, I have far too many interests to keep up with. One of my biggest interests
                 is maps, geography, and topology. I like learning about places, the streets and neighborhoods of cities,
-                the layout of the landscape, and the aesthetics of maps that record them. This is coupled with and
-                interest of <em>Local History</em>. I was never very interested in major historic events, but I enjoy
+                the layout of the landscape, and the aesthetics of maps that record them. I was never very interested in
+                major historic events, but I enjoy
                 learning the history of towns (particularly the places I live) and how they have shifted and shaped.
                 This is well matched with a love of hiking and running. I used to be terrible with directions until I
                 started running in high school and using Google Earth to layout and measure runs. Hiking in the
-                mountains (especially here in Utah) makes topology utterly real. It's one thing to see a 3000'
-                continuous climb on a map and think "yeah, I can hike that" but really doing it is, well, not that
-                straightforward.
+                mountains (especially in the Rockies) makes topology utterly real.
             </p>
             <p>
                 I am interested in design and architecture (however unsophisticated my knowledge of the field).
-                Furniture design is something I am very interested in, and I follow at least 10 instagram pages devoted
+                Furniture design in particular, I follow at least 10 instagram pages devoted
                 to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I
                 had the resources, I would love to put together a wood and machine shop to design and build my own
-                furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Ludwig Mies Van Der Rohe. I
+                furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Ludwig Mies Van Der
+                Rohe. I
                 like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and
-                Cor Alons. My favorite artist has long been JWM Turner. I am also passively intersted in fashion. I have
-                a massive collection of flannels, mostly from LL Bean, ranging from vintage american-made pieces to my
-                yearly christmas gift flannel. I haven't put a lot of effort into my wardrobe recently, but I like to
-                sit somewhere in the normcore to heritage techware to traditional Pennsylvania woodsman range. My
+                Cor Alons. My favorite artists include JWM Turner and Mark Maggiori. I am also passively intersted in fashion. My
                 favorite brands (that I cannot afford) include Gitman Vintage, Visvim, and Story MFG.
+            </p>
+            <p>
+                I'm a coffee person. If you know coffee people, its a crazy hobby. I'm currently using a Lido ET grinder and a Flair Pro manual press to brew espresso at home. I prefer natural processed Ethiopians (particularly from <a href="https://briosocoffee.com/">Brioso Coffee</a> in Columbus, OH).
             </p>
             <p>
                 The last of my major hobbies is music. I both appreciate and play music. My main outlet is through
@@ -67,8 +66,8 @@ export const firstArticle = {
                 time/appalachian folk, jazz (mainly bebop), shoegaze, americana, glitch, minimalist composition, and
                 noise rock. My all-time favorite band is Pavement. Other artists I love are (in somewhat descending
                 order): The Microphones/Mount Eerie, Parquet Courts, Fennesz, Townes Van Zandt, Songs: Ohia (and other
-                Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, Madvillian, Kendrick
-                Lamar, Frank Ocean, and Yung Lean.
+                Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, MF DOOM (and other Daniel Dumile projects), and Kendrick
+                Lamar.
             </p>
             <hr/>
             <p>
@@ -96,7 +95,7 @@ export const firstArticle = {
                 <ul>
                     <li>The growth of Gettysburg, PA as a function of Battlefield protected land</li>
                     <li>Compiled list of great Chairs, Desks</li>
-                    <li>Houses of the Victorian and German Villages of Columbus, Ohio.</li>
+                    <li>Houses of the Victorian and German Villages of Columbus, Ohio</li>
                     <li>National Park Rustic architecture</li>
                     <li>Graphing the SadBoys, Uncle Tupelo, and other splintering groups</li>
                 </ul>
