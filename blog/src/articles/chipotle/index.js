@@ -30,7 +30,7 @@ export default {
                 <figcaption>The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box.</figcaption>
             </Figure>
             <p>
-                The design influence here is clear, and referenced in AO's project page on the <a href="http://www.architectureoutfit.com/eating#/chipotle">Chipotle Re-Wrap</a>. Chipotle restaurants adopted the large plywood mass, often housing drink stations, bathroom entrances, and acting as a separation between the dining area and kitchen. The transparency of the Farnsworth house's glass exterior is also adopted by the restaurant; diners can see almost everything the chefs do.
+                The design influence here is clear, and referenced in AO's project page on the <a href="http://www.architectureoutfit.com/eating#/chipotle">Chipotle Re-Wrap</a>. Chipotle restaurants appropriated the large plywood mass, often housing drink stations, bathroom entrances, and acting as a separation between the dining area and kitchen. The transparency of the Farnsworth house's glass exterior is also adopted by the restaurant; diners can see almost everything the chefs do.
             </p>
             <p>
                 The design language mirrors the core tenets of Chipotle's customer experience. Simplistic design, clear direction of where to go upon entry, obvious signage, and lack of excess. Steve Ells has described Chipotle's menu as doing one thing right, avoiding bloat. The restaurant itself accomplishes that goal beautifully.
