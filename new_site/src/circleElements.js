@@ -48,7 +48,7 @@ export const circleElements = {
             text: "Blog",
             angle: "-180",
             duration: "3s",
-            link: "http://dfclutch.github.io/blog",
+            link: "http://dfclutch.github.io/blog/#/",
         },
         {
             text: "Drawings",
