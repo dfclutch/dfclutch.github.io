@@ -3,7 +3,7 @@ import React from 'react';
 
 import { colors } from '../colors.js'; 
 
-const PADDING_WIDTH = 10;
+const PADDING_WIDTH = 36;
 
 const ContentContainerWrapper = styled.div`
 	position: absolute;
@@ -21,7 +21,7 @@ const ContentContainerWrapper = styled.div`
 	z-index: 1;
 	line-height: "115%;";
 	text-align: justify;
-	font-size: ${() => window.mobileCheck() ? "19px" : "16px"};
+	font-size: ${() => window.mobileCheck() ? "24px" : "18px"};
 
 	h1, h3 {
 		margin: 0;

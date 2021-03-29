@@ -37,6 +37,7 @@ function buildCircleElements(elements, onPageClick, r) {
 			{ ...element }
 			index={index + pageElements.length}
 			radius={r}
+			key={index}
 		/>
 	));
 
@@ -58,7 +59,7 @@ function calculateRadius (factor) {
 }
 
 const Circle = (props) => {
-	const CIRCLE_RADIUS_FACTOR = window.mobileCheck() ? 0.70 : 0.60;
+	const CIRCLE_RADIUS_FACTOR = window.mobileCheck() ? 0.75 : 0.60;
 
 	const r = calculateRadius(CIRCLE_RADIUS_FACTOR)
 	return (
