@@ -4,8 +4,6 @@ import fkhr from './articles/fkhr';
 import row_houses from './articles/row_houses';
 
 const allArticles = [
-	fkhr,
-	row_houses,
 	chipotle,
 	firstArticle,
 ];

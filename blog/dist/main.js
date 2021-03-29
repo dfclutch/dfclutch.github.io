@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -130,7 +130,7 @@ if (true) {
 function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e}).apply(this,arguments)}var g=function(e,t){for(var n=[e[0]],r=0,o=t.length;r<o;r+=1)n.push(t[r],e[r+1]);return n},S=function(t){return null!==t&&"object"==typeof t&&"[object Object]"===(t.toString?t.toString():Object.prototype.toString.call(t))&&!Object(react_is__WEBPACK_IMPORTED_MODULE_0__["typeOf"])(t)},w=Object.freeze([]),b=Object.freeze({});function N(e){return"function"==typeof e}function E(e){return false||e.displayName||e.name||"Component"}function _(e){return e&&"string"==typeof e.styledComponentId}var I="undefined"!=typeof process&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",C="5.2.0",A="undefined"!=typeof window&&"HTMLElement"in window,O="boolean"==typeof SC_DISABLE_SPEEDY&&SC_DISABLE_SPEEDY||"undefined"!=typeof process&&(process.env.REACT_APP_SC_DISABLE_SPEEDY||process.env.SC_DISABLE_SPEEDY)||"production"!=="production",P={},R=function(){return true?__webpack_require__.nc:undefined},j= false?undefined:{};function T(){for(var e=arguments.length<=0?void 0:arguments[0],t=[],n=1,r=arguments.length;n<r;n+=1)t.push(n<0||arguments.length<=n?void 0:arguments[n]);return t.forEach((function(t){e=e.replace(/%[a-z]/,t)})),e}function D(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];throw true?new Error("An error occurred. See https://git.io/JUIaE#"+e+" for more information."+(n.length>0?" Args: "+n.join(", "):"")):undefined}var k=function(e){var t=document.head,n=e||t,r=document.createElement("style"),o=function(e){for(var t=e.childNodes,n=t.length;n>=0;n--){var r=t[n];if(r&&1===r.nodeType&&r.hasAttribute(I))return r}}(n),i=void 0!==o?o.nextSibling:null;r.setAttribute(I,"active"),r.setAttribute("data-styled-version","5.2.0");var s=R();return s&&r.setAttribute("nonce",s),n.insertBefore(r,i),r},x=function(){function e(e){var t=this.element=k(e);t.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,r=t.length;n<r;n++){var o=t[n];if(o.ownerNode===e)return o}D(17)}(t),this.length=0}var t=e.prototype;return t.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return!1}},t.deleteRule=function(e){this.sheet.deleteRule(e),this.length--},t.getRule=function(e){var t=this.sheet.cssRules[e];return void 0!==t&&"string"==typeof t.cssText?t.cssText:""},e}(),V=function(){function e(e){var t=this.element=k(e);this.nodes=t.childNodes,this.length=0}var t=e.prototype;return t.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t),r=this.nodes[e];return this.element.insertBefore(n,r||null),this.length++,!0}return!1},t.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--},t.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),M=function(){function e(e){this.rules=[],this.length=0}var t=e.prototype;return t.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,!0)},t.deleteRule=function(e){this.rules.splice(e,1),this.length--},t.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),z=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e}var t=e.prototype;return t.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},t.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,r=n.length,o=r;e>=o;)(o<<=1)<0&&D(16,""+e);this.groupSizes=new Uint32Array(o),this.groupSizes.set(n),this.length=o;for(var i=r;i<o;i++)this.groupSizes[i]=0}for(var s=this.indexOfGroup(e+1),a=0,c=t.length;a<c;a++)this.tag.insertRule(s,t[a])&&(this.groupSizes[e]++,s++)},t.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),r=n+t;this.groupSizes[e]=0;for(var o=n;o<r;o++)this.tag.deleteRule(n)}},t.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],r=this.indexOfGroup(e),o=r+n,i=r;i<o;i++)t+=this.tag.getRule(i)+"/*!sc*/\n";return t},e}(),G=new Map,F=new Map,B=1,L=function(e){if(G.has(e))return G.get(e);var t=B++;return false&&false,G.set(e,t),F.set(t,e),t},q=function(e){return F.get(e)},H=function(e,t){t>=B&&(B=t+1),G.set(e,t),F.set(t,e)},$="style["+I+'][data-styled-version="5.2.0"]',Y=new RegExp("^"+I+'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'),W=function(e,t,n){for(var r,o=n.split(","),i=0,s=o.length;i<s;i++)(r=o[i])&&e.registerName(t,r)},U=function(e,t){for(var n=t.innerHTML.split("/*!sc*/\n"),r=[],o=0,i=n.length;o<i;o++){var s=n[o].trim();if(s){var a=s.match(Y);if(a){var c=0|parseInt(a[1],10),u=a[2];0!==c&&(H(u,c),W(e,u,a[3]),e.getTag().insertRules(c,r)),r.length=0}else r.push(s)}}},J=A,X={isServer:!A,useCSSOMInjection:!O},Z=function(){function e(e,t,n){void 0===e&&(e=X),void 0===t&&(t={}),this.options=v({},X,{},e),this.gs=t,this.names=new Map(n),!this.options.isServer&&A&&J&&(J=!1,function(e){for(var t=document.querySelectorAll($),n=0,r=t.length;n<r;n++){var o=t[n];o&&"active"!==o.getAttribute(I)&&(U(e,o),o.parentNode&&o.parentNode.removeChild(o))}}(this))}e.registerId=function(e){return L(e)};var t=e.prototype;return t.reconstructWithOptions=function(t,n){return void 0===n&&(n=!0),new e(v({},this.options,{},t),this.gs,n&&this.names||void 0)},t.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},t.getTag=function(){return this.tag||(this.tag=(n=(t=this.options).isServer,r=t.useCSSOMInjection,o=t.target,e=n?new M(o):r?new x(o):new V(o),new z(e)));var e,t,n,r,o},t.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},t.registerName=function(e,t){if(L(e),this.names.has(e))this.names.get(e).add(t);else{var n=new Set;n.add(t),this.names.set(e,n)}},t.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(L(e),n)},t.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear()},t.clearRules=function(e){this.getTag().clearGroup(L(e)),this.clearNames(e)},t.clearTag=function(){this.tag=void 0},t.toString=function(){return function(e){for(var t=e.getTag(),n=t.length,r="",o=0;o<n;o++){var i=q(o);if(void 0!==i){var s=e.names.get(i),a=t.getGroup(o);if(void 0!==s&&0!==a.length){var c=I+".g"+o+'[id="'+i+'"]',u="";void 0!==s&&s.forEach((function(e){e.length>0&&(u+=e+",")})),r+=""+a+c+'{content:"'+u+'"}/*!sc*/\n'}}}return r}(this)},e}(),K=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},Q=function(e){return K(5381,e)},ee=/^\s*\/\/.*$/gm,te=[":","[",".","#"];function ne(e){var t,n,r,o,i=void 0===e?b:e,s=i.options,a=void 0===s?b:s,c=i.plugins,u=void 0===c?w:c,l=new _emotion_stylis__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"](a),d=[],h=function(e){function t(t){if(t)try{e(t+"}")}catch(e){}}return function(n,r,o,i,s,a,c,u,l,d){switch(n){case 1:if(0===l&&64===r.charCodeAt(0))return e(r+";"),"";break;case 2:if(0===u)return r+"/*|*/";break;case 3:switch(u){case 102:case 112:return e(o[0]+r),"";default:return r+(0===d?"/*|*/":"")}case-2:r.split("/*|*/}").forEach(t)}}}((function(e){d.push(e)})),f=function(e,r,i){return 0===r&&te.includes(i[n.length])||i.match(o)?e:"."+t};function m(e,i,s,a){void 0===a&&(a="&");var c=e.replace(ee,""),u=i&&s?s+" "+i+" { "+c+" }":c;return t=a,n=i,r=new RegExp("\\"+n+"\\b","g"),o=new RegExp("(\\"+n+"\\b){2,}"),l(s||!i?"":i,u)}return l.use([].concat(u,[function(e,t,o){2===e&&o.length&&o[0].lastIndexOf(n)>0&&(o[0]=o[0].replace(r,f))},h,function(e){if(-2===e){var t=d;return d=[],t}}])),m.hash=u.length?u.reduce((function(e,t){return t.name||D(15),K(e,t.name)}),5381).toString():"",m}var re=react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext(),oe=re.Consumer,ie=react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext(),se=(ie.Consumer,new Z),ae=ne();function ce(){return Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(re)||se}function ue(){return Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(ie)||ae}function le(e){var t=Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(e.stylisPlugins),n=t[0],i=t[1],c=ce(),u=Object(react__WEBPACK_IMPORTED_MODULE_1__["useMemo"])((function(){var t=c;return e.sheet?t=e.sheet:e.target&&(t=t.reconstructWithOptions({target:e.target},!1)),e.disableCSSOMInjection&&(t=t.reconstructWithOptions({useCSSOMInjection:!1})),t}),[e.disableCSSOMInjection,e.sheet,e.target]),l=Object(react__WEBPACK_IMPORTED_MODULE_1__["useMemo"])((function(){return ne({options:{prefix:!e.disableVendorPrefixes},plugins:n})}),[e.disableVendorPrefixes,n]);return Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])((function(){shallowequal__WEBPACK_IMPORTED_MODULE_2___default()(n,e.stylisPlugins)||i(e.stylisPlugins)}),[e.stylisPlugins]),react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(re.Provider,{value:u},react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ie.Provider,{value:l}, false?undefined:e.children))}var de=function(){function e(e,t){var n=this;this.inject=function(e,t){void 0===t&&(t=ae);var r=n.name+t.hash;e.hasNameForId(n.id,r)||e.insertRules(n.id,r,t(n.rules,r,"@keyframes"))},this.toString=function(){return D(12,String(n.name))},this.name=e,this.id="sc-keyframes-"+e,this.rules=t}return e.prototype.getName=function(e){return void 0===e&&(e=ae),this.name+e.hash},e}(),he=/([A-Z])/,pe=new RegExp(he,"g"),fe=/^ms-/,me=function(e){return"-"+e.toLowerCase()};function ye(e){return he.test(e)?e.replace(pe,me).replace(fe,"-ms-"):e}var ve=function(e){return null==e||!1===e||""===e};function ge(e,n,r,o){if(Array.isArray(e)){for(var i,s=[],a=0,c=e.length;a<c;a+=1)""!==(i=ge(e[a],n,r,o))&&(Array.isArray(i)?s.push.apply(s,i):s.push(i));return s}if(ve(e))return"";if(_(e))return"."+e.styledComponentId;if(N(e)){if("function"!=typeof(l=e)||l.prototype&&l.prototype.isReactComponent||!n)return e;var u=e(n);return false&&false,ge(u,n,r,o)}var l;return e instanceof de?r?(e.inject(r,o),e.getName(o)):e:S(e)?function e(t,n){var r,o,i=[];for(var s in t)t.hasOwnProperty(s)&&!ve(t[s])&&(S(t[s])?i.push.apply(i,e(t[s],s)):N(t[s])?i.push(ye(s)+":",t[s],";"):i.push(ye(s)+": "+(r=s,null==(o=t[s])||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||r in _emotion_unitless__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"]?String(o).trim():o+"px")+";"));return n?[n+" {"].concat(i,["}"]):i}(e):e.toString()}function Se(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];return N(e)||S(e)?ge(g(w,[e].concat(n))):0===n.length&&1===e.length&&"string"==typeof e[0]?e:ge(g(e,n))}var we=function(e){return"function"==typeof e||"object"==typeof e&&null!==e&&!Array.isArray(e)},be=function(e){return"__proto__"!==e&&"constructor"!==e&&"prototype"!==e};function Ne(e,t,n){var r=e[n];we(t)&&we(r)?Ee(r,t):e[n]=t}function Ee(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];for(var o=0,i=n;o<i.length;o++){var s=i[o];if(we(s))for(var a in s)be(a)&&Ne(e,s[a],a)}return e}var _e=/(a)(d)/gi,Ie=function(e){return String.fromCharCode(e+(e>25?39:97))};function Ce(e){var t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=Ie(t%52)+n;return(Ie(t%52)+n).replace(_e,"$1-$2")}function Ae(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(N(n)&&!_(n))return!1}return!0}var Oe=Q("5.2.0"),Pe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic= true&&(void 0===n||n.isStatic)&&Ae(e),this.componentId=t,this.baseHash=K(Oe,t),this.baseStyle=n,Z.registerId(t)}return e.prototype.generateAndInjectStyles=function(e,t,n){var r=this.componentId,o=[];if(this.baseStyle&&o.push(this.baseStyle.generateAndInjectStyles(e,t,n)),this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(r,this.staticRulesId))o.push(this.staticRulesId);else{var i=ge(this.rules,e,t,n).join(""),s=Ce(K(this.baseHash,i.length)>>>0);if(!t.hasNameForId(r,s)){var a=n(i,"."+s,void 0,r);t.insertRules(r,s,a)}o.push(s),this.staticRulesId=s}else{for(var c=this.rules.length,u=K(this.baseHash,n.hash),l="",d=0;d<c;d++){var h=this.rules[d];if("string"==typeof h)l+=h, false&&(false);else if(h){var p=ge(h,e,t,n),f=Array.isArray(p)?p.join(""):p;u=K(u,f+d),l+=f}}if(l){var m=Ce(u>>>0);if(!t.hasNameForId(r,m)){var y=n(l,"."+m,void 0,r);t.insertRules(r,m,y)}o.push(m)}}return o.join(" ")},e}(),Re=/invalid hook call/i,je=new Set,Te=function(e,t){if(false){ var n; }},De=function(e,t,n){return void 0===n&&(n=b),e.theme!==n.theme&&e.theme||t||n.theme},ke=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,xe=/(^-|-$)/g;function Ve(e){return e.replace(ke,"-").replace(xe,"")}function Me(e){return"string"==typeof e&&( true||false)}var ze=function(e){return Ce(Q(e)>>>0)},Ge=react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext(),Fe=Ge.Consumer;function Be(e){var t=Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(Ge),n=Object(react__WEBPACK_IMPORTED_MODULE_1__["useMemo"])((function(){return function(e,t){if(!e)return D(14);if(N(e)){var n=e(t);return true?n:undefined}return Array.isArray(e)||"object"!=typeof e?D(8):t?v({},t,{},e):e}(e.theme,t)}),[e.theme,t]);return e.children?react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Ge.Provider,{value:n},e.children):null}var Le={};function qe(e,t,n){var o=_(e),s=!Me(e),a=t.displayName,c=void 0===a?function(e){return Me(e)?"styled."+e:"Styled("+E(e)+")"}(e):a,d=t.componentId,h=void 0===d?function(e,t){var n="string"!=typeof e?"sc":Ve(e);Le[n]=(Le[n]||0)+1;var r=n+"-"+ze("5.2.0"+n+Le[n]);return t?t+"-"+r:r}(t.displayName,t.parentComponentId):d,p=t.attrs,f=void 0===p?w:p,g=t.displayName&&t.componentId?Ve(t.displayName)+"-"+t.componentId:t.componentId||h,S=o&&e.attrs?Array.prototype.concat(e.attrs,f).filter(Boolean):f,I=t.shouldForwardProp;o&&e.shouldForwardProp&&(I=I?function(n,r){return e.shouldForwardProp(n,r)&&t.shouldForwardProp(n,r)}:e.shouldForwardProp);var C,A=new Pe(n,g,o?e.componentStyle:void 0),O=function(e,t){return function(e,t,n){var r=e.attrs,o=e.componentStyle,s=e.defaultProps,a=e.foldedComponentIds,c=e.shouldForwardProp,d=e.styledComponentId,h=e.target; false&&false;var p=function(e,t,n){void 0===e&&(e=b);var r=v({},t,{theme:e}),o={};return n.forEach((function(e){var t,n,i,s=e;for(t in N(s)&&(s=s(r)),s)r[t]=o[t]="className"===t?(n=o[t],i=s[t],n&&i?n+" "+i:n||i):s[t]})),[r,o]}(De(t,Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(Ge),s)||b,t,r),f=p[0],y=p[1],g=function(e,t,n,r){var o=ce(),i=ue(),s=e.isStatic&&!t,a=s?e.generateAndInjectStyles(b,o,i):e.generateAndInjectStyles(n,o,i);return false&&false, false&&false,a}(o,r.length>0,f, false?undefined:void 0),S=n,w=y.$as||t.$as||y.as||t.as||h,E=Me(w),_=y!==t?v({},t,{},y):t,I=c||E&&_emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],C={};for(var A in _)"$"!==A[0]&&"as"!==A&&("forwardedAs"===A?C.as=_[A]:I&&!I(A,_emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])||(C[A]=_[A]));return t.style&&y.style!==t.style&&(C.style=v({},t.style,{},y.style)),C.className=Array.prototype.concat(a,d,g!==d?g:null,t.className,y.className).filter(Boolean).join(" "),C.ref=S,Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(w,C)}(C,e,t)};return O.displayName=c,(C=react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef(O)).attrs=S,C.componentStyle=A,C.displayName=c,C.shouldForwardProp=I,C.foldedComponentIds=o?Array.prototype.concat(e.foldedComponentIds,e.styledComponentId):w,C.styledComponentId=g,C.target=o?e.target:e,C.withComponent=function(e){var r=t.componentId,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(t,["componentId"]),i=r&&r+"-"+(Me(e)?e:Ve(E(e)));return qe(e,v({},o,{attrs:S,componentId:i}),n)},Object.defineProperty(C,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(t){this._foldedDefaultProps=o?Ee({},e.defaultProps,t):t}}), false&&(false),C.toString=function(){return"."+C.styledComponentId},s&&hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6___default()(C,e,{attrs:!0,componentStyle:!0,displayName:!0,foldedComponentIds:!0,shouldForwardProp:!0,self:!0,styledComponentId:!0,target:!0,withComponent:!0}),C}var He=function(e){return function e(t,r,o){if(void 0===o&&(o=b),!Object(react_is__WEBPACK_IMPORTED_MODULE_0__["isValidElementType"])(r))return D(1,String(r));var i=function(){return t(r,o,Se.apply(void 0,arguments))};return i.withConfig=function(n){return e(t,r,v({},o,{},n))},i.attrs=function(n){return e(t,r,v({},o,{attrs:Array.prototype.concat(o.attrs,n).filter(Boolean)}))},i}(qe,e)};["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","marquee","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","title","tr","track","u","ul","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"].forEach((function(e){He[e]=He(e)}));var $e=function(){function e(e,t){this.rules=e,this.componentId=t,this.isStatic=Ae(e),Z.registerId(this.componentId+1)}var t=e.prototype;return t.createStyles=function(e,t,n,r){var o=r(ge(this.rules,t,n,r).join(""),""),i=this.componentId+e;n.insertRules(i,i,o)},t.removeStyles=function(e,t){t.clearRules(this.componentId+e)},t.renderStyles=function(e,t,n,r){e>2&&Z.registerId(this.componentId+e),this.removeStyles(e,n),this.createStyles(e,t,n,r)},e}();function Ye(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),o=1;o<t;o++)n[o-1]=arguments[o];var s=Se.apply(void 0,[e].concat(n)),a="sc-global-"+ze(JSON.stringify(s)),u=new $e(s,a);function l(e){var t=ce(),n=ue(),o=Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(Ge),l=Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(t.allocateGSInstance(a)).current;return false&&false, false&&false,Object(react__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"])((function(){return h(l,e,t,o,n),function(){return u.removeStyles(l,t)}}),[l,e,t,o,n]),null}function h(e,t,n,r,o){if(u.isStatic)u.renderStyles(e,P,n,o);else{var i=v({},t,{theme:De(t,r,l.defaultProps)});u.renderStyles(e,i,n,o)}}return false&&false,react__WEBPACK_IMPORTED_MODULE_1___default.a.memo(l)}function We(e){ false&&false;for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];var o=Se.apply(void 0,[e].concat(n)).join(""),i=ze(o);return new de(i,o)}var Ue=function(){function e(){var e=this;this._emitSheetCSS=function(){var t=e.instance.toString(),n=R();return"<style "+[n&&'nonce="'+n+'"',I+'="true"','data-styled-version="5.2.0"'].filter(Boolean).join(" ")+">"+t+"</style>"},this.getStyleTags=function(){return e.sealed?D(2):e._emitSheetCSS()},this.getStyleElement=function(){var t;if(e.sealed)return D(2);var n=((t={})[I]="",t["data-styled-version"]="5.2.0",t.dangerouslySetInnerHTML={__html:e.instance.toString()},t),o=R();return o&&(n.nonce=o),[react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("style",v({},n,{key:"sc-0-0"}))]},this.seal=function(){e.sealed=!0},this.instance=new Z({isServer:!0}),this.sealed=!1}var t=e.prototype;return t.collectStyles=function(e){return this.sealed?D(2):react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(le,{sheet:this.instance},e)},t.interleaveWithNodeStream=function(e){return D(3)},e}(),Je=function(e){var t=react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((function(t,n){var o=Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(Ge),s=e.defaultProps,a=De(t,o,s);return false&&false,react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(e,v({},t,{theme:a,ref:n}))}));return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6___default()(t,e),t.displayName="WithTheme("+E(e)+")",t},Xe=function(){return Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(Ge)},Ze={StyleSheet:Z,masterSheet:se}; false&&false, false&&(false);/* harmony default export */ __webpack_exports__["a"] = (He);
 //# sourceMappingURL=styled-components.browser.esm.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(23)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(19)))
 
 /***/ }),
 /* 2 */
@@ -152,7 +152,7 @@ function _inheritsLoose(subClass, superClass) {
 
 
 if (true) {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(20);
 } else {}
 
 
@@ -170,7 +170,7 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
+  module.exports = __webpack_require__(21)();
 }
 
 
@@ -470,13 +470,13 @@ var index = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext || create
 
 /* harmony default export */ __webpack_exports__["a"] = (index);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(27)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(23)))
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(28)
+var isarray = __webpack_require__(24)
 
 /**
  * Expose `pathToRegexp`.
@@ -2174,418 +2174,6 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 /***/ }),
 /* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(20);
-            var content = __webpack_require__(21);
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-
-
-module.exports = content.locals || {};
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : undefined;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(22);
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, "", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join('');
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === 'string') {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
-
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
-
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-  return "/*# ".concat(data, " */");
-}
-
-/***/ }),
-/* 23 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -2775,7 +2363,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 24 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2797,7 +2385,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 25 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2810,7 +2398,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 
-var ReactPropTypesSecret = __webpack_require__(26);
+var ReactPropTypesSecret = __webpack_require__(22);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -2868,7 +2456,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 26 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2887,7 +2475,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 27 */
+/* 23 */
 /***/ (function(module, exports) {
 
 var g;
@@ -2913,7 +2501,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 28 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -2922,7 +2510,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 29 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4967,12 +4555,6 @@ if (false) { var ariaCurrentType; }
 
 //# sourceMappingURL=react-router-dom.js.map
 
-// EXTERNAL MODULE: ./src/style.scss
-var src_style = __webpack_require__(19);
-
-// EXTERNAL MODULE: ./node_modules/styled-components/dist/styled-components.browser.esm.js
-var styled_components_browser_esm = __webpack_require__(1);
-
 // CONCATENATED MODULE: ./src/colors.js
 /* harmony default export */ var colors = ({
   lightGrey: "#efefef",
@@ -4985,9 +4567,32 @@ var styled_components_browser_esm = __webpack_require__(1);
   green: "#32a852",
   red: "#eb4034"
 });
-// CONCATENATED MODULE: ./src/components/back.js
+// EXTERNAL MODULE: ./node_modules/styled-components/dist/styled-components.browser.esm.js
+var styled_components_browser_esm = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./src/components/Article/styles.js
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-style: italic;\n\tfont-family: 'Vollkorn', serif;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-size: 2.6rem;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\ttext-align: center;\n\tcolor: ", ";\n\tpadding: 18px 0;\n\tfont-size: 18px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
+  var data = _taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\n\tp {\n\t\tfont-family: 'Vollkorn', serif;\n\t\ttext-align: justify;\n\t}\n\t\n\ta {\n\t\ttext-decoration: none;\n\t\tcolor: ", ";\n\t}\n\t\n\ta:visited {\n\t\tcolor: ", ";\n\t}\n\t\n\ta:hover {\n\t\tcolor: ", ";\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -5000,225 +4605,42 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var BackWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), colors.grey, colors.red);
-var back_Back = function Back() {
-  return /*#__PURE__*/react_default.a.createElement(BackWrapper, null, "back");
-};
-// CONCATENATED MODULE: ./src/articles/firstArticle.js
-
-var firstArticle = {
-  title: "Article No. 1",
-  id: "article-no-1",
-  previewText: "It's just a rambling introduction.",
-  date: "15 Feb, 2021",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "I'm Dan, I'm a software engineer living in Columbus, OH. I build frontend apps for a salestech company in React. Originally, I had an idea for a Computer Science/Software Engineering blog, and I still may write a few articles in that space, but most of the things I want to write about are architecture/design focused. Specifially, Columbus area architecture, architects, neighborhoods, etc. I like furniture design and history, so that will make an appearance. I also make a lot of coffee, so I may do a manual espresso work flow explanation, talk through experiments, etc."), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have any qualifications to write about such things. I just read stuff on the internet. I will be loosely citing my sources, but that will often be Wikipedia."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
-};
-// CONCATENATED MODULE: ./src/components/figure.js
-function figure_templateObject() {
-  var data = figure_taggedTemplateLiteral(["\n    width: 100%;\n    margin: 10px 0;\n    box-sizing: border-box;\n    \n    & img {\n        max-width: 100%;\n    }\n    \n    & figcaption {\n\t\tfont-family: 'Vollkorn', serif;\n\t\tfont-size: .8rem;\n\t\tcolor: ", ";\n\t\tpadding: 5px 0;\n    }\n"]);
-
-  figure_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function figure_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var Figure = styled_components_browser_esm["a" /* default */].figure(figure_templateObject(), colors.darkGrey);
-// CONCATENATED MODULE: ./src/articles/chipotle/index.js
-
-
-/* harmony default export */ var chipotle = ({
-  title: "Chipotle Design Influences",
-  id: "chipotle-design",
-  previewText: "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
-  date: "5 January, 2021",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Out of all restaurants, I've eaten at Chipotle easily 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants since high school, and the ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "https://en.wikipedia.org/wiki/Mission_burrito"
-  }, "Mission Burrito"), " is one of my all time favorite foods. So I figured I'd write a bit about it's design influences."), /*#__PURE__*/react_default.a.createElement("p", null, "Chipotle is plainly distinguished from all other large chains in it's quality of interior design. The industrial look stretches back to the second location, opened in Denver. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/chipotle-interior.jpg",
-    alt: "Chipotle Mexican Restaurant interior"
-  })), /*#__PURE__*/react_default.a.createElement("p", null, "The current iteration of Chipotle's interior design language was refined in 2007 by ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "http://www.architectureoutfit.com/"
-  }, "Architecture Outfit"), ". While the exact design of each franchise location is left up to the franchisee, the firm put together a \"kit of parts\" and a set of guidelines to provide cohesion across locations. One of the most interesting influences on the design was Ludwig Mies Van Der Rohe's ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "https://farnsworthhouse.org/"
-  }, "Farnsworth House"), ". The house is composed from a glass facade and plywood \"core volume\" containing the kitchen, bathroom and fireplace."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/farnsworth-house-exterior.jpg",
-    alt: "Interior view of the Farnsworth House"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The Farnsworth House, a floating box of a building.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/farnsworth-house-interior.jpg",
-    alt: "Interior view of the Farnsworth House"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box.")), /*#__PURE__*/react_default.a.createElement("p", null, "The design influence here is clear, and referenced in AO's project page on the ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "http://www.architectureoutfit.com/eating#/chipotle"
-  }, "Chipotle Re-Wrap"), ". Chipotle restaurants appropriated the large plywood mass, often housing drink stations, bathroom entrances, and acting as a separation between the dining area and kitchen. The transparency of the Farnsworth house's glass exterior is also adopted by the restaurant; diners can see almost everything the chefs do."), /*#__PURE__*/react_default.a.createElement("p", null, "The design language mirrors the core tenets of Chipotle's customer experience. Simplistic design, clear direction of where to go upon entry, obvious signage, and lack of excess. Steve Ells has described Chipotle's menu as doing one thing right, avoiding bloat. The restaurant itself accomplishes that goal beautifully."), /*#__PURE__*/react_default.a.createElement("p", null, "Another early piece of Chipotle design is the chair:"), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/chipotle-chair.jpg",
-    alt: "The Chipotle Chair"
-  })), /*#__PURE__*/react_default.a.createElement("p", null, "The chair is a excellent piece of design (let alone for a mass produced piece of fast-casual restaurant furniture). It is comfortable enough to act as a dining chair, and fades into its environment through its continuation of the material selections and restrained form. I'd wager most regular patrons have no clue what the chair even looks like, although it is used in every location (although, most people probably don't remember the chairs of any restaurant). The basis of the design was a set of dining chairs made for Frank Lloyd Wright's Seth Peterson Cottage."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/peterson-interior.jpg",
-    alt: "Peterson Cottage Interior"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The dining chairs referenced in the design of the Chipotle chair.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/peterson-exterior.jpg",
-    alt: "Peterson Cottage"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Seth Peterson Cottage, Reedsburg, WI")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were made of plywood, a common material in Wright's furniture designs. They contribute to a motif found in furniture designs by FLW: The \"apex\" cut out of the base of the vertical, forward-oriented plywood legs. The pattern extends to tables, lounge chairs around the fireplace, and several other pieces of furniture from Wright's portfolio. I can't say which piece of furniture came first, however the dining chairs are a personal favorite from Wright's selection of plywood chairs."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/peterson-fireplace.jpg",
-    alt: "Peterson Cottage fireplace lounge chairs"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Peterson Cottage fireplace lounge chairs, shorter, wider, more reclined versions of the dining chairs.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/flw-chairs.jpg",
-    alt: "Frank Lloyd Wright chairs"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Wright designed chairs from the Clarence Sondern House exhibiting a similar leg design.")), /*#__PURE__*/react_default.a.createElement("p", null, "Bruce Gueswel (the man often referenced as the designer of the Chipotle chair) built a copy of this chair that became the model for the ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "http://www.oixio.com/habitat-solutions/form/form-chair.html"
-  }, /*#__PURE__*/react_default.a.createElement("em", null, "for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair")), " designed by Steve Sauer. Sauer took the plywood leg pieces from the original chair and redesigned them in skeletal, galvanized steel. Sauer also widened the base to improve stability. The apex bends in the metal converge under the seatpan in the for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), ", a divergence from the original design. The chair's name is stylized as for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), ", with only the \"m\" underlined."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/form-chair.jpg",
-    alt: "Form chair"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair.")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were put into production for the first 7 Chipotle locations, with a run of 244 examples. The chairs were quite noisy, so Ells asked Sauer to design feet to quite them. At this point, Gueswel took over the design and manufacture of the chairs, adding feet and rubber components under the seatpan. The distinguishing difference between the Gueswel Chipotle chair and the original for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair is the shape of the skeletal legs. The current chair dropped the central convergence for two separate leg components connected in the front and back by cross struts."), /*#__PURE__*/react_default.a.createElement("p", null, "I prefer the for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair to the Gueswel chair. Due to the outward bend of the rear leg rods, the lines of the chair are dynamic as the viewing angle changes, appearing straight when viewed from the side and curved when viewed from the rear. This is referenced in the stamp Sauer used to identify his chairs. The rear leg is perfectly straight, but when viewing them from behind, the bend is present."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/form-chair-2.jpg",
-    alt: "Form chair"
-  })), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
-    src: "./img/form-stamp.jpg",
-    alt: "Form stamp"
-  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The stamp Sauer used to identify his chairs.")))
-});
-// CONCATENATED MODULE: ./src/articles/fkhr/index.js
-
-
-/* harmony default export */ var fkhr = ({
-  title: "Florence Kenyon Hayden Rector",
-  id: "fkhd",
-  previewText: "Columbus' first female architect",
-  date: "",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null))
-});
-/*
-  NOTES:
-  - using a google map: https://www.google.com/maps/d/u/0/edit?mid=1UbxWzf0kJF7Bn-ojf5a-PG_HShX8eppn&usp=sharing
-  - Can be embedded?
-
-  1584 Hawthorne Park:
-    - Matching garage
-
-  878 Franklin
-    - Matching garage
-    
-  1277 E Broad
-    - Matching garage
-    - Unique Brick, copied to garage
-
-  1443 Bryden
-    - Garage, not exactly matching, similar roof
-    - Cool windows  
-*/
-// CONCATENATED MODULE: ./src/components/map.js
-function map_templateObject() {
-  var data = map_taggedTemplateLiteral(["\n    width: 100%;\n    box-sizing: border-box;\n\n    & iframe {\n      width: 100%;\n      height: 500px;\n    }\n"]);
-
-  map_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function map_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var MapContainer = styled_components_browser_esm["a" /* default */].div(map_templateObject());
-// CONCATENATED MODULE: ./src/articles/row_houses/index.js
-
-
-/* harmony default export */ var row_houses = ({
-  title: "Columbus Row Houses",
-  id: "row_houses",
-  previewText: "An article on row houses",
-  date: "",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "This article was inspired by an article written on univdiscol.com."), /*#__PURE__*/react_default.a.createElement("p", null, "Below is a map of my current work in documenting row houses in North Columbus."), /*#__PURE__*/react_default.a.createElement(MapContainer, null, /*#__PURE__*/react_default.a.createElement("iframe", {
-    src: "https://www.google.com/maps/d/embed?mid=17Ub2PapQXQLXpd0IDmvLUMy-KGHSdw_x&hl=en"
-  })))
-});
-/*
-  NOTES:
-*/
-// CONCATENATED MODULE: ./src/articles.js
-
-
-
-
-var allArticles = [fkhr, row_houses, chipotle, firstArticle];
-var ARTICLES_PER_PAGE = 10;
-
-function buildPaginatedArticles(allArticles) {
-  var paginatedArticles = [];
-  var pageCounter = -1;
-  allArticles.forEach(function (article, i) {
-    var pageIndex = i % ARTICLES_PER_PAGE;
-
-    if (pageIndex === 0) {
-      paginatedArticles.push([]);
-      pageCounter++;
-    }
-
-    paginatedArticles[pageCounter].push(article);
-  });
-  console.log(paginatedArticles);
-  return paginatedArticles;
-}
-
-/* harmony default export */ var src_articles = (buildPaginatedArticles(allArticles));
-// CONCATENATED MODULE: ./src/components/article.js
-function _templateObject3() {
-  var data = article_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-style: italic;\n\tfont-family: 'Vollkorn', serif;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = article_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-size: 2.6rem;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function article_templateObject() {
-  var data = article_taggedTemplateLiteral(["\n\tmargin-top: 10px;\n\n\tp {\n\t\tfont-family: 'Vollkorn', serif;\n\t\ttext-align: justify;\n\t}\n\t\n\ta {\n\t\ttext-decoration: none;\n\t\tcolor: ", ";\n\t}\n\t\n\ta:visited {\n\t\tcolor: ", ";\n\t}\n\t\n\ta:hover {\n\t\tcolor: ", ";\n\t}\n"]);
-
-  article_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function article_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-
-
-
+var styles_ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), colors.blue, colors.blue, colors.yellow);
+var ArticleTitle = styled_components_browser_esm["a" /* default */].h1(_templateObject2(), colors.blue);
+var styles_Date = styled_components_browser_esm["a" /* default */].div(_templateObject3(), colors.darkGrey);
+// CONCATENATED MODULE: ./src/components/Article/utils.js
 function getArticleById(page, id) {
-  return src_articles[page].find(function (article) {
+  return articles[page].find(function (article) {
     return article.id === id;
   });
 }
+// CONCATENATED MODULE: ./src/components/back.js
+function back_templateObject() {
+  var data = back_taggedTemplateLiteral(["\n\ttext-align: center;\n\tcolor: ", ";\n\tpadding: 18px 0;\n\tfont-size: 18px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
 
-var ArticleWrapper = styled_components_browser_esm["a" /* default */].div(article_templateObject(), colors.blue, colors.blue, colors.yellow);
-var ArticleTitle = styled_components_browser_esm["a" /* default */].h1(_templateObject2(), colors.blue);
-var article_Date = styled_components_browser_esm["a" /* default */].div(_templateObject3(), colors.darkGrey);
-var article_Article = function Article(props) {
+  back_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function back_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var BackWrapper = styled_components_browser_esm["a" /* default */].div(back_templateObject(), colors.grey, colors.red);
+var back_Back = function Back() {
+  return /*#__PURE__*/react_default.a.createElement(BackWrapper, null, "back");
+};
+// CONCATENATED MODULE: ./src/components/Article/index.js
+
+
+
+
+
+var Article_Article = function Article(props) {
   var _useParams = useParams(),
       id = _useParams.id;
 
@@ -5229,7 +4651,7 @@ var article_Article = function Article(props) {
       date = _getArticleById.date,
       fullContent = _getArticleById.fullContent;
 
-  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(article_Date, null, date), /*#__PURE__*/react_default.a.createElement("hr", null), fullContent, /*#__PURE__*/react_default.a.createElement(Link, {
+  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(styles_Date, null, date), /*#__PURE__*/react_default.a.createElement("hr", null), fullContent, /*#__PURE__*/react_default.a.createElement(Link, {
     to: "/"
   }, /*#__PURE__*/react_default.a.createElement(back_Back, null)));
 };
@@ -5391,6 +4813,170 @@ var mobileCheck = function mobileCheck() {
 
   return check;
 };
+// CONCATENATED MODULE: ./src/articles/firstArticle.js
+
+var firstArticle = {
+  title: "Article No. 1",
+  id: "article-no-1",
+  previewText: "It's just a rambling introduction.",
+  date: "15 Feb, 2021",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "I'm Dan, I'm a software engineer living in Columbus, OH. I build frontend apps for a salestech company in React. Originally, I had an idea for a Computer Science/Software Engineering blog, and I still may write a few articles in that space, but most of the things I want to write about are architecture/design focused. Specifially, Columbus area architecture, architects, neighborhoods, etc. I like furniture design and history, so that will make an appearance. I also make a lot of coffee, so I may do a manual espresso work flow explanation, talk through experiments, etc."), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have any qualifications to write about such things. I just read stuff on the internet. I will be loosely citing my sources, but that will often be Wikipedia."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
+};
+// CONCATENATED MODULE: ./src/components/figure.js
+function figure_templateObject() {
+  var data = figure_taggedTemplateLiteral(["\n    width: 100%;\n    margin: 10px 0;\n    box-sizing: border-box;\n    \n    & img {\n        max-width: 100%;\n    }\n    \n    & figcaption {\n\t\tfont-family: 'Vollkorn', serif;\n\t\tfont-size: .8rem;\n\t\tcolor: ", ";\n\t\tpadding: 5px 0;\n    }\n"]);
+
+  figure_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function figure_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var Figure = styled_components_browser_esm["a" /* default */].figure(figure_templateObject(), colors.darkGrey);
+// CONCATENATED MODULE: ./src/articles/chipotle/index.js
+
+
+/* harmony default export */ var chipotle = ({
+  title: "Chipotle Design Influences",
+  id: "chipotle-design",
+  previewText: "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
+  date: "5 January, 2021",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Out of all restaurants, I've eaten at Chipotle easily 2-3 times as many as the next most frequent. I fear I've spent hundreds if not thousands of dollars at Chipotle restaurants since high school, and the ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "https://en.wikipedia.org/wiki/Mission_burrito"
+  }, "Mission Burrito"), " is one of my all time favorite foods. So I figured I'd write a bit about it's design influences."), /*#__PURE__*/react_default.a.createElement("p", null, "Chipotle is plainly distinguished from all other large chains in it's quality of interior design. The industrial look stretches back to the second location, opened in Denver. Concrete floors, exposed duct work, stainless steel, birch CDX plywood, and white tile are the primary materials. When assembled, the restaurant feels authentic, high-quality, welcoming, and one of Chipotle's key brand identifiers: transparent."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/chipotle-interior.jpg",
+    alt: "Chipotle Mexican Restaurant interior"
+  })), /*#__PURE__*/react_default.a.createElement("p", null, "The current iteration of Chipotle's interior design language was refined in 2007 by ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.architectureoutfit.com/"
+  }, "Architecture Outfit"), ". While the exact design of each franchise location is left up to the franchisee, the firm put together a \"kit of parts\" and a set of guidelines to provide cohesion across locations. One of the most interesting influences on the design was Ludwig Mies Van Der Rohe's ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "https://farnsworthhouse.org/"
+  }, "Farnsworth House"), ". The house is composed from a glass facade and plywood \"core volume\" containing the kitchen, bathroom and fireplace."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/farnsworth-house-exterior.jpg",
+    alt: "Interior view of the Farnsworth House"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The Farnsworth House, a floating box of a building.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/farnsworth-house-interior.jpg",
+    alt: "Interior view of the Farnsworth House"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box.")), /*#__PURE__*/react_default.a.createElement("p", null, "The design influence here is clear, and referenced in AO's project page on the ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.architectureoutfit.com/eating#/chipotle"
+  }, "Chipotle Re-Wrap"), ". Chipotle restaurants appropriated the large plywood mass, often housing drink stations, bathroom entrances, and acting as a separation between the dining area and kitchen. The transparency of the Farnsworth house's glass exterior is also adopted by the restaurant; diners can see almost everything the chefs do."), /*#__PURE__*/react_default.a.createElement("p", null, "The design language mirrors the core tenets of Chipotle's customer experience. Simplistic design, clear direction of where to go upon entry, obvious signage, and lack of excess. Steve Ells has described Chipotle's menu as doing one thing right, avoiding bloat. The restaurant itself accomplishes that goal beautifully."), /*#__PURE__*/react_default.a.createElement("p", null, "Another early piece of Chipotle design is the chair:"), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/chipotle-chair.jpg",
+    alt: "The Chipotle Chair"
+  })), /*#__PURE__*/react_default.a.createElement("p", null, "The chair is a excellent piece of design (let alone for a mass produced piece of fast-casual restaurant furniture). It is comfortable enough to act as a dining chair, and fades into its environment through its continuation of the material selections and restrained form. I'd wager most regular patrons have no clue what the chair even looks like, although it is used in every location (although, most people probably don't remember the chairs of any restaurant). The basis of the design was a set of dining chairs made for Frank Lloyd Wright's Seth Peterson Cottage."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-interior.jpg",
+    alt: "Peterson Cottage Interior"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The dining chairs referenced in the design of the Chipotle chair.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-exterior.jpg",
+    alt: "Peterson Cottage"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Seth Peterson Cottage, Reedsburg, WI")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were made of plywood, a common material in Wright's furniture designs. They contribute to a motif found in furniture designs by FLW: The \"apex\" cut out of the base of the vertical, forward-oriented plywood legs. The pattern extends to tables, lounge chairs around the fireplace, and several other pieces of furniture from Wright's portfolio. I can't say which piece of furniture came first, however the dining chairs are a personal favorite from Wright's selection of plywood chairs."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/peterson-fireplace.jpg",
+    alt: "Peterson Cottage fireplace lounge chairs"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Peterson Cottage fireplace lounge chairs, shorter, wider, more reclined versions of the dining chairs.")), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/flw-chairs.jpg",
+    alt: "Frank Lloyd Wright chairs"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "Wright designed chairs from the Clarence Sondern House exhibiting a similar leg design.")), /*#__PURE__*/react_default.a.createElement("p", null, "Bruce Gueswel (the man often referenced as the designer of the Chipotle chair) built a copy of this chair that became the model for the ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "http://www.oixio.com/habitat-solutions/form/form-chair.html"
+  }, /*#__PURE__*/react_default.a.createElement("em", null, "for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair")), " designed by Steve Sauer. Sauer took the plywood leg pieces from the original chair and redesigned them in skeletal, galvanized steel. Sauer also widened the base to improve stability. The apex bends in the metal converge under the seatpan in the for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), ", a divergence from the original design. The chair's name is stylized as for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), ", with only the \"m\" underlined."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-chair.jpg",
+    alt: "Form chair"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair.")), /*#__PURE__*/react_default.a.createElement("p", null, "These chairs were put into production for the first 7 Chipotle locations, with a run of 244 examples. The chairs were quite noisy, so Ells asked Sauer to design feet to quite them. At this point, Gueswel took over the design and manufacture of the chairs, adding feet and rubber components under the seatpan. The distinguishing difference between the Gueswel Chipotle chair and the original for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair is the shape of the skeletal legs. The current chair dropped the central convergence for two separate leg components connected in the front and back by cross struts."), /*#__PURE__*/react_default.a.createElement("p", null, "I prefer the for", /*#__PURE__*/react_default.a.createElement("u", null, "m"), " chair to the Gueswel chair. Due to the outward bend of the rear leg rods, the lines of the chair are dynamic as the viewing angle changes, appearing straight when viewed from the side and curved when viewed from the rear. This is referenced in the stamp Sauer used to identify his chairs. The rear leg is perfectly straight, but when viewing them from behind, the bend is present."), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-chair-2.jpg",
+    alt: "Form chair"
+  })), /*#__PURE__*/react_default.a.createElement(Figure, null, /*#__PURE__*/react_default.a.createElement("img", {
+    src: "./img/form-stamp.jpg",
+    alt: "Form stamp"
+  }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The stamp Sauer used to identify his chairs.")))
+});
+// CONCATENATED MODULE: ./src/articles/fkhr/index.js
+
+
+/* harmony default export */ var fkhr = ({
+  title: "Florence Kenyon Hayden Rector",
+  id: "fkhd",
+  previewText: "Columbus' first female architect",
+  date: "",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null))
+});
+/*
+  NOTES:
+  - using a google map: https://www.google.com/maps/d/u/0/edit?mid=1UbxWzf0kJF7Bn-ojf5a-PG_HShX8eppn&usp=sharing
+  - Can be embedded?
+
+  1584 Hawthorne Park:
+    - Matching garage
+
+  878 Franklin
+    - Matching garage
+    
+  1277 E Broad
+    - Matching garage
+    - Unique Brick, copied to garage
+
+  1443 Bryden
+    - Garage, not exactly matching, similar roof
+    - Cool windows  
+*/
+// CONCATENATED MODULE: ./src/components/map.js
+function map_templateObject() {
+  var data = map_taggedTemplateLiteral(["\n    width: 100%;\n    box-sizing: border-box;\n\n    & iframe {\n      width: 100%;\n      height: 500px;\n    }\n"]);
+
+  map_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function map_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var MapContainer = styled_components_browser_esm["a" /* default */].div(map_templateObject());
+// CONCATENATED MODULE: ./src/articles/row_houses/index.js
+
+
+/* harmony default export */ var row_houses = ({
+  title: "Columbus Row Houses",
+  id: "row_houses",
+  previewText: "An article on row houses",
+  date: "",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "This article was inspired by an article written on univdiscol.com."), /*#__PURE__*/react_default.a.createElement("p", null, "Below is a map of my current work in documenting row houses in North Columbus."), /*#__PURE__*/react_default.a.createElement(MapContainer, null, /*#__PURE__*/react_default.a.createElement("iframe", {
+    src: "https://www.google.com/maps/d/embed?mid=17Ub2PapQXQLXpd0IDmvLUMy-KGHSdw_x&hl=en"
+  })))
+});
+/*
+  NOTES:
+*/
+// CONCATENATED MODULE: ./src/articles.js
+
+
+
+
+var allArticles = [chipotle, firstArticle];
+var ARTICLES_PER_PAGE = 10;
+
+function buildPaginatedArticles(allArticles) {
+  var paginatedArticles = [];
+  var pageCounter = -1;
+  allArticles.forEach(function (article, i) {
+    var pageIndex = i % ARTICLES_PER_PAGE;
+
+    if (pageIndex === 0) {
+      paginatedArticles.push([]);
+      pageCounter++;
+    }
+
+    paginatedArticles[pageCounter].push(article);
+  });
+  console.log(paginatedArticles);
+  return paginatedArticles;
+}
+
+/* harmony default export */ var src_articles = (buildPaginatedArticles(allArticles));
 // CONCATENATED MODULE: ./src/app.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -5413,7 +4999,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 
 
 
@@ -5473,7 +5058,7 @@ var app_App = /*#__PURE__*/function (_React$Component) {
         to: "/"
       }, /*#__PURE__*/react_default.a.createElement(Title, null, "Placeholder Title")), /*#__PURE__*/react_default.a.createElement(react_router_Switch, null, /*#__PURE__*/react_default.a.createElement(react_router_Route, {
         path: "/articles/:id",
-        children: /*#__PURE__*/react_default.a.createElement(article_Article, {
+        children: /*#__PURE__*/react_default.a.createElement(Article_Article, {
           page: page
         })
       }), /*#__PURE__*/react_default.a.createElement(react_router_Route, {

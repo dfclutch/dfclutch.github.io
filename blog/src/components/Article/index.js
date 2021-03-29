@@ -9,8 +9,6 @@ import { ArticleTitle, Date } from './styles';
 import { getArticleById } from './utils';
 
 import { Back } from "../back";
-import articles from "../articles";
-
 
 export const Article = (props) => {
 	const { id } = useParams();

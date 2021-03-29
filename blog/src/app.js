@@ -7,9 +7,8 @@ import {
 	Link,
 } from "react-router-dom";
 
-import './style.scss';
 
-import Article from './components/Article';
+import { Article } from './components/Article';
 import { ArticleList } from './components/articleList';
 import { Content } from './components/content';
 import { Title } from './components/title';
