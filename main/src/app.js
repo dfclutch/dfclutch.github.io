@@ -9,6 +9,7 @@ import {
 } from './circleElements';
 
 import { mobileCheck } from './mobile_check';
+import { GlobalStyle } from './globalStyle';
 
 class App extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class App extends React.Component {
             elements: circleElements,
         }
 
+        window.mobileCheck = mobileCheck;
         this.setPage = this.setPage.bind(this);
     }
 
@@ -47,6 +49,7 @@ class App extends React.Component {
                     onPageClick={ id => this.setPage(id) }
                     content={ this.getActivePageContent() }
                 />
+                <GlobalStyle />
             </div>
         );
     } 
