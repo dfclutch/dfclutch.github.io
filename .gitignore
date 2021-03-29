@@ -1,4 +1,4 @@
 .idea/**
-new_site/node_modules/
+main/node_modules/
 blog/node_modules/
 .DS_Store
