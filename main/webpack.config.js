@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   entry: './src/app.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../dist'),
+    filename: 'build.js',
+    path: path.resolve(__dirname),
   },
   optimization: {
     minimize: false
@@ -18,6 +18,7 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
+        exclude: /node_modules/,
         use:['style-loader','css-loader','sass-loader']
       }
     ]

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeContent } from './Content/home';
+//import { HomeContent } from './Content/home';
 import { AboutContent } from './Content/about';
 import { ProjectsContent } from './Content/projects';
 

@@ -3,7 +3,6 @@ import { ContentContainer } from './ContentContainer';
 import { mobileCheck } from '../mobile_check';
 
 export const HomeContent = () => {
-    const mobile = mobileCheck();
     return (
         <ContentContainer
         	as={"img"}

@@ -9,7 +9,7 @@ import {
 
 import './style.scss';
 
-import { Article } from './components/article';
+import Article from './components/Article';
 import { ArticleList } from './components/articleList';
 import { Content } from './components/content';
 import { Title } from './components/title';

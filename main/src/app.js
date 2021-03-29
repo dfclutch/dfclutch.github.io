@@ -8,7 +8,6 @@ import {
     pageIds
 } from './circleElements';
 
-import "./style.scss";
 import { mobileCheck } from './mobile_check';
 
 class App extends React.Component {
@@ -18,7 +17,6 @@ class App extends React.Component {
             elements: circleElements,
         }
 
-        window.mobileCheck = mobileCheck;
         this.setPage = this.setPage.bind(this);
     }
 

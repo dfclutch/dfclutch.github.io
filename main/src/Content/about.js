@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 export const AboutContent = () => {
 	return (
@@ -7,12 +6,9 @@ export const AboutContent = () => {
 			<h1>Dan Filler</h1>
 			<p> 
 				Pennsylvania native and Ohio State graduate. 
-				Frontend software engineer, currently working at 
+				Frontend software engineer. Building sales tech at 
 				<a href="https://www2.xant.ai/" target="_blank"> Xant</a>.
-			</p>
-			<p>
-				I specialize in building React/Redux applications and pride myself
-				on writing performant and maintainable code at enterprise scale.
+				Mostly writing React-Redux apps.
 			</p>
 			<p>
 				I am interested in other areas of computer science including 

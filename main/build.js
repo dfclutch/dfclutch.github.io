@@ -2456,10 +2456,10 @@ var home_HomeContent = function HomeContent() {
 
 
 var about_AboutContent = function AboutContent() {
-  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer, currently working at", /*#__PURE__*/react_default.a.createElement("a", {
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, "Dan Filler"), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania native and Ohio State graduate. Frontend software engineer. Building sales tech at", /*#__PURE__*/react_default.a.createElement("a", {
     href: "https://www2.xant.ai/",
     target: "_blank"
-  }, " Xant"), "."), /*#__PURE__*/react_default.a.createElement("p", null, "I specialize in building React/Redux applications and pride myself on writing performant and maintainable code at enterprise scale."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in other areas of computer science including computation theory and graph theory. I play ", /*#__PURE__*/react_default.a.createElement("a", {
+  }, " Xant"), ". Mostly writing React-Redux apps."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in other areas of computer science including computation theory and graph theory. I play ", /*#__PURE__*/react_default.a.createElement("a", {
     href: "https://rateyourmusic.com/genre/American+Primitivism/",
     target: "_blank"
   }, "American Primitive guitar"), ", practice ", /*#__PURE__*/react_default.a.createElement("a", {
@@ -2545,7 +2545,7 @@ var circleElements = {
     text: "Blog",
     angle: "-180",
     duration: "3s",
-    link: "http://dfclutch.github.io/blog"
+    link: "http://dfclutch.github.io/blog/#/"
   }, {
     text: "Drawings",
     angle: "-190",

@@ -15,7 +15,7 @@ export const ProjectsContent = () => {
             </p>
             <p>
                 <a href="http://dfclutch.github.io/apps/graphs" target="_blank"><h3>Graph Algorithms</h3></a>
-                Vanilla JS visualization of some graph algorithms, implements a geograph graph generation model I created.
+                Vanilla JS visualization of some graph algorithms, implements a geographic graph generation model I created.
             </p>
             <p>
                 <a href="http://java-docs.herokuapp.com" target="_blank"><h3>Java Docs</h3></a>

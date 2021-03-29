@@ -5011,10 +5011,8 @@ var firstArticle = {
   title: "Article No. 1",
   id: "article-no-1",
   previewText: "It's just a rambling introduction.",
-  date: "31 October, 2020",
-  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "Since I forgot it was 2020 and not 2006 I decided to start a blog. There's a lot of blogs out there and I can't promise that this one will be anything special. By way of introduction, my name is Dan Filler and I am a software engineer specializing in frontend React/Redux apps. Personally, I think the CS blog culture is filled with terribly written, unhelpful blogs that only hurt new developers (not that there aren't exceptions, I'll compile a list eventually). I don't plan on writing a standard Medium blog about building todo apps in React. In fact, I don't plan on keeping this blog to even a majority of computer science-topics."), /*#__PURE__*/react_default.a.createElement("p", null, "I plan on this being a very impractical CS blog, when it is CS-focused. I do enough practical engineering at work, so when I think about Computer Science outside of work the last thing I want to consider is scalability, usefulness, or efficiency (except in theory). I am interested in discrete mathematics surrounding computation. My biggest interest is in computability/automata theory and it's intersection with information theory. These concepts also intersect highly with programming languages in both implementation and the underlying models that give them power. I enjoy graph theory and network science, particularly the algorithms used to compute properties. Although I specialized in Artificial Intelligence during undergrad (At Ohio State, GO BUCKS), I am not interested in machine learning. I find that AI techniques that involve training statistical models on massive data sets are unsatisfying and inelegant. Not that these techniques aren't powerful and successful, but I simply don't find them exciting."), /*#__PURE__*/react_default.a.createElement("p", null, "Outside of computer science, I have far too many interests to keep up with. One of my biggest interests is maps, geography, and topology. I like learning about places, the streets and neighborhoods of cities, the layout of the landscape, and the aesthetics of maps that record them. I was never very interested in major historic events, but I enjoy learning the history of towns (particularly the places I live) and how they have shifted and shaped. This is well matched with a love of hiking and running. I used to be terrible with directions until I started running in high school and using Google Earth to layout and measure runs. Hiking in the mountains (especially in the Rockies) makes topology utterly real."), /*#__PURE__*/react_default.a.createElement("p", null, "I am interested in design and architecture (however unsophisticated my knowledge of the field). Furniture design in particular, I follow at least 10 instagram pages devoted to extremely expensive mid-century furniture. I draw a lot, mostly landscapes and buildings in pen. If I had the resources, I would love to put together a wood and machine shop to design and build my own furniture. Some of my favorite architects include Rafael Vinoly, Peter Bohlin, and Ludwig Mies Van Der Rohe. I like the furniture designs of Jean Prouve (of course, I don't care if it's basic), George Nakashima, and Cor Alons. My favorite artists include JWM Turner and Mark Maggiori. I am also passively intersted in fashion. My favorite brands (that I cannot afford) include Gitman Vintage, Visvim, and Story MFG."), /*#__PURE__*/react_default.a.createElement("p", null, "I'm a coffee person. If you know coffee people, its a crazy hobby. I'm currently using a Lido ET grinder and a Flair Pro manual press to brew espresso at home. I prefer natural processed Ethiopians (particularly from ", /*#__PURE__*/react_default.a.createElement("a", {
-    href: "https://briosocoffee.com/"
-  }, "Brioso Coffee"), " in Columbus, OH)."), /*#__PURE__*/react_default.a.createElement("p", null, "The last of my major hobbies is music. I both appreciate and play music. My main outlet is through guitar, I mostly play ", /*#__PURE__*/react_default.a.createElement("em", null, "American Primitive Guitar"), ". This genre (pioneered in the late 50s by John Fahey) is focused around instrumental fingerstyle guitar. I tend to shift the standard \"droning\" style of the genre toward more melodic, bluegrass-inspired arrangements. I have rearranged several banjo or violin standards for the guitar, and I mostly play in open tunings. Currently, my main guitar is a 1954 Silvertone 696. I listen to just about everything. Some of my favorite genres are bluegrass/old time/appalachian folk, jazz (mainly bebop), shoegaze, americana, glitch, minimalist composition, and noise rock. My all-time favorite band is Pavement. Other artists I love are (in somewhat descending order): The Microphones/Mount Eerie, Parquet Courts, Fennesz, Townes Van Zandt, Songs: Ohia (and other Jason Molina projects), Max Roach, Animal Collective, Ellen Arkbro, Phillip Glass, MF DOOM (and other Daniel Dumile projects), and Kendrick Lamar."), /*#__PURE__*/react_default.a.createElement("hr", null), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have much of a plan for this blog. I enjoy writing and talking about things I care about. I also enjoy teaching and explaining. I often find myself writing things down with no real end, other than just to get out the need to explain them. So, the goal of this page is simply to be a place to express that need. I have a number of ideas for posts that I would like to make, mostly centered around computer science. Here's a list I can think of off the top of my head (partially for my own reference):", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "Implementing literal Neural Networks in JavaScript"), /*#__PURE__*/react_default.a.createElement("li", null, "Ideas on an JSON structured programming language"), /*#__PURE__*/react_default.a.createElement("li", null, "An information theoretic look at JSON, YAML, TOML, XML, and other structured data containers"), /*#__PURE__*/react_default.a.createElement("li", null, "Architectures for Vanilla JS + HTML Canvas animation"), /*#__PURE__*/react_default.a.createElement("li", null, "Compression algorithms"), /*#__PURE__*/react_default.a.createElement("li", null, "Node- and global-level graph measures and a novel method for measuring them against each other"), /*#__PURE__*/react_default.a.createElement("li", null, "Existing and Novel methods of random graph generation"), /*#__PURE__*/react_default.a.createElement("li", null, "RFC, TBL, HTTP a.k.a. the history and essence of the internet"), /*#__PURE__*/react_default.a.createElement("li", null, "Implementing an analog synth with the Web Audio API")), "Topics not relating to CS:", /*#__PURE__*/react_default.a.createElement("ul", null, /*#__PURE__*/react_default.a.createElement("li", null, "The growth of Gettysburg, PA as a function of Battlefield protected land"), /*#__PURE__*/react_default.a.createElement("li", null, "Compiled list of great Chairs, Desks"), /*#__PURE__*/react_default.a.createElement("li", null, "Houses of the Victorian and German Villages of Columbus, Ohio"), /*#__PURE__*/react_default.a.createElement("li", null, "National Park Rustic architecture"), /*#__PURE__*/react_default.a.createElement("li", null, "Graphing the SadBoys, Uncle Tupelo, and other splintering groups")), "That's probably it for this post. I'm hoping to write a couple of posts a month. Some will require a lot more work than others, particularly ones that require programming efforts. Stay tuned and see what happens!"), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
+  date: "15 Feb, 2021",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "Howdy, folks!"), /*#__PURE__*/react_default.a.createElement("p", null, "I'm Dan, I'm a software engineer living in Columbus, OH. I build frontend apps for a salestech company in React. Originally, I had an idea for a Computer Science/Software Engineering blog, and I still may write a few articles in that space, but most of the things I want to write about are architecture/design focused. Specifially, Columbus area architecture, architects, neighborhoods, etc. I like furniture design and history, so that will make an appearance. I also make a lot of coffee, so I may do a manual espresso work flow explanation, talk through experiments, etc."), /*#__PURE__*/react_default.a.createElement("p", null, "I don't have any qualifications to write about such things. I just read stuff on the internet. I will be loosely citing my sources, but that will often be Wikipedia."), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement("em", null, "Dan Filler")))
 };
 // CONCATENATED MODULE: ./src/components/figure.js
 function figure_templateObject() {
@@ -5085,10 +5083,72 @@ var Figure = styled_components_browser_esm["a" /* default */].figure(figure_temp
     alt: "Form stamp"
   }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The stamp Sauer used to identify his chairs.")))
 });
+// CONCATENATED MODULE: ./src/articles/fkhr/index.js
+
+
+/* harmony default export */ var fkhr = ({
+  title: "Florence Kenyon Hayden Rector",
+  id: "fkhd",
+  previewText: "Columbus' first female architect",
+  date: "",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null))
+});
+/*
+  NOTES:
+  - using a google map: https://www.google.com/maps/d/u/0/edit?mid=1UbxWzf0kJF7Bn-ojf5a-PG_HShX8eppn&usp=sharing
+  - Can be embedded?
+
+  1584 Hawthorne Park:
+    - Matching garage
+
+  878 Franklin
+    - Matching garage
+    
+  1277 E Broad
+    - Matching garage
+    - Unique Brick, copied to garage
+
+  1443 Bryden
+    - Garage, not exactly matching, similar roof
+    - Cool windows  
+*/
+// CONCATENATED MODULE: ./src/components/map.js
+function map_templateObject() {
+  var data = map_taggedTemplateLiteral(["\n    width: 100%;\n    box-sizing: border-box;\n\n    & iframe {\n      width: 100%;\n      height: 500px;\n    }\n"]);
+
+  map_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function map_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var MapContainer = styled_components_browser_esm["a" /* default */].div(map_templateObject());
+// CONCATENATED MODULE: ./src/articles/row_houses/index.js
+
+
+/* harmony default export */ var row_houses = ({
+  title: "Columbus Row Houses",
+  id: "row_houses",
+  previewText: "An article on row houses",
+  date: "",
+  fullContent: /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("p", null, "This article was inspired by an article written on univdiscol.com."), /*#__PURE__*/react_default.a.createElement("p", null, "Below is a map of my current work in documenting row houses in North Columbus."), /*#__PURE__*/react_default.a.createElement(MapContainer, null, /*#__PURE__*/react_default.a.createElement("iframe", {
+    src: "https://www.google.com/maps/d/embed?mid=17Ub2PapQXQLXpd0IDmvLUMy-KGHSdw_x&hl=en"
+  })))
+});
+/*
+  NOTES:
+*/
 // CONCATENATED MODULE: ./src/articles.js
 
 
-var allArticles = [chipotle, firstArticle];
+
+
+var allArticles = [fkhr, row_houses, chipotle, firstArticle];
 var ARTICLES_PER_PAGE = 10;
 
 function buildPaginatedArticles(allArticles) {
