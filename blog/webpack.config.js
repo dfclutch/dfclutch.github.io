@@ -1,34 +1,30 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   entry: {
-    app: './src/app.js',
-    mobileCheck: './src/mobileCheck.js',
+    app: "./src/index.js",
+    mobileCheck: "./src/mobileCheck.js",
   },
   output: {
-    filename: '[name].js',
-    path: __dirname + '/dist',
+    filename: "[name].js",
+    path: __dirname + "/dist",
   },
   optimization: {
-    minimize: false
+    minimize: true,
   },
   module: {
     rules: [
       {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: 'babel-loader'
-      },
-      {
-        test: /\.(s*)css$/,
-        use:['style-loader','css-loader','sass-loader']
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
       },
       {
         test: /\.(jpg|jpeg|png)$/,
         use: {
-          loader: 'url-loader'
-        }
-      }
-    ]
-  }
+          loader: "url-loader",
+        },
+      },
+    ],
+  },
 };
