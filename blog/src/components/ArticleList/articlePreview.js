@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../../colors.js'
+import colors from '../../theme/colors.js'
 
 const ArticlePreviewContainer = styled.div`
 	margin: 0 0 10px 0;

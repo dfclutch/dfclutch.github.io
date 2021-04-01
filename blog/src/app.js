@@ -13,7 +13,6 @@ import { Content } from './components/content';
 import { Title } from './components/title';
 
 class App extends React.Component {
-
   componentDidMount() {
 		window.mobileCheck = mobileCheck;
 	}

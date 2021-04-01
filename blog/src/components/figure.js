@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../colors';
+import colors from '../theme/colors';
 
 export const Figure = styled.figure`
     width: 100%;

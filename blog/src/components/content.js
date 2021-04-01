@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from '../colors';
+import colors from '../theme/colors';
 
 export const Content = styled.div`
 	width: ${() => window.mobileCheck() ? "100vw" : "50vw" };

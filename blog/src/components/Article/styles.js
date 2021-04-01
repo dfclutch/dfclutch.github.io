@@ -1,4 +1,4 @@
-import colors from '../../colors';
+import colors from '../../theme/colors';
 import styled from 'styled-components';
 
 export const ArticleWrapper = styled.div`
