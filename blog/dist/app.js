@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 25);
+/******/ 	return __webpack_require__(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2510,7 +2510,8 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4605,16 +4606,10 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var styles_ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), colors.blue, colors.blue, colors.yellow);
+var ArticleWrapper = styled_components_browser_esm["a" /* default */].div(_templateObject(), colors.blue, colors.blue, colors.yellow);
 var ArticleTitle = styled_components_browser_esm["a" /* default */].h1(_templateObject2(), colors.blue);
 var styles_Date = styled_components_browser_esm["a" /* default */].div(_templateObject3(), colors.darkGrey);
-// CONCATENATED MODULE: ./src/components/Article/utils.js
-function getArticleById(page, id) {
-  return articles[page].find(function (article) {
-    return article.id === id;
-  });
-}
-// CONCATENATED MODULE: ./src/components/back.js
+// CONCATENATED MODULE: ./src/components/Article/back.js
 function back_templateObject() {
   var data = back_taggedTemplateLiteral(["\n\ttext-align: center;\n\tcolor: ", ";\n\tpadding: 18px 0;\n\tfont-size: 18px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n"]);
 
@@ -4634,186 +4629,7 @@ var BackWrapper = styled_components_browser_esm["a" /* default */].div(back_temp
 var back_Back = function Back() {
   return /*#__PURE__*/react_default.a.createElement(BackWrapper, null, "back");
 };
-// CONCATENATED MODULE: ./src/components/Article/index.js
-
-
-
-
-
-var Article_Article = function Article(props) {
-  var _useParams = useParams(),
-      id = _useParams.id;
-
-  console.log(id);
-
-  var _getArticleById = getArticleById(props.page, id),
-      title = _getArticleById.title,
-      date = _getArticleById.date,
-      fullContent = _getArticleById.fullContent;
-
-  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(styles_Date, null, date), /*#__PURE__*/react_default.a.createElement("hr", null), fullContent, /*#__PURE__*/react_default.a.createElement(Link, {
-    to: "/"
-  }, /*#__PURE__*/react_default.a.createElement(back_Back, null)));
-};
-// CONCATENATED MODULE: ./src/components/articlePreview.js
-function articlePreview_templateObject3() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\ttext-align: justify;\n\tfont-family: 'Vollkorn', serif;\n"]);
-
-  articlePreview_templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function articlePreview_templateObject2() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-size: 2rem;\n\tmargin: 0;\n"]);
-
-  articlePreview_templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function articlePreview_templateObject() {
-  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tbackground-color: ", ";\n\tpadding: 6px 12px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n\n\t&:hover h2 {\n\t\t\tcolor: ", ";\n\t}\n\t\n\t> p {\n\t\tcolor: black;\n\t}\n"]);
-
-  articlePreview_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function articlePreview_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.lightGrey, colors.yellow);
-var articlePreview_ArticleTitle = styled_components_browser_esm["a" /* default */].h2(articlePreview_templateObject2(), colors.blue);
-var PreviewText = styled_components_browser_esm["a" /* default */].p(articlePreview_templateObject3());
-var articlePreview_ArticlePreview = function ArticlePreview(props) {
-  var _props$article = props.article,
-      title = _props$article.title,
-      previewText = _props$article.previewText;
-  return /*#__PURE__*/react_default.a.createElement(ArticlePreviewContainer, {
-    onClick: props.onClick
-  }, /*#__PURE__*/react_default.a.createElement(articlePreview_ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(PreviewText, null, previewText));
-};
-// CONCATENATED MODULE: ./src/components/pageCounter.js
-function pageCounter_templateObject2() {
-  var data = pageCounter_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 0 8px;\n\tdisplay: inline-block;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t\tcolor: ", ";\n\t}\n\n\n"]);
-
-  pageCounter_templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function pageCounter_templateObject() {
-  var data = pageCounter_taggedTemplateLiteral(["\n\ttext-align: center;\n\tfont-size: 18px;\n\tmargin: 16px 0;\n"]);
-
-  pageCounter_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function pageCounter_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var CounterWrapper = styled_components_browser_esm["a" /* default */].div(pageCounter_templateObject());
-var ChangePageWrapper = styled_components_browser_esm["a" /* default */].div(pageCounter_templateObject2(), colors.grey, colors.red);
-var pageCounter_PageCounter = function PageCounter(props) {
-  console.log(props.maxPageIndex);
-  console.log(props.page);
-  return /*#__PURE__*/react_default.a.createElement(CounterWrapper, null, props.page > 0 && /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
-    onClick: props.prevPage
-  }, "prev"), props.page + 1, props.page + 1 < props.maxPageIndex && /*#__PURE__*/react_default.a.createElement(ChangePageWrapper, {
-    onClick: props.nextPage
-  }, "next"));
-};
-// CONCATENATED MODULE: ./src/components/articleList.js
-
-
-
-
-
-function renderArticlePreviews(articles) {
-  return articles.map(function (article) {
-    return /*#__PURE__*/react_default.a.createElement(Link, {
-      to: 'articles/' + article.id
-    }, /*#__PURE__*/react_default.a.createElement(articlePreview_ArticlePreview, {
-      article: article
-    }));
-  });
-}
-
-var articleList_ArticleList = function ArticleList(props) {
-  return /*#__PURE__*/react_default.a.createElement("div", null, renderArticlePreviews(props.articles), /*#__PURE__*/react_default.a.createElement(pageCounter_PageCounter, {
-    page: props.page,
-    maxPageIndex: props.articles.length - 1,
-    prevPage: props.prevPage,
-    nextPage: props.nextPage
-  }));
-};
-// CONCATENATED MODULE: ./src/components/content.js
-function content_templateObject() {
-  var data = content_taggedTemplateLiteral(["\n\twidth: ", ";\n\tpadding: ", ";\n\tbox-sizing: border-box;\n\tmargin: 0 auto;\n\tmin-height: 100vh;\n\tbackground-color: white;\n"]);
-
-  content_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function content_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var Content = styled_components_browser_esm["a" /* default */].div(content_templateObject(), function () {
-  return window.mobileCheck() ? "100vw" : "50vw";
-}, function () {
-  return window.mobileCheck() ? "5px" : "10px";
-});
-// CONCATENATED MODULE: ./src/components/title.js
-function title_templateObject() {
-  var data = title_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 10px 0;\n\twidth: 75%;\n\tfont-size: 2.6rem;\n\t\n\t&:hover {\n\t    cursor: pointer;\n\t    color: ", ";\n\t}\n"]);
-
-  title_templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function title_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var Title = styled_components_browser_esm["a" /* default */].h1(title_templateObject(), colors.green, colors.red);
-// CONCATENATED MODULE: ./src/mobile_check.js
-/*
-    StackOverflow snippet to check if on a mobile. Works okay.
- */
-var mobileCheck = function mobileCheck() {
-  var check = false;
-
-  (function (a) {
-    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
-  })(navigator.userAgent || navigator.vendor || window.opera);
-
-  return check;
-};
-// CONCATENATED MODULE: ./src/articles/firstArticle.js
+// CONCATENATED MODULE: ./src/Articles/firstArticle.js
 
 var firstArticle = {
   title: "Article No. 1",
@@ -4838,7 +4654,7 @@ function figure_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.
 
 
 var Figure = styled_components_browser_esm["a" /* default */].figure(figure_templateObject(), colors.darkGrey);
-// CONCATENATED MODULE: ./src/articles/chipotle/index.js
+// CONCATENATED MODULE: ./src/Articles/chipotle/index.js
 
 
 /* harmony default export */ var chipotle = ({
@@ -4891,7 +4707,7 @@ var Figure = styled_components_browser_esm["a" /* default */].figure(figure_temp
     alt: "Form stamp"
   }), /*#__PURE__*/react_default.a.createElement("figcaption", null, "The stamp Sauer used to identify his chairs.")))
 });
-// CONCATENATED MODULE: ./src/articles/fkhr/index.js
+// CONCATENATED MODULE: ./src/Articles/fkhr/index.js
 
 
 /* harmony default export */ var fkhr = ({
@@ -4936,7 +4752,7 @@ function map_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.sli
 
 
 var MapContainer = styled_components_browser_esm["a" /* default */].div(map_templateObject());
-// CONCATENATED MODULE: ./src/articles/row_houses/index.js
+// CONCATENATED MODULE: ./src/Articles/row_houses/index.js
 
 
 /* harmony default export */ var row_houses = ({
@@ -4951,32 +4767,147 @@ var MapContainer = styled_components_browser_esm["a" /* default */].div(map_temp
 /*
   NOTES:
 */
-// CONCATENATED MODULE: ./src/articles.js
+// CONCATENATED MODULE: ./src/Articles/index.js
 
 
 
 
-var allArticles = [chipotle, firstArticle];
-var ARTICLES_PER_PAGE = 10;
+var articles = [chipotle, firstArticle];
+/* harmony default export */ var Articles = (articles);
+// CONCATENATED MODULE: ./src/components/Article/index.js
 
-function buildPaginatedArticles(allArticles) {
-  var paginatedArticles = [];
-  var pageCounter = -1;
-  allArticles.forEach(function (article, i) {
-    var pageIndex = i % ARTICLES_PER_PAGE;
 
-    if (pageIndex === 0) {
-      paginatedArticles.push([]);
-      pageCounter++;
-    }
 
-    paginatedArticles[pageCounter].push(article);
-  });
-  console.log(paginatedArticles);
-  return paginatedArticles;
+
+
+function Article() {
+  var _useParams = useParams(),
+      id = _useParams.id;
+
+  var _articles$find = Articles.find(function (article) {
+    return article.id === id;
+  }),
+      title = _articles$find.title,
+      date = _articles$find.date,
+      fullContent = _articles$find.fullContent;
+
+  return /*#__PURE__*/react_default.a.createElement(ArticleWrapper, null, /*#__PURE__*/react_default.a.createElement(ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(styles_Date, null, date), /*#__PURE__*/react_default.a.createElement("hr", null), fullContent, /*#__PURE__*/react_default.a.createElement(Link, {
+    to: "/"
+  }, /*#__PURE__*/react_default.a.createElement(back_Back, null)));
+}
+;
+/* harmony default export */ var components_Article = (Article);
+// CONCATENATED MODULE: ./src/components/ArticleList/articlePreview.js
+function articlePreview_templateObject3() {
+  var data = articlePreview_taggedTemplateLiteral(["\n\ttext-align: justify;\n\tfont-family: 'Vollkorn', serif;\n"]);
+
+  articlePreview_templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
 }
 
-/* harmony default export */ var src_articles = (buildPaginatedArticles(allArticles));
+function articlePreview_templateObject2() {
+  var data = articlePreview_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tfont-size: 2rem;\n\tmargin: 0;\n"]);
+
+  articlePreview_templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function articlePreview_templateObject() {
+  var data = articlePreview_taggedTemplateLiteral(["\n\tmargin: 0 0 10px 0;\n\tborder-top: 1px solid black;\n\tpadding: 6px 12px;\n\tfont-size: 16px;\n\n\t&:hover {\n\t\tcursor: pointer;\n\t}\n\n\t&:hover h2 {\n\t\t\tcolor: ", ";\n\t}\n\t\n\t> p {\n\t\tcolor: black;\n\t}\n"]);
+
+  articlePreview_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function articlePreview_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var ArticlePreviewContainer = styled_components_browser_esm["a" /* default */].div(articlePreview_templateObject(), colors.yellow);
+var articlePreview_ArticleTitle = styled_components_browser_esm["a" /* default */].h2(articlePreview_templateObject2(), colors.blue);
+var PreviewText = styled_components_browser_esm["a" /* default */].p(articlePreview_templateObject3());
+var articlePreview_ArticlePreview = function ArticlePreview(_ref) {
+  var onClick = _ref.onClick,
+      previewText = _ref.previewText,
+      title = _ref.title;
+  return /*#__PURE__*/react_default.a.createElement(ArticlePreviewContainer, {
+    onClick: onClick
+  }, /*#__PURE__*/react_default.a.createElement(articlePreview_ArticleTitle, null, title), /*#__PURE__*/react_default.a.createElement(PreviewText, null, previewText));
+};
+// CONCATENATED MODULE: ./src/components/ArticleList/index.js
+
+
+
+
+/* import {PageCounter} from "./pageCounter"; */
+
+function ArticleList() {
+  return /*#__PURE__*/react_default.a.createElement("div", null, Articles.map(function (article) {
+    return /*#__PURE__*/react_default.a.createElement(Link, {
+      to: "articles/".concat(article.id),
+      key: article.id
+    }, /*#__PURE__*/react_default.a.createElement(articlePreview_ArticlePreview, article));
+  }));
+}
+
+;
+/*
+<PageCounter
+	page={page}
+	maxPageIndex={articles.length - 1}
+	prevPage={prevPage}
+	nextPage={nextPage}
+/>
+*/
+
+/* harmony default export */ var components_ArticleList = (ArticleList);
+// CONCATENATED MODULE: ./src/components/content.js
+function content_templateObject() {
+  var data = content_taggedTemplateLiteral(["\n\twidth: ", ";\n\tpadding: ", ";\n\tbox-sizing: border-box;\n\tmargin: 0 auto;\n\tmin-height: 100vh;\n\tbackground-color: white;\n"]);
+
+  content_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function content_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var Content = styled_components_browser_esm["a" /* default */].div(content_templateObject(), function () {
+  return window.mobileCheck() ? "100vw" : "50vw";
+}, function () {
+  return window.mobileCheck() ? "5px" : "10px";
+});
+// CONCATENATED MODULE: ./src/components/title.js
+function title_templateObject() {
+  var data = title_taggedTemplateLiteral(["\n\tcolor: ", ";\n\tpadding: 10px 0;\n\twidth: 75%;\n\tfont-size: 2.6rem;\n\t\n\t&:hover {\n\t    cursor: pointer;\n\t    color: ", ";\n\t}\n"]);
+
+  title_templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function title_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var Title = styled_components_browser_esm["a" /* default */].h1(title_templateObject(), colors.green, colors.red);
 // CONCATENATED MODULE: ./src/app.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -5008,67 +4939,33 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
-
 var app_App = /*#__PURE__*/function (_React$Component) {
   _inherits(App, _React$Component);
 
   var _super = _createSuper(App);
 
-  function App(props) {
-    var _this;
-
+  function App() {
     _classCallCheck(this, App);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      page: 0
-    };
-    window.mobileCheck = mobileCheck;
-    _this.prevPage = _this.prevPage.bind(_assertThisInitialized(_this));
-    _this.nextPage = _this.nextPage.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.apply(this, arguments);
   }
 
   _createClass(App, [{
-    key: "nextPage",
-    value: function nextPage() {
-      if (this.state.page + 1 === src_articles.length) return;
-      this.setState(function (state) {
-        return {
-          page: state.page + 1
-        };
-      });
-    }
-  }, {
-    key: "prevPage",
-    value: function prevPage() {
-      if (this.state.page === 0) return;
-      this.setState(function (state) {
-        return {
-          page: state.page - 1
-        };
-      });
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.mobileCheck = mobileCheck;
     }
   }, {
     key: "render",
     value: function render() {
-      var page = this.state.page;
       return /*#__PURE__*/react_default.a.createElement(react_router_dom_HashRouter, null, /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(Content, null, /*#__PURE__*/react_default.a.createElement(Link, {
         to: "/"
       }, /*#__PURE__*/react_default.a.createElement(Title, null, "Placeholder Title")), /*#__PURE__*/react_default.a.createElement(react_router_Switch, null, /*#__PURE__*/react_default.a.createElement(react_router_Route, {
         path: "/articles/:id",
-        children: /*#__PURE__*/react_default.a.createElement(Article_Article, {
-          page: page
-        })
+        children: /*#__PURE__*/react_default.a.createElement(components_Article, null)
       }), /*#__PURE__*/react_default.a.createElement(react_router_Route, {
         path: "/"
-      }, /*#__PURE__*/react_default.a.createElement(articleList_ArticleList, {
-        articles: src_articles[page],
-        page: page,
-        nextPage: this.nextPage,
-        prevPage: this.prevPage
-      }))))));
+      }, /*#__PURE__*/react_default.a.createElement(components_ArticleList, null))))));
     }
   }]);
 

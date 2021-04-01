@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../colors.js'
+import colors from '../../colors.js'
 
 const ArticlePreviewContainer = styled.div`
 	margin: 0 0 10px 0;
-	background-color: ${colors.lightGrey};
+	border-top: 1px solid black;
 	padding: 6px 12px;
 	font-size: 16px;
 
@@ -33,14 +33,13 @@ const PreviewText = styled.p`
 	font-family: 'Vollkorn', serif;
 `;
 
-export const ArticlePreview = (props) => {
-	const {
-		title,
-		previewText
-	} = props.article;
-
+export const ArticlePreview = ({
+	onClick,
+	previewText,
+	title,
+}) => {
 	return (
-		<ArticlePreviewContainer onClick={props.onClick} >
+		<ArticlePreviewContainer onClick={onClick} >
 			<ArticleTitle>
 				{ title }
 			</ArticleTitle>

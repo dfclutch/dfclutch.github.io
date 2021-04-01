@@ -1,7 +1,7 @@
 import colors from '../../colors';
 import styled from 'styled-components';
 
-const ArticleWrapper = styled.div`
+export const ArticleWrapper = styled.div`
 	margin-top: 10px;
 
 	p {

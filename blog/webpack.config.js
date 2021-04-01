@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: './src/app.js',
+    mobileCheck: './src/mobileCheck.js',
+  },
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js',
+    path: __dirname + '/dist',
   },
   optimization: {
     minimize: false

@@ -5,19 +5,24 @@ import {
 	useParams,
 } from 'react-router-dom';
 
-import { ArticleTitle, Date } from './styles';
-import { getArticleById } from './utils';
+import {
+	ArticleTitle,
+	ArticleWrapper,
+	Date
+} from './styles';
 
-import { Back } from "../back";
 
-export const Article = (props) => {
+import { Back } from "./back";
+import articles from '../../Articles';
+
+export function Article() {
 	const { id } = useParams();
-	console.log(id);
+
 	const {
 		title,
 		date,
 		fullContent
-	} = getArticleById(props.page, id);
+	} = articles.find(article => article.id === id );
 
 	return (
 		<ArticleWrapper>
@@ -31,3 +36,5 @@ export const Article = (props) => {
 		</ArticleWrapper>
 	);
 };
+
+export default Article;
