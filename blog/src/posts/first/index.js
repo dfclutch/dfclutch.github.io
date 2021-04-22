@@ -1,10 +1,10 @@
 import React from "react";
 
-const firstPost = {
+export default {
   title: "Article No. 1",
+  date: "15 Feb, 2021",
   id: "article-no-1",
   previewText: "It's just a rambling introduction.",
-  date: "15 Feb, 2021",
   content: (
     <div>
       <p>Howdy, folks!</p>
@@ -31,5 +31,3 @@ const firstPost = {
     </div>
   ),
 };
-
-export default firstPost;

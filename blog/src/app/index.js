@@ -1,28 +1,27 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Post from "./Post";
-import Feed from "./Feed";
+import Post from "./Routes/Post";
+import Feed from "./Routes/Feed";
 import { GlobalStyle, Content, Title } from "./styles";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Router>
-        <div>
-          <Content>
-            <Link to="/">
-              <Title>Ye Olde Blogue</Title>
-            </Link>
-
+      <Content>
+        <Router>
+          <Link to="/">
+            <Title>Ye Olde Blogue</Title>
+          </Link>
+          <div>
             <Switch>
               <Route path="/posts/:id" component={Post} />
               <Route path="/" component={Feed} />
             </Switch>
-          </Content>
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </Content>
     </>
   );
 }

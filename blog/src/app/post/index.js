@@ -1,17 +1,10 @@
 import React from "react";
-
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Date, PostTitle, PostWrapper } from "./styles";
 import Back from "./Back";
 
-import posts from "../../posts";
-
-function Post() {
-  const { id } = useParams();
-
-  const { title, date, content } = posts.find((post) => post.id === id);
-
+function Post({ title, date, content }) {
   return (
     <PostWrapper>
       <PostTitle>{title}</PostTitle>

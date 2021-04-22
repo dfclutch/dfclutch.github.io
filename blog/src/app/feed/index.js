@@ -1,20 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import posts from "../../posts";
-
-import { Preview } from "./Preview";
+import Preview from "./Preview";
 /* import {PageCounter} from "./pageCounter"; */
 
-function Feed() {
+function Feed({ posts }) {
   return (
-    <div>
+    <>
       {posts.map((post) => (
         <Link to={`posts/${post.id}`} key={post.id}>
           <Preview {...post} />
         </Link>
       ))}
-    </div>
+    </>
   );
 }
 /*

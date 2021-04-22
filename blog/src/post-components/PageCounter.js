@@ -20,18 +20,16 @@ const ChangePageWrapper = styled.div`
   }
 `;
 
-const PageCounter = (props) => {
+export const PageCounter = ({ maxPageIndex, nextPage, page, prevPage }) => {
   return (
     <CounterWrapper>
-      {props.page > 0 && (
-        <ChangePageWrapper onClick={props.prevPage}>prev</ChangePageWrapper>
+      {page > 0 && (
+        <ChangePageWrapper onClick={prevPage}>prev</ChangePageWrapper>
       )}
-      {props.page + 1}
-      {props.page + 1 < props.maxPageIndex && (
-        <ChangePageWrapper onClick={props.nextPage}>next</ChangePageWrapper>
+      {page + 1}
+      {page + 1 < maxPageIndex && (
+        <ChangePageWrapper onClick={nextPage}>next</ChangePageWrapper>
       )}
     </CounterWrapper>
   );
 };
-
-export default PageCounter;

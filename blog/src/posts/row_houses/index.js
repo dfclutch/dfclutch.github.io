@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MapContainer } from "../../components/map";
+import { Map } from "../../post-components/Map";
 
 export default {
   title: "Columbus Row Houses",
@@ -14,9 +14,9 @@ export default {
         Below is a map of my current work in documenting row houses in North
         Columbus.
       </p>
-      <MapContainer>
+      <Map>
         <iframe src="https://www.google.com/maps/d/embed?mid=17Ub2PapQXQLXpd0IDmvLUMy-KGHSdw_x&hl=en"></iframe>
-      </MapContainer>
+      </Map>
     </div>
   ),
 };

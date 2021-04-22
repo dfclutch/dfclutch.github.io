@@ -1,13 +1,19 @@
 import React from "react";
 
-import { Figure } from "../../components/figure";
+import { Figure } from "../../post-components/Figure";
+import { Gallery } from "../../post-components/Gallery";
 
 export default {
   title: "Chipotle Design Influences",
-  id: "chipotle-design",
-  previewText:
-    "Where my love of chairs intersects with my love of fast-casual burritos. The chain draws from storied 20th century architects for its primary design language.",
   date: "5 January, 2021",
+  previewText: (
+    <>
+      "Where my love of chairs intersects with my love of fast-casual burritos.
+      The chain draws from storied 20th century architects for its primary
+      design language."
+    </>
+  ),
+  id: "chipotle-design",
   content: (
     <div>
       <p>

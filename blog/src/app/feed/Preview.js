@@ -4,13 +4,12 @@ import styled from "styled-components";
 import colors from "../../theme/colors.js";
 
 const PreviewContainer = styled.div`
-  margin: 0 0 10px 0;
-  border-top: 1px solid black;
+  border-top: 1px solid ${colors.grey};
   padding: 6px 12px;
   font-size: 16px;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     background-color: ${colors.lightGrey};
 
     > h2 {
@@ -34,7 +33,7 @@ const PreviewText = styled.p`
   font-family: "Vollkorn", serif;
 `;
 
-export const Preview = ({ onClick, previewText, title }) => {
+const Preview = ({ onClick, previewText, title }) => {
   return (
     <PreviewContainer onClick={onClick}>
       <Title>{title}</Title>
@@ -42,3 +41,5 @@ export const Preview = ({ onClick, previewText, title }) => {
     </PreviewContainer>
   );
 };
+
+export default Preview;

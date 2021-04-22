@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import colors from "../theme/colors";
 
-export const MapContainer = styled.div`
+export const Map = styled.div`
   width: 100%;
   box-sizing: border-box;
 

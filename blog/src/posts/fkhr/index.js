@@ -1,12 +1,10 @@
 import React from "react";
 
-import { Figure } from "../../components/figure";
-
 export default {
   title: "Florence Kenyon Hayden Rector",
-  id: "fkhd",
-  previewText: "Columbus' first female architect",
   date: "",
+  id: "fkhd",
+  previewContent: "Columbus' first female architect",
   content: (
     <div>
       <p></p>
