@@ -3,17 +3,13 @@ import styled, { createGlobalStyle } from "styled-components";
 import colors from "../theme/colors";
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
-
-
   html, body {
-      margin: 0;
+    margin: 0;
     padding: 0;
-      min-height: 100%;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-family: Helvetica, Arial, sans-serif;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Poppins, Arial, sans-serif;
   }
 
   a {
