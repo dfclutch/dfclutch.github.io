@@ -1,5 +1,5 @@
 export const colors = {
-	"theme":'#1F6356',
+	"theme":'#0e472e',
 	"lightTheme": '#76a39a',
 	"darkTheme": '#1c4039',
 	"neutral": '#FFFFCB',

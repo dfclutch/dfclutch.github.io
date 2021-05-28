@@ -1,58 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-import Circle from './circle-ui/Circle';
-import { 
-    circleElements, 
-    setActivePage,
-    pageIds
-} from './circleElements';
-
-import { mobileCheck } from './mobile_check';
 import { GlobalStyle } from './globalStyle';
+import Home from './Home';
+import Links from './Links';
+import Work from './Work';
+import { AppContainer, ContentContainer } from './app.styles';
+import { mobileCheck } from './mobile_check';
+import { Nav } from './Nav';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            elements: circleElements,
-        }
+function App() {
+    const [ isMobile, setIsMobile] = useState(mobileCheck());
+    window.addEventListener(
+        'resize',
+        () => setIsMobile(mobileCheck())
+    );
 
-        window.mobileCheck = mobileCheck;
-        this.setPage = this.setPage.bind(this);
-    }
-
-    componentDidMount() {
-        this.setPage(pageIds.about);
-    }
-
-    setPage(id) {
-        const updatedElements = setActivePage(id);
-        this.setState({
-            elements: updatedElements
-        });
-    }
-
-    getActivePageContent() {
-        const activePage = Object
-        .values(this.state.elements.pages)
-        .find(page => page.active);
-
-        if (activePage) return activePage.content;
-    }
-
-    render() {
-        return (
-            <div>
-                <Circle
-                    elements={ this.state.elements }
-                    onPageClick={ id => this.setPage(id) }
-                    content={ this.getActivePageContent() }
-                />
-                <GlobalStyle />
-            </div>
-        );
-    } 
+    return (
+        <AppContainer isMobile={isMobile}> 
+            <Router>
+                <ContentContainer isMobile={isMobile}>
+                    <Switch>
+                        <Route
+                            path="/work"
+                            component={Work}
+                        />
+                        <Route
+                            path="/links"
+                            component={Links}
+                        />
+                        <Route
+                            path="/"
+                            component={Home}
+                        />
+                    </Switch>
+                </ContentContainer>
+                <Nav />
+            </Router>
+            <GlobalStyle />
+        </AppContainer>
+    );
 }
 
 ReactDOM.render(<App/>, document.getElementById("root"));
