@@ -6,7 +6,7 @@ export const AppContainer = styled.div`
   padding: 0 10px;
 
   a {
-    color: #112745;
+    color: #2f423d;
     text-decoration: none;
   }
 

@@ -16,7 +16,7 @@ export const NavLink = styled.div`
   font-style: oblique;
   ${({ active }) => active
     ? `
-      color: #112745;
+      color: #2f423d;
       text-decoration: underline;
     `
     : ' color: #fff'
