@@ -18,5 +18,5 @@ export const AppContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  min-height: ${({ isMobile }) => isMobile ? '500px' : '450px'};
+  min-height: ${({ isMobile }) => isMobile ? '550px' : '450px'};
 `;

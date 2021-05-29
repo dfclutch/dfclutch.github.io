@@ -4623,10 +4623,10 @@ var About = styled_components_browser_esm["b" /* default */].div(_templateObject
 function Home() {
   return /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, /*#__PURE__*/react_default.a.createElement(Logo, {
     src: "./img/logotype.png"
-  }), /*#__PURE__*/react_default.a.createElement(About, null, /*#__PURE__*/react_default.a.createElement("p", null, "Building usable interfaces in React for salespeople at ", /*#__PURE__*/react_default.a.createElement("a", {
+  }), /*#__PURE__*/react_default.a.createElement(About, null, /*#__PURE__*/react_default.a.createElement("p", null, "Building React applications at ", /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://www.xant.ai",
     target: "_blank"
-  }, "Xant")), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania Native, Ohio State CSE Alumni, Backpacker, Guitar-player, Coffee Maker, Map Drawer"), /*#__PURE__*/react_default.a.createElement("p", null, "Columbus, OH"), /*#__PURE__*/react_default.a.createElement("a", {
+  }, "Xant")), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania Native, Ohio State CSE Alumni, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer"), /*#__PURE__*/react_default.a.createElement("p", null, "Living in Columbus, OH"), /*#__PURE__*/react_default.a.createElement("a", {
     href: "mailto:dwfiller@gmail.com"
   }, "dwfiller@gmail.com")));
 }
@@ -4795,7 +4795,7 @@ var AppContainer = styled_components_browser_esm["b" /* default */].div(app_styl
 });
 var ContentContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject2(), function (_ref4) {
   var isMobile = _ref4.isMobile;
-  return isMobile ? '500px' : '450px';
+  return isMobile ? '550px' : '450px';
 });
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*

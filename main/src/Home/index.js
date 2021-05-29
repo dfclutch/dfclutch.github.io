@@ -7,13 +7,13 @@ function Home() {
       <Logo src="./img/logotype.png"/>
       <About>
         <p>
-          Building usable interfaces in React for salespeople at <a href="http://www.xant.ai" target="_blank">Xant</a>
+          Building React applications at <a href="http://www.xant.ai" target="_blank">Xant</a>
         </p>
         <p>
-          Pennsylvania Native, Ohio State CSE Alumni, Backpacker, Guitar-player, Coffee Maker, Map Drawer
+          Pennsylvania Native, Ohio State CSE Alumni, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer
         </p>
         <p>
-          Columbus, OH
+          Living in Columbus, OH
         </p>
         <a href="mailto:dwfiller@gmail.com">dwfiller@gmail.com</a>
       </About>
