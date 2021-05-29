@@ -7,7 +7,7 @@ export const AppContainer = styled.div`
   ${({ isMobile }) => isMobile ?
     `
       max-width: 100%;
-      min-height: 100vh;
+      min-height: ${window.innerHeight}px;
     ` :
     `
       max-width: 300px;

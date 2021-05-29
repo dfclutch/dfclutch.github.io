@@ -4785,7 +4785,7 @@ function app_styles_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = stri
 
 var AppContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject(), function (_ref) {
   var isMobile = _ref.isMobile;
-  return isMobile ? "\n      max-width: 100%;\n      min-height: 100vh;\n    " : "\n      max-width: 300px;\n      height: 520px;\n\n      a:hover {\n        text-decoration: underline;\n      }\n  ";
+  return isMobile ? "\n      max-width: 100%;\n      min-height: ".concat(window.innerHeight, "px;\n    ") : "\n      max-width: 300px;\n      height: 520px;\n\n      a:hover {\n        text-decoration: underline;\n      }\n  ";
 });
 var ContentContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject2(), function (_ref2) {
   var isMobile = _ref2.isMobile;
