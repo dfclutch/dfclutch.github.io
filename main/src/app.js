@@ -36,7 +36,7 @@ function App() {
                         />
                     </Switch>
                 </ContentContainer>
-                <Nav />
+                <Nav isMobile={isMobile}/>
             </Router>
             <GlobalStyle />
         </AppContainer>

@@ -4761,7 +4761,7 @@ function Work() {
 /* harmony default export */ var src_Work = (Work);
 // CONCATENATED MODULE: ./src/app.styles.js
 function app_styles_templateObject2() {
-  var data = app_styles_taggedTemplateLiteral(["\n  min-height: ", ";\n"]);
+  var data = app_styles_taggedTemplateLiteral(["\n  padding-top: ", ";\n"]);
 
   app_styles_templateObject2 = function _templateObject2() {
     return data;
@@ -4771,7 +4771,7 @@ function app_styles_templateObject2() {
 }
 
 function app_styles_templateObject() {
-  var data = app_styles_taggedTemplateLiteral(["\n  max-width: ", ";\n  margin-top: ", ";\n  padding: 0 10px;\n\n  a {\n    color: #2f423d;\n    text-decoration: none;\n  }\n\n  ", "\n"]);
+  var data = app_styles_taggedTemplateLiteral(["\n  position: relative;\n  margin: 0 10px;\n\n  ", "\n\n  a {\n    color: #2f423d;\n    text-decoration: none;\n  }\n"]);
 
   app_styles_templateObject = function _templateObject() {
     return data;
@@ -4785,17 +4785,11 @@ function app_styles_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = stri
 
 var AppContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject(), function (_ref) {
   var isMobile = _ref.isMobile;
-  return isMobile ? '100%' : '300px';
-}, function (_ref2) {
+  return isMobile ? "\n      max-width: 100%;\n      min-height: 100vh;\n    " : "\n      max-width: 300px;\n      height: 520px;\n\n      a:hover {\n        text-decoration: underline;\n      }\n  ";
+});
+var ContentContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject2(), function (_ref2) {
   var isMobile = _ref2.isMobile;
   return isMobile ? '30px' : '10px';
-}, function (_ref3) {
-  var isMobile = _ref3.isMobile;
-  return !isMobile && "\n    a:hover {\n      text-decoration: underline;\n    }\n  ";
-});
-var ContentContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject2(), function (_ref4) {
-  var isMobile = _ref4.isMobile;
-  return isMobile ? '550px' : '450px';
 });
 // CONCATENATED MODULE: ./src/mobile_check.js
 /*
@@ -4812,7 +4806,7 @@ var mobileCheck = function mobileCheck() {
 };
 // CONCATENATED MODULE: ./src/Nav/styles.js
 function Nav_styles_templateObject2() {
-  var data = Nav_styles_taggedTemplateLiteral(["\n  font-style: oblique;\n  ", ";\n"]);
+  var data = Nav_styles_taggedTemplateLiteral(["\n  font-style: oblique;\n  margin-right: 12px;\n  ", ";\n"]);
 
   Nav_styles_templateObject2 = function _templateObject2() {
     return data;
@@ -4822,7 +4816,7 @@ function Nav_styles_templateObject2() {
 }
 
 function Nav_styles_templateObject() {
-  var data = Nav_styles_taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 1.6rem;\n  font-weight: 800;\n\n  a {\n    color: #fff;\n  }\n"]);
+  var data = Nav_styles_taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  font-size: 1.6rem;\n  font-weight: 800;\n  margin-bottom: 10px;\n  padding: 4px 0;\n  background-color: white;\n  border-radius: 8px;\n\n  position: absolute;\n  bottom: 0;\n"]);
 
   Nav_styles_templateObject = function _templateObject() {
     return data;
@@ -4837,7 +4831,7 @@ function Nav_styles_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = stri
 var NavContainer = styled_components_browser_esm["b" /* default */].div(Nav_styles_templateObject());
 var styles_NavLink = styled_components_browser_esm["b" /* default */].div(Nav_styles_templateObject2(), function (_ref) {
   var active = _ref.active;
-  return active ? "\n      color: #2f423d;\n      text-decoration: underline;\n    " : ' color: #fff';
+  return active ? "\n      color: #8cada3;\n      text-decoration: underline;\n    " : '';
 });
 // CONCATENATED MODULE: ./src/Nav/index.js
 
@@ -4907,7 +4901,9 @@ function App() {
   }), /*#__PURE__*/react_default.a.createElement(react_router_Route, {
     path: "/",
     component: src_Home
-  }))), /*#__PURE__*/react_default.a.createElement(Nav, null)), /*#__PURE__*/react_default.a.createElement(GlobalStyle, null));
+  }))), /*#__PURE__*/react_default.a.createElement(Nav, {
+    isMobile: isMobile
+  })), /*#__PURE__*/react_default.a.createElement(GlobalStyle, null));
 }
 
 react_dom_default.a.render( /*#__PURE__*/react_default.a.createElement(App, null), document.getElementById("root"));
