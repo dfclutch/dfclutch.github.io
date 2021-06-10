@@ -10,7 +10,7 @@ function Home() {
           Building React applications at <a href="http://www.xant.ai" target="_blank">Xant</a>
         </p>
         <p>
-          Pennsylvania Native, Ohio State CSE Alumni, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer
+          Pennsylvania Native, Ohio State CSE Alumnus, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer
         </p>
         <p>
           Living in Columbus, OH

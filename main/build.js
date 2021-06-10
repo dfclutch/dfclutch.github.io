@@ -4626,7 +4626,7 @@ function Home() {
   }), /*#__PURE__*/react_default.a.createElement(About, null, /*#__PURE__*/react_default.a.createElement("p", null, "Building React applications at ", /*#__PURE__*/react_default.a.createElement("a", {
     href: "http://www.xant.ai",
     target: "_blank"
-  }, "Xant")), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania Native, Ohio State CSE Alumni, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer"), /*#__PURE__*/react_default.a.createElement("p", null, "Living in Columbus, OH"), /*#__PURE__*/react_default.a.createElement("a", {
+  }, "Xant")), /*#__PURE__*/react_default.a.createElement("p", null, "Pennsylvania Native, Ohio State CSE Alumnus, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer"), /*#__PURE__*/react_default.a.createElement("p", null, "Living in Columbus, OH"), /*#__PURE__*/react_default.a.createElement("a", {
     href: "mailto:dwfiller@gmail.com"
   }, "dwfiller@gmail.com")));
 }
@@ -4784,8 +4784,9 @@ function app_styles_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = stri
 
 
 var AppContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject(), function (_ref) {
-  var isMobile = _ref.isMobile;
-  return isMobile ? "\n      max-width: 100%;\n      min-height: ".concat(window.innerHeight, "px;\n    ") : "\n      max-width: 300px;\n      height: 520px;\n\n      a:hover {\n        text-decoration: underline;\n      }\n  ";
+  var isMobile = _ref.isMobile,
+      windowHeight = _ref.windowHeight;
+  return isMobile ? "\n      max-width: 100%;\n      min-height: ".concat(windowHeight, "px;\n    ") : "\n      max-width: 300px;\n      height: 520px;\n\n      a:hover {\n        text-decoration: underline;\n      }\n  ";
 });
 var ContentContainer = styled_components_browser_esm["b" /* default */].div(app_styles_templateObject2(), function (_ref2) {
   var isMobile = _ref2.isMobile;
@@ -4885,11 +4886,28 @@ function App() {
       isMobile = _useState2[0],
       setIsMobile = _useState2[1];
 
+  var _useState3 = Object(react["useState"])(window.innerHeight),
+      _useState4 = _slicedToArray(_useState3, 2),
+      windowHeight = _useState4[0],
+      setHeight = _useState4[1];
+
   window.addEventListener('resize', function () {
     return setIsMobile(mobileCheck());
   });
+
+  window.onload = function () {
+    /*
+        delayed reset of height because some mobile browsers
+        mess up the timing
+    */
+    setTimeout(function () {
+      setHeight(window.innerHeight);
+    }, 100);
+  };
+
   return /*#__PURE__*/react_default.a.createElement(AppContainer, {
-    isMobile: isMobile
+    isMobile: isMobile,
+    windowHeight: windowHeight
   }, /*#__PURE__*/react_default.a.createElement(react_router_dom_HashRouter, null, /*#__PURE__*/react_default.a.createElement(ContentContainer, {
     isMobile: isMobile
   }, /*#__PURE__*/react_default.a.createElement(react_router_Switch, null, /*#__PURE__*/react_default.a.createElement(react_router_Route, {

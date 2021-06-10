@@ -4,10 +4,10 @@ export const AppContainer = styled.div`
   position: relative;
   margin: 0 10px;
 
-  ${({ isMobile }) => isMobile ?
+  ${({ isMobile, windowHeight }) => isMobile ?
     `
       max-width: 100%;
-      min-height: ${window.innerHeight}px;
+      min-height: ${windowHeight}px;
     ` :
     `
       max-width: 300px;

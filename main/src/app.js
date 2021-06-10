@@ -12,13 +12,28 @@ import { Nav } from './Nav';
 
 function App() {
     const [ isMobile, setIsMobile] = useState(mobileCheck());
+    const [ windowHeight, setHeight ] = useState(window.innerHeight);
+
     window.addEventListener(
         'resize',
         () => setIsMobile(mobileCheck())
     );
+    
+    window.onload = () => {
+        /*
+            delayed reset of height because some mobile browsers
+            mess up the timing
+        */ 
+        setTimeout(() => {
+            setHeight(window.innerHeight);
+        }, 100);
+    }
 
     return (
-        <AppContainer isMobile={isMobile}> 
+        <AppContainer
+            isMobile={isMobile}
+            windowHeight={windowHeight}
+        > 
             <Router>
                 <ContentContainer isMobile={isMobile}>
                     <Switch>
