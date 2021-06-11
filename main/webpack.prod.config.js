@@ -2,12 +2,14 @@ const path = require('path');
 
 module.exports = {
   entry: './src/app.js',
+  mode: 'production',
+  stats: 'errors-warnings',
   output: {
     filename: 'build.js',
     path: path.resolve(__dirname),
   },
   optimization: {
-    minimize: false
+    minimize: true
   },
   module: {
     rules: [
@@ -15,12 +17,7 @@ module.exports = {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: 'babel-loader'
-      },
-      {
-        test: /\.(s*)css$/,
-        exclude: /node_modules/,
-        use:['style-loader','css-loader','sass-loader']
       }
     ]
   }
-};
+}

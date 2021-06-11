@@ -2,7 +2,7 @@ import React from "react";
 
 import Project from "./Project";
 
-function Work() {
+function Projects() {
   return (
     <>
       <Project
@@ -29,4 +29,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default Projects;

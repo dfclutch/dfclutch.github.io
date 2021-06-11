@@ -12,9 +12,9 @@ export function Nav() {
           Home
         </NavLink>
       </Link>
-      <Link to="/work">
-        <NavLink active={pathname === '/work'}>
-          Work
+      <Link to="/projects">
+        <NavLink active={pathname === '/projects'}>
+          Projects
         </NavLink>
       </Link>
       <Link to="/links">

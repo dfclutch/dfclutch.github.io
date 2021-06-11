@@ -5,7 +5,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { GlobalStyle } from './globalStyle';
 import Home from './Home';
 import Links from './Links';
-import Work from './Work';
+import Projects from './Projects';
 import { AppContainer, ContentContainer } from './app.styles';
 import { mobileCheck } from './mobile_check';
 import { Nav } from './Nav';
@@ -22,7 +22,7 @@ function App() {
     window.onload = () => {
         /*
             delayed reset of height because some mobile browsers
-            mess up the timing
+            mess up the window height
         */ 
         setTimeout(() => {
             setHeight(window.innerHeight);
@@ -38,8 +38,8 @@ function App() {
                 <ContentContainer isMobile={isMobile}>
                     <Switch>
                         <Route
-                            path="/work"
-                            component={Work}
+                            path="/projects"
+                            component={Projects}
                         />
                         <Route
                             path="/links"

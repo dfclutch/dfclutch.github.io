@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   position: relative;
-  margin: 0 10px;
 
   ${({ isMobile, windowHeight }) => isMobile ?
     `
+      margin: 0 10px;
       max-width: 100%;
       min-height: ${windowHeight}px;
     ` :
-    `
-      max-width: 300px;
-      height: 520px;
+    `  
+      max-width: 500px;
+      margin: auto;
+      height: 650px;
 
       a:hover {
         text-decoration: underline;
