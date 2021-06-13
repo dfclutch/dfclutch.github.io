@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Post from "./Routes/Post";
 import Feed from "./Routes/Feed";
 import { GlobalStyle, Content, Title } from "./styles";
+import { addWindowSizeListener, getBreakpointValue } from "../utilities/responsive";
+import { CONTENT_BREAKPOINTS } from "./breakpoints";
 
 function App() {
+  const [
+    contentWidth,
+    setContentWidth
+  ] = useState(getBreakpointValue(CONTENT_BREAKPOINTS));
+  addWindowSizeListener(CONTENT_BREAKPOINTS, setContentWidth);
+
   return (
     <>
       <GlobalStyle />
-      <Content>
+      <Content width={contentWidth}>
         <Router>
           <Link to="/">
             <Title>Ye Olde Blogue</Title>

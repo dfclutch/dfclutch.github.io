@@ -1,8 +1,8 @@
 import first from "./first";
 import chipotle from "./chipotle";
-import fkhr from "./fkhr";
-import row_houses from "./row_houses";
+import setTheory from './set-theory';
+import giardiniera from './giardiniera';
 
-const posts = [chipotle, first];
+const posts = [ giardiniera, chipotle, first];
 
 export default posts;

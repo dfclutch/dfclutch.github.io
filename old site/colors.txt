@@ -1,8 +1,0 @@
-COLORS:
---------------
-ORANGE-YELLOW: #fca103
-BLUE: #0398fc
-LIGHT-GREY: #a8a8a8
-BLACK: #000000
-RED: #d41919
-

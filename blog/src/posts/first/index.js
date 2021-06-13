@@ -4,7 +4,7 @@ export default {
   title: "Article No. 1",
   date: "15 Feb, 2021",
   id: "article-no-1",
-  previewText: "It's just a rambling introduction.",
+  previewContent: "It's just a rambling introduction.",
   content: (
     <div>
       <p>Howdy, folks!</p>

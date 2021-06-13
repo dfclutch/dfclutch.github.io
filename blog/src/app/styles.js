@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 import colors from "../theme/colors";
+import typography from "../theme/typography";
 
 export const GlobalStyle = createGlobalStyle`
   html, body {
@@ -9,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: Poppins, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, sans-serif;
   }
 
   a {
@@ -21,28 +22,33 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.brand};
   }
 
-  a:hover {
-    color: ${colors.darkGrey};
-  }
+  ${() => (window.mobileCheck() ? "" : `
+    a:hover {
+      color: ${colors.darkGrey};
+    }
+  `)};
 `;
 
 export const Title = styled.h1`
-  color: ${colors.black};
+  color: ${colors.brand};
   cursor: pointer;
   padding: 10px 0;
   width: 75%;
-  font-size: 2.6rem;
+  ${typography.title}
 
-  &:hover {
-    color: ${colors.brand};
-  }
+  ${() => (window.mobileCheck() ? "" : `
+    &:hover {
+      color: ${colors.darkGrey};
+    }
+  `)};
 `;
 
 export const Content = styled.div`
-  width: ${() => (window.mobileCheck() ? "100vw" : "50vw")};
+  width: ${({width}) => width};
   padding: ${() => (window.mobileCheck() ? "5px" : "10px")};
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
   background-color: white;
 `;
+

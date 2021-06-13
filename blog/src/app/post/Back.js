@@ -11,6 +11,8 @@ const BackWrapper = styled.div`
   text-align: center;
   font-size: 18px;
   color: ${colors.black};
+  width: 100px;
+  margin: auto;
 
   &:hover {
     color: ${colors.brand};

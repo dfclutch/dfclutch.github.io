@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Preview from "./Preview";
-/* import {PageCounter} from "./pageCounter"; */
 
 function Feed({ posts }) {
   return (

@@ -1,22 +1,25 @@
 import colors from "../../theme/colors";
 import styled from "styled-components";
+import typography from "../../theme/typography";
 
 export const PostWrapper = styled.div`
-  margin-top: 10px;
-
-  p {
-    font-family: "Vollkorn", serif;
-    text-align: justify;
+  & div {
+    position: relative;
   }
+
+  margin-top: 10px;
+  font-family: "Vollkorn", serif;
+  text-align: justify;
 `;
 
 export const PostTitle = styled.h1`
   color: ${colors.black};
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 2.6rem;
 `;
 
 export const Date = styled.div`
   color: ${colors.darkGrey};
   font-style: italic;
-  font-family: "Vollkorn", serif;
+  ${typography.serif}
 `;

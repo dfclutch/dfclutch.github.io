@@ -33,11 +33,11 @@ const PreviewText = styled.p`
   font-family: "Vollkorn", serif;
 `;
 
-const Preview = ({ onClick, previewText, title }) => {
+const Preview = ({ onClick, previewContent, title }) => {
   return (
     <PreviewContainer onClick={onClick}>
       <Title>{title}</Title>
-      <PreviewText>{previewText}</PreviewText>
+      <PreviewText>{previewContent}</PreviewText>
     </PreviewContainer>
   );
 };
