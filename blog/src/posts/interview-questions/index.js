@@ -31,7 +31,7 @@ export default {
             <li><Mono>Testing Systems</Mono>: Systems by which implementations are validated against the criteria provided by the design</li>
             <li><Mono>Deployment Systems</Mono>: Systems by which new features and products are delivered to the user</li>
           </ul>
-          These systems constrain how well a team can perform when they are not executed properly, and promote a team to success when they are successful.
+          Failure to adequately provide support systems is a constraint on a team. No matter how good the engineers are, they won't be able to succeed. Conversely, successful support systems enable a team to achieve the best possible outcomes for the product and business.
         </li>
         <li>
           <Mono>Developer Turnover</Mono>: Turnover is very telling about the developer experience and how the company treats its engineering assets. In software engineering, communication overhead is the most imposing constraint. Regular turnover (especially when paired with poor documentation and standards) means the developers are playing telephone with the secrets of the code. Good employers know how to keep their engineers around for an appropriate length of time.
