@@ -11,7 +11,7 @@ export default {
   content: (
     <div>
       <p>
-        In May 2020, I was looking for a software engineering job as a new graduate. The economy looked bleak, I'd had months of no success, and the field seems crowded with thousands of other kids in my position. It felt like a necessary approach at the time to be able to land a position. A year later, I wish I had dug deeper with my questions.
+        In May 2020, I was looking for a software engineering job as a new graduate. The economy looked bleak, I'd had months of no success, and the field seemed crowded with thousands of other kids in my position. I thought that in order to land a position,  I needed to lower my standards. A year later, I wish I had dug deeper with my questions.
       </p>
       <p>
         As I enter a new job search, I've prepared a list of concerns that I'll be asking any potential employer about. Determining if you actually want to work at a given company is at least as important as convincing them they should hire you. Your job takes up a quarter of your life, it shouldn't feel frustrating or negative.
@@ -37,10 +37,10 @@ export default {
           <Mono>Developer Turnover</Mono>: Turnover is very telling about the developer experience and how the company treats its engineering assets. In software engineering, communication overhead is the most imposing constraint. Regular turnover (especially when paired with poor documentation and standards) means the developers are playing telephone with the secrets of the code. Good employers know how to keep their engineers around for an appropriate length of time.
         </li>
         <li>
-          <Mono>Remote Work Environment</Mono>: If working remote, the company should ideally take explicit and effective steps toward ensuring an effective work environment. This goes beyond a stipend for some monitors. Ideally, someone should have thought about how to make the development processes work in a remote world.
+          <Mono>Remote Work Environment</Mono>: If working remote, the company should take explicit and effective steps toward ensuring an effective work environment. This goes beyond a stipend for some monitors. Ideally, someone should have thought about how to make the development processes work in a remote world.
         </li>
         <li>
-          <Mono>Startup Financing</Mono>: If applying at a startup, ask about their financial stability and runway. Working for a new startup is a personal risk in your own financial stability. An employer should be transparent and open about the outlook of the organization to their perspective employees. Asking someone to step onto a sinking ship is a clear sign they don't care about you.
+          <Mono>Startup Financing</Mono>: If applying at a startup, ask about their financial stability and runway. Working for a new startup is a personal risk in your own financial stability. An employer should be transparent and open about the outlook of the organization to their perspective employees. An employer asking you to step onto a sinking ship is a clear sign they don't care about you.
         </li>
       </ol>
     </div>
