@@ -11,7 +11,7 @@ export default {
   content: (
     <div>
       <p>
-        In May 2020, when I graduated college and was looking for a software engineering job, I never considered the fact that I should consider turning down a decent-paying job offer. The economy looked bleak, I'd had months of no success, and the field seems crowded with thousands of other engineering students in my position. It felt like a necessary approach at the time, but I wish I had dug deeper with my questions.
+        In May 2020, I was looking for a software engineering job as a new graduate. The economy looked bleak, I'd had months of no success, and the field seems crowded with thousands of other kids in my position. It felt like a necessary approach at the time to be able to land a position. A year later, I wish I had dug deeper with my questions.
       </p>
       <p>
         As I enter a new job search, I've prepared a list of concerns that I'll be asking any potential employer about. Determining if you actually want to work at a given company is at least as important as convincing them they should hire you. Your job takes up a quarter of your life, it shouldn't feel frustrating or negative.
