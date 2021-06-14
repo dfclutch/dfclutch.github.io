@@ -4,7 +4,7 @@ import { Map } from "../../post-components/Map";
 
 export default {
   title: "Columbus Row Houses",
-  id: "row_houses",
+  id: "row-houses",
   previewText: "An article on row houses",
   date: "",
   content: (

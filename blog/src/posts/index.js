@@ -1,8 +1,8 @@
 import first from "./first";
 import chipotle from "./chipotle";
-import setTheory from './set-theory';
 import giardiniera from './giardiniera';
+import interview_questions from './interview-questions';
 
-const posts = [ giardiniera, chipotle, first];
+const posts = [ interview_questions, giardiniera, chipotle, first];
 
 export default posts;
