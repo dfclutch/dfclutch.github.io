@@ -5,7 +5,7 @@ import { addWindowSizeListener, getBreakpointValue } from '../utilities/responsi
 
 const StyledFigure = styled.figure`
   width: ${({figWidth}) => figWidth};
-  margin: 10px 0;
+  margin: 10px auto;
   display: grid;
 
   & img {
