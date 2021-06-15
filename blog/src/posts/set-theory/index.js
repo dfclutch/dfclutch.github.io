@@ -6,7 +6,7 @@ import { SectionHeader } from "../../post-components/SectionHeader";
 
 export default {
   title: "Set Theory",
-  date: "",
+  date: "15 June, 2021",
   id: "set-theory",
   previewContent:
   <>
