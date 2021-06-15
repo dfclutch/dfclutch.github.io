@@ -43,7 +43,7 @@ export default {
         ]}
       />
       <p> 
-        The ruleset is simple: cards are layed down 12 at a time, players search the field for a <Mono>Set</Mono>, replace the 3 cards with new ones from the deck, whoever has the most <Mono>Sets</Mono> at the end of the deck wins.
+        The ruleset is simple: cards are layed down 12 at a time, players search the field for a <Mono>Set</Mono>, if the players agree it is a <Mono>Set</Mono> the cards are removed and replaced 3 cards with new cards from the deck. Whoever has the most <Mono>Sets</Mono> at the end of the deck wins.
       </p>
       <p>
         The more complicated piece is the definition of a <Mono>Set</Mono>. First, we must define the cards. A Card can be defined by 4 properties:
@@ -55,7 +55,7 @@ export default {
         <li>Fill of the symbols <Mono>[Empty, Shaded, Solid]</Mono></li>
       </ul>
       <p>
-        So we could define this card as <Mono>[3, Green, Diamond, Shaded]</Mono>. Note that each attribute has 3 possible values. The deck contains one of each card, leading to <Mono>3 x 3 x 3 x 3 = 81</Mono> total cards.
+        So we could define a card as <Mono>[3, Green, Diamond, Shaded]</Mono>. Note that each attribute has 3 possible values. The deck contains one of each card, leading to <Mono>3 x 3 x 3 x 3 = 81</Mono> total cards.
       </p>
       <p>
         Finally a <Mono>Set</Mono> is <em>three cards where for each of the 4 properties, all three cards have either the same value or all different values.</em> For example the following three cards are a <Mono>Set</Mono>:
@@ -93,7 +93,7 @@ export default {
           ]}
         />
         <p>
-        <Mono>Maximal Sets</Mono> are pretty tough to spot in games. They don't register very well as having any relating properites so in a fast-paced game I usually don't pick them out first. A suggested rule addition would be to assign extra points for both finding and successfully identifying a <Mono>Maximal Set</Mono>
+        <Mono>Maximal Sets</Mono> are pretty tough to spot in games. They don't register very well as having any relating properites so in a fast-paced game I usually don't pick them out first. A suggested rule addition would be to assign extra points for both finding and successfully identifying a <Mono>Maximal Set</Mono>.
         </p>
         <p>
           The next logical step then is to define a <Mono>Minimal Set</Mono>. This should be the <Mono>Set</Mono> of 3 identical cards - where all properties are have the same values. Due to the structure of the deck, there's only one of each card. So, we say a <Mono>Minimal Set</Mono> is a <Mono>Set</Mono>  where all but one of the properites are identical. These lead to the most aesthetic and easily identifiable <Mono>Sets</Mono> in the game:
