@@ -21,8 +21,8 @@ function Projects() {
         title="Graph Algorithms"
       />
       <Project
-        description="Basic fullstack app for recording coffee recipes."
-        link="http://java-docs.herokuapp.com"
+        description="Basic fullstack app for recording coffee recipes. currently being rewritten"
+        link="https://github.com/dfclutch/javadocs"
         title="Java Docs"
       />
     </>
