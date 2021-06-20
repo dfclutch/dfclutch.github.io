@@ -6,7 +6,7 @@ export default {
   title: "Columbus Park of Roses",
   id: "park-of-roses",
   previewContent: "Some pics from my recent visit and an awesome general plan from 1952.",
-  date: "",
+  date: "20 June, 2021",
   content: (
     <>
       <p>
