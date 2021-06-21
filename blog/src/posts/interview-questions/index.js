@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SectionHeader } from "../../post-components/SectionHeader";
+import SectionHeader from "../../post-components/SectionHeader";
 import { Mono } from "../../post-components/Mono";
 
 export default {

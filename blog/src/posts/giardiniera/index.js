@@ -39,7 +39,7 @@ export default {
         The vegetables are covered in a 3% (by weight) saltwater solution. I use 8 cups of water (1920g) and then 3% (~60g) salt to cover my vegetables. The time to complete the fermentation is at least 3 days, up to a week, but it varies. I don't think the exact day is very critical. I pulled it when the color had muted significantly and most of the vegetables sank to the bottom.
       </p>
       <Figure
-        src="./img/giar-start-2.jpg"
+        src="./img/giardiniera/start-2.jpg"
         alt="Beginning of Giardiniera fermentation"
         caption={`
           At the beginning, most of the contents float. In my experience, most of the vegetables will sink to the bottom by the end of the fermentation.
@@ -53,7 +53,7 @@ export default {
         ]}
       />
       <Figure
-          src="./img/giar-start.jpg"
+          src="./img/giardiniera/start.jpg"
           alt="Close up view of beginning"
           breakpoints={[
             { w: 600, v: '100%' },
@@ -70,7 +70,7 @@ export default {
         If I were to change these ingredients at all I would definitely remove the fresh parsely. Fresh herbs react poorly to the fermentation. A variation would be to go more herbaceous with dried Rosemary, sage, {"&"} thyme. I think in that case I would drop any hot peppers.
       </p>
       <Figure
-          src="./img/giar-bottled.jpg"
+          src="./img/giardiniera/bottled.jpg"
           alt="Bottled giardiniera"
           breakpoints={[
             { w: 600, v: '100%' },
@@ -84,7 +84,7 @@ export default {
         I bottled mine in mason jars. They keep for several weeks in the fridge. This stuff goes great on a sandwhich, salad, hotdog, etc. The brine is also good anywhere you need some salty, acidic liquid but brings a bit of funk. I've added a bit when bringing together a pasta sauce in place of something like wine or lemon juice.
       </p>
       <Figure
-          src="./img/giar-sandwich.jpg"
+          src="./img/giardiniera/sandwich.jpg"
           alt="Giardiniera on a sandwhich"
           breakpoints={[
             { w: 2000, v: '100%' },

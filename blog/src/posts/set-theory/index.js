@@ -2,7 +2,7 @@ import React from "react";
 import Figure from "../../post-components/Figure";
 
 import { Mono } from "../../post-components/Mono";
-import { SectionHeader } from "../../post-components/SectionHeader";
+import SectionHeader from "../../post-components/SectionHeader";
 
 export default {
   title: "Set Theory",
@@ -19,7 +19,7 @@ export default {
         There's this card game called <Mono>Set</Mono>. I first heard about it in a web apps project class I took during my 3rd year of undergrad. We had to build a web version of the game using Ruby. When I was working on the game, I got into playing an existing online version for a few weeks, it's pretty addictive. A year or so later I found an IRL version of the game in my parent's basement. This older box design is great:
       </p>
       <Figure
-        src='./img/set-box.jpg'
+        src='./img/set/box.jpg'
         alt='the Set game box'
         breakpoints={[
           { w: 1000, v: '100%' },
@@ -35,7 +35,7 @@ export default {
         The deck is comprised of 81-cards, each with a certain number of symbols in different colors, fill patterns, and shapes.
       </p>
       <Figure
-        src='./img/set-field.jpg'
+        src='./img/set/field.jpg'
         alt='Assorted Set Cards'
         breakpoints={[
           { w: 1000, v: '100%' },
@@ -66,7 +66,7 @@ export default {
           <li><Mono>[3, Red, Oval, Solid]</Mono></li>
         </ul>
         <Figure
-          src='./img/set-valid.jpg'
+          src='./img/set/valid.jpg'
           alt='A valid Set of cards'
           breakpoints={[
             { w: 1000, v: '100%' },
@@ -85,7 +85,7 @@ export default {
         So now that we are all <Mono>Set</Mono> masters, let's do some meta-analysis of the interesting properties of the game. One thing Computer Scientists and Mathematicians love doing is assigning names to things. A phenomenon I came up with early on was the idea  of the <Mono>Maximal Set</Mono>: where all four properites have 3 different values. In other words, the cards of the <Mono>Set</Mono> couldn't get any more different. This <Mono>Set</Mono> is maximal:
       </p>
         <Figure
-          src='./img/set-maximal.jpg'
+          src='./img/set/maximal.jpg'
           alt='A maximal Set of cards'
           breakpoints={[
             { w: 1000, v: '100%' },
@@ -99,7 +99,7 @@ export default {
           The next logical step then is to define a <Mono>Minimal Set</Mono>. This should be the <Mono>Set</Mono> of 3 identical cards - where all properties are have the same values. Due to the structure of the deck, there's only one of each card. So, we say a <Mono>Minimal Set</Mono> is a <Mono>Set</Mono>  where all but one of the properites are identical. These lead to the most aesthetic and easily identifiable <Mono>Sets</Mono> in the game:
         </p>
         <Figure
-          src='./img/set-minimal.jpg'
+          src='./img/set/minimal.jpg'
           alt='A minimal Set of cards'
           breakpoints={[
             { w: 1000, v: '100%' },
@@ -128,7 +128,7 @@ export default {
           Here's a vague sketch of what a validation algorithm for a single propery looks like:
         </p>
         <Figure
-          src='./img/set-machine.jpg'
+          src='./img/set/machine.jpg'
           alt='A sketch of a Turing Machine to validate a set'
           breakpoints={[
             { w: 1000, v: '75%' },

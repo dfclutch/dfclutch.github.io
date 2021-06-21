@@ -32,7 +32,7 @@ export default {
         welcoming, and one of Chipotle's key brand identifiers: transparent.
       </p>
       <Figure
-        src="./img/chipotle-interior.jpg"
+        src="./img/chipotle/chipotle-interior.jpg"
         alt="Chipotle Mexican Restaurant interior"
       />
       <p>
@@ -48,12 +48,12 @@ export default {
         kitchen, bathroom and fireplace.
       </p>
       <Figure
-        src="./img/farnsworth-house-exterior.jpg"
+        src="./img/chipotle/farnsworth-house-exterior.jpg"
         alt="Exterior view of the Farnsworth House"
         caption="The Farnsworth House, a floating box of a building."
       />
       <Figure
-        src="./img/farnsworth-house-interior.jpg"
+        src="./img/chipotle/farnsworth-house-interior.jpg"
         alt="Interior view of the Farnsworth House"
         caption="The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box."
       />
@@ -79,7 +79,7 @@ export default {
       <p>Another early piece of Chipotle design is the chair:</p>
 
       <Figure
-        src="./img/chipotle-chair.jpg"
+        src="./img/chipotle/chipotle-chair.jpg"
         alt="The Chipotle Chair"
       />
       <p>
@@ -94,13 +94,13 @@ export default {
         Cottage.
       </p>
       <Figure
-        src="./img/peterson-interior.jpg"
+        src="./img/chipotle/peterson-interior.jpg"
         alt="Peterson Cottage Interior"
         caption="The dining chairs referenced in the design of the Chipotle chair."
       />
 
       <Figure
-        src="./img/peterson-exterior.jpg"
+        src="./img/chipotle/peterson-exterior.jpg"
         alt="Peterson Cottage"
         caption="Seth Peterson Cottage, Reedsburg, WI"
       />
@@ -116,14 +116,14 @@ export default {
       </p>
 
       <Figure
-        src="./img/peterson-fireplace.jpg"
+        src="./img/chipotle/peterson-fireplace.jpg"
         alt="Peterson Cottage fireplace lounge chairs"
         caption="Peterson Cottage fireplace lounge chairs, shorter, wider, more
         reclined versions of the dining chairs."
       />
 
       <Figure
-        src="./img/flw-chairs.jpg"
+        src="./img/chipotle/flw-chairs.jpg"
         alt="Frank Lloyd Wright chairs"
         caption="Wright designed chairs from the Clarence Sondern House exhibiting a similar leg design."
         breakpoints={[
@@ -149,7 +149,7 @@ export default {
       </p>
 
       <Figure
-        src="./img/form-chair.jpg"
+        src="./img/chipotle/form-chair.jpg"
         alt="Form chair"
         caption="The form chair."
         breakpoints={[
@@ -179,7 +179,7 @@ export default {
       </p>
 
       <Figure
-        src="./img/form-chair-2.jpg"
+        src="./img/chipotle/form-chair-2.jpg"
         alt="Form chair"
         breakpoints={[
           { w: 400, v: '100%' },
@@ -187,7 +187,7 @@ export default {
         ]}
       />
       <Figure
-        src="./img/form-stamp.jpg"
+        src="./img/chipotle/form-stamp.jpg"
         alt="Form stamp"
         caption="The stamp Sauer used to identify his chairs."
         breakpoints={[
