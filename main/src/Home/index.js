@@ -7,7 +7,7 @@ function Home() {
       <Logo src="./img/logotype.png"/>
       <About>
         <p>
-          Building React applications at <a href="http://www.xant.ai" target="_blank">Xant</a>
+          Frontend software engineer at <a href="http://www.xant.ai" target="_blank">Xant</a>
         </p>
         <p>
           Pennsylvania Native, Ohio State CSE Alumnus, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer
@@ -15,6 +15,8 @@ function Home() {
         <p>
           Living in Columbus, OH
         </p>
+        <a href="http://dfclutch.github.io/blog">Read my blog!</a>
+        <br/>
         <a href="mailto:dwfiller@gmail.com">dwfiller@gmail.com</a>
       </About>
     </>
