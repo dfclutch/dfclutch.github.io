@@ -9,13 +9,15 @@ const PreviewContainer = styled.div`
   font-size: 16px;
   cursor: pointer;
 
-  &:hover {
-    background-color: ${colors.lightGrey};
+  ${() => (window.mobileCheck() ? "" : `
+    &:hover {
+      background-color: ${colors.lightGrey};
 
-    > h2 {
-      color: ${colors.brand};
+      > h2 {
+        color: ${colors.brand};
+      }
     }
-  }
+  `)};
 
   > p {
     color: black;
