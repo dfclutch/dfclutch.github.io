@@ -1,6 +1,6 @@
 import React from "react";
-import SectionHeader from '../../post-components/SectionHeader';
-import Figure from "../../post-components/Figure";
+import SectionHeader from '../post-components/SectionHeader';
+import Figure from "../post-components/Figure";
 
 export default {
   title: "Columbus Park of Roses",
@@ -25,14 +25,36 @@ export default {
       <p>
         The plan differs from the current state of the park. I haven't been able to determine if this is a result of updates or if the plan wasn't implemented exactly. Here are some differences I can spot:
       </p>
-      <SectionHeader>Administration Building</SectionHeader>
-      
       <p>
-        <ul>
-          <li>The Ampitheater/gazebo is not drawn, instead the area is labeled as a lilac garden</li>
-          <li>There are several bathrooms in the drawing that don't exist</li>
-          <li>The children's garden was moved</li>
-        </ul>
+        Missing administration building:
+      </p>
+      <Figure
+        alt='drawing of an admin building'
+        src='./img/park-of-roses/admin-detail.png'
+      />
+      <Figure
+        alt='satellite image of an admin building'
+        src='./img/park-of-roses/admin-sat.png'
+      />
+      <p>Current ampitheater/gazebo is labeled as a lilac garden, also note missing restroom:</p>
+      <Figure
+        alt='drawing of a lilac garden'
+        src='./img/park-of-roses/lilac-detail.png'
+      />
+      <Figure
+        alt='satellite image of missing lilac garden'
+        src='./img/park-of-roses/lilac-sat.png'
+      />
+      <p>Children's Garden moved and expanded:</p>
+      <Figure
+        alt='drawing of the childrens garden'
+        src='./img/park-of-roses/children-detail.png'
+      />
+      <Figure
+        alt='satellite image of moved childrens garden'
+        src='./img/park-of-roses/children-sat.png'
+      />
+      <p>
         Of note are the dotted lines south of the garden representing the banks of the ravine. They give a good indication of the relationship between the garden meadow and the adjacent ravine.
       </p>
       <p>

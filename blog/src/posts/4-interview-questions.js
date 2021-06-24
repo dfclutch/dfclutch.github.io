@@ -1,7 +1,7 @@
 import React from "react";
 
-import SectionHeader from "../../post-components/SectionHeader";
-import { Mono } from "../../post-components/Mono";
+import SectionHeader from "../post-components/SectionHeader";
+import { Mono } from "../post-components/Mono";
 
 export default {
   title: "Do I Even Want to Work Here?",

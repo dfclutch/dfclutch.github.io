@@ -1,12 +1,14 @@
-import first from "./first";
-import chipotle from "./chipotle";
-import giardiniera from './giardiniera';
-import interview_questions from './interview-questions';
-import set_theory from './set-theory';
-import parkOfRoses from "./park-of-roses";
-import lens from "./lens";
+import first from "./1-first";
+import chipotle from "./2-chipotle";
+import giardiniera from './3-giardiniera';
+import interview_questions from './4-interview-questions';
+import set_theory from './5-set-theory';
+import parkOfRoses from "./6-park-of-roses";
+import lens from "./7-lens";
+import reactComponents from './8-formidable-components-article';
 
 const posts = [
+  reactComponents,
   lens,
   parkOfRoses,
   set_theory,

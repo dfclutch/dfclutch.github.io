@@ -1,8 +1,8 @@
 import React from "react";
-import Figure from "../../post-components/Figure";
 
-import { Mono } from "../../post-components/Mono";
-import SectionHeader from "../../post-components/SectionHeader";
+import Figure from "../post-components/Figure";
+import { Mono } from "../post-components/Mono";
+import SectionHeader from "../post-components/SectionHeader";
 
 export default {
   title: "Set Theory",
@@ -55,10 +55,13 @@ export default {
         <li>Fill of the symbols <Mono>[Empty, Shaded, Solid]</Mono></li>
       </ul>
       <p>
-        So we could define a card as <Mono>[3, Green, Diamond, Shaded]</Mono>. Note that each attribute has 3 possible values. The deck contains one of each card, leading to <Mono>3 x 3 x 3 x 3 = 81</Mono> total cards.
+        So we could define a card as <Mono>[3, Green, Diamond, Shaded]</Mono>. Note that each property has 3 possible values. The deck contains one of each card, leading to <Mono>3 x 3 x 3 x 3 = 81</Mono> total cards.
       </p>
       <p>
-        Finally a <Mono>Set</Mono> is <em>three cards where for each of the 4 properties, all three cards have either the same value or all different values.</em> For example the following three cards are a <Mono>Set</Mono>:
+        A <Mono>Card</Mono> has 4 <Mono>properties</Mono> each with 3 possible <Mono>values</Mono>.
+      </p>
+      <p>
+        Finally, a <Mono>Set</Mono> is three cards. Between those three cards, for each of the 4 properties, all the cards have either the same value or 3 different values. For example the following three cards are a <Mono>Set</Mono>:
       </p>
         <ul>
           <li><Mono>[3, Purple, Squiggle, Solid]</Mono></li>
@@ -74,15 +77,54 @@ export default {
           ]}
         />
       <p>
-        The <em>number</em> is all the same, the <em>color</em> is all different, the <em>shape</em> is all different, and the <em>fill</em> is all the same. Another way to think about it is that for any of the properties you can't have 2 values the same and one different. 
+        The <em>number</em>s on each card are all the same, the <em>color</em>s of each card are all different, the <em>shape</em>s are all different, and the <em>fill</em>s are all the same.
       </p>
       <p>
-        I would be impressed if anyone picked that up on the first read. The best way to get it is to <a href="https://smart-games.org/en/set/start">Play a few games and figure it out.</a>
+        Here are a few more examples. Try to work out why each is a <Mono>Set</Mono> in your head. I usually end up going through one property at a time:
+      </p>
+      <p>
+        Valid Sets:
+        <ul>
+          <li><Mono>[1, Purple, Squiggle, Solid]</Mono></li>
+          <li><Mono>[2, Green, Squiggle, Shaded]</Mono></li>
+          <li><Mono>[3, Red, Squiggle, Empty]</Mono></li>
+        </ul>
+        <ul>
+          <li><Mono>[2, Green, Squiggle, Solid]</Mono></li>
+          <li><Mono>[3, Purple, Oval, Empty]</Mono></li>
+          <li><Mono>[1, Red, Diamond, Shaded]</Mono></li>
+        </ul>
+        <ul>
+          <li><Mono>[3, Purple, Squiggle, Solid]</Mono></li>
+          <li><Mono>[3, Purple, Squiggle, Shaded]</Mono></li>
+          <li><Mono>[3, Purple, Squiggle, Empty]</Mono></li>
+        </ul>
+      </p>
+      <p>
+        Invalid Sets:
+        <ul>
+          <li><Mono>[2, Purple, Squiggle, Solid]</Mono></li>
+          <li><Mono>[2, Green, Oval, Shaded]</Mono></li>
+          <li><Mono>[3, Red, Oval, Empty]</Mono></li>
+        </ul>
+        <ul>
+          <li><Mono>[2, Green, Squiggle, Solid]</Mono></li>
+          <li><Mono>[3, Purple, Oval, Empty]</Mono></li>
+          <li><Mono>[1, Green, Diamond, Shaded]</Mono></li>
+        </ul>
+        <ul>
+          <li><Mono>[3, Purple, Squiggle, Solid]</Mono></li>
+          <li><Mono>[2, Purple, Diamond, Shaded]</Mono></li>
+          <li><Mono>[1, Purple, Squiggle, Empty]</Mono></li>
+        </ul>
+      </p>
+      <p>
+        I would be impressed if anyone picked that up on the first read. I find it difficult to explain in text. The best way to get it is to <a href="https://smart-games.org/en/set/start">play a few games and figure it out.</a>
       </p>
       
       <SectionHeader>The Properties</SectionHeader>
       <p>
-        So now that we are all <Mono>Set</Mono> masters, let's do some meta-analysis of the interesting properties of the game. One thing Computer Scientists and Mathematicians love doing is assigning names to things. A phenomenon I came up with early on was the idea  of the <Mono>Maximal Set</Mono>: where all four properites have 3 different values. In other words, the cards of the <Mono>Set</Mono> couldn't get any more different. This <Mono>Set</Mono> is maximal:
+        So now that we are all <Mono>Set</Mono> masters, let's define some interesting types of <Mono>Sets</Mono>. The first special case is a <Mono>Maximal Set</Mono>: a <Mono>Set</Mono> where all four properites have 3 different values. In other words, the cards of the <Mono>Set</Mono> couldn't get any more different. This <Mono>Set</Mono> is maximal:
       </p>
         <Figure
           src='./img/set/maximal.jpg'
@@ -119,6 +161,9 @@ export default {
 
         <SectionHeader>Computation</SectionHeader>
         <p>
+          Naturally, I started thinking about the <a href="https://en.wikipedia.org/wiki/Computability">computability</a> of validating a <Mono>Set</Mono>. 
+        </p>
+        <p>
           Time for some real CS: let's analyze <Mono>Set</Mono> validation. I was thinking about what complexity class this problem would fit into. This means identifying which types of abstract computation machines can correctly validate a <Mono>Set</Mono>.
         </p>
         <p>
@@ -136,7 +181,7 @@ export default {
           ]}
         />
         <p>
-          As it turns out, you don't need a Turing Machine at all. Since there is a finite number of possible <Mono>Sets</Mono>, a Finite State Automata can vaildate a <Mono>Set</Mono>. This machine is pretty brute-force. Since they don't have built-in memory devices, the only way to remember something is by changing state. So, to record the value of an attribute, you must branch. The machine branches 12 times (one for each value), each time branching into 3, building a tree with about <Mono>3^12 = 531441</Mono> states. This number can be reduced in the last layer by collapsing all success states into one. This machine can easily modified to identify our different types of <Mono>Sets</Mono> (Maximal, Minimal), by just changing the acceptance states.
+          As it turns out, you don't need a Turing Machine at all. Since there is a finite number of possible <Mono>Sets</Mono>, a Finite State Automata can vaildate a <Mono>Set</Mono>. This machine is pretty brute-force. Since they don't have built-in memory devices, the only way to remember something is by changing state. So, to record the value of a property, you must branch. The machine branches 12 times (one for each value), each time branching into 3, building a tree with about <Mono>3^12 = 531441</Mono> states. This number can be reduced in the last layer by collapsing all success states into one. This machine can easily modified to identify our different types of <Mono>Sets</Mono> (Maximal, Minimal), by just changing the acceptance states.
         </p>
         <p>
           So there you go, the set of <Mono>Sets</Mono> forms a Regular language, you've just got to build a pretty huge machine.

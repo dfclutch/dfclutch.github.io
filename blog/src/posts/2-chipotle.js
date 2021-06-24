@@ -1,6 +1,6 @@
 import React from "react";
 
-import Figure from "../../post-components/Figure";
+import Figure from "../post-components/Figure";
 
 export default {
   title: "Chipotle Design Influences",
