@@ -16,7 +16,7 @@ export default {
         This garden is a standard that I think all public spaces should reach for. Importantly, it's completely free and open to the public. 
       </p>
       <p>
-        While reading <a>the Wikipedia entry</a> on the park, I found this landscape plan. It dates to 1952, the year the park was built. I'm a sucker for maps and architectural drawings (look at that title font!), so of course I had to find the source image. It's available at full resolution from the <a href="https://digital-collections.columbuslibrary.org/digital/collection/memory/id/13461">Columbus Metroplitan Library Collection</a>. You'll want to <em>right-click {">"} Open image in new tab</em> and zoom in on this one:z
+        While reading <a>the Wikipedia entry</a> on the park, I found this landscape plan. It dates to 1952, the year the park was built. I'm a sucker for maps and architectural drawings (look at that title font!), so of course I had to find the source image. It's available at full resolution from the <a href="https://digital-collections.columbuslibrary.org/digital/collection/memory/id/13461">Columbus Metroplitan Library Collection</a>. You'll want to <em>right-click {">"} Open image in new tab</em> and zoom in on this one.
       </p>
       <Figure
         alt='General plan of the Park of Roses'
