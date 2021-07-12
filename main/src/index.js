@@ -24,8 +24,8 @@ function App() {
             <Logo src="./img/logotype.png"/>
             <p>
             {'Frontend software engineer at '}
-                <Link href="http://www.xant.ai">
-                    Xant
+                <Link href="http://www.spiff.com">
+                    Spiff
                 </Link>
             </p>
             <p>

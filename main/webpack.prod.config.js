@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/index.js',
   mode: 'production',
   stats: 'errors-warnings',
   output: {
