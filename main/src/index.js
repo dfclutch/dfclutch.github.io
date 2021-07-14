@@ -29,10 +29,10 @@ function App() {
                 </Link>
             </p>
             <p>
-            Pennsylvania Native, Ohio State CSE Alumnus, JavaScript evangelist, Backpacker, Guitar-player, Coffee Maker, Map Drawer
+            Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, guitarist, espresso brewer, digital cartographer
             </p>
             <p>
-            Living in Columbus, OH
+            Living in beautiful, downtown Columbus, OH
             </p>
 
             <section>
@@ -53,7 +53,11 @@ function App() {
                     title="Graph Algorithms"
                 />
                 <Project
-                    description="Basic fullstack app for recording coffee recipes. currently being rewritten"
+                    description={
+                        <>
+                            Basic fullstack app for recording coffee recipes. Currently being rewritten using the <a href="https://www.serverless.com/">Serverless</a> framework.
+                        </>
+                    }
                     link="https://github.com/dfclutch/javadocs"
                     title="Java Docs"
                 />
