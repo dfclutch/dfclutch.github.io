@@ -12,7 +12,7 @@ import {
 } from './styles.js';
 
 function App() {
-    const [ isMobile, setIsMobile] = useState(mobileCheck());
+    const [isMobile, setIsMobile] = useState(mobileCheck());
 
     window.addEventListener(
         'resize',
@@ -21,22 +21,27 @@ function App() {
 
     return (
         <AppContainer isMobile={isMobile}>
-            <Logo src="./img/logotype.png"/>
+            <Logo src="./img/logotype.png" />
             <p>
-            {'Frontend software engineer at '}
+                {'Frontend software engineer at '}
                 <Link href="http://www.spiff.com">
                     Spiff
                 </Link>
             </p>
             <p>
-            Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, guitarist, espresso brewer, digital cartographer
+                Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, guitarist, espresso brewer, digital cartographer
             </p>
             <p>
-            Living in beautiful, downtown Columbus, OH
+                Living in beautiful, downtown Columbus, OH
             </p>
 
             <section>
                 <SectionHeader>Projects</SectionHeader>
+                <Project
+                    description="A microlibrary with 0 dependencies for generating random data of all kinds. Published on npm."
+                    link="https://www.npmjs.com/package/rndom"
+                    title="rndom"
+                />
                 <Project
                     description="D3js-based interactive graphical simulation based on the SIR epidemic model."
                     link="http://dfclutch.github.io/apps/epsim"
@@ -93,10 +98,10 @@ function App() {
                 </BigLink>
                 <br />
             </section>
-                    
+
             <GlobalStyle />
         </AppContainer>
     );
 }
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
