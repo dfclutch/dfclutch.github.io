@@ -32,7 +32,7 @@ export default {
         welcoming, and one of Chipotle's key brand identifiers: transparent.
       </p>
       <Figure
-        src="./img/chipotle/chipotle-interior.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/chipotle-interior.jpg"
         alt="Chipotle Mexican Restaurant interior"
       />
       <p>
@@ -48,12 +48,12 @@ export default {
         kitchen, bathroom and fireplace.
       </p>
       <Figure
-        src="./img/chipotle/farnsworth-house-exterior.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/farnsworth-house-exterior.jpg"
         alt="Exterior view of the Farnsworth House"
         caption="The Farnsworth House, a floating box of a building."
       />
       <Figure
-        src="./img/chipotle/farnsworth-house-interior.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/farnsworth-house-interior.jpg"
         alt="Interior view of the Farnsworth House"
         caption="The plywood core of the Farnsworth House referenced by Chipotle's large plywood interior structures. A box within a box."
       />
@@ -79,7 +79,7 @@ export default {
       <p>Another early piece of Chipotle design is the chair:</p>
 
       <Figure
-        src="./img/chipotle/chipotle-chair.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/chipotle-chair.jpg"
         alt="The Chipotle Chair"
       />
       <p>
@@ -94,13 +94,13 @@ export default {
         Cottage.
       </p>
       <Figure
-        src="./img/chipotle/peterson-interior.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/peterson-interior.jpg"
         alt="Peterson Cottage Interior"
         caption="The dining chairs referenced in the design of the Chipotle chair."
       />
 
       <Figure
-        src="./img/chipotle/peterson-exterior.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/peterson-exterior.jpg"
         alt="Peterson Cottage"
         caption="Seth Peterson Cottage, Reedsburg, WI"
       />
@@ -116,20 +116,20 @@ export default {
       </p>
 
       <Figure
-        src="./img/chipotle/peterson-fireplace.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/peterson-fireplace.jpg"
         alt="Peterson Cottage fireplace lounge chairs"
         caption="Peterson Cottage fireplace lounge chairs, shorter, wider, more
         reclined versions of the dining chairs."
       />
 
       <Figure
-        src="./img/chipotle/flw-chairs.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/flw-chairs.jpg"
         alt="Frank Lloyd Wright chairs"
         caption="Wright designed chairs from the Clarence Sondern House exhibiting a similar leg design."
         breakpoints={[
           { w: 1000, v: '100%' },
           { w: 2000, v: '75%' },
-          { w: Infinity, v: '800px'},
+          { w: Infinity, v: '800px' },
         ]}
       />
       <p>
@@ -149,13 +149,13 @@ export default {
       </p>
 
       <Figure
-        src="./img/chipotle/form-chair.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/form-chair.jpg"
         alt="Form chair"
         caption="The form chair."
         breakpoints={[
           { w: 900, v: '100%' },
           { w: 1100, v: '80%' },
-          { w: Infinity, v: '560px'},
+          { w: Infinity, v: '560px' },
         ]}
       />
       <p>
@@ -179,21 +179,21 @@ export default {
       </p>
 
       <Figure
-        src="./img/chipotle/form-chair-2.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/form-chair-2.jpg"
         alt="Form chair"
         breakpoints={[
           { w: 400, v: '100%' },
-          { w: Infinity, v: '400px'},
+          { w: Infinity, v: '400px' },
         ]}
       />
       <Figure
-        src="./img/chipotle/form-stamp.jpg"
+        src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/form-stamp.jpg"
         alt="Form stamp"
         caption="The stamp Sauer used to identify his chairs."
         breakpoints={[
           { w: 600, v: '80%' },
           { w: 800, v: '60%' },
-          { w: Infinity, v: '400px'},
+          { w: Infinity, v: '400px' },
         ]}
       />
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Figure from "../post-components/Figure";
 
 const image = <Figure
-  src='./img/lens/lens.jpg'
+  src='https://ye-olde-blog.s3.amazonaws.com/lens.jpeg'
   alt='vintage Nikon lens with beautiful pastel colors'
   breakpoints={[{ w: Infinity, v: '75%' }]}
 />
