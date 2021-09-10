@@ -167,7 +167,7 @@ export default {
         Time for some real CS: let's analyze <Mono>Set</Mono> validation. I was thinking about what complexity class this problem would fit into. This means identifying which types of abstract computation machines can correctly validate a <Mono>Set</Mono>.
       </p>
       <p>
-        Initially, I thought that validation of a set would require a Turing Machine. Intuitively this makes sense: validation of a <Mono>Set</Mono> requires that you remember at least 2 values at once. A Turing Machine to complete this task would check the value for a property of the first card, check the value of the next card, and depending on if those are the same or different, validate the final value. Repeat 3 times, once for each property. Traversing back and forth along a string is a Turing Machine thing, and I thought this was necessary.
+        Initially, I thought that validation of a set would require a Turing Machine. Intuitively this makes sense: to validate a <Mono>Set</Mono> you need to remember at least 2 values. The way a human validates a set feels very <em>Turing-y</em>. You have to remember a few values at once, go back and forth across the set of cards, etc. The setup of a Turing machine feels built for this task.
       </p>
       <p>
         Here's a vague sketch of what a validation algorithm for a single propery looks like:
@@ -181,7 +181,7 @@ export default {
         ]}
       />
       <p>
-        As it turns out, you don't need a Turing Machine at all. Since there is a finite number of possible <Mono>Sets</Mono>, a Finite State Automata can vaildate a <Mono>Set</Mono>. This machine is pretty brute-force. Since they don't have built-in memory devices, the only way to remember something is by changing state. So, to record the value of a property, you must branch. The machine branches 12 times (one for each value), each time branching into 3, building a tree with about <Mono>3^12 = 531441</Mono> states. This number can be reduced in the last layer by collapsing all success states into one. This machine can easily modified to identify our different types of <Mono>Sets</Mono> (Maximal, Minimal), by just changing the acceptance states.
+        As it turns out, you don't need a Turing Machine at all. Since there is a finite number of possible <Mono>Sets</Mono>, you could build a Finite State Automata to vaildate a <Mono>Set</Mono>. FSAs don't have built-in memory devices, the only way to remember something is by changing state. So, to record the value of a property, you must branch. The machine branches 12 times (one for each value), each time branching into 3, building a tree with about <Mono>3^12 = 531441</Mono> states. This number can be reduced in the last layer by collapsing all success states into one. This machine can easily modified to identify our different types of <Mono>Sets</Mono> (Maximal, Minimal), by just changing the acceptance states.
       </p>
       <p>
         So there you go, the set of <Mono>Sets</Mono> forms a Regular language, you've just got to build a pretty huge machine.
