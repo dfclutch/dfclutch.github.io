@@ -36,6 +36,34 @@ function App() {
             </p>
 
             <section>
+                <SectionHeader>Links</SectionHeader>
+                <BigLink href="mailto:dwfiller@gmail.com">
+                    Email
+                </BigLink>
+                <br />
+                <BigLink href="https://dfclutch.github.io/dan-filler-resume.pdf">
+                    Resume
+                </BigLink>
+                <br />
+                <BigLink href="https://github.com/dfclutch">
+                    Github
+                </BigLink>
+                <br />
+                <BigLink href="https://www.linkedin.com/in/dan-filler/">
+                    LinkedIn
+                </BigLink>
+                <br />
+                <BigLink href="https://dfclutch.github.io/blog/#/">
+                    Blog
+                </BigLink>
+                <br />
+                <BigLink href="https://dfclutch.github.io/apps/drawings">
+                    Drawings
+                </BigLink>
+                <br />
+            </section>
+
+            <section>
                 <SectionHeader>Projects</SectionHeader>
                 <Project
                     description="A microlibrary with 0 dependencies for generating random data of all kinds. Published on npm."
@@ -66,39 +94,21 @@ function App() {
                     link="https://github.com/dfclutch/javadocs"
                     title="Java Docs"
                 />
+                <Project
+                    description={
+                        <>
+                            Basic fullstack app for recording coffee recipes. Currently being rewritten using the <a href="https://www.serverless.com/">Serverless</a> framework.
+                        </>
+                    }
+                    link="https://github.com/dfclutch/javadocs"
+                    title="Java Docs"
+                />
+                <Project
+                    description="CalTopo map gathering important data for backpackers in the Michaux State Forest"
+                    link="https://caltopo.com/m/7798"
+                    title="Backpacking Michaux"
+                />
             </section>
-            <section>
-                <SectionHeader>Links</SectionHeader>
-                <BigLink href="mailto:dwfiller@gmail.com">
-                    Email
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/dan-filler-resume.pdf">
-                    Resume
-                </BigLink>
-                <br />
-                <BigLink href="https://github.com/dfclutch">
-                    Github
-                </BigLink>
-                <br />
-                <BigLink href="https://www.linkedin.com/in/dan-filler/">
-                    LinkedIn
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/blog/#/">
-                    Blog
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/apps/drawings">
-                    Drawings
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/michaux/">
-                    Michaux
-                </BigLink>
-                <br />
-            </section>
-
             <GlobalStyle />
         </AppContainer>
     );
