@@ -104,8 +104,8 @@ function App() {
                     title="Java Docs"
                 />
                 <Project
-                    description="CalTopo map gathering important data for backpackers in the Michaux State Forest"
-                    link="https://caltopo.com/m/7798"
+                    description="Webpage gathering important data for backpackers and hikers in the Michaux State Forest"
+                    link="https://dfclutch.github.io/michaux"
                     title="Backpacking Michaux"
                 />
             </section>
