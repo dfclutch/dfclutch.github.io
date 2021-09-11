@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-      background-color: #dba20f;
+    background-color: ${({ bgColor }) => bgColor};
   }
 
   a {
@@ -43,7 +43,7 @@ export const AppContainer = styled.div`
         max-width: 100%;
       ` 
     : `  
-        max-width: 500px;
+        max-width: 600px;
         margin: auto;
 
         a:hover {
@@ -70,3 +70,18 @@ export const BigLink = styled(Link)`
 export const ProjectContainer = styled.div`
   margin-bottom: 10px;
 `;
+
+export const ColorPickerContainer = styled.div`
+  ${({ isMobile }) => isMobile ? `width: 90%;` : `width: 40%;`}
+  margin: 48px auto;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ColorPickerOption = styled.div`
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  background-color: ${({color}) => color};
+  ${({ selected }) => selected && "border: 1px solid white;"}
+`

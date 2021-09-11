@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack --watch --config webpack.prod.config.js"
+    "dev": "webpack --watch --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "webpack-cli": "^4.0.0"
   },
   "dependencies": {
+    "rndom": "^1.2.0",
     "styled-components": "^5.2.0"
   }
 }

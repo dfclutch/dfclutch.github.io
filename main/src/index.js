@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import rndom from "rndom";
 
 import { mobileCheck } from './mobile_check';
-import { Link, Project } from './components';
+import { ColorPicker, Link, Project } from './components';
 import {
     BigLink,
     AppContainer,
@@ -11,8 +12,20 @@ import {
     SectionHeader,
 } from './styles.js';
 
+const COLORS = [
+    "#353535",
+    "#eb4034",
+    "#254a3b",
+    "#3999cc",
+    "#ff9f38",
+    "#b4a4ba",
+    "#6324e0",
+    "#2aad79"
+]
+
 function App() {
     const [isMobile, setIsMobile] = useState(mobileCheck());
+    const [bgColor, setBgColor] = useState(COLORS[rndom.intBetween(0, COLORS.length)])
 
     window.addEventListener(
         'resize',
@@ -109,7 +122,16 @@ function App() {
                     title="Backpacking Michaux"
                 />
             </section>
-            <GlobalStyle />
+            <section>
+                <ColorPicker
+                    colors={COLORS}
+                    currentColor={bgColor}
+                    isMobile={isMobile}
+                    setColor={setBgColor}
+                />
+            </section>
+            
+            <GlobalStyle bgColor={bgColor}/>
         </AppContainer>
     );
 }

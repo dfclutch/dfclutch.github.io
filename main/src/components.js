@@ -2,7 +2,9 @@ import React from "react";
 
 import {
   ProjectContainer,
-  BigLink
+  BigLink,
+  ColorPickerContainer,
+  ColorPickerOption
 } from './styles';
 
 export function Link({
@@ -31,5 +33,20 @@ export function Project({
         { description }
       </p>
     </ProjectContainer>
+  );
+}
+
+export function ColorPicker({ colors, currentColor, isMobile, setColor }) {
+  return (
+    <ColorPickerContainer isMobile={isMobile} >
+      {colors.map(color => (
+        <ColorPickerOption
+          key={color}
+          selected={color === currentColor}
+          color={color}
+          onClick={() => setColor(color)}
+        />
+      ))}
+    </ColorPickerContainer>
   );
 }
