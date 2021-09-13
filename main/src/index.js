@@ -108,15 +108,6 @@ function App() {
                     title="Java Docs"
                 />
                 <Project
-                    description={
-                        <>
-                            Basic fullstack app for recording coffee recipes. Currently being rewritten using the <a href="https://www.serverless.com/">Serverless</a> framework.
-                        </>
-                    }
-                    link="https://github.com/dfclutch/javadocs"
-                    title="Java Docs"
-                />
-                <Project
                     description="Webpage gathering important data for backpackers and hikers in the Michaux State Forest"
                     link="https://dfclutch.github.io/michaux"
                     title="Backpacking Michaux"
