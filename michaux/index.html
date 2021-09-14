@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Michaux State Forest Recreation</title>
     <style>
+      html, body { margin: 0; }
+
+      #content {
+        width: 50%;
+        margin: auto;
+      }
+      
       h1, h2, h3, strong {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
@@ -28,12 +35,7 @@
       }
 
       p, .text, a, li {
-        font-size: 1.3rem;
-      }
-
-      #content {
-        width: 50%;
-        margin: auto;
+        font-size: 1.15rem;
       }
 
       a:link {
@@ -63,7 +65,6 @@
 
       .column {
         flex: 50%;
-        padding: 5px;
       }
       
       figure {
@@ -72,7 +73,7 @@
       }
 
       img {
-        width: 100%;
+        max-width: 100%;
       }
 
       figcaption {
@@ -80,10 +81,16 @@
         font-size: 1.1rem;
       }
 
+
+      iframe {
+        width: 100%;
+        border: none;
+      }
+
       @media only screen and (max-width: 600px) {
         #content {
-            width: 100%;
-            padding: 5px;
+          width: auto;
+          margin: 8px;
         }
 
         body {
@@ -104,13 +111,16 @@
       <hr>
       <h2>BACKGROUND</h2>
       <p>
-        The Michaux (mih-SHOW) State Forest is an 85,000 acre state-managed forest covering the majority of South Mountain in Pennsylvania. The Michaux is culturally, historically, and geographically important to the region. There are many remnants of the iron and logging industries, including preserved iron furnaces, most visibly at Caledonia and Pine Grove Furnace state parks. The Michaux is home to Penn State Mont Alto Campus, one of the finest and oldest forestry schools in the country. Because of this, there are ongoing forestry experiments throughout the forest. As with all the Pennsylvania state forests, the Michaux is a "working forest". It is actively logged, mined, and otherwise used for environmental resources. It offers critical public-use outdoors opportunities to the mid-atlantic region. 
+        The Michaux (mih-SHOW) State Forest is an 85,000 acre state-managed forest covering the majority of South Mountain in Pennsylvania. The Michaux is culturally, historically, and geographically important to the region. There are many remnants of the iron and logging industries, including preserved iron furnaces, most visibly at Caledonia and Pine Grove Furnace state parks. The Michaux is home to Penn State Mont Alto Campus, one of the finest and oldest forestry schools in the country. As with all the Pennsylvania state forests, the Michaux is a "working forest". It is actively logged, mined, and otherwise used for environmental resources. It offers critical public-use outdoors opportunities to the mid-atlantic region. 
       </p>
       <p>
-        South Mountain is the (poorly named) northern terminus range of the <a href="https://en.wikipedia.org/wiki/Great_Appalachian_Valley" target="_blank">Blue Ridge Mountains</a>. The Blue Ridge is a 600 mile mountain chain which includes the Smoky and Shenandoah ranges. South Mountain stretches from Dillsburg, PA south to the Potomac River near Harpers Ferry. The Blue Ridge is the eastern portion of the Appalachians and is separated from the rest of the Appalachians by a wide valley, known in general as the <a href="https://en.wikipedia.org/wiki/Great_Appalachian_Valley" target="_blank">Great Appalachian Valley.</a> The Great Valley extends south to Alabama and north into Canada, with each sub-section locally named (e.g. Shenandoah Valley). South Mountain specifically is bordered to the west by Cumberland and Hagerstown Valleys. The Blue Ridge is distinct from the rest of the Appalachians in both geography/topology and culture. The western portions of the Appalachians is made up of north-south oriented ridge and valley formations. The Blue Ridge is comprised of shorter, more irregular ridges at varied angles and more triangular peaks.
+        South Mountain is the (poorly named) northern terminus range of the <a href="https://en.wikipedia.org/wiki/Great_Appalachian_Valley" target="_blank">Blue Ridge Mountains</a>. The Blue Ridge is a 600 mile mountain chain which includes the Smoky and Shenandoah ranges. South Mountain stretches from Dillsburg, PA south to the Potomac River near Harpers Ferry. The Blue Ridge is the eastern portion of the Appalachians and is separated from the rest of the Appalachians by a wide valley, known in general as the <a href="https://en.wikipedia.org/wiki/Great_Appalachian_Valley" target="_blank">Great Appalachian Valley.</a> The Blue Ridge is distinct from the rest of the Appalachians in both topology and culture.
       </p>
       <p>
-        The Michaux offers some of the best backpacking and hiking in Pennsylvania. The forest has a dense trail network and excellent map availability. Camping is permitted anywhere in the forest (200' away from water, and you cannot stay more than one night in a spot without a free permit). There are many excellent already established <a href="#campsites">campsites</a> that should be used if possible. The Appalachian Trail runs 36 miles through the forest and provides an excellent central route north-south. The halfway point of the entire trail (1100 miles from both Springer Mtn., Georgia and Mt. Katahdin, Maine) is contained in the forest near Pine Grove Furnace.
+        The goal of this website is to archive my personal knowledge of backpacking in the Michaux. The Michaux offers some of the best backpacking in Pennsylvania. The forest has a dense trail network, excellent map availability, and open camping regulations (please read <a href="http://elibrary.dcnr.pa.gov/GetDocument?docId=1738468&DocName=StateForestRules.pdf" target="_blank">Section 21.117 of the State Forest Rules</a>). There are many excellent already established <a href="#campsites">campsites</a> that should be used if possible. The Appalachian Trail runs 36 miles through the forest and provides an excellent central route north-south. The halfway point of the entire trail (1100 miles from both Springer Mtn., Georgia and Mt. Katahdin, Maine) is contained in the forest near Pine Grove Furnace.
+      </p>
+      <p>
+
       </p>
       <div class="row">
         <div class="column">
@@ -133,6 +143,9 @@
         <ul>
           <li>
             <a href="https://www.dcnr.pa.gov/StateForests/FindAForest/Michaux/Pages/default.aspx" target="_blank">Michaux DCNR Homepage</a>
+          </li>
+          <li>
+            <a href="http://elibrary.dcnr.pa.gov/GetDocument?docId=1738468&DocName=StateForestRules.pdf">PA State Forest Rules and Regulations</a>
           </li>
           <li>
             <a href="http://elibrary.dcnr.pa.gov/GetDocument?docId=3253756&DocName=D01%20Michaux%20Public%20Use%20Map" target="_blank">Public Use Map (download)</a>
@@ -168,7 +181,7 @@
           <strong>Blaze:</strong> The colored markings, spray painted on trees, to denote the route of a trail.
         </li>
         <li>
-          <strong>Haul Road:</strong> A commonly used name for a logging road. Many have grown over and are simply grass paths through the trees, though some still have gravel/chipped shale surfaces.
+          <strong>Haul Road:</strong> Another name for a logging road. Many in the Michaux grown over and are simply grass paths through the trees, though some still have gravel/chipped shale surfaces.
         </li>
         <li>
           <strong>AT:</strong> Appalachian Trail. 2200 mile extremely famous long trail, 36 miles of which (including the halfway point in Pine Grove Furnace SP) are contained within the Michaux. The AT is the only trail blazed in white.
@@ -251,9 +264,9 @@
 
       <p>
         <h3 id="campsites">Campsites</h3>
-        <a href="https://caltopo.com/m/7798" target="_blank">Link to Map</a>
+        <iframe src="https://caltopo.com/m/7798" width="500" height="500"></iframe>
         <p>
-          This is an evolving map of campsites I personally know to exist in the forest. I have historically done a bad site recording all campsites I see, but on my previous few trips and all future visits, I will photograph each site I pass. Taking an iphone photo also stores the geolocation, which allows me to compile really accurate campsite positions.
+          This is an evolving map of campsites I personally know to exist in the forest. I have only started logging these over the past few trips so this set should grow. These are logged by taking a photo, which automatically tags the location.
         </p>
       </p>
 
