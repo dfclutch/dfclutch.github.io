@@ -15,16 +15,18 @@ const GalleryImage = styled.img`
 
 const Controls = styled.div`
   display: flex;
-  justify-items: space between;
+  justify-content: center;
 `;
 
+const BUTTON_WIDTH = 64;
+
 const Caption = styled.div`
-  width: 50%;
+  max-width: calc(100% - ${BUTTON_WIDTH * 2}px);
   color: ${colors.grey};
 `;
 
 const Button = styled.div`
-  width: 25%;
+  width: ${BUTTON_WIDTH}px;
   cursor: pointer;
   color: ${colors.grey};
 
@@ -50,7 +52,7 @@ export const Gallery = ({ images }) => {
 
   return (
     <GalleryWrapper>
-      <GalleryImage src={image.src} alt={image.alt} />
+      <GalleryImage src={image.src} alt={image.alt ? image.alt : image.caption} />
       <Controls>
         <Button
           onClick={() => {

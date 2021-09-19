@@ -36,7 +36,7 @@ function Figure({
     >
       <img
         src={src}
-        alt={alt}
+        alt={alt ? alt : caption}
       />
       {
         caption &&
