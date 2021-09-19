@@ -22,6 +22,7 @@ function App() {
           <Link to="/">
             <Title>Ye Olde Blogue</Title>
           </Link>
+          <h3>By <a href="https://dfclutch.github.io/">Dan Filler</a></h3>
           <div>
             <Switch>
               <Route path="/posts/:id" component={Post} />
