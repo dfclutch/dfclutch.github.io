@@ -6,8 +6,10 @@ import set_theory from './5-set-theory';
 import parkOfRoses from "./6-park-of-roses";
 import lens from "./7-lens";
 import reactComponents from './8-formidable-components-article';
+//import bocklin from './9-bocklin';
 
 const posts = [
+  //bocklin,
   reactComponents,
   lens,
   parkOfRoses,

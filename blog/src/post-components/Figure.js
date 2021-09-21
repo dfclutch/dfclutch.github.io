@@ -5,6 +5,7 @@ import { addWindowSizeListener, getBreakpointValue } from '../utilities/responsi
 
 const StyledFigure = styled.figure`
   width: ${({figWidth}) => figWidth};
+  max-width: 100%;
   margin: 10px auto;
   display: grid;
 
@@ -16,7 +17,7 @@ const StyledFigure = styled.figure`
   & figcaption {
     padding: 8px 0;
     font-family: "Vollkorn", serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: black;
   }
 `;
