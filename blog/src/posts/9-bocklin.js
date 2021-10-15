@@ -101,7 +101,7 @@ export default {
       />
 
       <p>
-        Galadriel is quite similar to, though a bit less creepy than, the typeface that American Horror Story uses: <a href="https://en.wikipedia.org/wiki/Willow_(typeface)" target="_blank">Willow</a>. Both feature high vertically positioned cross-members, but Willow has the tiny "O" character. <em>*shudder*</em>
+        Galadriel is quite similar to, though a bit less creepy than, the typeface that American Horror Story uses: <a href="https://en.wikipedia.org/wiki/Willow_(typeface)" target="_blank">Willow</a>. Both feature vertically high-positioned cross-members, but Willow has the tiny "O" character. <em>*shudder*</em>
       </p>
 
       <Figure
