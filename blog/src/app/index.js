@@ -4,14 +4,17 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Post from "./Routes/Post";
 import Feed from "./Routes/Feed";
 import { GlobalStyle, Content, Title } from "./styles";
-import { addWindowSizeListener, getBreakpointValue } from "../utilities/responsive";
+import {
+  addWindowSizeListener,
+  getBreakpointValue,
+} from "../utilities/responsive";
 import { CONTENT_BREAKPOINTS } from "./breakpoints";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
-  const [
-    contentWidth,
-    setContentWidth
-  ] = useState(getBreakpointValue(CONTENT_BREAKPOINTS));
+  const [contentWidth, setContentWidth] = useState(
+    getBreakpointValue(CONTENT_BREAKPOINTS)
+  );
   addWindowSizeListener(CONTENT_BREAKPOINTS, setContentWidth);
 
   return (
@@ -22,8 +25,11 @@ function App() {
           <Link to="/">
             <Title>Ye Olde Blogue</Title>
           </Link>
-          <h3>By <a href="https://dfclutch.github.io/">Dan Filler</a></h3>
+          <h3>
+            By <a href="https://dfclutch.github.io/">Dan Filler</a>
+          </h3>
           <div>
+            <ScrollToTop />
             <Switch>
               <Route path="/posts/:id" component={Post} />
               <Route path="/" component={Feed} />
