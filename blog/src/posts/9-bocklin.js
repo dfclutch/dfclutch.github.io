@@ -73,7 +73,7 @@ export default {
         typeface/type designer. B&#246;cklin is an <em>Art Nouveau</em> style
         typeface. The style focuses on highly decorative and artistic script
         fonts, often featuring extended serifs. For me, it evokes thoughts of
-        high fantasy novels or psychadelics. Reading about the Art Nouveau
+        high fantasy novels or psychedelics. Reading about the Art Nouveau
         movement led me to this amazing Wikipedia page:{" "}
         <a
           href="https://en.wikipedia.org/wiki/Art_Nouveau_posters_and_graphic_arts"
