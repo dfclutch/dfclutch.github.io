@@ -14,12 +14,12 @@ export default {
         almost every day as a part of my job. I can recognize a lot of
         typefaces, I know the terms like <em>ascenders</em> and <em>kerning</em>
         . Even with all that, I was completely stumped trying to identify a
-        familiar font that I never new the name of. Every so often I'd see a new
+        familiar font that I never knew the name of. Every so often I'd see a new
         example or think of a new adjective to search, but it took forever to
         actually get a result.
       </p>
       <p>
-        Here's some examples of variations and similar typefaces I've found:
+        Here's some examples of variations and similar typefaces I found along the way:
       </p>
       <Figure
         caption={<>Short North Tavern, Columbus, OH</>}
