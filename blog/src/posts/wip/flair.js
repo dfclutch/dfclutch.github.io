@@ -1,5 +1,5 @@
 import React from "react";
-import Figure from "../post-components/Figure";
+import Figure from "../../post-components/Figure";
 
 export default {
   title: "Flair Espresso",
