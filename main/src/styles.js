@@ -9,15 +9,15 @@ export const GlobalStyle = createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-family: Helvetica, Arial, sans-serif;
-      color: #fff;
+      color: ${({ color, isInverted }) => isInverted ? color : "white"};
   }
 
   body {
-    background-color: ${({ bgColor }) => bgColor};
+    background-color: ${({ color, isInverted }) => isInverted ? "white" : color};
   }
 
   a {
-    color: white;
+    color: ${({ color, isInverted }) => isInverted ? color : "white"};
     font-weight: bold;
     cursor: pointer;
   }
@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   p {
     text-align: justify;
     text-justify: inter-word;
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 `;
 
@@ -37,11 +37,11 @@ export const AppContainer = styled.div`
   position: relative;
   padding: 10px 0 20px;
 
-  ${({ isMobile }) => isMobile 
+  ${({ isMobile }) => isMobile
     ? `
         margin: 0 10px;
         max-width: 100%;
-      ` 
+      `
     : `  
         max-width: 600px;
         margin: auto;
@@ -52,10 +52,14 @@ export const AppContainer = styled.div`
   `}
 `;
 
-export const Logo = styled.img`
+export const LogoContainer = styled.div`
   display: block;
   width: 100%;
-  margin-bottom: 10px;
+  margin: 16px 0;
+  font-style: italic;
+  font-weight: 900;
+  font-size: ${({ isMobile }) => isMobile ? `140px` : `200px`};
+  line-height: 75%;
 `;
 
 export const SectionHeader = styled.h1`
@@ -74,14 +78,23 @@ export const ProjectContainer = styled.div`
 export const ColorPickerContainer = styled.div`
   ${({ isMobile }) => isMobile ? `width: 90%;` : `width: 40%;`}
   margin: 48px auto;
+  height: 26px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 26px;
 `;
 
 export const ColorPickerOption = styled.div`
   width: 18px;
   height: 18px;
   border-radius: 18px;
-  background-color: ${({color}) => color};
-  ${({ selected }) => selected && "border: 1px solid white;"}
+  margin: 0 4px;
+  background-color: ${({ color }) => color};
+  ${({ selected }) => selected && `
+    width: 10px;
+    height: 10px;
+    margin: 0 8px;
+  `}
 `

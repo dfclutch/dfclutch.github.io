@@ -8,24 +8,24 @@ import {
     BigLink,
     AppContainer,
     GlobalStyle,
-    Logo,
     SectionHeader,
 } from './styles.js';
+import { Logo } from './logo.jsx';
 
 const COLORS = [
-    "#353535",
-    "#eb4034",
-    "#254a3b",
-    "#3999cc",
-    "#ff9f38",
-    "#b4a4ba",
-    "#6324e0",
-    "#2aad79"
+    "#941d15", // red
+    "#BD5800", // orange
+    "#d1a000", // yellow
+    "#193b2d", // green
+    "#1c3a80", // blue
+    "#48295c", // purple
 ]
 
 function App() {
     const [isMobile, setIsMobile] = useState(mobileCheck());
-    const [bgColor, setBgColor] = useState(COLORS[rndom.intBetween(0, COLORS.length)])
+    console.log({ isMobile });
+    const [selectedColor, setSelectedColor] = useState(rndom.oneOf(COLORS))
+    const [isInverted, setIsInverted] = useState(false);
 
     window.addEventListener(
         'resize',
@@ -34,7 +34,7 @@ function App() {
 
     return (
         <AppContainer isMobile={isMobile}>
-            <Logo src="./img/logotype.png" />
+            <Logo isMobile={isMobile} />
             <p>
                 {'Frontend software engineer at '}
                 <Link href="http://www.spiff.com">
@@ -116,13 +116,16 @@ function App() {
             <section>
                 <ColorPicker
                     colors={COLORS}
-                    currentColor={bgColor}
+                    currentColor={selectedColor}
                     isMobile={isMobile}
-                    setColor={setBgColor}
+                    setColor={setSelectedColor}
                 />
             </section>
-            
-            <GlobalStyle bgColor={bgColor}/>
+
+            <GlobalStyle
+                color={selectedColor}
+                isInverted={isInverted}
+            />
         </AppContainer>
     );
 }
