@@ -4,7 +4,8 @@ import {
   ProjectContainer,
   BigLink,
   ColorPickerContainer,
-  ColorPickerOption
+  ColorPickerOption,
+  InverterContainer
 } from './styles';
 
 export function Link({
@@ -14,7 +15,7 @@ export function Link({
 }) {
   return (
     <a href={href} target="_blank" className={className}>
-      { children }
+      {children}
     </a>
   );
 }
@@ -27,10 +28,10 @@ export function Project({
   return (
     <ProjectContainer>
       <BigLink href={link}>
-        { title }
+        {title}
       </BigLink>
       <p>
-        { description }
+        {description}
       </p>
     </ProjectContainer>
   );
@@ -49,4 +50,14 @@ export function ColorPicker({ colors, currentColor, isMobile, setColor }) {
       ))}
     </ColorPickerContainer>
   );
+}
+
+export function Inverter({ isInverted, setIsInvtered, color }) {
+  const toggleIsInverted = () => setIsInvtered(!isInverted)
+
+  return (
+    <InverterContainer onClick={toggleIsInverted} isInverted={isInverted} color={color}>
+      INVERT
+    </InverterContainer>
+  )
 }

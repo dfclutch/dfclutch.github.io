@@ -77,7 +77,7 @@ export const ProjectContainer = styled.div`
 
 export const ColorPickerContainer = styled.div`
   ${({ isMobile }) => isMobile ? `width: 90%;` : `width: 40%;`}
-  margin: 48px auto;
+  margin: 48px auto 12px;
   height: 26px;
   display: flex;
   justify-content: space-between;
@@ -98,3 +98,16 @@ export const ColorPickerOption = styled.div`
     margin: 0 8px;
   `}
 `
+
+export const InverterContainer = styled.div`
+  width: 160px;
+  height: 26px;
+  margin: auto;
+  border-radius: 26px;
+  color: ${({ color, isInverted }) => isInverted ? "white" : color};
+  background-color: ${({ color, isInverted }) => isInverted ? color : "white"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+`;

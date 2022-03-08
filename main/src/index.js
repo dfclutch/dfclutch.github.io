@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import rndom from "rndom";
 
 import { mobileCheck } from './mobile_check';
-import { ColorPicker, Link, Project } from './components';
+import { ColorPicker, Inverter, Link, Project } from './components';
 import {
     BigLink,
     AppContainer,
@@ -16,7 +16,7 @@ const COLORS = [
     "#941d15", // red
     "#BD5800", // orange
     "#d1a000", // yellow
-    "#193b2d", // green
+    "#2E614D", // green
     "#1c3a80", // blue
     "#48295c", // purple
 ]
@@ -24,8 +24,8 @@ const COLORS = [
 function App() {
     const [isMobile, setIsMobile] = useState(mobileCheck());
     console.log({ isMobile });
-    const [selectedColor, setSelectedColor] = useState(rndom.oneOf(COLORS))
-    const [isInverted, setIsInverted] = useState(false);
+    const [selectedColor, setSelectedColor] = useState(COLORS[3]) // green
+    const [isInverted, setIsInverted] = useState(true);
 
     window.addEventListener(
         'resize',
@@ -119,6 +119,11 @@ function App() {
                     currentColor={selectedColor}
                     isMobile={isMobile}
                     setColor={setSelectedColor}
+                />
+                <Inverter
+                    isInverted={isInverted}
+                    setIsInvtered={setIsInverted}
+                    color={selectedColor}
                 />
             </section>
 
