@@ -7,8 +7,11 @@ import parkOfRoses from "./6-park-of-roses";
 import lens from "./7-lens";
 import reactComponents from './8-formidable-components-article';
 import bocklin from './9-bocklin';
+import primitive_borders from './10-primitive-borders';
+
 
 const posts = [
+  primitive_borders,
   bocklin,
   reactComponents,
   lens,
