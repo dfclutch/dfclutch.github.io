@@ -45,7 +45,7 @@ function App() {
                 Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, guitarist, espresso brewer, digital cartographer
             </p>
             <p>
-                Living in beautiful Clintonville, Columbus, OH
+                Living in Crestview, Clintonville, Columbus, OH
             </p>
 
             <section>
