@@ -14,7 +14,7 @@ export const PostWrapper = styled.div`
 `;
 
 export const PostTitle = styled.h1`
-  color: ${colors.black};
+  color: ${colors.brand};
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 2.6rem;
 `;

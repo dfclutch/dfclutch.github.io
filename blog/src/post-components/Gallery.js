@@ -22,16 +22,16 @@ const BUTTON_WIDTH = 64;
 
 const Caption = styled.div`
   max-width: calc(100% - ${BUTTON_WIDTH * 2}px);
-  color: ${colors.grey};
+  color: ${colors.darkGrey};
 `;
 
 const Button = styled.div`
   width: ${BUTTON_WIDTH}px;
   cursor: pointer;
-  color: ${colors.grey};
+  color: ${colors.darkGrey};
 
   &:hover {
-    color: ${colors.brand};
+    color: ${colors.darkGrey};
   }
 `;
 

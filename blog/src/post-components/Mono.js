@@ -6,4 +6,5 @@ export const Mono = styled.span`
   font-size: .9rem;
   font-family: monospace;
   background-color: ${colors.lightGrey}
+  color: black; 
 `;

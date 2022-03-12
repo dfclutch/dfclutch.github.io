@@ -4,17 +4,17 @@ import styled from "styled-components";
 import colors from "../../theme/colors.js";
 
 const PreviewContainer = styled.div`
-  border-top: 1px solid ${colors.grey};
+  border-top: 1px solid ${colors.darkGrey};
   padding: 6px 12px;
   font-size: 16px;
   cursor: pointer;
 
   ${() => (window.mobileCheck() ? "" : `
     &:hover {
-      background-color: ${colors.lightGrey};
+      background-color: ${colors.yellow};
 
       > h2 {
-        color: ${colors.brand};
+        color: white;
       }
     }
   `)};
@@ -25,14 +25,16 @@ const PreviewContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${colors.black};
+  color: ${colors.brand};
   font-size: 1.75rem;
-  margin: 0;
+  margin: 12px 0;
+  text-decoration: none;
 `;
 
-const PreviewText = styled.p`
+const PreviewText = styled.div`
   text-align: justify;
   font-family: "Vollkorn", serif;
+  margin: 8px 0;
 `;
 
 const Preview = ({ onClick, previewContent, title }) => {

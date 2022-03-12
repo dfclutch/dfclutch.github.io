@@ -1,15 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Preview from "./Preview";
 
 function Feed({ posts }) {
+  const history = useHistory()
+
   return (
     <>
       {posts.map((post) => (
-        <Link to={`posts/${post.id}`} key={post.id}>
-          <Preview {...post} />
-        </Link>
+        <Preview
+          {...post}
+          onClick={() => history.push(`posts/${post.id}`)}
+          key={post.id}
+        />
       ))}
     </>
   );

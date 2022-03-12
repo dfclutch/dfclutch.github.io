@@ -14,7 +14,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
     color: ${colors.brand};
   }
 
@@ -38,17 +37,17 @@ export const Title = styled.h1`
 
   ${() => (window.mobileCheck() ? "" : `
     &:hover {
-      color: ${colors.darkGrey};
+      font-weight: 900;
     }
   `)};
 `;
 
 export const Content = styled.div`
-  width: ${({width}) => width};
+  width: ${({ width }) => width};
   padding: ${() => (window.mobileCheck() ? "5px" : "10px")};
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: white;
+  color: blackl
 `;
 
