@@ -1,0 +1,5 @@
+node_modules
+# **/build.js
+**/build.js.LICENSE.txt
+**/package-lock.json
+.DS_STORE
