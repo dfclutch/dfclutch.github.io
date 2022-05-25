@@ -24,8 +24,8 @@ const COLORS = [
 function App() {
     const [isMobile, setIsMobile] = useState(mobileCheck());
     console.log({ isMobile });
-    const [selectedColor, setSelectedColor] = useState(COLORS[3]) // green
-    const [isInverted, setIsInverted] = useState(true);
+    const [selectedColor, setSelectedColor] = useState(COLORS[4]) // green
+    const [isInverted, setIsInverted] = useState(false);
 
     window.addEventListener(
         'resize',
@@ -69,6 +69,7 @@ function App() {
                 <BigLink href="https://dfclutch.github.io/blog/#/">
                     Blog
                 </BigLink>
+                <br />
                 <BigLink href="https://dfclutch.github.io/apps/drawings">
                     Drawings
                 </BigLink>
