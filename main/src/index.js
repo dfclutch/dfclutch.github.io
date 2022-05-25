@@ -69,10 +69,10 @@ function App() {
                 <BigLink href="https://dfclutch.github.io/blog/#/">
                     Blog
                 </BigLink>
-                <br />
                 <BigLink href="https://dfclutch.github.io/apps/drawings">
                     Drawings
                 </BigLink>
+                <br />
                 <BigLink href="https://danfiller.bandcamp.com/">
                     Music
                 </BigLink>
