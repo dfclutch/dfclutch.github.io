@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack --watch --config webpack.prod.config.js"
+    "dev": "webpack --watch --config webpack.dev.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
