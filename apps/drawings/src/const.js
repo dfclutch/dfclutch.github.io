@@ -1,7 +1,7 @@
 export const DRAWINGS = [
   { fileName: "milesburn1.jpg", title: "Milesburn Cabin", year: 2020, id: 1 },
   { fileName: "laurel_lake.JPG", title: "Laurel Lake", year: 2019, id: 2 },
-  { fileName: "mountain_lake.jpg", title: "Mountain Lake", year: 2021, id: 3 },
+  { fileName: "mountain_lake.jpg", title: "Mountain Lake", year: 2017, id: 3 },
   { fileName: "wave_chair.jpg", title: "Wave Chair", year: 2015, id: 4 },
   { fileName: "red_valley.jpg", title: "Red Valley", year: 2017, id: 5 },
   { fileName: "glenwood.jpg", title: "Glenwood Canyon", year: 2020, id: 6 },
