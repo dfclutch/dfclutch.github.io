@@ -80,11 +80,11 @@ export default {
         I cut a template to use while drilling holes for the mount plate and the
         vertical supports. These were drilled a bit smaller than the dowels to
         allow me to assemble the lamp with just a friction fit. I figured that
-        now matter how messy the planes were cut, if I could keep the dowel
-        holes aligned, it would at least fit together. I marked the bottom left
-        corner each time I used the template and maintained the alignment of
-        each layer in the assembly. Sandwiching the boards between the template
-        and a piece of scrap prevented the holes from splintering too much.
+        no matter how messy the planes were cut, if I could keep the dowel holes
+        aligned, it would at least fit together. I marked the bottom left corner
+        each time I used the template and maintained the alignment of each layer
+        in the assembly. Sandwiching the boards between the template and a piece
+        of scrap prevented the holes from splintering too much.
       </p>
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/lamp/template.jpg"
