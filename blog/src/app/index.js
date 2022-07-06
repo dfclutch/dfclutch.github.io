@@ -20,7 +20,7 @@ function App() {
             <Title>Ye Olde Blogue</Title>
           </Link>
           <h3>
-            By <a href="https://dfclutch.github.io/">Dan Filler</a>
+            By <a href="http://dfclutch.com/">Dan Filler</a>
           </h3>
           <div>
             <ScrollToTop />
