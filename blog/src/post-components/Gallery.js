@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import colors from "../theme/colors";
+import { useBreakpoints } from "../utilities/responsive";
 
 const GalleryWrapper = styled.div`
   text-align: center;
   font-size: 18px;
-  margin: 16px 0;
+  margin: 16px auto;
+  width: ${({ width }) => width};
 `;
 
 const GalleryImage = styled.img`
@@ -28,7 +30,9 @@ const Caption = styled.div`
 const Button = styled.div`
   width: ${BUTTON_WIDTH}px;
   cursor: pointer;
-  color: ${colors.darkGrey};
+  color: ${colors.blue};
+  font-size: 2rem;
+  font-weight: bold;
 
   &:hover {
     color: ${colors.darkGrey};
@@ -46,13 +50,18 @@ const Button = styled.div`
  *  }
  * objects representing the images in the Gallery, in display order.
  */
-export const Gallery = ({ images }) => {
+export const Gallery = ({ images, breakpoints }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const image = images[imageIndex];
 
+  const width = breakpoints ? useBreakpoints(breakpoints) : "100%";
+
   return (
-    <GalleryWrapper>
-      <GalleryImage src={image.src} alt={image.alt ? image.alt : image.caption} />
+    <GalleryWrapper width={width}>
+      <GalleryImage
+        src={image.src}
+        alt={image.alt ? image.alt : image.caption || ""}
+      />
       <Controls>
         <Button
           onClick={() => {
