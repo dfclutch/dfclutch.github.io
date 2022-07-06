@@ -50,12 +50,13 @@ export default {
         plan was for a small, perforated diffusion layer above the lightbulb. I
         changed this during the build process to use 2 equally sized layers at
         the top and bottom. This would provide a soft diffusion layer, doubles
-        the number of visual spaces, and adds structural rigidity.
+        the number of visual spaces, and adds structural rigidity. The dowels in
+        the sketchup model are 1/2", I ended up using 1/4".
       </p>
       <p>
         Unfortunately, I didn't take any photos during the cutting phase. I used
         a hand held circular saw, a few saw horses, and a guide rail to cut
-        birch ply into the 6 main pieces I needed: two top layer, two bottom
+        birch ply into the 6 main pieces I needed: two top layers, two bottom
         layers, a mount plate, and the hole template. I also cut 1/4" dowel for
         the vertical supports.
       </p>
@@ -76,14 +77,14 @@ export default {
       />
 
       <p>
-        I cut a template to drill holes for the mount plate and the vertical
-        supports. These were drilled a bit smaller than the dowels to allow me
-        to assemble the lamp with just a friction fit. I figured that now matter
-        how messy the planes were cut, if I could keep the dowel holes aligned,
-        it would at least fit together. I marked the bottom left corner each
-        time I used the template and maintained the alignment of each layer in
-        the assembly. Sandwiching the boards between the template and a piece of
-        scrap prevented the holes from splintering too much.
+        I cut a template to use while drilling holes for the mount plate and the
+        vertical supports. These were drilled a bit smaller than the dowels to
+        allow me to assemble the lamp with just a friction fit. I figured that
+        now matter how messy the planes were cut, if I could keep the dowel
+        holes aligned, it would at least fit together. I marked the bottom left
+        corner each time I used the template and maintained the alignment of
+        each layer in the assembly. Sandwiching the boards between the template
+        and a piece of scrap prevented the holes from splintering too much.
       </p>
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/lamp/template.jpg"
@@ -127,9 +128,9 @@ export default {
         ]}
       />
       <p>
-        You can see from some of the more detailed shots how rough some edges
-        are. Painting (and maybe a bit of sanding) on these will hopefully
-        smooth some things down
+        You can see how rough some edges are. Painting (and maybe a bit of
+        sanding) on these will hopefully smooth some things down, though I'm not
+        too worried about it.
       </p>
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/lamp/detail.jpg"
@@ -168,7 +169,7 @@ export default {
       />
 
       <p>
-        My preffered placement in the room is on this built in, allowing the
+        My preferred placement in the room is on this built in, allowing the
         lamp to cast light into both the living and dining room. As a sole light
         source, it creates a great diffused low-light environment. An
         incandescent bulb paired with heavy wood is nice and cozy.

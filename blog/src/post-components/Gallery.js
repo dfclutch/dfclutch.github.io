@@ -34,7 +34,7 @@ const Button = styled.div`
   font-size: 2rem;
   font-weight: bold;
 
-  &:hover {
+  &:active {
     color: ${colors.darkGrey};
   }
 `;
