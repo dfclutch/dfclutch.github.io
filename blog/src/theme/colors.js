@@ -7,5 +7,6 @@ export default {
   black: "#000",
   blue: "#4287f5",
   yellow: "#FCBA03",
-  brand: "#2E614D",
+  brand: "#1c3a80",
+  darkBrand: "#132757",
 };

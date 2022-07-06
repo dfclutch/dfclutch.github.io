@@ -4,20 +4,23 @@ import styled from "styled-components";
 import colors from "../../theme/colors.js";
 
 const PreviewContainer = styled.div`
-  border-top: 1px solid ${colors.darkGrey};
+  border-top: 1px solid ${colors.white};
   padding: 6px 12px;
   font-size: 16px;
   cursor: pointer;
 
-  ${() => (window.mobileCheck() ? "" : `
+  ${() =>
+    window.mobileCheck()
+      ? ""
+      : `
     &:hover {
-      background-color: ${colors.yellow};
+      background-color: ${colors.darkBrand};
 
       > h2 {
         color: white;
       }
     }
-  `)};
+  `};
 
   > p {
     color: black;
@@ -25,7 +28,7 @@ const PreviewContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${colors.brand};
+  color: ${colors.white};
   font-size: 1.75rem;
   margin: 12px 0;
   text-decoration: none;

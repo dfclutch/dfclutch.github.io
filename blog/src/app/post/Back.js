@@ -10,13 +10,8 @@ const BackWrapper = styled.div`
   cursor: pointer;
   text-align: center;
   font-size: 18px;
-  color: ${colors.black};
   width: 100px;
   margin: 100px auto;
-
-  &:hover {
-    color: ${colors.brand};
-  }
 `;
 
 const Back = () => {

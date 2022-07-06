@@ -11,35 +11,42 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Roboto", Helvetica, sans-serif;
+    background-color: ${colors.brand};
+    color: ${colors.white};
   }
 
   a {
-    color: ${colors.brand};
+    color: ${colors.white};
   }
 
   a:visited {
-    color: ${colors.brand};
+    color: ${colors.white};
   }
 
-  ${() => (window.mobileCheck() ? "" : `
+  ${() =>
+    window.mobileCheck()
+      ? ""
+      : `
     a:hover {
-      color: ${colors.darkGrey};
+      color: ${colors.grey};
     }
-  `)};
+  `};
 `;
 
 export const Title = styled.h1`
-  color: ${colors.brand};
   cursor: pointer;
   padding: 10px 0;
   width: 75%;
   ${typography.title}
 
-  ${() => (window.mobileCheck() ? "" : `
+  ${() =>
+    window.mobileCheck()
+      ? ""
+      : `
     &:hover {
       font-weight: 900;
     }
-  `)};
+  `};
 `;
 
 export const Content = styled.div`
@@ -48,6 +55,5 @@ export const Content = styled.div`
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
-  color: blackl
+  color: blackl;
 `;
-

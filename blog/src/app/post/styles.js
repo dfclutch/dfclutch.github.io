@@ -14,13 +14,12 @@ export const PostWrapper = styled.div`
 `;
 
 export const PostTitle = styled.h1`
-  color: ${colors.brand};
+  color: ${colors.white};
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 2.6rem;
 `;
 
 export const Date = styled.div`
-  color: ${colors.darkGrey};
   font-style: italic;
   ${typography.serif}
 `;
