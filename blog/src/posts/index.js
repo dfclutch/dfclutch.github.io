@@ -8,11 +8,9 @@ import lens from "./7-lens";
 import reactComponents from "./8-formidable-components-article";
 import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
-// import tuscalachian_loop from './11-tuscalachian-loop';
-import lamp from "./wip/lamp";
+import lamp from "./11-lamp";
 
 const posts = [
-  // tuscalachian_loop,
   lamp,
   primitive_borders,
   bocklin,

@@ -1,6 +1,6 @@
 import React from "react";
-import Figure from "../../post-components/Figure";
-import { Gallery } from "../../post-components/Gallery";
+import Figure from "../post-components/Figure";
+import { Gallery } from "../post-components/Gallery";
 
 export default {
   title: "Lamp prototyping part 1: Process",
@@ -8,7 +8,7 @@ export default {
   previewContent: `
     Process and construction of a simple plywood and dowel lamp
   `,
-  date: "Jul 5, 2022",
+  date: "Jul 6, 2022",
   content: (
     <>
       <p>
