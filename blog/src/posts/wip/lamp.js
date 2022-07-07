@@ -3,9 +3,10 @@ import Figure from "../../post-components/Figure";
 import { Gallery } from "../../post-components/Gallery";
 
 export default {
-  title: "Lamp prototyping",
+  title: "Lamp prototyping part 1: Process",
   id: "lamp-proto",
   previewContent: `
+    Process and construction of a simple plywood and dowel lamp
   `,
   date: "Jul 5, 2022",
   content: (
@@ -14,10 +15,10 @@ export default {
         I've long thought I should try to build a lamp, so I decided to give it
         a go this weekend. I figure a lamp is a good starting point for
         furniture design and construction since it requires relatively little
-        structural integrity to be effective. My goals were to build something I
-        liked the look of with the simplest and cheapest tools and materials. I
-        also needed a large margin for error in construction since I am a total
-        layman.
+        structural integrity to be effective. The process was informed by access
+        to only simple materials and tools. I also needed a large margin for
+        error in construction since I am a total layman. This lead to a design
+        and construction that is simple to execute and repeat.
       </p>
       <p>
         I started with a quick sketch on paper and then a bit of extra
