@@ -9,17 +9,18 @@ export const PostWrapper = styled.div`
 
   margin-top: 10px;
   font-family: "Vollkorn", serif;
-  font-size: 17px;
+  ${typography.medium}
   text-align: justify;
 `;
 
 export const PostTitle = styled.h1`
-  color: ${colors.white};
+  color: ${colors.brand};
   font-family: "Roboto", Helvetica, sans-serif;
-  font-size: 2.6rem;
+  ${typography.title}
 `;
 
 export const Date = styled.div`
   font-style: italic;
   ${typography.serif}
+  ${typography.medium}
 `;

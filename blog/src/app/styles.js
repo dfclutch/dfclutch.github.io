@@ -11,16 +11,14 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Roboto", Helvetica, sans-serif;
-    background-color: ${colors.brand};
-    color: ${colors.white};
   }
 
   a {
-    color: ${colors.white};
+    color: ${colors.brand};
   }
 
   a:visited {
-    color: ${colors.white};
+    color: ${colors.brand};
   }
 
   ${() =>
@@ -28,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
       ? ""
       : `
     a:hover {
-      color: ${colors.grey};
+      color: ${colors.darkBrand};
     }
   `};
 `;
@@ -37,7 +35,8 @@ export const Title = styled.h1`
   cursor: pointer;
   padding: 10px 0;
   width: 75%;
-  ${typography.title}
+  ${typography.mainTitle}
+  color: ${colors.brand};
 
   ${() =>
     window.mobileCheck()
@@ -55,5 +54,8 @@ export const Content = styled.div`
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
-  color: blackl;
+
+  & h3 {
+    ${typography.large}
+  }
 `;
