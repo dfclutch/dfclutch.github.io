@@ -9,8 +9,10 @@ import reactComponents from "./8-formidable-components-article";
 import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
 import lamp from "./11-lamp";
+import flair from "./12-flair";
 
 const posts = [
+  flair,
   lamp,
   primitive_borders,
   bocklin,
