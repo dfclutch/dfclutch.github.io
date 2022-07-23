@@ -220,6 +220,7 @@ export default {
           { w: Infinity, v: "600px" },
         ]}
       />
+      No pictures, but I froth the warmed milk in the french press by rapidly pumping the screen up and down. Warm milk will hold air easily, I start with a few big pumps to incorporate a good amount of air and then do many small, quick pumps to mix the frothy milk and the non-frothy warm milk. Then I transfer to a warmed milk pitcher. The spout on the stainless steel pitcher is much better for pouring milk, and the pouring action when I transfer the milk is a good mixing step.
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/flair/20.JPG"
         breakpoints={[
@@ -228,12 +229,7 @@ export default {
           { w: Infinity, v: "600px" },
         ]}
       />
-      <video width="320" height="240">
-        <source
-          src="https://ye-olde-blog.s3.amazonaws.com/img/flair/pull.MOV"
-          type="video/mov"
-        />
-      </video>
+      The completed cortado. A cortado is my drink of choice, you can still enjoy the main flavors of the espresso clearly, but in a rich, frothy, sweet milk drink. This glass is known as the Libbey Gibraltar glass, which gives this drink it's other name: the Gibraltar.
     </>
   ),
 };
