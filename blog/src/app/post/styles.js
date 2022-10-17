@@ -9,7 +9,7 @@ export const PostWrapper = styled.div`
 
   margin-top: 10px;
   font-family: "Vollkorn", serif;
-  ${typography.medium}
+  ${typography.small}
   text-align: justify;
 `;
 
