@@ -7,7 +7,7 @@ export default {
   previewContent:
     "In which I realize how hard it is to find the name of a typeface.",
   date: "Sept 18, 2021",
-  content: (
+  content: () => (
     <>
       <p>
         I feel like I know typography better than most people. I work with type
@@ -60,7 +60,11 @@ export default {
         breakpoints={[{ w: Infinity, v: "700px" }]}
       />
       <p>
-        Pedal With Pete is a local <a href="https://pedal-with-pete.org/" target="_blank">cerebral palsy foundation</a>. They no longer use this extravagant font in their branding.
+        Pedal With Pete is a local{" "}
+        <a href="https://pedal-with-pete.org/" target="_blank">
+          cerebral palsy foundation
+        </a>
+        . They no longer use this extravagant font in their branding.
       </p>
 
       <p>

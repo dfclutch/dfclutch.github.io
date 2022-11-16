@@ -8,7 +8,7 @@ export default {
     Finally something I'm actually qualified to talk about: making espresso on the Flair manual lever system.
   `,
   date: "Jul 8, 2022",
-  content: (
+  content: () => (
     <>
       <p>
         I started this article over a year ago before I got my espresso machine.

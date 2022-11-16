@@ -11,7 +11,7 @@ export default {
     design language.
   `,
   id: "chipotle-design",
-  content: (
+  content: () => (
     <div>
       <p>
         Out of all restaurants, I've eaten at Chipotle easily 2-3 times as many
@@ -127,9 +127,9 @@ export default {
         alt="Frank Lloyd Wright chairs"
         caption="Wright designed chairs from the Clarence Sondern House exhibiting a similar leg design."
         breakpoints={[
-          { w: 1000, v: '100%' },
-          { w: 2000, v: '75%' },
-          { w: Infinity, v: '800px' },
+          { w: 1000, v: "100%" },
+          { w: 2000, v: "75%" },
+          { w: Infinity, v: "800px" },
         ]}
       />
       <p>
@@ -153,9 +153,9 @@ export default {
         alt="Form chair"
         caption="The form chair."
         breakpoints={[
-          { w: 900, v: '100%' },
-          { w: 1100, v: '80%' },
-          { w: Infinity, v: '560px' },
+          { w: 900, v: "100%" },
+          { w: 1100, v: "80%" },
+          { w: Infinity, v: "560px" },
         ]}
       />
       <p>
@@ -182,8 +182,8 @@ export default {
         src="https://ye-olde-blog.s3.amazonaws.com/img/chipotle/form-chair-2.jpg"
         alt="Form chair"
         breakpoints={[
-          { w: 400, v: '100%' },
-          { w: Infinity, v: '400px' },
+          { w: 400, v: "100%" },
+          { w: Infinity, v: "400px" },
         ]}
       />
       <Figure
@@ -191,9 +191,9 @@ export default {
         alt="Form stamp"
         caption="The stamp Sauer used to identify his chairs."
         breakpoints={[
-          { w: 600, v: '80%' },
-          { w: 800, v: '60%' },
-          { w: Infinity, v: '400px' },
+          { w: 600, v: "80%" },
+          { w: 800, v: "60%" },
+          { w: Infinity, v: "400px" },
         ]}
       />
     </div>

@@ -29,6 +29,15 @@ export const GlobalStyle = createGlobalStyle`
       color: ${colors.darkBrand};
     }
   `};
+
+  strong {
+    font-weight: 600;
+  }
+
+  li {
+    margin: 8px 0;
+    width: 80%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -55,7 +64,11 @@ export const Content = styled.div`
   margin: 0 auto;
   min-height: 100vh;
 
-  & h3 {
+  & h2 {
     ${typography.large}
+  }
+
+  & h3 {
+    ${typography.medium}
   }
 `;

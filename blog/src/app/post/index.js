@@ -5,14 +5,13 @@ import { Date, PostTitle, PostWrapper } from "./styles";
 import Back from "./Back";
 
 function Post({ title, date, content }) {
+  console.log({ content });
   return (
     <PostWrapper>
       <PostTitle>{title}</PostTitle>
       <Date>{date}</Date>
       <hr />
-
-      {content}
-
+      {content()}
       <Link to="/">
         <Back />
       </Link>
