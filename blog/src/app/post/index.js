@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { Date, PostTitle, PostWrapper } from "./styles";
 import Back from "./Back";
 
-function Post({ title, date, content }) {
-  console.log({ content });
+function Post({ title, date, content: Content }) {
   return (
     <PostWrapper>
       <PostTitle>{title}</PostTitle>
       <Date>{date}</Date>
       <hr />
-      {content()}
+      <Content />
       <Link to="/">
         <Back />
       </Link>

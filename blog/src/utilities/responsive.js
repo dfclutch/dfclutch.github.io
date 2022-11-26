@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function addWindowSizeListener(breakpoints, setValue) {
   window.addEventListener("resize", () =>
@@ -18,4 +18,14 @@ export function useBreakpoints(breakpoints) {
   addWindowSizeListener(breakpoints, setWidth);
 
   return width;
+}
+
+export function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.mobileCheck());
+
+  useEffect(() => {
+    setIsMobile(window.mobileCheck());
+  }, [window.innerWidth]);
+
+  return { isMobile };
 }
