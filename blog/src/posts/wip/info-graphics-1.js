@@ -17,7 +17,7 @@ export default {
   previewContent: `
     Applying the Information Graphics theories of Edward Tufte
   `,
-  date: "Aug 1, 2021",
+  date: "Nov 25, 2022",
   content: () => {
     const { isMobile } = useIsMobile();
     console.log({ isMobile });
