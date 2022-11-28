@@ -26,11 +26,12 @@ export default {
       <>
         <h2>Information Graphics</h2>
         <p>
-          Information Graphics are visual tools meant to communicate
-          information. These are ever present in our lives and an important part
-          of how we interact with the world. Road signs, stock performance
-          graphs, restaurant menus, weather reports, fire exit maps in your
-          hotel room, etc.
+          Information Graphics are tools for visual communication. They may
+          display data, communicate instructions, or highlight connections.
+          These are ever present in our lives and an important part of how we
+          interact with the world. Road signs, stock performance graphs,
+          restaurant menus, weather reports, fire exit maps in your hotel room,
+          etc.
         </p>
         <p>
           Information Graphics bring attention to features of a dataset that are
@@ -48,7 +49,7 @@ export default {
         </ul>
         <h2>Tufte</h2>
         <p>
-          Edward Tufte is a statistician, graphics thinking, professor, and
+          Edward Tufte is a statistician, graphics thinker, professor, and
           author. His primary work is a series of books on Information Graphics
           published from the early 80s to the late 2000s. These volumes contain
           hundreds of examples of information graphics, each analyzed for their
