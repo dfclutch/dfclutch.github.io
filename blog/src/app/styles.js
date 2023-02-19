@@ -38,6 +38,16 @@ export const GlobalStyle = createGlobalStyle`
     margin: 8px 0;
     width: 80%;
   }
+
+  button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 `;
 
 export const Title = styled.h1`

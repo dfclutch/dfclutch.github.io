@@ -2,22 +2,35 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import Preview from "./Preview";
+import { WIPToggle } from "./WIPToggle";
 
-function Feed({ posts }) {
-  const history = useHistory()
+function Feed({ posts, wip, showWIP, setShowWIP }) {
+  const history = useHistory();
+  const postToPreviewComponent = postToPreviewComponentWithHistory(history);
 
   return (
     <>
-      {posts.map((post) => (
-        <Preview
-          {...post}
-          onClick={() => history.push(`posts/${post.id}`)}
-          key={post.id}
+      {setShowWIP && (
+        <WIPToggle
+          toggleShowWIP={() => setShowWIP(!showWIP)}
+          showWIP={showWIP}
         />
-      ))}
+      )}
+      {showWIP && wip.map(postToPreviewComponent)}
+      {posts.map(postToPreviewComponent)}
     </>
   );
 }
+
+const postToPreviewComponentWithHistory = (history) => (post) =>
+  (
+    <Preview
+      {...post}
+      onClick={() => history.push(`posts/${post.id}`)}
+      key={post.id}
+    />
+  );
+
 /*
   <PageCounter
     page={page}

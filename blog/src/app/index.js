@@ -10,6 +10,7 @@ import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const width = useBreakpoints(CONTENT_BREAKPOINTS);
+  const [showWIP, setShowWIP] = useState(false);
 
   return (
     <>
@@ -26,7 +27,13 @@ function App() {
             <ScrollToTop />
             <Switch>
               <Route path="/posts/:id" component={Post} />
-              <Route path="/" component={Feed} />
+              <Route
+                path="/wip"
+                component={() => (
+                  <Feed showWIP={showWIP} setShowWIP={setShowWIP} />
+                )}
+              />
+              <Route path="/" component={() => <Feed />} />
             </Switch>
           </div>
         </Router>

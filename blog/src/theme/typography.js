@@ -32,6 +32,10 @@ const serif = `
   font-family: "Vollkorn", serif;
 `;
 
+const mono = `
+font-family: monospace;
+`;
+
 export default {
   large,
   mainTitle,
@@ -40,4 +44,5 @@ export default {
   serif,
   small,
   title,
+  mono,
 };

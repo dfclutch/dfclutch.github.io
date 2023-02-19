@@ -10,7 +10,7 @@ export default {
     Making mistakes in great weather.
   `,
   date: "Aug 1, 2021",
-  content: (
+  content: () => (
     <>
       <p>
         The Black Forest Trail (BFT) is a 43 mile trail in North Central

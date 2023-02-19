@@ -2,11 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import posts from "../../posts";
+import { wip } from "../../posts";
 
 import Post from "../Post";
 
 function getPost({ id }) {
-  return posts.find((post) => post.id === id);
+  const allPosts = [...posts, ...wip];
+  return allPosts.find((post) => post.id === id);
 }
 
 const PostRoute = () => {

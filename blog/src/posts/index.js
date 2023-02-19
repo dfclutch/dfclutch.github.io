@@ -10,12 +10,13 @@ import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
 import lamp from "./11-lamp";
 import flair from "./12-flair";
-// import bft from "./13-btf-oct22";
+import bft from "./13-btf-oct22";
 import info_graphics_1 from "./wip/info-graphics-1";
+import pizza from "./14-pizza-tutorial";
+import bluegrass_lyrics from "./wip/bluegrass-lyrics";
 
 const posts = [
   info_graphics_1,
-  // bft,
   flair,
   lamp,
   primitive_borders,
@@ -29,5 +30,10 @@ const posts = [
   chipotle,
   first,
 ];
+
+export const wip = [bluegrass_lyrics, pizza, bft].map((article) => ({
+  ...article,
+  wip: true,
+}));
 
 export default posts;
