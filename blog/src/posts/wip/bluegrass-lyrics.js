@@ -3,7 +3,7 @@ import { Link } from "../../post-components/Link";
 import { Pullquote } from "../../post-components/PullQuote";
 
 export default {
-  title: "The Wild World of Bluegrass Lyrics",
+  title: "Minutiae and Patterns in Bluegrass Lyrics",
   id: "bluegrass-lyrics",
   previewContent: `
     Copy and paste this template into a new post in /wip
@@ -14,36 +14,34 @@ export default {
       <p>
         The tunes that comprise the Bluegrass canon come from all across the
         rural American melting pot's back catalogue of folk, spiritual,
-        traditional, and work music. They reach back to mother countries and
-        generations past, shifting and changing with each iteration. As songs
-        are shared, the lyrics are misheard, mis-learned, or purposely
-        rewritten. The canon itself is not even agreed upon and varies greatly
+        traditional, and work music. Some reach back to mother countries and by
+        miracle of tradition they live on to this day. Some were written and
+        recorded before the Bluegrass sound was established by the likes of
+        Jimmie Rodgers and the Delmore brothers. Some were written in the 40s
+        and 50s by the fathers of bluegrass: Monroe, Flatt + Scruggs, and
+        Stanley. The canon itself is not even agreed upon and varies greatly
         across regions, even in a post-recording, post-internet world.
       </p>
       <p>
-        With this vast library, comes a wild world of lyrical curiosities and
-        some downright stupid lyrics. I don't have the expertise to know the
-        origins of any of these, and I'm sure there's weirder lyrics out there.
-        But, here's some of my favorites that I've come across in the last year
-        or so of learning bluegrass tunes.
+        With this vast library, comes a world of lyrical curiosities. As songs
+        are shared, the lyrics are misheard, mis-learned, or purposely
+        rewritten. I don't have the expertise to know the origins of any of
+        these, and I'm sure there's weirder lyrics out there. But, here's some
+        of my favorite little quirks and patterns that I've come across in the
+        tunes I've learned.
       </p>
-      <h3>Features:</h3>
-      <p>A couple consistent features will crop up across these tunes:</p>
-      <ul>
-        <li>Repeated syllables</li>
-        <li>Repeated concepts or words</li>
-        <li>Repeated or mirrored structures</li>
-      </ul>
+
       <h3>Blue Ridge Cabin Home</h3>
       <p>
-        In my circles at least, Blue Ridge Cabin Home feels like "Bluegrass tune
-        no. 1". It's the first track on{" "}
+        In my circles at least, Blue Ridge Cabin Home is "Bluegrass tune no. 1".
+        It's the first track on{" "}
         <Link
           href="https://en.wikipedia.org/wiki/The_Bluegrass_Album"
           text="The Bluegrass Album"
         />
-        , which typifies "modern" bluegrass to this day, and it's basic
-        structure and melody are fundamental to a lot of bluegrass tunes.
+        , which was critical in establishing the bluegrass canon during the
+        genre's 2nd wave. It's basic structure and melody are fundamental to a
+        lot of bluegrass tunes.
       </p>
       <p>
         The first oddity here: nowhere in the entire song is the word "Cabin"
@@ -65,8 +63,9 @@ export default {
         references.
       </p>
       <p>
-        The second half of the second verse demonstrates strong syllabic
-        repetition, with 6 uses of some variant of a <i>"ther"</i> syllable:
+        The second half of the second verse demonstrates strong (too strong?)
+        syllabic repetition, with 6 uses of some variant of a <i>"ther"</i>{" "}
+        syllable:
       </p>
       <Pullquote
         lines={[
@@ -75,8 +74,9 @@ export default {
         ]}
       />
       <p>
-        We see a few repeated words and concepts, namely "Wandering" and being
-        far-away from the Blue Ridge mountains. Here across verses 1 and 2:
+        We see a few other repeated words and concepts, namely "Wandering" and
+        being far-away from the Blue Ridge mountains. Here across verses 1 and
+        2:
       </p>
       <Pullquote
         lines={[
@@ -96,10 +96,13 @@ export default {
       <p>
         And boy, that "back/ramshackle/shack" triple rhyme hits hard, don't it?
       </p>
+
       <h3>She left me Standin' on the Mountain</h3>
       <p>
-        We see a great example of syllabic repetition from{" "}
-        <i>She left me Standin'</i> verse 3:
+        Perhaps the cutest bluegrass song, with honey-sweet lyrics and a ringing
+        high tenor harmony. This tune was written by the Delmore brothers, and
+        brought to the bluegrass canon through Jim and Jesse. We see a great
+        example of syllabic repetition from <i>She left me Standin'</i> verse 3:
       </p>
       <Pullquote
         lines={[
@@ -114,6 +117,27 @@ export default {
         <i>a-Me a-Mario</i>. At high tempos, the song rolls off the tongue like
         a newscaster's vocal warmup.
       </p>
+
+      <h3>Pig in the Pen</h3>
+
+      <p>Pig in the Pen originated as an Old Time fiddle tune</p>
+
+      <Pullquote
+        lines={[
+          "Wish I had a pig in a pen, corn to feed him on",
+          "Pretty little girl to stay at home, feed him when I'm gone.",
+        ]}
+      />
+
+      <Pullquote
+        lines={[
+          "I got a pig at home in a pen, and corn to feed him on",
+          "All I need's a pretty little girl to feed him when I'm gone",
+        ]}
+      />
+
+      <p></p>
+
       <h3>Footprints in the Snow</h3>
       <p>
         A great example of a mirrored structure shows up in this Bill Monroe
