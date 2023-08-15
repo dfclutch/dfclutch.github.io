@@ -16,7 +16,7 @@ const StyledFigure = styled.figure`
 
   & figcaption {
     padding: 8px 0;
-    font-family: "Vollkorn", serif;
+    font-family: "Spectral", serif;
     font-size: 1rem;
     color: ${colors.darkGrey};
   }

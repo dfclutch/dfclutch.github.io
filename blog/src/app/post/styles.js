@@ -8,7 +8,7 @@ export const PostWrapper = styled.div`
   }
 
   margin-top: 10px;
-  font-family: "Vollkorn", serif;
+  font-family: "Spectral", serif;
   ${typography.small}
   text-align: justify;
 `;

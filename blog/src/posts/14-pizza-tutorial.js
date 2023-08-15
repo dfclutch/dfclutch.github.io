@@ -37,8 +37,6 @@ export default {
           flour
           salt
         */}
-      <p></p>
-
       <p>
         This is a complete guide to cooking pizza at home, with a standard gas
         or electric oven.
@@ -52,7 +50,6 @@ export default {
         baked all the way through. Much of the technique in this guide is
         focused on eliminating these moisture issues.
       </p>
-
       <h2>1. Dough</h2>
       <p>
         You can make the dough by hand (in a large bowl), with a bread machine,
@@ -60,7 +57,6 @@ export default {
         same way before kneading. This recipe makes 600g of dough, enough for 2
         medium or 3 small pizzas.
       </p>
-
       <h3>1.1 Bloom yeast</h3>
       <p>To mixing vessel add:</p>
       <ul>
@@ -84,7 +80,6 @@ export default {
         your finger to sprinkle, avoiding clumps.
       </p>
       <p>Let bloom for 3-5 mins - the yeast should bloom into a bubbly foam.</p>
-
       <h3>1.2 Dry ingredients</h3>
       <p>In a separate bowl, mix thoroughly:</p>
       <ul>
@@ -99,12 +94,10 @@ export default {
           <Mono>1 tsp</Mono> kosher salt
         </li>
       </ul>
-
       <h3>1.3 Mix and Knead</h3>
       <p>
         Combine wet and dry, with <Mono>2 Tbsp Olive Oil</Mono>.
       </p>
-
       <ul>
         <li>
           <strong>Bread machine:</strong> just let the dough setting run its
@@ -125,11 +118,8 @@ export default {
           about done kneading.
         </li>
       </ul>
-
       <h3>1.4 Fermenting and Proofing</h3>
-
       <strong>Option 1: Cold Fermentation</strong>
-
       <p>
         Ideally, you'd make this pizza dough at least a full day in advance.
         This allows for a lengthy "Cold Ferment" in the fridge, which develops
@@ -147,7 +137,6 @@ export default {
         you want to bake your pizza. First, let the dough come up to room temp
         for about 2 hours. Then move onto portioning and final proofing.
       </p>
-
       <strong>Option 2: Standard Proof</strong>
       <p>
         Allow your kneaded dough to rest at room temperature for about 1 hour
@@ -155,7 +144,6 @@ export default {
         inverted bowl, in an airtight container, or in a bowl covered in a damp
         towel.
       </p>
-
       <strong>Portioning and Final Proof</strong>
       <p>Portion your dough into 200 or 300g.</p>
       <p>
@@ -173,7 +161,6 @@ export default {
         it a bit from a sphere to a circle and letting it rest about 20 more
         minutes. This will encourage it to form a pizza round more easily.
       </p>
-
       <h2>2. Sauce</h2>
       <p>
         Tomato sauces are very flexible. Most in-the-know pizza makers will use
@@ -193,7 +180,6 @@ export default {
         <li>Dried basil and oregano</li>
         <li>Honey</li>
       </ul>
-
       <p>
         Restaurants often will not cook their sauce at all before topping the
         pizza. At home, cooking the sauce helps reduce the moisture and makes it
@@ -207,7 +193,6 @@ export default {
         you want. I like to do so with lots of flavor mix-ins for thicker crust
         pizzas like Chicago or Detroit style, or even Focaccia.
       </p>
-
       <h2>3. Cheese</h2>
       <p>
         For a long time I used fresh mozzarella. It's delicious straight from
@@ -224,7 +209,6 @@ export default {
         I generally grate parmesan or pecorino over the pizza immediately after
         baking.
       </p>
-
       <h2>4. Toppings</h2>
       <p>
         The 2 most important aspects of topping a pizza for me are even
@@ -297,9 +281,7 @@ export default {
           lot of sweetness. Pair with a balsamic reduction drizzle after baking.
         </li>
       </ul>
-
       <h2>5. Assembly</h2>
-
       <p>
         We are finally ready to bake! Set your oven as high as it goes, at least
         500&deg; but ideally 550&deg;. While it preheats, put whatever you are
@@ -307,7 +289,6 @@ export default {
         baking sheet will work, but the heavier the better. A pizza stone is
         great, I often use a heavy cast iron griddle instead.
       </p>
-
       <h3>5.1 Stretching the dough</h3>
       <p>
         Don't let this step scare you, the dough can sense fear. Since
@@ -315,13 +296,11 @@ export default {
         explain it in words here. Instead, watch this video from the makers of
         the Ooni Pizza oven:
       </p>
-
       <YoutubeEmbed
         src="https://www.youtube.com/embed/Entzcl8q7H4?start=60"
         width={"560"}
         height={"315"}
       />
-
       <p>
         If you find the dough is too springy and won't stretch without
         contracting, don't rush it. Leave the dough as a small round, cover it
@@ -329,7 +308,6 @@ export default {
         Even better, move it near your warming oven to encourage further gluten
         relaxation.
       </p>
-
       <h3>5.2 Docking and Parbaking</h3>
       <p>
         I find that baking the pizza crust with no toppings or sauce for just a
@@ -354,7 +332,6 @@ export default {
         bit drier and maybe a few very light brown spots where there are
         bubbles/high points in the dough.
       </p>
-
       <h3>5.3 Decorating</h3>
       <p>
         Remove your parbaked crust and sauce, cheese, and top it up. This is a
@@ -363,7 +340,6 @@ export default {
         hand and already opened (ideally they'd be portioned too but that's a
         bit extra).
       </p>
-
       <h4>5.3.1 Sauce</h4>
       <p>
         One of the most critical steps in the fight for crispy crust:{" "}
@@ -386,7 +362,6 @@ export default {
         are a sauce fiend, use less than you think you'll need. It's easy to
         over-sauce.
       </p>
-
       <p>
         The rest of the decoration is how you'd expect it. I would encourage
         experimentation with how you apply toppings. For example: add a light
@@ -394,9 +369,7 @@ export default {
         Think about what needs the most/least intense heat and position those
         toppings higher/lower in the stack.
       </p>
-
       <h3>6. Baking and Resting</h3>
-
       <p>
         Place your decorated pizza back in the oven and let it bake. There's no
         substitute for keeping a close eye on your pizza to tell when it's done.
@@ -404,13 +377,11 @@ export default {
         brave and let it keep baking until it's truly cooked. We aren't here for
         anemic crusts.
       </p>
-
       <p>
         If your pizza is well baked you should be able to pick it up without the
         middle sagging. The bottom should be well browned, and audibly crisp if
         you scrape along the bottom of it.
       </p>
-
       <p>
         After you remove the pizza, it should rest about 3-5 minutes before
         slicing. This allows the cheese and toppings to set a bit to allow for

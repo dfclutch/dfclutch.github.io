@@ -40,7 +40,7 @@ const Title = styled.h2`
 
 const PreviewText = styled.div`
   text-align: justify;
-  font-family: "Vollkorn", serif;
+  font-family: "Spectral", serif;
   margin: 8px 0;
   ${typography.medium}
 `;

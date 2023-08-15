@@ -21,7 +21,7 @@ const medium = `
 `;
 
 const small = `
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 
 const extra_small = `
@@ -29,7 +29,7 @@ const extra_small = `
 `;
 
 const serif = `
-  font-family: "Vollkorn", serif;
+  font-family: "Spectral", serif;
 `;
 
 const mono = `
