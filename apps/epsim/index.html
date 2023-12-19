@@ -15,7 +15,73 @@
         the Network Science and Datamining community, particularly <a
             href="https://www.kdd.org/kdd2018/accepted-papers/view/inferring-metapopulation-propagation-network-for-intra-city-epidemic-contro">this
         paper</a>. This work is for entertainment and educational purposes only and I do not claim scientific or medical accuracy.<br/>
-        <br/>
+    </p>
+    <p>
+        This simulation is based on the SAIRD model. It simulates individuals with a contagious disease and how the disease spreads within them. Each 
+    </p>    
+    <img src="SAIRD.svg" alt="compartmental flow"/>
+    
+    <p>
+        Use the sliders below to set each parameter.
+        When you are done, click the run button to watch the simulation at work. Each individual is represented by a dot. 
+        As the individuals move from compartment to compartment each timestamp, their color will change corresponding to their condition.
+    </p>
+
+    <div class="parameters">
+        <div class="col">
+            <div class="param">
+                <label for="I0">Initial Infection Size:</label> <span id="I0-text"></span> people infected<br>
+                <input class="number" type="number" id="I0" min="1" max="30" step="1" value="5">
+            </div>
+            <div class="param">
+                <label for="pI">Infection Probability:</label> <span id="pI-text"></span><br>
+                <input class="number" type="number" id="pI" min="0" max="1" step=".01" value=".05">
+            </div>
+            <div class="param">
+                <label for="pR">Recovery Probability:</label> <span id="pR-text"></span><br>
+                Mortality Probability: <span id="pM-text"></span><br>
+                <input class="number" type="number" id="pR" min="0" max="1" step=".01" value=".9">
+            </div>
+        </div>
+        <div class="col">
+            <div class="param">
+                <label for="AHCR">Assumed Healthy Contact Rate:</label> <span id="AHCR-text"></span> people contacted daily<br>
+                <input class="number" type="number" id="AHCR" min="0" max="20" step="1" value="5">
+            </div>
+            <div class="param">
+                <label for="CCR">Confirmed Infectious Contact Rate:</label> <span id="CCR-text"></span> people contacted daily<br>
+                <input class="number" type="number" id="CCR" min="0" max="20" step="1" value=".5">
+            </div>
+        </div>
+        <div class="col">
+            <div class="param">
+                <label for="To">Symptomatic Offset Time:</label> <span id="To-text"></span> days<br>
+                <input class="number" type="number" id="To" min="1" max="14" value="3">
+            </div>
+            <div class="param">
+                <label for="Tc">Contagious Time:</label> <span id="Tc-text"></span> days<br>
+                <input class="number" type="number" id="Tc" min="0" max="21" value="10">
+            </div>
+
+            <button id="run">Run</button>
+
+        </div>
+        <br style="clear:both;"/>
+    </div>
+
+    <div class="stats">
+        <span >Population Size: </span><span id="N_stat"></span>
+        <span >Total Infected: </span><span id="infected_stat"></span>
+        <span >Active Infected: </span><span id="active_infected_stat"></span>
+        <span >Recovered: </span><span id="recovered_stat"></span>
+        <span >Deceased: </span><span id="deceased_stat"></span>
+        <span >Day: </span><span id="day_stat"></span>
+    </div>
+    <div id="renderArea">
+        <!-- SVG animation goes here! -->
+    </div>
+
+    <p>
 
         This webpage provides a visualization of my variant of the <a
             href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIRD_model"><em>Susceptible-Infectious-Recovered-Deceased</em>
@@ -70,130 +136,10 @@
             </li>
         </ul>
         <br>
-        The flowchart below shows how an individual can progress through the compartments:
-        <img src="SAIRD.svg" alt="compartmental flow"/>
     </p>
-    <p>
-        Use the sliders below to set each parameter.
-        When you are done, click the run button to watch the simulation at work. Each individual is represented by a dot. 
-        As the individuals move from compartment to compartment each timestamp, their color will change corresponding to their condition.
-    </p>
+    
 
-    <div class="parameters">
-        <div class="col">
-            <div class="param">
-                <label for="I0">Initial Infection Size:</label> <span id="I0-text"></span> people infected<br>
-                <input class="slider" type="range" id="I0" min="1" max="30" step="1" value="5">
-            </div>
-            <div class="param">
-                <label for="pI">Infection Probability:</label> <span id="pI-text"></span><br>
-                <input class="slider" type="range" id="pI" min="0" max="1" step=".01" value=".05">
-            </div>
-            <div class="param">
-                <label for="pR">Recovery Probability:</label> <span id="pR-text"></span><br>
-                Mortality Probability: <span id="pM-text"></span><br>
-                <input class="slider" type="range" id="pR" min="0" max="1" step=".01" value=".9">
-            </div>
-        </div>
-        <div class="col">
-            <div class="param">
-                <label for="AHCR">Assumed Healthy Contact Rate:</label> <span id="AHCR-text"></span> people contacted daily<br>
-                <input class="slider" type="range" id="AHCR" min="0" max="15" step="1" value="3">
-            </div>
-            <div class="param">
-                <label for="CCR">Confirmed Infectious Contact Rate:</label> <span id="CCR-text"></span> people contacted daily<br>
-                <input class="slider" type="range" id="CCR" min="0" max="20" step="1" value=".5">
-            </div>
-        </div>
-        <div class="col">
-            <div class="param">
-                <label for="To">Symptomatic Offset Time:</label> <span id="To-text"></span> days<br>
-                <input class="slider" type="range" id="To" min="4" max="21" value="14">
-            </div>
-            <div class="param">
-                <label for="Tc">Contagious Time:</label> <span id="Tc-text"></span> days<br>
-                <input class="slider" type="range" id="Tc" min="0" max="21" value="10">
-            </div>
-
-            <button id="run">Run</button>
-
-        </div>
-        <br style="clear:both;"/>
-    </div>
-
-    <script>
-        /* Parameter Slider Elements */
-        const param_elements = {
-            I0: document.getElementById("I0"),
-            pI: document.getElementById("pI"),
-            pR: document.getElementById("pR"),
-            AHCR: document.getElementById("AHCR"),
-            CCR: document.getElementById("CCR"),
-            To: document.getElementById("To"),
-            Tc: document.getElementById("Tc")
-        };
-
-        /* text output for each parameter */
-        const param_text = {
-            I0: document.getElementById("I0-text"),
-            pI: document.getElementById("pI-text"),
-            pR: document.getElementById("pR-text"),
-            pM: document.getElementById("pM-text"),
-            AHCR: document.getElementById("AHCR-text"),
-            CCR: document.getElementById("CCR-text"),
-            To: document.getElementById("To-text"),
-            Tc: document.getElementById("Tc-text")
-        };
-
-        /* Global Parameter Values */
-        const params = {
-            I0: parseFloat(param_elements.I0.value),
-            pI: parseFloat(param_elements.pI.value),
-            pR: parseFloat(param_elements.pR.value),
-            pM: 1 - parseFloat(param_elements.pR.value),
-            AHCR: parseFloat(param_elements.AHCR.value),
-            CCR: parseFloat(param_elements.CCR.value),
-            To: parseFloat(param_elements.To.value),
-            Tc: parseFloat(param_elements.Tc.value)
-        };
-
-        /* Run button */
-        let run_button = document.getElementById("run");
-
-        /* update parameter value on slider change */
-        function paramUpdate() {
-            Object.keys(param_elements).forEach(key => {
-                params[key] = parseFloat(param_elements[key].value);
-                param_text[key].innerHTML = params[key];
-            });
-
-            params.pM = 1 - params.pR;
-            param_text.pM.innerHTML = params.pM.toFixed(2);
-            buildIndividuals();
-            drawIndividuals();
-            resetAnimation();
-        }
-
-        /* add event listeners */
-        Object.keys(param_elements).forEach(key => {
-            param_elements[key].addEventListener("change", paramUpdate);
-        })
-
-        /* call paramUpdate to set initial parameters */
-        paramUpdate();
-    </script>
-    <div class="stats">
-        <span >Population Size: </span><span id="N_stat"></span>
-        <span >Total Infected: </span><span id="infected_stat"></span>
-        <span >Active Infected: </span><span id="active_infected_stat"></span>
-        <span >Recovered: </span><span id="recovered_stat"></span>
-        <span >Deceased: </span><span id="deceased_stat"></span>
-        <span >Day: </span><span id="day_stat"></span>
-    </div>
-    <div id="renderArea">
-        <!-- SVG animation goes here! -->
-    </div>
-
+    
     <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
     <script type="text/javascript" src="../chance.js"></script>
     <script>
@@ -202,11 +148,15 @@
          */
 
         const isMobile = mobileCheck();
-        console.log(isMobile);
+
+        const N = 10000; //isMobile ? 1600 : 3200;
+        // these must multiply to N
+        const rows = 100;
+            cols = 100;
 
         let width = document.getElementById("renderArea").scrollWidth;
-        let height = width / 2;
-        let r = isMobile ? 5 : 6;
+        let height = isMobile ? width * 1.5: width / 1.4;
+        let r = 3;
         let yellow = "#000",
             orange = "#f70",
             red    = "#f00",
@@ -226,16 +176,10 @@
         let individuals =[],
             infected = [];
 
-        const N = isMobile ? 1600 : 3200;
-        // these must multiply to N
-        const rows = isMobile ? 32 : 40;
-            cols = isMobile ? 50 : 80;
 
         function setupRenderArea() {
             d3.selectAll("svg").remove();
 
-            width = document.getElementById("renderArea").scrollWidth;
-            height = width / 2;
 
             svg = d3.select("#renderArea").append("svg")
                 .attr("width", width)
@@ -315,7 +259,6 @@
                 .attr("cx", d => d.pos.x)
                 .attr("cy", d => d.pos.y)
                 .attr("fill", d => d.color())
-                .attr("stroke", "#333");
         }
 
         window.onresize = () => {
@@ -332,11 +275,74 @@
         }
     </script>
 
+<script>
+    /* Parameter Slider Elements */
+    const param_elements = {
+        I0: document.getElementById("I0"),
+        pI: document.getElementById("pI"),
+        pR: document.getElementById("pR"),
+        AHCR: document.getElementById("AHCR"),
+        CCR: document.getElementById("CCR"),
+        To: document.getElementById("To"),
+        Tc: document.getElementById("Tc")
+    };
+
+    /* text output for each parameter */
+    const param_text = {
+        I0: document.getElementById("I0-text"),
+        pI: document.getElementById("pI-text"),
+        pR: document.getElementById("pR-text"),
+        pM: document.getElementById("pM-text"),
+        AHCR: document.getElementById("AHCR-text"),
+        CCR: document.getElementById("CCR-text"),
+        To: document.getElementById("To-text"),
+        Tc: document.getElementById("Tc-text")
+    };
+
+    /* Global Parameter Values */
+    const params = {
+        I0: parseFloat(param_elements.I0.value),
+        pI: parseFloat(param_elements.pI.value),
+        pR: parseFloat(param_elements.pR.value),
+        pM: 1 - parseFloat(param_elements.pR.value),
+        AHCR: parseFloat(param_elements.AHCR.value),
+        CCR: parseFloat(param_elements.CCR.value),
+        To: parseFloat(param_elements.To.value),
+        Tc: parseFloat(param_elements.Tc.value)
+    };
+
+    /* Run button */
+    let run_button = document.getElementById("run");
+
+    /* update parameter value on slider change */
+    function paramUpdate() {
+        Object.keys(param_elements).forEach(key => {
+            params[key] = parseFloat(param_elements[key].value);
+            param_text[key].innerHTML = params[key];
+        });
+
+        params.pM = 1 - params.pR;
+        param_text.pM.innerHTML = params.pM.toFixed(2);
+        buildIndividuals();
+        drawIndividuals();
+        resetAnimation();
+    }
+
+    /* add event listeners */
+    Object.keys(param_elements).forEach(key => {
+        param_elements[key].addEventListener("input", paramUpdate);
+    })
+
+    /* call paramUpdate to set initial parameters */
+    paramUpdate();
+</script>
+
     <script>
         /*
             ANIMATION STUFF
          */
         var animationTimer;
+        const TIMESTEP_INTERVAL = 250;
 
         let total_infected = params.I0,
             total_recovered = 0,
@@ -413,7 +419,7 @@
                 if (total_infected - total_recovered - total_deceased <= 0) {
                     clearInterval(animationTimer);
                 }
-            }, 250);
+            }, TIMESTEP_INTERVAL);
         }
 
         function resetAnimation() {
