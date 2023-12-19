@@ -1,23 +1,23 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
-  stats: 'errors-warnings',
+  entry: "./src/index.jsx",
+  mode: "development",
+  stats: "errors-warnings",
   output: {
-    filename: 'build.js',
+    filename: "build.js",
     path: path.resolve(__dirname),
   },
   optimization: {
-    minimize: false
+    minimize: false,
   },
   module: {
     rules: [
       {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: 'babel-loader'
-      }
-    ]
-  }
-}
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
+    ],
+  },
+};

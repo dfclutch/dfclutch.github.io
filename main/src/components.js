@@ -5,8 +5,9 @@ import {
   BigLink,
   ColorPickerContainer,
   ColorPickerOption,
-  InverterContainer
-} from './styles';
+  InverterContainer,
+  ProfilePicContainer,
+} from "./styles";
 
 export function Link({
   href,
@@ -20,27 +21,19 @@ export function Link({
   );
 }
 
-export function Project({
-  description,
-  link,
-  title
-}) {
+export function Project({ description, link, title }) {
   return (
     <ProjectContainer>
-      <BigLink href={link}>
-        {title}
-      </BigLink>
-      <p>
-        {description}
-      </p>
+      <BigLink href={link}>{title}</BigLink>
+      <p>{description}</p>
     </ProjectContainer>
   );
 }
 
 export function ColorPicker({ colors, currentColor, isMobile, setColor }) {
   return (
-    <ColorPickerContainer isMobile={isMobile} >
-      {colors.map(color => (
+    <ColorPickerContainer isMobile={isMobile}>
+      {colors.map((color) => (
         <ColorPickerOption
           key={color}
           selected={color === currentColor}
@@ -53,11 +46,19 @@ export function ColorPicker({ colors, currentColor, isMobile, setColor }) {
 }
 
 export function Inverter({ isInverted, setIsInvtered, color }) {
-  const toggleIsInverted = () => setIsInvtered(!isInverted)
+  const toggleIsInverted = () => setIsInvtered(!isInverted);
 
   return (
-    <InverterContainer onClick={toggleIsInverted} isInverted={isInverted} color={color}>
+    <InverterContainer
+      onClick={toggleIsInverted}
+      isInverted={isInverted}
+      color={color}
+    >
       INVERT
     </InverterContainer>
-  )
+  );
 }
+
+export const ProfilePic = ({ url, isMobile }) => {
+  return <ProfilePicContainer src={url} isMobile={isMobile} />;
+};

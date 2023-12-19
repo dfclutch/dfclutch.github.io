@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { LogoContainer } from './styles';
+import { LogoContainer } from "./styles";
 
 export const Logo = ({ isMobile }) => (
   <LogoContainer isMobile={isMobile}>
-    Dan
+    DAN
     <br />
-    Filler
+    FILLER
   </LogoContainer>
-)
+);
