@@ -5,7 +5,7 @@ export default {
   title: "Allegheny Front Trail Trip Report",
   id: "template",
   previewContent: `A delightful, low-intensity summer hike through the PA wilds`,
-  date: "Aug 1, 2021",
+  date: "Aug 1, 2023",
   content: () => (
     <>
       <p>

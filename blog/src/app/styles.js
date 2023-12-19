@@ -69,7 +69,7 @@ export const Title = styled.h1`
 
 export const Content = styled.div`
   width: ${({ width }) => width};
-  padding: ${() => (window.mobileCheck() ? "5px" : "10px")};
+  ${() => window.mobileCheck() && "padding: 12px;"}
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;

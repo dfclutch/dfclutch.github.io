@@ -27,13 +27,18 @@ function App() {
             <ScrollToTop />
             <Switch>
               <Route path="/posts/:id" component={Post} />
-              <Route
+              {/* <Route
                 path="/wip"
                 component={() => (
                   <Feed showWIP={showWIP} setShowWIP={setShowWIP} />
                 )}
+              /> */}
+              <Route
+                path="/"
+                component={() => (
+                  <Feed showWIP={showWIP} setShowWIP={setShowWIP} />
+                )}
               />
-              <Route path="/" component={() => <Feed />} />
             </Switch>
           </div>
         </Router>
