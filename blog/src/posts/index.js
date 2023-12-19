@@ -12,9 +12,10 @@ import lamp from "./11-lamp";
 import flair from "./12-flair";
 import info_graphics_1 from "./wip/info-graphics-1";
 import pizza from "./14-pizza-tutorial";
-import aftJuly2023 from "./wip/aft-july23";
+import aftJuly2023 from "./15-aft-july23";
 
 const posts = [
+  aftJuly2023,
   info_graphics_1,
   flair,
   lamp,
@@ -30,7 +31,7 @@ const posts = [
   first,
 ];
 
-export const wip = [pizza, aftJuly2023].map((article) => ({
+export const wip = [pizza].map((article) => ({
   ...article,
   wip: true,
 }));

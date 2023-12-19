@@ -1,10 +1,10 @@
 import React from "react";
-import Figure from "../../post-components/Figure";
+import Figure from "../post-components/Figure";
 
 export default {
   title: "Allegheny Front Trail Trip Report",
   id: "template",
-  previewContent: ``,
+  previewContent: `A delightful, low-intensity summer hike through the PA wilds`,
   date: "Aug 1, 2021",
   content: () => (
     <>
@@ -46,10 +46,10 @@ export default {
         operations in the upper watershed.
       </p>
       <p>
-        As I hiked, I followed along in the guidebook I brought along -{" "}
-        <em>Guide to the Allegheny Front Trail</em> by Ben Cramer. I love these
-        guidebooks, they add an immersive layer to the trip with context and
-        history as well as practical info on camping, wildlife, and water
+        As I hiked, I followed along in the official guidebook -{" "}
+        <em>Guide to the Allegheny Front Trail</em> - by Ben Cramer. I love
+        these guidebooks, they add an immersive layer to the trip with context
+        and history as well as practical info on camping, wildlife, and water
         quality.
       </p>
       <h2>Geography</h2>
@@ -98,7 +98,10 @@ export default {
         time at each vista. This also meant I had nearly 17 miles to hike on the
         first day to get to a good campsite.
       </p>
-      <Figure src="https://ye-olde-blog.s3.amazonaws.com/img/aft/trailhead.jpeg" />
+      <Figure
+        src="https://ye-olde-blog.s3.amazonaws.com/img/aft/trailhead.jpeg"
+        caption="The old Taco, RIP to this truck, this ended up being my last trip with it before I sold it for an extended cab gen 3."
+      />
       <p>
         I'm very picky about campsites, selecting the right one is important for
         a comfortable night and next day. In PA - and the rest of the eastern US
@@ -121,7 +124,11 @@ export default {
       </p>
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/aft/sixmile.jpeg"
-        breakpoints={[{ w: Infinity, v: "60%" }]}
+        breakpoints={[
+          { w: 900, v: "100%" },
+          { w: 1200, v: "75%" },
+          { w: Infinity, v: "60%" },
+        ]}
         style={{ position: "relative", right: 0 }}
       />
       <p>
@@ -396,10 +403,16 @@ export default {
         otherwise be underwater. You also enter the first of what will become a
         common site for much of the rest of the trip: white pine plantations.
       </p>
-      <Figure
-        src="https://ye-olde-blog.s3.amazonaws.com/img/aft/white_pine_1.jpeg"
-        breakpoints={[{ w: Infinity, v: "60%" }]}
-      />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Figure
+          src="https://ye-olde-blog.s3.amazonaws.com/img/aft/boardwalk_1.jpeg"
+          breakpoints={[{ w: Infinity, v: "61.5%" }]}
+        />
+        <Figure
+          src="https://ye-olde-blog.s3.amazonaws.com/img/aft/white_pine_1.jpeg"
+          breakpoints={[{ w: Infinity, v: "34.6%" }]}
+        />
+      </div>
       <p>
         The trail makes the second crossing over Black Moshannon creek on Shirks
         road, nearby a sign describes a Native American trail. I made one final

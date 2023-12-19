@@ -8,9 +8,9 @@ export default {
   title: "Home Pizza Tutorial",
   id: "pizza",
   previewContent: `
-    Copy and paste this template into a new post in /wip
+    My definitive guide to at-home pizza making
   `,
-  date: "REPLACE ME!",
+  date: "March 28, 2023",
   content: () => (
     <>
       {/* 
