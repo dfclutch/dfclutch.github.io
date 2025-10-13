@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 
 import Post from "./Routes/Post";
 import Feed from "./Routes/Feed";
@@ -15,7 +15,7 @@ function App() {
     <>
       <GlobalStyle />
       <Content width={width}>
-        <Router>
+        <BrowserRouter>
           <Link to="/">
             <Title>Ye Olde Blogue</Title>
           </Link>
@@ -24,12 +24,12 @@ function App() {
           </h3>
           <div>
             <ScrollToTop />
-            <Switch>
+            <Routes>
               <Route path="/posts/:id" component={Post} />
               <Route path="/" component={Feed} />
-            </Switch>
+            </Routes>
           </div>
-        </Router>
+        </BrowserRouter>
       </Content>
     </>
   );

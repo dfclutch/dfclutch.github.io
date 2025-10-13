@@ -1,17 +1,17 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Preview from "./Preview";
 
 function Feed({ posts }) {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   return (
     <>
       {posts.map((post) => (
         <Preview
           {...post}
-          onClick={() => history.push(`posts/${post.id}`)}
+          onClick={() => navigate(`posts/${post.id}`)}
           key={post.id}
         />
       ))}

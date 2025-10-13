@@ -10,6 +10,14 @@ export default {
   date: "Jul 8, 2022",
   content: (
     <>
+      <p>
+        The Flair is a manual espresso press. Espresso is just hot water forced through finely ground coffee at a certain pressure, so it's actually pretty easy to do by hand. The giant espresso machines are mostly just hot water tanks and pumps. Instead, with the Flair, you heat the water manually and provide the pressure yourself.
+      </p>
+      <p>
+        The basic components of the Flair are the stand, the water chamber, and the filter. The filter fits snugly into the water chamber and both sit on the stand.
+      </p>
+      <p>You heat up the water chamber ahead of time to ensure temperature stability, if you put boiling water in a cold stainless steel tube it will drop in temperature rapidly.</p>
+
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/flair/1.jpg"
         breakpoints={[

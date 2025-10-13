@@ -9,6 +9,7 @@ import {
     AppContainer,
     GlobalStyle,
     SectionHeader,
+    ContentContainer
 } from './styles.js';
 import { Logo } from './logo.jsx';
 
@@ -34,102 +35,99 @@ function App() {
 
     return (
         <AppContainer isMobile={isMobile}>
-            <Logo isMobile={isMobile} />
-            <p>
-                {'Frontend software engineer at '}
-                <Link href="http://www.spiff.com">
-                    Spiff
-                </Link>
-            </p>
-            <p>
-                Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, guitarist, espresso brewer, digital cartographer
-            </p>
-            <p>
-                Living in Crestview, Clintonville, Columbus, OH
-            </p>
 
-            <section>
-                <SectionHeader>Links</SectionHeader>
-                <BigLink href="mailto:dwfiller@gmail.com">
-                    Email
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/dan-filler-resume.pdf">
-                    Resume
-                </BigLink>
-                <br />
-                <BigLink href="https://github.com/dfclutch">
-                    Github
-                </BigLink>
-                <br />
-                <BigLink href="https://www.linkedin.com/in/dan-filler/">
-                    LinkedIn
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/blog/#/">
-                    Blog
-                </BigLink>
-                <br />
-                <BigLink href="https://dfclutch.github.io/apps/drawings">
-                    Drawings
-                </BigLink>
-                <br />
-                <BigLink href="https://danfiller.bandcamp.com/">
-                    Music
-                </BigLink>
-                <br />
-            </section>
+            <ContentContainer>
+                <Logo isMobile={isMobile} />
 
-            <section>
-                <SectionHeader>Projects</SectionHeader>
-                <Project
-                    description="A microlibrary with 0 dependencies for generating random data of all kinds. Published on npm."
-                    link="https://www.npmjs.com/package/rndom"
-                    title="rndom"
-                />
-                <Project
-                    description="D3js-based interactive graphical simulation based on the SIR epidemic model."
-                    link="http://dfclutch.github.io/apps/epsim"
-                    title="Covid SAIRD simulation"
-                />
-                <Project
-                    description="An interactive visualization of several random network generation models."
-                    link="http://dfclutch.github.io/apps/d3"
-                    title="Network Generation Models"
-                />
-                <Project
-                    description="Vanilla JS visualization of some graph algorithms, implements a novel geographic graph generation model."
-                    link="http://dfclutch.github.io/apps/graphs"
-                    title="Graph Algorithms"
-                />
-                <Project
-                    description={
-                        <>
-                            Basic fullstack app for recording coffee recipes. Currently being rewritten using the <a href="https://www.serverless.com/">Serverless</a> framework.
-                        </>
-                    }
-                    link="https://github.com/dfclutch/javadocs"
-                    title="Java Docs"
-                />
-                <Project
-                    description="Webpage gathering important data for backpackers and hikers in the Michaux State Forest"
-                    link="https://dfclutch.github.io/michaux"
-                    title="Backpacking Michaux"
-                />
-            </section>
-            <section>
-                <ColorPicker
-                    colors={COLORS}
-                    currentColor={selectedColor}
-                    isMobile={isMobile}
-                    setColor={setSelectedColor}
-                />
-                <Inverter
-                    isInverted={isInverted}
-                    setIsInvtered={setIsInverted}
-                    color={selectedColor}
-                />
-            </section>
+                <div>
+                    <p>
+                        {'Frontend software engineer at '}
+                        <Link href="http://www.spiff.com">
+                            Salesforce - working on Spiff!
+                        </Link>
+                    </p>
+                    <p>
+                        Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, bluegrass musician, espresso brewer, digital cartographer
+                    </p>
+                    <p>
+                        Living in Crestview, Clintonville, Columbus, OH
+                    </p>
+
+                    <section>
+                        <BigLink href="mailto:dwfiller@gmail.com">
+                            Email
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://dfclutch.github.io/dan-filler-resume.pdf">
+                            Resume
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://github.com/dfclutch">
+                            Github
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://www.linkedin.com/in/dan-filler/">
+                            LinkedIn
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://dfclutch.github.io/blog/#/">
+                            Blog
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://dfclutch.github.io/apps/drawings">
+                            Drawings
+                        </BigLink>
+                        <br />
+                        <BigLink href="https://danfiller.bandcamp.com/">
+                            Music
+                        </BigLink>
+                        <br />
+                    </section>
+
+                    <section>
+                        <SectionHeader>Projects</SectionHeader>
+
+                        <Project
+                            description="Webpage gathering important data for backpackers and hikers in the Michaux State Forest"
+                            link="https://dfclutch.github.io/michaux"
+                            title="Backpacking Michaux"
+                        />
+                        <Project
+                            description="A microlibrary with 0 dependencies for generating random data of all kinds. Published on npm."
+                            link="https://www.npmjs.com/package/rndom"
+                            title="rndom"
+                        />
+                        <Project
+                            description="D3js-based interactive graphical simulation based on the SIR epidemic model."
+                            link="http://dfclutch.github.io/apps/epsim"
+                            title="Covid SAIRD simulation"
+                        />
+                        <Project
+                            description="An interactive visualization of several random network generation models."
+                            link="http://dfclutch.github.io/apps/d3"
+                            title="Network Generation Models"
+                        />
+                        <Project
+                            description="Vanilla JS visualization of some graph algorithms, implements a novel geographic graph generation model."
+                            link="http://dfclutch.github.io/apps/graphs"
+                            title="Graph Algorithms"
+                        />
+                    </section>
+                    <section>
+                        <ColorPicker
+                            colors={COLORS}
+                            currentColor={selectedColor}
+                            isMobile={isMobile}
+                            setColor={setSelectedColor}
+                        />
+                        <Inverter
+                            isInverted={isInverted}
+                            setIsInvtered={setIsInverted}
+                            color={selectedColor}
+                        />
+                    </section>
+                </div>
+            </ContentContainer>
 
             <GlobalStyle
                 color={selectedColor}

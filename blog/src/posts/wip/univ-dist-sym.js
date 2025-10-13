@@ -12,7 +12,7 @@ export default {
   content: (
     <>
       <p>
-        A few weeks ago, I was read <a href="https://www.columbus.gov/universitydistrictplan/" target="_blank">The University District Plan</a>. It's a f I paused to take in the map on page 8 to evaluate the exact boundaries defined by the document. I've spent lots of time looking at maps of this part of northern Columbus, but something clicked while looking at this one.* I found a distinct symmetry across the north-south plane in the neighborhood structure and identity.
+        A few weeks ago, I was reading <a href="https://www.columbus.gov/universitydistrictplan/" target="_blank">The University District Plan</a>. I paused to take in the map on page 8 to evaluate the exact boundaries defined by the document. I've spent lots of time looking at maps of this part of northern Columbus, but something clicked while looking at this one.* I found a distinct symmetry across the north-south plane in the neighborhood structure and identity.
       </p>
       <p>
         Here are the neighborhood pairs I have identified:
@@ -33,7 +33,7 @@ export default {
         This is the neighborhood pair that initially inspired this post. Each neighborhood is at the most extreme north/south position on their respective side, with no direct borders with the campus. They are of relatively similar size and layout, though Glen Echo contains Cliffside Dr stretching west and lacks the clear organization of The Circles.
       </p>
       <p>
-        These neighborhoods are characteristically beautiful. They feature heavily landscaped lots, with many mature trees, and unique and beautiful early 20th century homes. They also exhibit higher rate of owner occupancy, given their distance from campus, but still a significantly elevated level of renting from most similar neighborhoods outside the University District. Both have park elements and <a href="https://en.wikipedia.org/wiki/Street_furniture" target="_blank">street furniture</a>
+        These neighborhoods are characteristically beautiful. They feature heavily landscaped lots, with many mature trees, and unique and beautiful early 20th century homes. They also exhibit higher rate of owner occupancy, given their distance from campus, but still an elevated level of rentals compared to similar neighborhoods outside the University District. Both have park-like elements and <a href="https://en.wikipedia.org/wiki/Street_furniture" target="_blank">street furniture</a>
       </p>
       <p>
         The Circles is characterized by the 4 roundabouts comprising the neighborhood, each with a small garden area in the center. These gardens contain benches, a cluster of trees, shrubbery, and a path across the island. Some of the exits from the neighborhood have been closed off, contributing to the park-like setting, as there is almost no thru traffic. The Circles exhibits extravagant Victorian architecture. The homes are highly decorative, with intricate and colorfully-painted woodwork. Many homes have unique features like stone stanchions or turrets.

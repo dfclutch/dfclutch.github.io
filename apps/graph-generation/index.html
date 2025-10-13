@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+		<script rel="preload" type="text/javascript" src="../chance.js"></script>
+		<script rel="preload" type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
+		<title>Random D3 Graphs</title>
+	</head>
+	<body>
+		<h1>Random Graphs with D3!</h1>
+		These graphs are produced using the <a href="https://d3js.org">D3 visualization library</a>.<br>
+		The <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős-Renyi</a> model generates graphs with random edges using a probability parameter. The Hub Graph is a design of my own. Hub graphs are constructed with a fairly small number of "Hubs" - shown as large, black nodes. The hubs are connected to some of the other Hubs. Hubs are highly connected to a number of "Friends". Friends which share a hub node are highly connected, with a few connections to nodes not in their friend group. <a href="https://en.wikipedia.org/wiki/Scale-free_network">Scale-Free Networks</a> are generated using a "rich-get-richer" principle. Every time a new node is added, the node it connects to is selected randomly, but weighted toward nodes that already have a lot of friends.
+		<br>
+		Hint: Try dragging the nodes around!
+		<br>
+		<br>
+		<div>
+			Image Size = <input type="text" id="sizeInput" value="900"></input>
+		</div>
+		<div>
+			Nodes = <input type="text" id="nodesInput" value="200"></input>
+		</div>
+		<div>
+			<button id="generateErdos">Erdős-Renyi Graph!</button>
+			<button id="generateHub">Hub Graph!</button>
+			<button id="generateScaleFree">Scale-Free Graph!</button>
+			<button id="generateInverseScaleFree">Inverse Scale-Free Graph!</button>
+		</div>
+		<div>
+			<strong id="currentGraphType">
+				Erdos-Renyi Graph:
+			</strong>
+		<div>
+		<div id="textOutput"></div>
+		<div id="renderArea">
+			<!-- SVG animation goes here! -->
+		</div>
+		<script type="text/javascript" src="graph-generation.js"></script>
+	</body>
+</html>

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.jsx",
     mobileCheck: "./src/mobileCheck.js",
   },
   output: {

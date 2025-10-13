@@ -1,6 +1,6 @@
 .idea/**
+**/node_modules/**
 main/node_modules/
 blog/node_modules/
-warios/node_modules/
 .DS_Store
 .vscode

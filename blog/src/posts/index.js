@@ -10,8 +10,10 @@ import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
 import lamp from "./11-lamp";
 import flair from "./12-flair";
+import univDistSym from "./wip/univ-dist-sym";
 
 const posts = [
+  univDistSym,
   flair,
   lamp,
   primitive_borders,

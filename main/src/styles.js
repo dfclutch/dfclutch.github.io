@@ -52,9 +52,21 @@ export const AppContainer = styled.div`
   `}
 `;
 
-export const LogoContainer = styled.div`
-  display: block;
+export const ContentContainer = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
+`
+
+export const LogoContainer = styled.div`
+/* Abs positioning makes it not take up vert space */
+  position: absolute;
+  top: 150px;
+
+  /* Rotate from top left corner (not default) */
+  transform-origin: bottom left;  
+  transform: rotate(-90deg);
+
   margin: 16px 0;
   font-style: italic;
   font-weight: 900;
