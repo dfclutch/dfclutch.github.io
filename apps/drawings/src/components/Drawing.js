@@ -24,7 +24,6 @@ const DrawingContainer = styled.div`
 const Drawing = ({ drawing }) => {
   return (
     <div>
-      <DrawingTitle>{drawing.title}</DrawingTitle>
       <DrawingContainer>
         <DrawingImg
           src={getS3BucketPath(drawing.fileName)}
