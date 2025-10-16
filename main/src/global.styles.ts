@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from './utils/colors';
 
 type GlobalStyleProps = { color: string, isInverted: boolean }
 
@@ -22,6 +23,10 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     font-weight: 900;
     cursor: pointer;
     letter-spacing: 0.5px;
+
+    &:hover {
+      color: ${COLORS.lightBlue}
+    }
   }
 
   section {

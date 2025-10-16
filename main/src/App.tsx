@@ -2,7 +2,9 @@ import { CircularImage } from './components/Image'
 import { GlobalStyle } from './global.styles'
 import { COLORS } from './utils/colors'
 
-import profPic from "./assets/prof-pic-3.jpg"
+
+import profPic from "./assets/prof-pic-4.jpg"
+
 import { useIsMobile } from './utils/useIsMobile'
 import { AppContainer } from './app.styles'
 import { Logo } from './components/Logo'
@@ -36,7 +38,7 @@ function App() {
           Pennsylvania native, Ohio State CSE alumnus, javascript evangelist, ultralight backpacker, traditional bluegrass banjo/guitar/mandolin picker, espresso brewer, home cook, map enthusiast
         </p>
         <p>
-          Living in Columbus, OH
+          Living in Columbus, OH with my wife Carly and dog Maggie
         </p>
       </div>
 
@@ -78,7 +80,7 @@ function App() {
             Instagram
           </BigLink>
         </div>
-        <CircularImage src={profPic} />
+        <CircularImage src={profPic} isMobile={isMobile} />
       </SplitSection>
 
       <section>

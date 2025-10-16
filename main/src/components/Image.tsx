@@ -13,9 +13,9 @@ const ImageStyle = styled.img`
   height: auto;
 `
 
-export const CircularImage = styled.img`
+export const CircularImage = styled.img<{ isMobile: boolean }>`
   display: block;
-  max-width: 40%;
+  max-width: ${({ isMobile }) => isMobile ? "60%" : "40%"};
   height: auto;
   border-radius: 50%;
   margin: auto;
