@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Link, Routes, Outlet } from "react-router-dom";
 
 import Post from "./Routes/Post";
 import Feed from "./Routes/Feed";
@@ -22,11 +22,12 @@ function App() {
           <h3>
             By <a href="http://dfclutch.com/">Dan Filler</a>
           </h3>
+          <Outlet />
           <div>
             <ScrollToTop />
             <Routes>
-              <Route path="/posts/:id" component={Post} />
-              <Route path="/" component={Feed} />
+              <Route path="/" element={<Feed />} />
+              <Route path="/posts/:id" element={<Post />} />
             </Routes>
           </div>
         </BrowserRouter>

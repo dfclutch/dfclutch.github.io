@@ -2,7 +2,7 @@
     StackOverflow snippet to check if on a mobile. Works okay.
  */
 
-mobileCheck = () => {
+const mobileCheck = () => {
   let check = false;
   (function (a) {
     if (

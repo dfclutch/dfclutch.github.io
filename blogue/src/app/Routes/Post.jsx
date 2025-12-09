@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import posts from "../../posts";
 
-import Post from "../Post";
+import Post from "../post";
 
 function getPost({ id }) {
   return posts.find((post) => post.id === id);
