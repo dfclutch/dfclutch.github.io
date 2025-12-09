@@ -5,9 +5,13 @@ import colors from "../../theme/colors.js";
 import typography from "../../theme/typography.js";
 
 const PreviewContainer = styled.div`
-  border-top: 1px solid ${colors.grey};
+  ${({ wip }) =>
+    wip
+      ? `border: 2px solid ${colors.wipColor}; border-radius: 4px;`
+      : `border-top: 1px solid ${colors.grey};`}
   padding: 6px 12px;
   cursor: pointer;
+  margin: 8px 0;
 
   ${() =>
     window.mobileCheck()
@@ -36,14 +40,14 @@ const Title = styled.h2`
 
 const PreviewText = styled.div`
   text-align: justify;
-  font-family: "Vollkorn", serif;
+  font-family: "Spectral", serif;
   margin: 8px 0;
   ${typography.medium}
 `;
 
-const Preview = ({ onClick, previewContent, title }) => {
+const Preview = ({ onClick, previewContent, title, wip }) => {
   return (
-    <PreviewContainer onClick={onClick}>
+    <PreviewContainer onClick={onClick} wip={wip}>
       <Title>{title}</Title>
       <PreviewText>{previewContent}</PreviewText>
     </PreviewContainer>

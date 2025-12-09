@@ -7,7 +7,7 @@ export default {
   date: "18 April, 2021",
   id: "giardiniera",
   previewContent: "The Italian answer to Sauerkraut",
-  content: (
+  content: () => (
     <div>
       <p>
         To start, in an American accent it's pronounced <em>Jar-din-air-uh</em>.
@@ -45,7 +45,7 @@ export default {
         <li>Garlic</li>
         <li>
           Oregano, red pepper flake, celery salt, peppercorns, coriander, fresh
-          bayleaf
+          bay leaf
         </li>
       </ul>
       <p>
@@ -94,7 +94,7 @@ export default {
       </p>
       <p>
         If I were to change these ingredients at all I would definitely remove
-        the fresh parsely. Fresh herbs react poorly to the fermentation. A
+        the fresh parsley. Fresh herbs react poorly to the fermentation. A
         variation would be to go more herbaceous with dried Rosemary, sage,{" "}
         {"&"} thyme. I think in that case I would drop any hot peppers.
       </p>
@@ -111,14 +111,14 @@ export default {
       />
       <p>
         I bottled mine in mason jars. They keep for several weeks in the fridge.
-        This stuff goes great on a sandwhich, salad, hotdog, etc. The brine is
+        This stuff goes great on a sandwich, salad, hotdog, etc. The brine is
         also good anywhere you need some salty, acidic liquid but brings a bit
         of funk. I've added a bit when bringing together a pasta sauce in place
         of something like wine or lemon juice.
       </p>
       <Figure
         src="https://ye-olde-blog.s3.amazonaws.com/img/giardiniera/sandwich.jpg"
-        alt="Giardiniera on a sandwhich"
+        alt="Giardiniera on a sandwich"
         breakpoints={[
           { w: 2000, v: "100%" },
           { w: Infinity, v: "600px" },

@@ -5,7 +5,7 @@ export default {
   date: "15 Feb, 2021",
   id: "article-no-1",
   previewContent: "It's just a rambling introduction.",
-  content: (
+  content: () => (
     <div>
       <p>Howdy, folks!</p>
       <p>
@@ -13,7 +13,7 @@ export default {
         frontend apps for a salestech company in React. Originally, I had an
         idea for a Computer Science/Software Engineering blog, and I still may
         write a few articles in that space, but most of the things I want to
-        write about are architecture/design focused. Specifially, Columbus area
+        write about are architecture/design focused. Specifically, Columbus area
         architecture, architects, neighborhoods, etc. I like furniture design
         and history, so that will make an appearance. I also make a lot of
         coffee, so I may do a manual espresso work flow explanation, talk

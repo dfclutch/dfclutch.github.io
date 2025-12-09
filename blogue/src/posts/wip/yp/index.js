@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-  title: "Packard and Yost",
+  title: "Florence Kenyon Hayden Rector",
   id: "yp",
   previewText: "Columbus' first female architect",
   date: "",

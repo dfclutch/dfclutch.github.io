@@ -1,29 +1,34 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
-import Preview from "./Preview";
+import Preview from './Preview'
+import { WIPToggle } from './WIPToggle'
 
-function Feed({ posts }) {
+
+const Feed = ({ posts, wip, showWIP, setShowWIP }) => {
   const navigate = useNavigate()
+  const postToPreviewComponent = postToPreviewComponentWithNavigate(navigate)
 
   return (
     <>
-      {posts.map((post) => (
-        <Preview
-          {...post}
-          onClick={() => navigate(`posts/${post.id}`)}
-          key={post.id}
+      {setShowWIP && (
+        <WIPToggle
+          toggleShowWIP={() => setShowWIP(!showWIP)}
+          showWIP={showWIP}
         />
-      ))}
+      )}
+      {showWIP && wip.map(postToPreviewComponent)}
+      {posts.map(postToPreviewComponent)}
     </>
-  );
+  )
 }
-/*
-  <PageCounter
-    page={page}
-    maxPageIndex={articles.length - 1}
-    prevPage={prevPage}
-    nextPage={nextPage}
+
+const postToPreviewComponentWithNavigate = (navigate) => (post) =>
+(
+  <Preview
+    {...post}
+    onClick={() => navigate(`posts/${post.id}`)}
+    key={post.id}
   />
-*/
-export default Feed;
+)
+
+export default Feed 

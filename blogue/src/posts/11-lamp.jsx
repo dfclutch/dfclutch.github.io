@@ -9,7 +9,7 @@ export default {
     Process and construction of a simple plywood and dowel lamp
   `,
   date: "Jul 6, 2022",
-  content: (
+  content: () => (
     <>
       <p>
         I've long thought I should try to build a lamp, so I decided to give it

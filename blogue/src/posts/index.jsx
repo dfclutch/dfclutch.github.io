@@ -10,10 +10,13 @@ import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
 import lamp from "./11-lamp";
 import flair from "./12-flair";
-import univDistSym from "./wip/univ-dist-sym";
+import info_graphics_1 from "./wip/info-graphics-1";
+import pizza from "./14-pizza-tutorial";
+import aftJuly2023 from "./15-aft-july23";
 
 const posts = [
-  univDistSym,
+  aftJuly2023,
+  info_graphics_1,
   flair,
   lamp,
   primitive_borders,
@@ -27,5 +30,10 @@ const posts = [
   chipotle,
   first,
 ];
+
+export const wip = [pizza].map((article) => ({
+  ...article,
+  wip: true,
+}));
 
 export default posts;

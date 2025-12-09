@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const BackWrapper = styled.div`
@@ -14,7 +14,11 @@ const BackWrapper = styled.div`
 `;
 
 const Back = () => {
-  return <BackWrapper>back</BackWrapper>;
+  return (
+    <Link to="/">
+      <BackWrapper>back</BackWrapper>
+    </Link>
+  );
 };
 
 export default Back;

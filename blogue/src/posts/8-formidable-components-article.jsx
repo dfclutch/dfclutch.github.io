@@ -3,9 +3,13 @@ import React from "react";
 const content = (
   <>
     <p>
-      This article from <a href='https://formidable.com/'>Formidable</a> goes through some of the history of React component structure preferences and where they've landed in 2021.
+      This article from <a href="https://formidable.com/">Formidable</a> goes
+      through some of the history of React component structure preferences and
+      where they've landed in 2021.
     </p>
-    <a href='https://formidable.com/blog/2021/react-components/'>Not All Components are Created Equal</a>
+    <a href="https://formidable.com/blog/2021/react-components/">
+      Not All Components are Created Equal
+    </a>
   </>
 );
 
@@ -14,5 +18,5 @@ export default {
   id: "formidable-react",
   previewContent: content,
   date: "24 Jun, 2021",
-  content: content,
+  content: () => content,
 };
