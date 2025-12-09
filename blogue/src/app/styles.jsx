@@ -29,6 +29,25 @@ export const GlobalStyle = createGlobalStyle`
       color: ${colors.darkBrand};
     }
   `};
+
+  strong {
+    font-weight: 600;
+  }
+
+  li {
+    margin: 8px 0;
+    width: 80%;
+  }
+
+  button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 `;
 
 export const Title = styled.h1`
@@ -50,12 +69,16 @@ export const Title = styled.h1`
 
 export const Content = styled.div`
   width: ${({ width }) => width};
-  padding: ${() => (window.mobileCheck() ? "5px" : "10px")};
+  ${() => window.mobileCheck() && "padding: 12px;"}
   box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
 
-  & h3 {
+  & h2 {
     ${typography.large}
+  }
+
+  & h3 {
+    ${typography.medium}
   }
 `;
