@@ -16,18 +16,18 @@ function App() {
       <GlobalStyle />
       <Content width={width}>
         <BrowserRouter>
-          <Link to="/">
+          <Link to="/blog/">
             <Title>Ye Olde Blogue</Title>
           </Link>
           <h3>
-            By <a href="http://dfclutch.com/">Dan Filler</a>
+            By <a href="http://dan-schiller.com/">Dan Filler</a>
           </h3>
           <Outlet />
           <div>
             <ScrollToTop />
             <Routes>
-              <Route path="/" element={<Feed />} />
-              <Route path="/posts/:id" element={<Post />} />
+              <Route path="/blog/" element={<Feed />} />
+              <Route path="/blog/posts/:id" element={<Post />} />
             </Routes>
           </div>
         </BrowserRouter>
