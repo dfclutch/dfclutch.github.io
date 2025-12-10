@@ -55,6 +55,7 @@ export const Title = styled.h1`
   padding: 10px 0;
   width: 75%;
   ${typography.mainTitle}
+  ${typography.sans_serif}
   color: ${colors.brand};
 
   ${() =>
@@ -77,10 +78,12 @@ export const Content = styled.div`
   ${typography.serif}
 
   & h2 {
+    ${typography.sans_serif}
     ${typography.large}
   }
 
   & h3 {
+    ${typography.sans_serif}
     ${typography.medium}
   }
 `;

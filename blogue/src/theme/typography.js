@@ -32,12 +32,17 @@ const serif = `
   font-family: "Spectral", serif;
 `;
 
+const sans_serif = `
+  font-family: "Roboto", Helvetica, sans-serif;
+`;
+
 export default {
   large,
   mainTitle,
   medium,
   extra_small,
   serif,
+  sans_serif,
   small,
   title,
 };
