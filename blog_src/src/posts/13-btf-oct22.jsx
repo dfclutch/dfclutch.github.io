@@ -16,8 +16,8 @@ export default {
         The Black Forest Trail (BFT) is a 43 mile trail in North Central
         Pennsylvania. Despite being on the shorter end of PA long trails, it is
         one of the most physically demanding, with 7 ascents/descents of 1000'.
-        The trail draws two arcs through the water-carved Allegheny plateu,
-        alternating between easy, flat trail atop the plateu and knee-busting
+        The trail draws two arcs through the water-carved Allegheny plateau,
+        alternating between easy, flat trail atop the plateau and knee-busting
         climbs in and out of 500-1000' deep hollows.
       </p>
       <Map src="https://caltopo.com/m/L5QV9"></Map>
@@ -34,7 +34,7 @@ export default {
         I debated switching directions from my first attempt, hiking the trail
         clockwise. This would give me new scenery first and leave the shortest
         day for the drive home. Ultimately, I decided to hike it in the same
-        direction as before. Hiking counterclockwise match up with the direction
+        direction as before. Hiking counterclockwise to match up with the direction
         the guidebook is written in and to make the first day a bit easier.
       </p>
       <p>
