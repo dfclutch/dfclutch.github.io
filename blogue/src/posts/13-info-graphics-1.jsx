@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "../../post-components/Link";
-import { Mono } from "../../post-components/Mono";
-import Figure from "../../post-components/Figure";
+import { Link } from "../post-components/Link";
+import { Mono } from "../post-components/Mono";
+import Figure from "../post-components/Figure";
 import styled from "styled-components";
-import { useIsMobile } from "../../utilities/responsive";
+import { useIsMobile } from "../utilities/responsive";
 
 const Flex = styled.div`
   display: flex;
@@ -91,7 +91,7 @@ export default {
           <li>
             <Mono>Don't produce eye-tiring effects:</Mono> unintentional optical
             illusions in the form of stripes, patterns, high-contrast grids
-            producing flashing dots, etc. all tire the viewers eyes and make it
+            producing flashing dots, etc. all tire the viewer's eyes and make it
             harder to draw visual conclusions.
           </li>
           <li>

@@ -114,7 +114,7 @@ export default {
           pushing down, rotating as you go. Keep going until the dough is
           totally smooth, about 5-10 mins. When you start your hands will be
           covered in sticky, floury bits. By the time they are totally clean
-          (e.g. the flour has worked back into the dough ball, you should be
+          (e.g. the flour has worked back into the dough ball), you should be
           about done kneading.
         </li>
       </ul>
@@ -139,8 +139,8 @@ export default {
       </p>
       <strong>Option 2: Standard Proof</strong>
       <p>
-        Allow your kneaded dough to rest at room temperature for about 1 hour
-        until it's nearly doubled in size. Do this on the counter under an
+        Allow your kneaded dough to rest at room temperature for about 1-2 hours
+        until it's doubled in size. Do this on the counter under an
         inverted bowl, in an airtight container, or in a bowl covered in a damp
         towel.
       </p>
@@ -262,7 +262,7 @@ export default {
         </li>
         <li>
           Pepperoni: I prefer small "cup-and-crisp" pepperoni. Use more than you
-          think you'll need because it shrinks as it bakes. Delicious with a
+          think you'll need because they shrink as they bake. Delicious with a
           spicy tomato sauce, extra red pepper flakes, and honey.
         </li>
         <li>

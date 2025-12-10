@@ -10,7 +10,7 @@ const Feed = ({ posts, wip, showWIP, setShowWIP }) => {
 
   return (
     <>
-      {setShowWIP && (
+      {!!wip.length && setShowWIP && (
         <WIPToggle
           toggleShowWIP={() => setShowWIP(!showWIP)}
           showWIP={showWIP}

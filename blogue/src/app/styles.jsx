@@ -74,6 +74,8 @@ export const Content = styled.div`
   margin: 0 auto;
   min-height: 100vh;
 
+  ${typography.serif}
+
   & h2 {
     ${typography.large}
   }

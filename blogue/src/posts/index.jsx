@@ -10,11 +10,12 @@ import bocklin from "./9-bocklin";
 import primitive_borders from "./10-primitive-borders";
 import lamp from "./11-lamp";
 import flair from "./12-flair";
-import info_graphics_1 from "./wip/info-graphics-1";
+import info_graphics_1 from "./13-info-graphics-1";
 import pizza from "./14-pizza-tutorial";
 import aftJuly2023 from "./15-aft-july23";
 
 const posts = [
+  pizza,
   aftJuly2023,
   info_graphics_1,
   flair,
@@ -31,7 +32,7 @@ const posts = [
   first,
 ];
 
-export const wip = [pizza].map((article) => ({
+export const wip = [].map((article) => ({
   ...article,
   wip: true,
 }));

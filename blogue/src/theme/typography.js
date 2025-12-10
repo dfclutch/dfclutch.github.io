@@ -29,7 +29,7 @@ const extra_small = `
 `;
 
 const serif = `
-  font-family: "Vollkorn", serif;
+  font-family: "Spectral", serif;
 `;
 
 export default {
